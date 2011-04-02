@@ -1,0 +1,3 @@
+--type-add=ruby=.haml
+--type-add=css=.sass
+--type-add=css=.scss

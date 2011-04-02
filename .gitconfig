@@ -1,0 +1,16 @@
+[user]
+  name = Shanon McQuay
+  email = shanonmcquay@gmail.com
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+[github]
+  user = compactcode
