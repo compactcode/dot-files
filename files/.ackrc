@@ -2,3 +2,4 @@
 --type-add=css=.sass
 --type-add=css=.scss
 --type-add=html=.ftl
+--type-set=puppet=.pp
