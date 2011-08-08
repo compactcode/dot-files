@@ -1,2 +1,2 @@
-alias sc='script/console'
-alias ss='script/server'
+alias rc='rails c'
+alias rs='rails s'
