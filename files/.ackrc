@@ -2,3 +2,6 @@
 --type-add=css=.sass
 --type-add=css=.scss
 --type-set=puppet=.pp
+--type-add=html=.handlebars
+
+--ignore-dir=tmp
