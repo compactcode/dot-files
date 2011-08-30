@@ -1,7 +1,7 @@
 --type-add=ruby=.haml
 --type-add=css=.sass
 --type-add=css=.scss
---type-set=puppet=.pp
 --type-add=html=.handlebars
+--type-add=js=.coffee
 
 --ignore-dir=tmp
