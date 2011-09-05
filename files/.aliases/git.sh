@@ -1,1 +1,1 @@
-alias gitrs='git reset --hard'
+alias grs='git reset --hard'
