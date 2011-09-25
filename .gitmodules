@@ -7,3 +7,6 @@
 [submodule "files/.vim/bundle/command-t"]
 	path = files/.vim/bundle/command-t
 	url = git://git.wincent.com/command-t.git
+[submodule "files/.vim/bundle/surround"]
+	path = files/.vim/bundle/surround
+	url = git://github.com/tpope/vim-surround.git
