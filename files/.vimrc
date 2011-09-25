@@ -13,6 +13,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set autoindent
 set list listchars=tab:\ \ ,trail:·
 
 " Searching
@@ -22,8 +23,13 @@ set ignorecase
 set smartcase
 
 " Status bar
+set ruler
+set showcmd
 set laststatus=2
 
 " Load plugins with pathogen
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
+
+" Command-t
+let g:CommandTMaxHeight=20
