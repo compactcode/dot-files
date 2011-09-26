@@ -20,6 +20,9 @@ set expandtab
 set autoindent
 set list listchars=tab:\ \ ,trail:·
 
+" Let plugins do their magic
+filetype plugin indent on
+
 " Searching
 set hlsearch
 set incsearch
@@ -37,3 +40,9 @@ let g:CommandTCancelMap=['<ESC>','<C-c>']
 
 " Theme
 colorscheme solarized
+
+" Key bindings
+let mapleader = ','
+
+imap jj <Esc>
+imap ;; <Esc> :wa<CR> :!!<CR>
