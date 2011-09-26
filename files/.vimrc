@@ -1,5 +1,9 @@
 set nocompatible
 
+" Load plugins with pathogen
+runtime bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect()
+
 set number
 set ruler
 syntax on
@@ -27,9 +31,9 @@ set ruler
 set showcmd
 set laststatus=2
 
-" Load plugins with pathogen
-runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
-
 " Command-t
 let g:CommandTMaxHeight=20
+let g:CommandTCancelMap=['<ESC>','<C-c>']
+
+" Theme
+colorscheme solarized
