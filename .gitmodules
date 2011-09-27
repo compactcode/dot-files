@@ -16,3 +16,6 @@
 [submodule "files/.vim/bundle/rails"]
 	path = files/.vim/bundle/rails
 	url = git://github.com/tpope/vim-rails.git
+[submodule "files/.vim/bundle/supertab"]
+	path = files/.vim/bundle/supertab
+	url = git://github.com/ervandew/supertab.git
