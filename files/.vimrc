@@ -19,9 +19,7 @@ set softtabstop=2
 set expandtab
 set autoindent
 set list listchars=tab:\ \ ,trail:·
-
-" Let plugins do their magic
-filetype plugin indent on
+filetype indent on
 
 " Searching
 set hlsearch
