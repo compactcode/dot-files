@@ -43,4 +43,7 @@ colorscheme solarized
 let mapleader = ','
 
 imap jj <Esc>
-imap ;; <Esc> :wa<CR> :!!<CR>
+imap ;; <Esc> :wa<CR>
+imap '' <Esc> :wa<CR> :!!<CR>
+
+nmap !  :wa<CR> :!!<CR>
