@@ -28,3 +28,6 @@
 [submodule "files/.vim/bundle/unimpaired"]
 	path = files/.vim/bundle/unimpaired
 	url = git://github.com/tpope/vim-unimpaired.git
+[submodule "files/.vim/bundle/tabular"]
+	path = files/.vim/bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
