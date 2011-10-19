@@ -36,6 +36,13 @@ set laststatus=2
 let g:CommandTMaxHeight=20
 let g:CommandTCancelMap=['<ESC>','<C-c>']
 
+" Unimpaired
+nmap <C-Up> [e
+nmap <C-Down> ]e
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+nmap <CR> [<Space>
+
 " Theme
 colorscheme solarized
 
