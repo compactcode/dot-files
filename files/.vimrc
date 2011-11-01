@@ -6,6 +6,7 @@ call pathogen#infect()
 
 set number
 set ruler
+set cursorline
 syntax on
 
 " Set encoding
