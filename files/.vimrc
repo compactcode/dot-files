@@ -50,8 +50,14 @@ colorscheme solarized
 " Key bindings
 let mapleader = ','
 
+" Quickly exit insert mode.
 imap jj <Esc>
 imap ;; <Esc> :wa<CR>
-imap '' <Esc> :wa<CR> :!!<CR>
 
-nmap !  :wa<CR> :!!<CR>
+" Quickly run the previous shell command.
+imap '' <Esc> :wa<CR> :!!<CR>
+nmap ! :wa<CR> :!!<CR>
+
+" Handy Rails commands.
+nmap <Leader>a :A<CR>
+nmap <Leader>r :!rspec %<CR>
