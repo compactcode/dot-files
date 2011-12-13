@@ -22,9 +22,6 @@
 [submodule "files/.vim/bundle/endwise"]
 	path = files/.vim/bundle/endwise
 	url = git://github.com/tpope/vim-endwise.git
-[submodule "files/.vim/bundle/snipmate"]
-	path = files/.vim/bundle/snipmate
-	url = git://github.com/msanders/snipmate.vim.git
 [submodule "files/.vim/bundle/unimpaired"]
 	path = files/.vim/bundle/unimpaired
 	url = git://github.com/tpope/vim-unimpaired.git
