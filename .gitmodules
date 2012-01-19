@@ -4,9 +4,6 @@
 [submodule "files/.vim/bundle/pathogen"]
 	path = files/.vim/bundle/pathogen
 	url = git://github.com/tpope/vim-pathogen.git
-[submodule "files/.vim/bundle/command-t"]
-	path = files/.vim/bundle/command-t
-	url = git://git.wincent.com/command-t.git
 [submodule "files/.vim/bundle/surround"]
 	path = files/.vim/bundle/surround
 	url = git://github.com/tpope/vim-surround.git
@@ -28,3 +25,9 @@
 [submodule "files/.vim/bundle/tabular"]
 	path = files/.vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
+[submodule "files/.vim/bundle/coffee"]
+	path = files/.vim/bundle/coffee
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "files/.vim/bundle/ctrlp"]
+	path = files/.vim/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git

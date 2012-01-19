@@ -1,7 +1,7 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
-plugins=(autojump brew extract git gem rails3 ruby)
+plugins=(autojump bundler extract git rails3)
 
 source $ZSH/oh-my-zsh.sh
 
