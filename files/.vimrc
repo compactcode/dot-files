@@ -1,5 +1,8 @@
 set nocompatible
 
+set wildignore+=*/.git/*
+set wildignore+=*.png,*.gif,*.jpg,*.ico,*.swp,*.pdf
+
 " Load plugins with pathogen
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
@@ -36,7 +39,6 @@ set laststatus=2
 " Browsing
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_max_height=20
-let g:ctrlp_map='<Leader>t'
 
 " Unimpaired
 nmap <C-Up> [e
@@ -50,6 +52,10 @@ colorscheme solarized
 
 " Key bindings
 let mapleader = ','
+
+" Browsing
+nmap <Leader>t :CtrlP<CR>
+nmap <Leader>b :CtrlPBuffer<CR>
 
 " Quickly exit insert mode.
 imap jj <Esc>
