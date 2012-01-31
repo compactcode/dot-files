@@ -10,9 +10,6 @@
 [submodule "files/.vim/bundle/solarized"]
 	path = files/.vim/bundle/solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "files/.vim/bundle/rails"]
-	path = files/.vim/bundle/rails
-	url = git://github.com/tpope/vim-rails.git
 [submodule "files/.vim/bundle/supertab"]
 	path = files/.vim/bundle/supertab
 	url = git://github.com/ervandew/supertab.git
