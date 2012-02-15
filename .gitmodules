@@ -13,9 +13,6 @@
 [submodule "files/.vim/bundle/supertab"]
 	path = files/.vim/bundle/supertab
 	url = git://github.com/ervandew/supertab.git
-[submodule "files/.vim/bundle/endwise"]
-	path = files/.vim/bundle/endwise
-	url = git://github.com/tpope/vim-endwise.git
 [submodule "files/.vim/bundle/unimpaired"]
 	path = files/.vim/bundle/unimpaired
 	url = git://github.com/tpope/vim-unimpaired.git
