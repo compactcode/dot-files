@@ -1,0 +1,31 @@
+#ruby
+snippet def
+	def ${1:method_name}
+		${2}
+	end
+snippet cla
+	class ${1:`substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
+		${2}
+	end
+
+#rspec
+snippet it
+	it "${1:spec_name}" do
+		${2}
+	end
+snippet desc
+	describe ${1:class_name} do
+		${2}
+	end
+snippet cont
+	context "${1:message}" do
+		${2}
+	end
+snippet bef
+	before(:${1:each}) do
+		${2}
+	end
+snippet let
+	let(:${1:variable}) do
+		${2:stub}
+	end
