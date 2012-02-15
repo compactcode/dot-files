@@ -1,1 +1,1 @@
-nmap <Leader><Leader> :ZoomWin<CR>
+nnoremap <Leader><Leader> :ZoomWin<CR>
