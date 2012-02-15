@@ -4,6 +4,8 @@ set cursorline
 set nowrap
 set list listchars=tab:\ \ ,trail:·
 
+set nofoldenable
+
 set ruler
 set showcmd
 set laststatus=2
