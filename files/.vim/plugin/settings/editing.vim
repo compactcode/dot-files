@@ -6,6 +6,7 @@ set softtabstop=2
 set shiftwidth=2
 
 set nobackup
+set nowritebackup
 set noswapfile
 
 set hidden
