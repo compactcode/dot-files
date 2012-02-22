@@ -1,20 +1,25 @@
 #ruby
 snippet def
-	def ${1:method_name}
+	def ${1:name}
 		${2}
 	end
 snippet cla
 	class ${1:`substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
 		${2}
 	end
-
+snippet init
+	def initialize(${1:args})
+		${2}
+	end
+snippet req
+	require "${1}"
 #rspec
 snippet it
-	it "${1:spec_name}" do
+	it "${1:should}" do
 		${2}
 	end
 snippet desc
-	describe ${1:class_name} do
+	describe "${1:name}" do
 		${2}
 	end
 snippet cont
@@ -26,6 +31,8 @@ snippet bef
 		${2}
 	end
 snippet let
-	let(:${1:variable}) do
-		${2:stub}
+	let(:${1:name}) { ${2:stub} }
+snippet subj
+	subject do
+		${1}
 	end

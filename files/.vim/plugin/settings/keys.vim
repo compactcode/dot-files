@@ -7,9 +7,15 @@ noremap <C-l> <C-w>l " Focus on the window to the right.
 
 inoremap jj <Esc> :w<CR>
 
-inoremap <C-e> <C-o>$
-inoremap <C-a> <C-o>^
-
 nnoremap ! :!!<CR>
 
+nnoremap <Leader>c :nohlsearch<CR>
 nnoremap <Leader>r :! bundle exec rspec %<CR>
+
+" Emacs bindings
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+
+inoremap <C-a> <C-o>^
+inoremap <C-e> <C-o>$
+inoremap <C-k> <C-o>D

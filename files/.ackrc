@@ -2,6 +2,7 @@
 --type-add=css=.sass
 --type-add=css=.scss
 --type-add=html=.handlebars
+--type-add=html=.md
 --type-add=js=.coffee
 
 --ignore-dir=tmp
