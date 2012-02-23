@@ -1,9 +1,11 @@
 set pastetoggle=<F4>
 
-noremap <C-h> <C-w>h " Focus on the window to the left.
-noremap <C-j> <C-w>j " Focus on the window below.
-noremap <C-k> <C-w>k " Focus on the window above.
-noremap <C-l> <C-w>l " Focus on the window to the right.
+noremap <Space> i<Space><Esc>l
+
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 
 inoremap jj <Esc> :w<CR>
 
