@@ -1,23 +1,36 @@
+" Toggle paste mode when inserting text from the system clipboard
 set pastetoggle=<F4>
 
-noremap <Space> i<Space><Esc>l
-
+" Quickly switch between split windows
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
+" Quickly switch to insert mode from visual mode
+vnoremap a <Esc>a
+vnoremap i <Esc>i
+
+" Quickly switch to normal mode from insert mode
 inoremap jj <Esc> :w<CR>
 
+" Quickly insert whitespace in normal mode
+nnoremap <Space> i<Space><Esc>l
+
+" Quickly re run the last command
 nnoremap ! :!!<CR>
 
+" Clear any current search highlight
 nnoremap <Leader>c :nohlsearch<CR>
+
+" Run the current file using rspec
 nnoremap <Leader>r :! bundle exec rspec %<CR>
 
-" Emacs bindings
+" Emacs bindings in command mode
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
+" Emacs bindings in insert mode
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
 inoremap <C-k> <C-o>D

@@ -14,12 +14,18 @@ snippet init
 snippet req
 	require "${1}"
 #rspec
+snippet rspec
+	require "${1:spec_helper}"
+
+	describe ${2} do
+		${3}
+	end
 snippet it
 	it "${1:should}" do
 		${2}
 	end
 snippet desc
-	describe "${1:name}" do
+	describe "#${1}" do
 		${2}
 	end
 snippet cont
