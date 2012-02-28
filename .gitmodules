@@ -31,3 +31,6 @@
 [submodule "files/.vim/bundle/snipmate"]
 	path = files/.vim/bundle/snipmate
 	url = https://github.com/akitaonrails/snipmate.vim.git
+[submodule "files/.vim/bundle/matchit"]
+	path = files/.vim/bundle/matchit
+	url = git://github.com/edsono/vim-matchit.git
