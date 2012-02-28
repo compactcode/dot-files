@@ -9,7 +9,6 @@ noremap <C-l> <C-w>l
 
 " Quickly switch to insert mode from visual mode
 vnoremap a <Esc>a
-vnoremap i <Esc>i
 
 " Quickly switch to normal mode from insert mode
 inoremap jj <Esc> :w<CR>
