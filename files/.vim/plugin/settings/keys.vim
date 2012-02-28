@@ -26,7 +26,7 @@ nnoremap ! :!!<CR>
 nnoremap <Leader>c :nohlsearch<CR>
 
 " Run the current file using rspec
-nnoremap <Leader>r :! bundle exec rspec %<CR>
+nnoremap <Leader>r :w<CR>:! rspec %<CR>
 
 " Emacs bindings in command mode
 cnoremap <C-a> <Home>
