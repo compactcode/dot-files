@@ -1,7 +1,5 @@
+" Use a leader key closer to the home row
 let mapleader = ','
-
-" Toggle paste mode when inserting text from the system clipboard
-set pastetoggle=<F4>
 
 " Quickly switch between split windows
 noremap <C-h> <C-w>h
