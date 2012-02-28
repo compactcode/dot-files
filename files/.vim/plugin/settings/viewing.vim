@@ -4,9 +4,6 @@ set number
 " Show the line and column of the cursor location
 set ruler
 
-" Visually highlight the current line
-set cursorline
-
 " Disable line wrapping
 set nowrap
 
