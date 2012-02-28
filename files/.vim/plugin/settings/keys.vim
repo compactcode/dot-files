@@ -13,6 +13,9 @@ vnoremap a <Esc>a
 " Quickly switch to normal mode from insert mode
 inoremap jj <Esc> :w<CR>
 
+" Use the very magic (sane) regex engine when searching
+nnoremap / /\v
+
 " Quickly insert whitespace in normal mode
 nnoremap <Space> i<Space><Esc>l
 
