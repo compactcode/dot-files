@@ -16,10 +16,14 @@ set list listchars=tab:\ \ ,trail:·
 " Disable code folding
 set nofoldenable
 
-set ruler
-set showcmd
+" Show a status bar
 set laststatus=2
 
+" Show the line and column number in the status bar
+set ruler
+
+" Show syntax highlighting
 syntax on
 
+" Use the solarized color scheme, inheriting configuration from the terminal
 colorscheme solarized

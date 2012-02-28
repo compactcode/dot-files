@@ -12,7 +12,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Allow buffers to exist in the background
+" Allow buffers to be backgrounded without saving
 set hidden
 
 " Allow pasting pre formatted text
