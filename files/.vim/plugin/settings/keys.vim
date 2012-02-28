@@ -1,3 +1,5 @@
+let mapleader = ','
+
 " Toggle paste mode when inserting text from the system clipboard
 set pastetoggle=<F4>
 
