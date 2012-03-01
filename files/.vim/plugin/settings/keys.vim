@@ -35,4 +35,7 @@ cnoremap <C-e> <End>
 " Emacs bindings in insert mode
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
+inoremap <C-u> <C-o>d^
 inoremap <C-k> <C-o>D
+inoremap <M-b> <C-o>b
+inoremap <M-f> <C-o>w
