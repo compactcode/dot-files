@@ -18,3 +18,5 @@ set hidden
 " Allow pasting pre formatted text
 set pastetoggle=<F4>
 
+" Show the current command
+set showcmd
