@@ -40,3 +40,6 @@
 [submodule "files/.vim/bundle/ack"]
 	path = files/.vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "files/.rbenv"]
+	path = files/.rbenv
+	url = git://github.com/sstephenson/rbenv.git
