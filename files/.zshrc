@@ -7,6 +7,6 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.aliases/git.sh
 source ~/.aliases/system.sh
-source ~/.aliases/macvim.sh
+source ~/.aliases/vim.sh
 
 export PATH="$HOME/.rbenv/bin:$PATH"
