@@ -9,4 +9,4 @@ source ~/.aliases/git.sh
 source ~/.aliases/system.sh
 source ~/.aliases/macvim.sh
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+export PATH="$HOME/.rbenv/bin:$PATH"
