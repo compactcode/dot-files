@@ -22,5 +22,3 @@ set ruler
 " Show syntax highlighting
 syntax on
 
-" Use the solarized color scheme, inheriting configuration from the terminal
-colorscheme solarized
