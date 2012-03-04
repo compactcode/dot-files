@@ -22,3 +22,6 @@ set ruler
 " Show syntax highlighting
 syntax on
 
+" Use the solarized color scheme
+set background=dark
+colorscheme solarized
