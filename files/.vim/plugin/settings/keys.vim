@@ -22,6 +22,9 @@ nnoremap <Space> i<Space><Esc>l
 " Quickly re run the last command
 nnoremap ! :!!<CR>
 
+" Quickly save all files and exit vim
+nnoremap Q :wa!<CR>ZZ
+
 " Clear any current search highlight
 nnoremap <Leader>c :nohlsearch<CR>
 
