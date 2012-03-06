@@ -1,5 +1,6 @@
 export CLICOLOR=1
 
+source ~/.aliases/bundler.sh
 source ~/.aliases/git.sh
 source ~/.aliases/system.sh
 source ~/.aliases/vim.sh
