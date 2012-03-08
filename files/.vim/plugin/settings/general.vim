@@ -5,5 +5,5 @@ set encoding=utf-8
 set title
 
 " Make these files completely invisible to vim
-set wildignore+=*/.git/*,*/.sass-cache/*
-set wildignore+=*.png,*.gif,*.jpg,*.ico,*.pdf,*.DS_Store
+set wildignore+=*/.git/*,*/.hg/*,*/.sass-cache/*
+set wildignore+=*.png,*.gif,*.jpg,*.ico,*.pdf,*.DS_Store,*.pyc
