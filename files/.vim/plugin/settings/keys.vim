@@ -7,6 +7,9 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
+" Make Y behave like other capitals
+vnoremap Y y$
+
 " Quickly switch to insert mode from visual mode
 vnoremap a <Esc>a
 
@@ -19,11 +22,11 @@ nnoremap / /\v
 " Quickly insert whitespace in normal mode
 nnoremap <Space> i<Space><Esc>l
 
-" Quickly re run the last command
-nnoremap ! :!!<CR>
+" Quickly save all files and re run the last command
+nnoremap ! :wa<CR>:!!<CR>
 
 " Quickly save all files and exit vim
-nnoremap Q :wa!<CR>ZZ
+nnoremap Q :wa<CR>ZZ
 
 " Clear any current search highlight
 nnoremap <Leader>c :nohlsearch<CR>
