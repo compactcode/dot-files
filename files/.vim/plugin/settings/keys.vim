@@ -8,7 +8,7 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
 " Make Y behave like other capitals
-vnoremap Y y$
+nnoremap Y y$
 
 " Quickly switch to insert mode from visual mode
 vnoremap a <Esc>a
