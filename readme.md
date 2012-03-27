@@ -12,7 +12,7 @@ My main reason for using it is the excellent community framework [oh-my-zsh](htt
 
 My editor of choice is vim, running inside a terminal so I can leverage as much of its power as possbile.
 
-I have a fairly customized setup which is [documented here](tree/master/files/.vim/).
+I have a fairly customized setup which is [documented here](https://github.com/compactcode/dot-files/tree/master/files/.vim).
 
 ### Misc
 
