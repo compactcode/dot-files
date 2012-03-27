@@ -1,31 +1,28 @@
-# My user configuration for terminal based software development.
+## My user configuration for terminal based software development.
 
-My workflow revolves around the terminal. It's fast, infinately customizable
-and easy to set up.
+My workflow revolves around the terminal. It's fast, infinately customizable and easy to set up.
 
-## Shell
+### Shell
 
-I am currently using zsh instead of bash. It has a couple of small advantages
-but my main reason for using it is the excellent community framework
-[oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+I am currently using [zsh](http://en.wikipedia.org/wiki/Z_shell) instead of bash.
 
-## Editor
+My main reason for using it is the excellent community framework [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
 
-My editor of choice is vim, running inside my terminal so I can leverage as
-much of its power as possbile.
+### Editor
 
-I have a fairly customized setup which is documented here:
-[vim](/tree/master/files/.vim/)
+My editor of choice is vim, running inside a terminal so I can leverage as much of its power as possbile.
 
-## Misc
+I have a fairly customized setup which is [documented here](tree/master/files/.vim/).
 
-[ack](https://github.com/petdance/ack) - Search
-[autojump](https://github.com/joelthelion/autojump) - Directory navigation
+### Misc
 
-## Installation
+* [ack](https://github.com/petdance/ack) - A fast way to search through source code.
+* [autojump](https://github.com/joelthelion/autojump) - A quick way to navigate around directories.
+
+### Installation
 
 ```
-git clone git@github.com:compactcode/dot-files.git
+git clone git://github.com/compactcode/dot-files.git
 
 ./dot-files/install.sh
 ./dot-files/install-osx-lion.sh
