@@ -2,13 +2,13 @@
 
 My workflow revolves around the terminal. It's fast, infinately customizable and easy to set up.
 
-### Shell
+### Zsh
 
 I am currently using [zsh](http://en.wikipedia.org/wiki/Z_shell) instead of bash.
 
 My main reason for using it is the excellent community framework [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
 
-### Editor
+### Vim
 
 My editor of choice is vim, running inside a terminal so I can leverage as much of its power as possbile.
 
