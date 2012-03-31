@@ -43,6 +43,6 @@
 [submodule "files/.vim/bundle/ack"]
 	path = files/.vim/bundle/ack
 	url = git://github.com/mileszs/ack.vim.git
-[submodule "files/.vim/bundle/rails"]
-	path = files/.vim/bundle/rails
-	url = git://github.com/tpope/vim-rails.git
+[submodule "files/.vim/bundle/alternate"]
+	path = files/.vim/bundle/alternate
+	url = git@github.com:compactcode/alternate.vim.git
