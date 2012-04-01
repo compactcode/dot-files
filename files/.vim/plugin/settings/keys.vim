@@ -31,8 +31,8 @@ nnoremap Q :wa<CR>ZZ
 " Clear any current search highlight
 nnoremap <Leader>c :nohlsearch<CR>
 
-" Run the current file using rspec
-nnoremap <Leader>r :w<CR>:! rspec %<CR>
+" Run the spec for the current ruby file
+autocmd FileType ruby nnoremap <buffer> <Leader>r :execute "! rspec " . alternate#FindTest() <CR>
 
 " Emacs bindings in command mode
 cnoremap <C-a> <Home>
