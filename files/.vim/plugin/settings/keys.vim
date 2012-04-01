@@ -32,7 +32,10 @@ nnoremap Q :wa<CR>ZZ
 nnoremap <Leader>c :nohlsearch<CR>
 
 " Run the spec for the current ruby file
-autocmd FileType ruby nnoremap <buffer> <Leader>r :execute "! rspec " . alternate#FindTest() <CR>
+autocmd FileType ruby   nnoremap <buffer> <Leader>r :execute "! rspec " . alternate#FindTest() <CR>
+
+" Run the test for the current python file
+autocmd FileType python nnoremap <buffer> <Leader>r :execute "! nosetests " . alternate#FindTest() <CR>
 
 " Emacs bindings in command mode
 cnoremap <C-a> <Home>
