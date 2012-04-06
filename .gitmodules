@@ -45,4 +45,7 @@
 	url = git://github.com/mileszs/ack.vim.git
 [submodule "files/.vim/bundle/alternate"]
 	path = files/.vim/bundle/alternate
-	url = git@github.com:compactcode/alternate.vim.git
+	url = git@github.com/compactcode/alternate.vim.git
+[submodule "files/.vim/bundle/open"]
+	path = files/.vim/bundle/open
+	url = git@github.com/compactcode/open.vim.git
