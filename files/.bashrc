@@ -1,4 +1,4 @@
-export CLICOLOR=1
+export EDITOR=vim
 
 source ~/.aliases/bundler.sh
 source ~/.aliases/git.sh
