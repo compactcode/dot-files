@@ -1,6 +1,3 @@
-" Use a leader key closer to the home row
-let mapleader = ','
-
 " Quickly switch between split windows
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
@@ -16,8 +13,8 @@ vnoremap a <Esc>a
 " Quickly switch to normal mode from insert mode
 inoremap jj <Esc> :w<CR>
 
-" Use the very magic (sane) regex engine when searching
-nnoremap / /\v
+" Insert a newline above the current line
+nmap <CR> [<Space>
 
 " Quickly insert whitespace in normal mode
 nnoremap <Space> i<Space><Esc>l
@@ -27,9 +24,6 @@ nnoremap ! :wa<CR>:!!<CR>
 
 " Quickly save all files and exit vim
 nnoremap Q :wa<CR>ZZ
-
-" Clear any current search highlight
-nnoremap <Leader>c :nohlsearch<CR>
 
 " Emacs bindings in command mode
 cnoremap <C-a> <Home>
@@ -42,3 +36,37 @@ inoremap <C-u> <C-o>d^
 inoremap <C-k> <C-o>D
 inoremap <M-b> <C-o>b
 inoremap <M-f> <C-o>w
+
+" =============================================================================
+" Leader
+" =============================================================================
+
+" Use a leader key closer to the home row
+let mapleader = ','
+
+" Clear search highlights
+nnoremap <Leader>c :nohlsearch<CR>
+
+" Search through all files
+nnoremap <Leader>t :CtrlP<CR>
+
+" Search through open buffers
+nnoremap <Leader>b :CtrlPBuffer<CR>
+
+" Search through most recently used files
+nnoremap <Leader>f :CtrlPMRUFiles<CR>
+
+" Switch between test and implementation files.
+nnoremap <Leader>a :Open(alternate#FindAlternate())<CR>
+nnoremap <Leader>s :OpenHorizontal(alternate#FindAlternate())<CR>
+nnoremap <Leader>v :OpenVertical(alternate#FindAlternate())<CR>
+
+" Run the test for the current file
+autocmd FileType ruby   nnoremap <buffer> <Leader>r :execute "! rspec " . alternate#FindTest() <CR>
+autocmd FileType python nnoremap <buffer> <Leader>r :execute "! nosetests " . alternate#FindTest() <CR>
+
+" Align symbols
+nnoremap <Leader>= :Tabularize /=<CR>
+nnoremap <Leader>> :Tabularize /=><CR>
+nnoremap <Leader>{ :Tabularize /{<CR>
+
