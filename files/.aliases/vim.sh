@@ -1,2 +1,2 @@
-alias v='vim -v'
-alias jv='j && vim -v'
+alias v='vim'
+alias jv='j && vim'
