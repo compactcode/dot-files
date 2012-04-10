@@ -64,6 +64,8 @@ nnoremap <Leader>v :OpenVertical(alternate#FindAlternate())<CR>
 " Run the test for the current file
 autocmd FileType ruby   nnoremap <buffer> <Leader>r :execute "! rspec " . alternate#FindTest() <CR>
 autocmd FileType python nnoremap <buffer> <Leader>r :execute "! nosetests " . alternate#FindTest() <CR>
+autocmd FileType javascript nnoremap <buffer> <Leader>r :execute "! jest " . alternate#FindTest() <CR>
+autocmd FileType coffee nnoremap <buffer> <Leader>r :execute "! jest " . alternate#FindTest() <CR>
 
 " Align symbols
 nnoremap <Leader>= :Tabularize /=<CR>
