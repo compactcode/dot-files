@@ -12,6 +12,8 @@ vnoremap a <Esc>a
 
 " Quickly switch to normal mode from insert mode
 inoremap jj <Esc> :w<CR>
+inoremap kj <Esc> :w<CR>
+inoremap jk <Esc> :w<CR>
 
 " Insert a newline above the current line
 nmap <CR> [<Space>
