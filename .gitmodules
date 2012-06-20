@@ -49,3 +49,6 @@
 [submodule "files/.vim/bundle/open"]
 	path = files/.vim/bundle/open
 	url = git@github.com/compactcode/open.vim.git
+[submodule "files/.vim/bundle/zencoding"]
+	path = files/.vim/bundle/zencoding
+	url = git://github.com/mattn/zencoding-vim.git
