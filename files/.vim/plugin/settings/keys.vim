@@ -58,6 +58,9 @@ nnoremap <Leader>b :CtrlPBuffer<CR>
 " Search through most recently used files
 nnoremap <Leader>f :CtrlPMRUFiles<CR>
 
+" Open a file explorer in the current directory.
+nnoremap <Leader>o :! open %:h<CR>
+
 " Switch between test and implementation files.
 nnoremap <Leader>a :Open(alternate#FindAlternate())<CR>
 nnoremap <Leader>s :OpenHorizontal(alternate#FindAlternate())<CR>
