@@ -25,9 +25,6 @@
 [submodule "files/.vim/bundle/ctrlp"]
 	path = files/.vim/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
-[submodule "files/.vim/bundle/zoomwin"]
-	path = files/.vim/bundle/zoomwin
-	url = git://github.com/vim-scripts/ZoomWin.git
 [submodule "files/.vim/bundle/snipmate"]
 	path = files/.vim/bundle/snipmate
 	url = git://github.com/akitaonrails/snipmate.vim.git
