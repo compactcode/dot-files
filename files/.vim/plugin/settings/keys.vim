@@ -47,7 +47,7 @@ inoremap <M-f> <C-o>w
 let mapleader = ','
 
 " Clear search highlights
-nnoremap <Leader>c :nohlsearch<CR>
+nnoremap <Leader>, :nohlsearch<CR>
 
 " Search through all files
 nnoremap <Leader>t :CtrlP<CR>
@@ -60,6 +60,9 @@ nnoremap <Leader>f :CtrlPMRUFiles<CR>
 
 " Open a file explorer in the current directory.
 nnoremap <Leader>o :! open %:h<CR>
+
+" Copy selection to the system clipboard.
+nnoremap <Leader>c :! pbcopy<CR>
 
 " Switch between test and implementation files.
 nnoremap <Leader>a :Open(alternate#FindAlternate())<CR>
