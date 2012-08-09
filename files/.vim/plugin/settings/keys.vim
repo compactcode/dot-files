@@ -62,7 +62,7 @@ nnoremap <Leader>f :CtrlPMRUFiles<CR>
 nnoremap <Leader>o :! open %:h<CR>
 
 " Copy selection to the system clipboard.
-nnoremap <Leader>c :! pbcopy<CR>
+vnoremap <Leader>c :! pbcopy<CR>
 
 " Switch between test and implementation files.
 nnoremap <Leader>a :Open(alternate#FindAlternate())<CR>
