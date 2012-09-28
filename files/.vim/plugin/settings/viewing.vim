@@ -4,6 +4,9 @@ set number
 " Show the line and column of the cursor location
 set ruler
 
+" Show the line and column number in the status bar
+set cursorline
+
 " Disable line wrapping
 set nowrap
 
