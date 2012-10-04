@@ -25,6 +25,5 @@ I have a fairly customized setup which is [documented here](https://github.com/c
 git clone git://github.com/compactcode/dot-files.git
 
 ./dot-files/install.sh
-./dot-files/install-osx-lion.sh
 ```
 
