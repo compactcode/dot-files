@@ -1,5 +1,6 @@
 --type-add=ruby=.builder
 --type-add=ruby=.haml
+--type-add=ruby=.feature
 --type-add=css=.sass
 --type-add=css=.scss
 --type-add=html=.handlebars
