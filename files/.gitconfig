@@ -1,3 +1,5 @@
+[core]
+  excludesfile = "~/.gitignore"
 [user]
   name = Shanon McQuay
   email = shanonmcquay@gmail.com
