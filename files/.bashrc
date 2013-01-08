@@ -2,6 +2,7 @@ export EDITOR=vim
 
 source ~/.aliases/bundler.sh
 source ~/.aliases/git.sh
+source ~/.aliases/system.sh
 source ~/.aliases/vim.sh
 
 # Allow switching ruby versions with rbenv.
