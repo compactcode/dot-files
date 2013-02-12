@@ -11,6 +11,7 @@ export PATH="$HOME/.rbenv/shims:$PATH"
 
 # Allow overriding system default tools.
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/share/npm/bin:$PATH"
 
 # Include homebrew installed c header file when compiling.
 export C_INCLUDE_PATH="/usr/local/include"
