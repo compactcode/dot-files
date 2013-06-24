@@ -1,6 +1,9 @@
 " Show line numbers
 set number
 
+" Show relative line numbers
+set relativenumber
+
 " Show the line and column of the cursor location
 set ruler
 
