@@ -31,9 +31,6 @@
 [submodule "files/.vim/bundle/matchit"]
 	path = files/.vim/bundle/matchit
 	url = git://github.com/edsono/vim-matchit.git
-[submodule "files/.vim/bundle/haml"]
-	path = files/.vim/bundle/haml
-	url = git://github.com/tpope/vim-haml.git
 [submodule "files/.vim/bundle/markdown"]
 	path = files/.vim/bundle/markdown
 	url = git://github.com/tpope/vim-markdown.git
