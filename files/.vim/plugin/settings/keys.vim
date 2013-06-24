@@ -58,16 +58,19 @@ nnoremap <Leader>b :CtrlPBuffer<CR>
 " Search through most recently used files
 nnoremap <Leader>f :CtrlPMRUFiles<CR>
 
-" Open a file explorer in the current directory.
+" Open a file explorer in the current directory
 nnoremap <Leader>o :! open %:h<CR>
 
-" Copy selection to the system clipboard.
+" Copy selection to the system clipboard
 vnoremap <Leader>c :! pbcopy<CR>
 
-" Switch between test and implementation files.
+" Switch between test and implementation files
 nnoremap <Leader>a :Open(alternate#FindAlternate())<CR>
-nnoremap <Leader>s :OpenHorizontal(alternate#FindAlternate())<CR>
+nnoremap <Leader>h :OpenHorizontal(alternate#FindAlternate())<CR>
 nnoremap <Leader>v :OpenVertical(alternate#FindAlternate())<CR>
+
+" Search for the current word in all files
+nnoremap <Leader>s :Ack<CR>
 
 " Run the test for the current file
 autocmd FileType ruby   nnoremap <buffer> <Leader>r :execute "! rspec " . alternate#FindTest() <CR>
