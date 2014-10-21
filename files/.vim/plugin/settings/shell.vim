@@ -1,2 +1,5 @@
-" Configure the vim shell to source my profile.
-set shell=/bin/bash\ -l
+" Configure the vim shell to use standard bash..
+set shell=/bin/bash
+
+" Configure the vim shell to be interactive and load aliases.
+set shellcmdflag=-ci
