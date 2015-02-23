@@ -1,5 +1,7 @@
 [core]
   excludesfile = "~/.gitignore"
+[push]
+  default = simple
 [user]
   name = Shanon McQuay
   email = shanonmcquay@gmail.com
