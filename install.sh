@@ -21,9 +21,3 @@ ln -vsf "$MY_PATH/files/.vim" ~
 ln -vsf "$MY_PATH/files/.vimrc" ~
 ln -vsf "$MY_PATH/files/.zprofile" ~
 ln -vsf "$MY_PATH/files/.zshrc" ~
-
-RUBY_BUILD_PATH=files/.rbenv/plugins/ruby-build
-
-if [[ ! -a $RUBY_BUILD_PATH ]]; then
-  git clone git://github.com/sstephenson/ruby-build.git $RUBY_BUILD_PATH
-fi
