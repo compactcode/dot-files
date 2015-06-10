@@ -43,3 +43,6 @@
 [submodule "files/.vim/bundle/emmet"]
 	path = files/.vim/bundle/emmet
 	url = git@github.com:mattn/emmet-vim.git
+[submodule "files/.vim/bundle/docker"]
+	path = files/.vim/bundle/docker
+	url = git@github.com:honza/dockerfile.vim.git
