@@ -73,7 +73,7 @@ nnoremap <Leader>v :OpenVertical(alternate#FindAlternate())<CR>
 nnoremap <Leader>s :Ack<CR>
 
 " Run the test for the current file
-autocmd FileType ruby nnoremap <buffer> <Leader>r :execute "! zeus rspec " . alternate#FindTest() <CR>
+autocmd FileType ruby nnoremap <buffer> <Leader>r :execute "! bundle exec rspec " . alternate#FindTest() <CR>
 
 " Align symbols
 nnoremap <Leader>= :Tabularize /=<CR>
