@@ -1,8 +1,8 @@
-BSH=$HOME
-ZSH=$HOME/.oh-my-zsh/
-ZSH_THEME="robbyrussell"
+source $HOME/.bashrc
 
-plugins=(autojump extract git)
+source ~/.scripts/git-prompt.sh
 
-source $ZSH/oh-my-zsh.sh
-source $BSH/.bashrc
+GIT_PS1_SHOWCOLORHINTS=1
+GIT_PS1_SHOWDIRTYSTATE=1
+
+precmd () { __git_ps1 "%~ " "%s " }
