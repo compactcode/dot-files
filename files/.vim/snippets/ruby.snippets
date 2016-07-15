@@ -43,10 +43,10 @@ snippet bef
 		${2}
 	end
 snippet let
-	let(:${1:name}) { ${2:stub} }
+	let(:${1:name}) { ${2:double} }
 snippet subj
 	subject do
 		${1}
 	end
-snippet stub
-	stub(:${1}).and_return(${2})
+snippet double
+	double(:${1}).and_return(${2})
