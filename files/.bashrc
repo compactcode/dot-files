@@ -1,5 +1,8 @@
 export EDITOR=vim
 
+export FZF_DEFAULT_COMMAND="rg --files"
+export FZF_DEFAULT_OPTS="--reverse --height 40%"
+
 source ~/.aliases/bundler.sh
 source ~/.aliases/git.sh
 source ~/.aliases/system.sh

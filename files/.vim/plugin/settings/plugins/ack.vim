@@ -1,1 +1,1 @@
-let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = 'rg --no-heading --column'

@@ -50,13 +50,8 @@ let mapleader = ','
 nnoremap <Leader>, :nohlsearch<CR>
 
 " Search through all files
-nnoremap <Leader>t :CtrlP<CR>
-
-" Search through open buffers
-nnoremap <Leader>b :CtrlPBuffer<CR>
-
-" Search through most recently used files
-nnoremap <Leader>f :CtrlPMRUFiles<CR>
+nnoremap <Leader>t :FZF<CR>
+nnoremap <Leader>f :FZFMru<CR>
 
 " Open a file explorer in the current directory
 nnoremap <Leader>o :! open %:h<CR>
