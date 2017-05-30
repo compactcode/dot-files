@@ -6,6 +6,9 @@ source ~/.zplug/init.zsh
 zplug mafredri/zsh-async, from:github
 zplug sindresorhus/pure,  from:github, use:pure.zsh, as:theme
 
+# Save & share history between sessions.
+zplug "modules/history", from:prezto
+
 zplug load --verbose
 
 # Enable Emacs key bindings.
