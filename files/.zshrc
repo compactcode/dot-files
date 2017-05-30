@@ -10,6 +10,8 @@ zplug "modules/history",   from:prezto # Persistent history.
 zplug "modules/fasd",      from:prezto # Fast directory switching.
 zplug "modules/prompt",    from:prezto # Prompt setup.
 
+zplug "changyuheng/zsh-interactive-cd" # cd completion using fzf.
+
 # Use the pure prompt.
 zstyle ':prezto:module:prompt' theme 'pure'
 
