@@ -1,3 +1,4 @@
+alias g='git'
 alias ga='git add'
 alias gars='git add . && git reset --hard'
 alias gc='git commit -v'
