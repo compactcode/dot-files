@@ -15,5 +15,4 @@ ln -vsf "$MY_PATH/files/.inputrc" ~
 ln -vsf "$MY_PATH/files/.rspec" ~
 ln -vsf "$MY_PATH/files/.vim" ~
 ln -vsf "$MY_PATH/files/.vimrc" ~
-ln -vsf "$MY_PATH/files/.zprofile" ~
 ln -vsf "$MY_PATH/files/.zshrc" ~

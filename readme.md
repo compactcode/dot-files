@@ -4,7 +4,7 @@
 
 * `brew install ripgrep`
 * `brew install fzf`
-* `brew install zplug`
+* `git clone https://github.com/zplug/zplug.git ~/.zplug`
 
 ### Installation
 
