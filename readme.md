@@ -1,5 +1,11 @@
 ## My configuration for terminal based software development.
 
+### Requirements
+
+* `brew install ripgrep`
+* `brew install fzf`
+* `brew install zplug`
+
 ### Installation
 
 ```
