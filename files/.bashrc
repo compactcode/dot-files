@@ -5,7 +5,6 @@ export FZF_DEFAULT_OPTS="--reverse --height 40%"
 
 source ~/.aliases/bundler.sh
 source ~/.aliases/git.sh
-source ~/.aliases/system.sh
 source ~/.aliases/vim.sh
 
 source /usr/local/share/chruby/chruby.sh
