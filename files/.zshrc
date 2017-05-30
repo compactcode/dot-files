@@ -6,12 +6,12 @@ setopt PUSHD_SILENT      # Do not print the directory stack after pushd or popd.
 
 source ~/.zplug/init.zsh
 
-# A fast, minimal prompt theme.
-zplug mafredri/zsh-async, from:github
-zplug sindresorhus/pure,  from:github, use:pure.zsh, as:theme
+zplug "modules/history",   from:prezto # Persistent history.
+zplug "modules/fasd",      from:prezto # Fast directory switching.
+zplug "modules/prompt",    from:prezto # Prompt setup.
 
-zplug "modules/history", from:prezto # Save & share history between sessions.
-zplug "modules/fasd",    from:prezto # Jump to recently used directories.
+# Use the pure prompt.
+zstyle ':prezto:module:prompt' theme 'pure'
 
 zplug load --verbose
 
