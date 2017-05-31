@@ -12,5 +12,7 @@ zstyle ':prezto:module:prompt' theme 'pure'
 
 zplug load --verbose
 
+source ~/.functions/fzf-git.sh
+
 source /usr/local/opt/fzf/shell/completion.zsh   # use fzf for glob completion
 source /usr/local/opt/fzf/shell/key-bindings.zsh # use fzf for history etc
