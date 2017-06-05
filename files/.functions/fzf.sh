@@ -8,18 +8,6 @@
 # This is a collection of functions that use the fzf fuzzy finder to help autocomplete
 # many common commands.
 
-# fkill - list processes using ps and select one to kill
-fkill() {
-  local pid
-
-  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
-
-  if [ "x$pid" != "x" ]
-  then
-    echo $pid | xargs kill -${1:-9}
-  fi
-}
-
 # fd - list sub directories and select one to cd
 fd() {
   local selected_directory
