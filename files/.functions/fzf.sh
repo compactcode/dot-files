@@ -25,7 +25,7 @@ fd() {
 fco() {
   local selected_branch
 
-  selected_branch=$(git branch --all | fzf)
+  selected_branch=$(git branch --all | fzf -0)
 
   if [[ -n $selected_branch ]]
   then
