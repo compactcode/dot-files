@@ -1,6 +1,7 @@
 # fkill - kill process
 fkill() {
   local pid
+
   pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
 
   if [ "x$pid" != "x" ]
@@ -22,11 +23,14 @@ fd() {
 
 # fco - checkout a git branch
 fco() {
-  local branches branch
-  branches=$(git branch --all) &&
-  branch=$(echo "$branches" |
-           fzf -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+  local selected_branch
+
+  selected_branch=$(git branch --all | fzf)
+
+  if [[ -n $selected_branch ]]
+  then
+    git checkout $(echo "$selected_branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+  fi
 }
 
 # frg - search files and select a result
