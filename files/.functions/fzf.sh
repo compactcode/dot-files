@@ -1,4 +1,14 @@
-# fkill - kill process
+#   __                        __                  _   _
+#  / _|_   _ _________   _   / _|_   _ _ __   ___| |_(_) ___  _ __  ___
+# | |_| | | |_  /_  / | | | | |_| | | | '_ \ / __| __| |/ _ \| '_ \/ __|
+# |  _| |_| |/ / / /| |_| | |  _| |_| | | | | (__| |_| | (_) | | | \__ \
+# |_|  \__,_/___/___|\__, | |_|  \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
+#                    |___/
+#
+# This is a collection of functions that use the fzf fuzzy finder to help autocomplete
+# many common commands.
+
+# fkill - list processes using ps and select one to kill
 fkill() {
   local pid
 
@@ -10,7 +20,7 @@ fkill() {
   fi
 }
 
-# fd - cd to selected sub directory
+# fd - list sub directories and select one to cd
 fd() {
   local selected_directory
   selected_directory=$(find . -type d | grep -v '\.git' | fzf)
@@ -21,7 +31,7 @@ fd() {
   fi
 }
 
-# fco - checkout a git branch
+# fco - list all branches and select one to checkout
 fco() {
   local selected_branch
 
@@ -33,7 +43,7 @@ fco() {
   fi
 }
 
-# frg - search files and select a result
+# frg - search files using ripgrep and select one
 frg() {
   # TODO: Require param.
   # TODO: Handle no results.
@@ -41,10 +51,7 @@ frg() {
   rg --column --no-heading --hidden -i --color always $@ | grep -v '\.git' | fzf --ansi --preview '~/.functions/preview-search-result.sh {}'
 }
 
-# fj - cd to selected mru directory
-#
-# fj                => select => cd
-# fj search_pattern => cd
+# fj - list most recently used directories using fasd and select one to cd
 fj() {
   local search_pattern selected_directory
 
@@ -63,7 +70,7 @@ fj() {
   fi
 }
 
-# Go to a frequently used directory.
+# Select a frequently used directory.
 alias j="fj"
-# Go straight to your most used directory.
+# Go straight to the most frequently used directory.
 alias jj="fasd -dlR | head -1"
