@@ -45,10 +45,17 @@ fco() {
 
 # frg - search files using ripgrep and select one
 frg() {
-  # TODO: Require param.
-  # TODO: Handle no results.
-  # TODO: Cleanup the selected result.
-  rg --column --no-heading --hidden -i --color always $@ | grep -v '\.git' | fzf --ansi --preview '~/.functions/preview-search-result.sh {}'
+  local search_pattern
+
+  search_pattern=$1
+
+  if [[ -z $search_pattern ]]
+  then
+    echo 'no search pattern given' && return 1
+  else
+    # TODO: Cleanup the selected result.
+    echo "$(rg --column --no-heading --smart-case --color always $@ | fzf --ansi --preview '~/.functions/preview-search-result.sh {}')"
+  fi
 }
 
 # fj - list most recently used directories using fasd and select one to cd
