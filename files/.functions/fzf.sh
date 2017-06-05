@@ -8,17 +8,6 @@
 # This is a collection of functions that use the fzf fuzzy finder to help autocomplete
 # many common commands.
 
-# fd - list sub directories and select one to cd
-fd() {
-  local selected_directory
-  selected_directory=$(find . -type d | grep -v '\.git' | fzf)
-
-  if [[ -n $selected_directory ]]
-  then
-    cd $selected_directory
-  fi
-}
-
 # fco - list all branches and select one to checkout
 fco() {
   local selected_branch
