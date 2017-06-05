@@ -30,8 +30,10 @@ frg() {
   then
     echo 'no search pattern given' && return 1
   else
-    # TODO: Cleanup the selected result.
-    echo "$(rg --column --no-heading --smart-case --color always $@ | fzf --ansi --preview '~/.functions/preview-search-result.sh {}')"
+    echo "$(\
+      rg --column --no-heading --smart-case --color always $@ | \
+      fzf --ansi --preview '~/.functions/preview-search-result.sh {}' | \
+      awk -F ':' '{print $1}')"
   fi
 }
 
