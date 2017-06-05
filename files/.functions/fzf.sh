@@ -1,7 +1,12 @@
-# fd - cd to selected directory
+# fd - cd to selected sub directory
 fd() {
-  local dir
-  dir=$(find ${1:-.} -path '*/\.*' -type d -print | grep -v '\.git' 2> /dev/null | fzf +m) && cd "$dir"
+  local selected_directory
+  selected_directory=$(find . -type d | grep -v '\.git' | fzf)
+
+  if [[ -n $selected_directory ]]
+  then
+    cd $selected_directory
+  fi
 }
 
 # fco - checkout a git branch
