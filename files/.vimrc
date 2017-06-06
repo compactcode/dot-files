@@ -22,3 +22,227 @@ call plug#end()
 
 filetype indent on
 filetype plugin on
+
+
+" ************************************************************
+" General
+" ************************************************************
+
+" It makes life easier
+set encoding=utf-8
+
+" Use the current filename as the title for the terminal
+set title
+
+" Make these files completely invisible to vim
+set wildignore+=*/.git/*,*/.hg/*,*/.sass-cache/*,*node_modules/*
+set wildignore+=*.png,*.gif,*.jpg,*.ico,*.pdf,*.DS_Store,*.pyc
+
+
+" ************************************************************
+"  Display
+" ************************************************************
+
+" Show line numbers
+set number
+
+" Show the line and column of the cursor location
+set ruler
+
+" Show the line and column number in the status bar
+set cursorline
+
+" Disable line wrapping
+set nowrap
+
+" Show dangling whitespace
+set list listchars=tab:\ \ ,trail:·
+
+" Disable code folding
+set nofoldenable
+
+" Show a status bar
+set laststatus=2
+
+" Show the line and column number in the status bar
+set ruler
+
+" Show syntax highlighting
+syntax on
+
+" Use the solarized color scheme
+set background=dark
+colorscheme solarized
+
+
+" ************************************************************
+" Search
+" ************************************************************
+
+" Highlight all matches of the most recent search
+set hlsearch
+
+" Update search matches in real time
+set incsearch
+
+" Ignore case unless a capital letter is used
+set ignorecase
+set smartcase
+
+
+" ************************************************************
+" Editing
+" ************************************************************
+
+" Copy indentations from the current line to new lines
+set autoindent
+
+" Use spaces intead of tabs
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
+" Don't let vim manage backups
+set nobackup
+set nowritebackup
+set noswapfile
+
+" Allow buffers to be backgrounded without saving
+set hidden
+
+" Allow pasting pre formatted text
+set pastetoggle=<F4>
+
+" Show the current command
+set showcmd
+
+
+" ************************************************************
+" Normal mode key bindings
+" ************************************************************
+
+" Quickly switch between split windows
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+" Make Y behave like other capitals
+nnoremap Y y$
+
+" Insert a newline above the current line
+nmap <CR> [<Space>
+
+" Quickly insert whitespace in normal mode
+nnoremap <Space> i<Space><Esc>l
+
+" Quickly save all files and re run the last command
+nnoremap ! :wa<CR>:!!<CR>
+
+" Quickly save all files and exit vim
+nnoremap Q :wa<CR>ZZ
+
+
+" ************************************************************
+" Insert mode key bindings
+" ************************************************************
+
+" Quickly switch to normal mode from insert mode
+inoremap jj <Esc> :w<CR>
+inoremap kj <Esc> :w<CR>
+inoremap jk <Esc> :w<CR>
+
+" Emacs bindings
+inoremap <C-a> <C-o>^
+inoremap <C-e> <C-o>$
+inoremap <C-u> <C-o>d^
+inoremap <C-k> <C-o>D
+inoremap <M-b> <C-o>b
+inoremap <M-f> <C-o>w
+
+
+" ************************************************************
+" Visual mode key bindings
+" ************************************************************
+
+" Quickly switch to insert mode from visual mode
+vnoremap a <Esc>a
+
+
+" ************************************************************
+" Command mode key bindings
+" ************************************************************
+
+" Emacs bindings
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+
+
+" ************************************************************
+" Leader key bindings
+" ************************************************************
+
+" Use a leader key closer to the home row
+let mapleader = ','
+
+" Clear search highlights
+nnoremap <Leader>, :nohlsearch<CR>
+
+" Search through all files
+nnoremap <Leader>t :FZF<CR>
+nnoremap <Leader>f :FZFMru<CR>
+
+" Open a file explorer in the current directory
+nnoremap <Leader>o :! open %:h<CR>
+
+" Copy selection to the system clipboard
+vnoremap <Leader>c :! pbcopy<CR>
+
+" Switch between test and implementation files
+nnoremap <Leader>a :Open(alternate#FindAlternate())<CR>
+nnoremap <Leader>h :OpenHorizontal(alternate#FindAlternate())<CR>
+nnoremap <Leader>v :OpenVertical(alternate#FindAlternate())<CR>
+
+" Search for the current word in all files
+nnoremap <Leader>s :Ack<CR>
+
+" Run the test for the current file
+autocmd FileType ruby nnoremap <buffer> <Leader>r :execute "! bundle exec rspec " . alternate#FindTest() <CR>
+
+" Align symbols
+nnoremap <Leader>= :Tabularize /=<CR>
+nnoremap <Leader>> :Tabularize /=><CR>
+nnoremap <Leader>{ :Tabularize /{<CR>
+
+
+" ************************************************************
+" Quickfix window key bindings
+" ************************************************************
+
+" Open the next item and keeping the focus in the quickfix window
+autocmd BufWinEnter quickfix noremap <buffer> j :cn<CR><C-w><C-p>
+
+" Open the previous item keeping the focus in the quickfix window
+autocmd BufWinEnter quickfix noremap <buffer> k :cp<CR><C-w><C-p>
+
+" Ignore the enter key
+autocmd BufWinEnter quickfix noremap <buffer> <Enter> <Nop>
+
+
+" ************************************************************
+" Shell
+" ************************************************************
+
+" Configure the vim shell to use standard bash..
+set shell=/bin/bash
+
+" Configure the vim shell to be interactive and load aliases.
+set shellcmdflag=-c
+
+
+" ************************************************************
+" (plugin) ack.vim
+" ************************************************************
+
+let g:ackprg = 'rg --no-heading --column'
