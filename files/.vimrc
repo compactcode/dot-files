@@ -1,6 +1,12 @@
-set nocompatible
+if has('nvim')
+  call plug#begin('~/.local/share/nvim/plugged')
+else
+  set encoding=utf-8
 
-call plug#begin('~/.vim/plugged')
+  set nocompatible
+
+  call plug#begin('~/.vim/plugged')
+endif
 
 Plug 'altercation/vim-colors-solarized'
 Plug 'mileszs/ack.vim'
@@ -25,8 +31,6 @@ call plug#end()
 " General
 " ************************************************************
 
-" It makes life easier
-set encoding=utf-8
 
 " Use the current filename as the title for the terminal
 set title
