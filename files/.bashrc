@@ -1,6 +1,6 @@
 export EDITOR=vim
 
-export FZF_DEFAULT_COMMAND="rg --files"
+export FZF_DEFAULT_COMMAND="rg --files --hidden | grep -v '\.git'"
 export FZF_DEFAULT_OPTS="--reverse --height 40%"
 
 source ~/.aliases/bundler.sh
