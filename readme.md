@@ -2,10 +2,15 @@
 
 ### Requirements
 
+#### General
+
 * `brew install ripgrep`
 * `brew install fzf`
 * `brew install fasd`
-* `git clone https://github.com/zplug/zplug.git ~/.zplug`
+
+#### Vim
+
+* `brew install neovim`
 
 ### Installation
 
