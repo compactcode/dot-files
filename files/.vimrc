@@ -20,9 +20,6 @@ Plug 'tomtom/tlib_vim'
 
 call plug#end()
 
-filetype indent on
-filetype plugin on
-
 
 " ************************************************************
 " General
@@ -66,9 +63,6 @@ set laststatus=2
 
 " Show the line and column number in the status bar
 set ruler
-
-" Show syntax highlighting
-syntax on
 
 " Use the solarized color scheme
 set background=dark
