@@ -26,7 +26,6 @@ Plug 'tomtom/tlib_vim'
 
 call plug#end()
 
-
 " ************************************************************
 " General
 " ************************************************************
@@ -67,7 +66,7 @@ set laststatus=2
 
 " Use the solarized color scheme
 set background=dark
-colorscheme solarized
+silent! colorscheme solarized
 
 
 " ************************************************************
