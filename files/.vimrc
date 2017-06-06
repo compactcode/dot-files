@@ -117,6 +117,12 @@ set pastetoggle=<F4>
 " Show the current command
 set showcmd
 
+" ************************************************************
+" Leader key
+" ************************************************************
+
+" Use a leader key closer to the home row
+let mapleader = ','
 
 " ************************************************************
 " Normal mode key bindings
@@ -143,6 +149,31 @@ nnoremap ! :wa<CR>:!!<CR>
 " Quickly save all files and exit vim
 nnoremap Q :wa<CR>ZZ
 
+" Clear search highlights
+nnoremap <Leader>, :nohlsearch<CR>
+
+" Search through all files
+nnoremap <Leader>t :FZF<CR>
+nnoremap <Leader>f :FZFMru<CR>
+
+" Open a file explorer in the current directory
+nnoremap <Leader>o :! open %:h<CR>
+
+" Switch between test and implementation files
+nnoremap <Leader>a :Open(alternate#FindAlternate())<CR>
+nnoremap <Leader>h :OpenHorizontal(alternate#FindAlternate())<CR>
+nnoremap <Leader>v :OpenVertical(alternate#FindAlternate())<CR>
+
+" Search for the current word in all files
+nnoremap <Leader>s :Ack<CR>
+
+" Align symbols
+nnoremap <Leader>= :Tabularize /=<CR>
+nnoremap <Leader>> :Tabularize /=><CR>
+nnoremap <Leader>{ :Tabularize /{<CR>
+
+" Run the test for the current file
+autocmd FileType ruby nnoremap <buffer> <Leader>r :execute "! bundle exec rspec " . alternate#FindTest() <CR>
 
 " ************************************************************
 " Insert mode key bindings
@@ -167,6 +198,9 @@ inoremap <M-f> <C-o>w
 " Quickly switch to insert mode from visual mode
 vnoremap a <Esc>a
 
+" Copy selection to the system clipboard
+vnoremap <Leader>c :! pbcopy<CR>
+
 
 " ************************************************************
 " Command mode key bindings
@@ -175,43 +209,6 @@ vnoremap a <Esc>a
 " Emacs bindings
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
-
-
-" ************************************************************
-" Leader key bindings
-" ************************************************************
-
-" Use a leader key closer to the home row
-let mapleader = ','
-
-" Clear search highlights
-nnoremap <Leader>, :nohlsearch<CR>
-
-" Search through all files
-nnoremap <Leader>t :FZF<CR>
-nnoremap <Leader>f :FZFMru<CR>
-
-" Open a file explorer in the current directory
-nnoremap <Leader>o :! open %:h<CR>
-
-" Copy selection to the system clipboard
-vnoremap <Leader>c :! pbcopy<CR>
-
-" Switch between test and implementation files
-nnoremap <Leader>a :Open(alternate#FindAlternate())<CR>
-nnoremap <Leader>h :OpenHorizontal(alternate#FindAlternate())<CR>
-nnoremap <Leader>v :OpenVertical(alternate#FindAlternate())<CR>
-
-" Search for the current word in all files
-nnoremap <Leader>s :Ack<CR>
-
-" Run the test for the current file
-autocmd FileType ruby nnoremap <buffer> <Leader>r :execute "! bundle exec rspec " . alternate#FindTest() <CR>
-
-" Align symbols
-nnoremap <Leader>= :Tabularize /=<CR>
-nnoremap <Leader>> :Tabularize /=><CR>
-nnoremap <Leader>{ :Tabularize /{<CR>
 
 
 " ************************************************************
