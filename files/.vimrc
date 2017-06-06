@@ -227,12 +227,13 @@ autocmd BufWinEnter quickfix noremap <buffer> <Enter> <Nop>
 " Shell
 " ************************************************************
 
-" Configure the vim shell to use standard bash..
+" Explicitly use bash since its faster
 set shell=/bin/bash
 
-" Configure the vim shell to be interactive and load aliases.
-set shellcmdflag=-c
-
+if has('nvim')
+  " Make the shell interactive so aliases are loaded.
+  set shellcmdflag=-ic
+endif
 
 " ************************************************************
 " (plugin) ack.vim
