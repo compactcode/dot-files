@@ -193,7 +193,11 @@ inoremap <M-f> <C-o>w
 vnoremap a <Esc>a
 
 " Copy selection to the system clipboard
-vnoremap <Leader>c :! pbcopy<CR>
+if has('nvim')
+  vnoremap <Leader>c "*y
+else
+  vnoremap <Leader>c :! pbcopy<CR>u
+endif
 
 
 " ************************************************************
