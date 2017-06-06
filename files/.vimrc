@@ -148,10 +148,8 @@ nnoremap Q :wa<CR>ZZ
 " Insert mode key bindings
 " ************************************************************
 
-" Quickly switch to normal mode from insert mode
-inoremap jj <Esc> :w<CR>
+" Quickly exit insert mode
 inoremap kj <Esc> :w<CR>
-inoremap jk <Esc> :w<CR>
 
 " Emacs bindings
 inoremap <C-a> <C-o>^
