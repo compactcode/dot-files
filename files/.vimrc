@@ -61,9 +61,6 @@ set nofoldenable
 " Show a status bar
 set laststatus=2
 
-" Show the line and column number in the status bar
-set ruler
-
 " Use the solarized color scheme
 set background=dark
 colorscheme solarized
