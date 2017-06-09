@@ -2,11 +2,11 @@ source $HOME/.bashrc
 
 source ~/.zplug/init.zsh
 
-zplug "modules/editor",          from:prezto # emacs key bindings.
-zplug "modules/directory",       from:prezto # automatic cd/pushd/popd etc.
-zplug "modules/fasd",            from:prezto # cd to frequent/recent directories.
-zplug "modules/history",         from:prezto # better command history.
-zplug "modules/prompt",          from:prezto # prompt theme.
+zplug "modules/editor",    from:prezto # emacs key bindings.
+zplug "modules/directory", from:prezto # automatic cd/pushd/popd etc.
+zplug "modules/fasd",      from:prezto # cd to frequent/recent directories.
+zplug "modules/history",   from:prezto # better command history.
+zplug "modules/prompt",    from:prezto # prompt theme.
 
 zstyle ':prezto:module:prompt' theme 'pure'
 
