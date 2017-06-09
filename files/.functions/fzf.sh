@@ -32,7 +32,7 @@ frg() {
   else
     echo "$(\
       rg --column --no-heading --smart-case --color always $@ | \
-      fzf --ansi --preview '~/.functions/preview-search-result.sh {}' | \
+      fzf --ansi --preview '~/.functions/fzf-column-preview.sh {}' | \
       awk -F ':' '{print $1}')"
   fi
 }

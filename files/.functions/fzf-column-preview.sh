@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Taken from https://github.com/junegunn/fzf.vim/blob/master/bin/preview.sh
+
+# Takes single line results from grep, ag, pt, rg and outputs enough text to
+# display in a FZF preview window.
+#
+# e.g: rg --column --no-heading bundler
+#
+# => config/boot.rb:3:10:require 'bundler/setup' # Set up gems listed in the Gemfile.
+
 REVERSE="\x1b[7m"
 RESET="\x1b[m"
 
