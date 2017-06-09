@@ -9,7 +9,6 @@ else
 endif
 
 Plug 'altercation/vim-colors-solarized'
-Plug 'mileszs/ack.vim'
 Plug 'compactcode/open.vim'
 Plug 'compactcode/alternate.vim'
 Plug 'mattn/emmet-vim'
@@ -146,9 +145,13 @@ nnoremap Q :wa<CR>ZZ
 " Clear search highlights
 nnoremap <Leader>, :nohlsearch<CR>
 
-" Search through all files
+" Select a file to open
 nnoremap <Leader>t :FZF<CR>
+" Select a recently edited file to open
 nnoremap <Leader>f :FZFMru<CR>
+
+" Search the project for occurences of the current word
+nnoremap <Leader>s :RgCurrentWord<CR>
 
 " Open a file explorer in the current directory
 nnoremap <Leader>o :! open %:h<CR>
@@ -157,9 +160,6 @@ nnoremap <Leader>o :! open %:h<CR>
 nnoremap <Leader>a :Open(alternate#FindAlternate())<CR>
 nnoremap <Leader>h :OpenHorizontal(alternate#FindAlternate())<CR>
 nnoremap <Leader>v :OpenVertical(alternate#FindAlternate())<CR>
-
-" Search for the current word in all files
-nnoremap <Leader>s :Ack<CR>
 
 " Align symbols
 nnoremap <Leader>= :Tabularize /=<CR>
@@ -210,20 +210,6 @@ cnoremap <C-e> <End>
 
 
 " ************************************************************
-" Quickfix window key bindings
-" ************************************************************
-
-" Open the next item and keeping the focus in the quickfix window
-autocmd BufWinEnter quickfix noremap <buffer> j :cn<CR><C-w><C-p>
-
-" Open the previous item keeping the focus in the quickfix window
-autocmd BufWinEnter quickfix noremap <buffer> k :cp<CR><C-w><C-p>
-
-" Ignore the enter key
-autocmd BufWinEnter quickfix noremap <buffer> <Enter> <Nop>
-
-
-" ************************************************************
 " Shell
 " ************************************************************
 
@@ -235,15 +221,37 @@ if has('nvim')
   set shellcmdflag=-ic
 endif
 
-" ************************************************************
-" (plugin) ack.vim
-" ************************************************************
-
-let g:ackprg = 'rg --no-heading --column'
-
 
 " ************************************************************
 " (plugin) fzf.vim
 " ************************************************************
 
 let g:fzf_history_dir = '~/.fzf-history'
+
+" ************************************************************
+" (plugin) fzf.vim & ripgrep
+" ************************************************************
+
+" A function to edit a file from a rg search result.
+"
+" e.g: rg --column --no-heading bundler
+"
+" => config/boot.rb:3:10:require 'bundler/setup' # Set up gems listed in the Gemfile.
+function! s:OpenRgResult(selected_line)
+  let file   = split(a:selected_line, ":")[0]
+  let column = split(a:selected_line, ":")[1]
+
+  execute open#Open(file)
+  execute column
+  normal! zz
+endfunction
+
+" Configure ripgrep to output single line results in color.
+let s:fzf_rg_source  = 'rg --column --no-heading --smart-case --color always %s'
+" Configure fzf to handle color and show a preview window.
+let s:fzf_rg_options = '--ansi --multi --preview "~/.functions/fzf-column-preview.sh {}"'
+" Configure fzf to use our custom function when result is selected.
+let s:fzf_rg_sink    = function('s:OpenRgResult')
+
+command! -nargs=1 Rg            call fzf#run(fzf#wrap('fzf', {'source': printf(s:fzf_rg_source, <f-args>),          'options': s:fzf_rg_options, 'sink': s:fzf_rg_sink}))
+command! -nargs=0 RgCurrentWord call fzf#run(fzf#wrap('fzf', {'source': printf(s:fzf_rg_source, expand("<cword>")), 'options': s:fzf_rg_options, 'sink': s:fzf_rg_sink}))
