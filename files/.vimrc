@@ -216,11 +216,6 @@ cnoremap <C-e> <End>
 " Explicitly use bash since its faster
 set shell=/bin/bash
 
-if has('nvim')
-  " Make the shell interactive so aliases are loaded.
-  set shellcmdflag=-ic
-endif
-
 
 " ************************************************************
 " (plugin) fzf.vim
