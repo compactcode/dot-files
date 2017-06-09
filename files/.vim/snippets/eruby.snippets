@@ -21,12 +21,8 @@ snippet p
 	<p>${1}</p>
 snippet div
 	<div>${1}</div>
-snippet div.
-	<div class="${1}">${2}</div>
 snippet span
 	<span>${1}</span>
-snippet span.
-	<span class="${1}">${2}</span>
 
 #ruby
 snippet if
@@ -36,11 +32,11 @@ snippet %
 	<% ${1} %>
 snippet =
 	<%= ${1} %>
-
 snippet each
 	<% ${1}.each do |${2}| %>
 	  ${3}
 	<% end %>
+
 #rails
 snippet link
 	<%= link_to '${1}', ${2} %>
