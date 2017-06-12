@@ -27,6 +27,8 @@ if has('nvim')
   Plug 'SirVer/ultisnips'
   " Snippet library.
   Plug 'honza/vim-snippets'
+  " Syntax checking.
+  Plug 'vim-syntastic/syntastic'
 end
 
 call plug#end()
