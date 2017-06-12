@@ -17,6 +17,8 @@ Plug 'tpope/vim-repeat'
 Plug 'junegunn/fzf'
 Plug 'junegunn/vim-easy-align'
 Plug 'pbogut/fzf-mru.vim'
+" Emacs key bindings for command mode.
+Plug 'houtsnip/vim-emacscommandline'
 
 if has('nvim')
   " Asynchronous completion engine.
@@ -32,7 +34,6 @@ call plug#end()
 " ************************************************************
 " General
 " ************************************************************
-
 
 " Use the current filename as the title for the terminal
 set title
@@ -189,15 +190,6 @@ if has('nvim')
 else
   vnoremap <Leader>c :! pbcopy<CR>u
 endif
-
-
-" ************************************************************
-" Command mode key bindings
-" ************************************************************
-
-" Emacs bindings
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
 
 
 " ************************************************************
