@@ -15,8 +15,8 @@ Plug 'mattn/emmet-vim'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'godlygeek/tabular'
 Plug 'junegunn/fzf'
+Plug 'junegunn/vim-easy-align'
 Plug 'pbogut/fzf-mru.vim'
 
 Plug 'garbas/vim-snipmate'
@@ -145,14 +145,6 @@ nnoremap Q :wa<CR>ZZ
 " Clear search highlights
 nnoremap <Leader>, :nohlsearch<CR>
 
-" Select a file to open
-nnoremap <Leader>t :FZF<CR>
-" Select a recently edited file to open
-nnoremap <Leader>f :FZFMru<CR>
-
-" Search the project for occurences of the current word
-nnoremap <Leader>s :RgCurrentWord<CR>
-
 " Open a file explorer in the current directory
 nnoremap <Leader>o :! open %:h<CR>
 
@@ -160,11 +152,6 @@ nnoremap <Leader>o :! open %:h<CR>
 nnoremap <Leader>a :Open(alternate#FindAlternate())<CR>
 nnoremap <Leader>h :OpenHorizontal(alternate#FindAlternate())<CR>
 nnoremap <Leader>v :OpenVertical(alternate#FindAlternate())<CR>
-
-" Align symbols
-nnoremap <Leader>= :Tabularize /=<CR>
-nnoremap <Leader>> :Tabularize /=><CR>
-nnoremap <Leader>{ :Tabularize /{<CR>
 
 " Run the test for the current file
 autocmd FileType ruby nnoremap <buffer> <Leader>r :execute "! bundle exec rspec " . alternate#FindTest() <CR>
@@ -218,10 +205,31 @@ set shell=/bin/bash
 
 
 " ************************************************************
+" (plugin) easy-align
+" ***********************************************************
+
+" Align symbols
+nnoremap <Leader>= :EasyAlign =<CR>
+
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+" ************************************************************
 " (plugin) fzf.vim
 " ************************************************************
 
 let g:fzf_history_dir = '~/.fzf-history'
+
+" Select a file to open
+nnoremap <Leader>t :FZF<CR>
+
+" ************************************************************
+" (plugin) fzf-mru.vim
+" ************************************************************
+
+" Select a recently edited file to open
+nnoremap <Leader>f :FZFMru<CR>
+
 
 " ************************************************************
 " (plugin) fzf.vim & ripgrep
@@ -250,3 +258,6 @@ let s:fzf_rg_sink    = function('s:OpenRgResult')
 
 command! -nargs=1 Rg            call fzf#run(fzf#wrap('fzf', {'source': printf(s:fzf_rg_source, <f-args>),          'options': s:fzf_rg_options, 'sink': s:fzf_rg_sink}))
 command! -nargs=0 RgCurrentWord call fzf#run(fzf#wrap('fzf', {'source': printf(s:fzf_rg_source, expand("<cword>")), 'options': s:fzf_rg_options, 'sink': s:fzf_rg_sink}))
+
+" Search the project for occurences of the current word
+nnoremap <Leader>s :RgCurrentWord<CR>
