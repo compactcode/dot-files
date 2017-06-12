@@ -8,14 +8,23 @@ else
   call plug#begin('~/.vim/plugged')
 endif
 
+" The solarized light & dark theme.
 Plug 'altercation/vim-colors-solarized'
+" Utils for opening files.
 Plug 'compactcode/open.vim'
+" Utils for finding source/test files.
 Plug 'compactcode/alternate.vim'
+" Write HTML using abbreviations e.g. ul>li*5>.name+.url
 Plug 'mattn/emmet-vim'
+" Quickly change quotes/parens e.g. ' => ", ( => {
 Plug 'tpope/vim-surround'
+" Use . to repeat commands form plugins.
 Plug 'tpope/vim-repeat'
-Plug 'junegunn/fzf'
+" Shortcuts to vertically align things.
 Plug 'junegunn/vim-easy-align'
+" Fuzzy finding for files.
+Plug 'junegunn/fzf'
+" Fuzzy finding for recently used files.
 Plug 'pbogut/fzf-mru.vim'
 " Emacs key bindings for command mode.
 Plug 'houtsnip/vim-emacscommandline'
