@@ -19,10 +19,6 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/vim-easy-align'
 Plug 'pbogut/fzf-mru.vim'
 
-Plug 'garbas/vim-snipmate'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-
 call plug#end()
 
 " ************************************************************
