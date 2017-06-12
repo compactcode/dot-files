@@ -12,12 +12,20 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'compactcode/open.vim'
 Plug 'compactcode/alternate.vim'
 Plug 'mattn/emmet-vim'
-Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'junegunn/fzf'
 Plug 'junegunn/vim-easy-align'
 Plug 'pbogut/fzf-mru.vim'
+
+if has('nvim')
+  " Asynchronous completion engine.
+  Plug 'roxma/nvim-completion-manager'
+  " Snippet engine.
+  Plug 'SirVer/ultisnips'
+  " Snippet library.
+  Plug 'honza/vim-snippets'
+end
 
 call plug#end()
 
@@ -257,3 +265,18 @@ command! -nargs=0 RgCurrentWord call fzf#run(fzf#wrap('fzf', {'source': printf(s
 
 " Search the project for occurences of the current word
 nnoremap <Leader>s :RgCurrentWord<CR>
+
+" ************************************************************
+" (plugin) nvim-completion-manager
+" ************************************************************
+
+inoremap <expr> <CR> pumvisible() ? "\<c-y>\<cr>" : "\<CR>"
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" ************************************************************
+" (plugin) ultiSnips
+" ************************************************************
+
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
