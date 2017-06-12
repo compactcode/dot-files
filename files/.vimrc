@@ -131,7 +131,7 @@ noremap <C-l> <C-w>l
 nnoremap Y y$
 
 " Insert a newline above the current line
-nmap <CR> [<Space>
+nmap <CR> O<Esc>j
 
 " Quickly insert whitespace in normal mode
 nnoremap <Space> i<Space><Esc>l
