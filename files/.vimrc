@@ -10,6 +10,10 @@ endif
 
 " The solarized light & dark theme.
 Plug 'altercation/vim-colors-solarized'
+" A useful status bar.
+Plug 'vim-airline/vim-airline'
+" Contains a status bar theme for solarized.
+Plug 'vim-airline/vim-airline-themes'
 " Utils for opening files.
 Plug 'compactcode/open.vim'
 " Utils for finding source/test files.
