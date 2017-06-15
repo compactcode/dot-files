@@ -46,12 +46,10 @@ end
 
 call plug#end()
 
+
 " ************************************************************
 " General
 " ************************************************************
-
-" Use the current filename as the title for the terminal
-set title
 
 " Make these files completely invisible to vim
 set wildignore+=*/.git/*,*/.hg/*,*/.sass-cache/*,*node_modules/*
@@ -80,6 +78,9 @@ set list listchars=tab:\ \ ,trail:·
 " Disable code folding
 set nofoldenable
 
+" Disable the built in mode status.
+set noshowmode
+"
 " Show a status bar
 set laststatus=2
 
