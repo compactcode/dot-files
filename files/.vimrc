@@ -41,7 +41,7 @@ if has('nvim')
   " Snippet library.
   Plug 'honza/vim-snippets'
   " Syntax checking.
-  Plug 'vim-syntastic/syntastic'
+  Plug 'neomake/neomake'
 end
 
 call plug#end()
