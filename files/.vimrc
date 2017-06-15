@@ -182,7 +182,7 @@ autocmd FileType ruby nnoremap <buffer> <Leader>r :execute "! bundle exec rspec 
 " ************************************************************
 
 " Quickly exit insert mode
-inoremap kj <Esc> :w<CR>
+inoremap kj <Esc> :update<CR>
 
 " Emacs bindings
 inoremap <C-a> <C-o>^
