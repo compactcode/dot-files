@@ -33,9 +33,17 @@ Plug 'pbogut/fzf-mru.vim'
 " Emacs key bindings for command mode.
 Plug 'houtsnip/vim-emacscommandline'
 
+" ************************************************************
+" Languages
+" ************************************************************
+Plug 'rust-lang/rust.vim'
+
 if has('nvim')
   " Asynchronous completion engine.
   Plug 'roxma/nvim-completion-manager'
+  " Completions for rust.
+  Plug 'roxma/nvim-cm-racer'
+  Plug 'racer-rust/vim-racer'
   " Snippet engine.
   Plug 'SirVer/ultisnips'
   " Snippet library.
@@ -43,6 +51,10 @@ if has('nvim')
   " Syntax checking.
   Plug 'neomake/neomake'
 end
+
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 call plug#end()
 
@@ -288,3 +300,10 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+
+" ************************************************************
+" (plugin) neomake
+" ************************************************************
+
+" Auto check on save.
+autocmd! BufWritePost * Neomake

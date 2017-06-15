@@ -16,3 +16,9 @@ export PATH="/usr/local/bin:$PATH"
 
 # Add npm to the path.
 export PATH="/usr/local/share/npm/bin:$PATH"
+
+# Add cargo tools to the path.
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Add cargo source .
+export RUST_SRC_PATH="$HOME/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src"
