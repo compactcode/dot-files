@@ -10,7 +10,7 @@ zplug "modules/prompt",    from:prezto # prompt theme.
 
 zstyle ':prezto:module:prompt' theme 'pure'
 
-zplug load --verbose
+zplug load
 
 source ~/.functions/fzf.sh
 
