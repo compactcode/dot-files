@@ -22,7 +22,7 @@ Plug 'compactcode/alternate.vim'
 Plug 'mattn/emmet-vim'
 " Quickly change quotes/parens e.g. ' => ", ( => {
 Plug 'tpope/vim-surround'
-" Use . to repeat commands form plugins.
+" Use . to repeat commands from plugins.
 Plug 'tpope/vim-repeat'
 " Shortcuts to vertically align things.
 Plug 'junegunn/vim-easy-align'
