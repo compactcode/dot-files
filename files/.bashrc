@@ -9,17 +9,15 @@ source ~/.aliases/rg.sh
 source ~/.aliases/utility.sh
 source ~/.aliases/vim.sh
 
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-
-# Add custom homebrew tools to the path.
+# Add homebrew binaries to the path.
 export PATH="/usr/local/bin:$PATH"
 
-# Add npm to the path.
+# Add npm binaries to the path.
 export PATH="/usr/local/share/npm/bin:$PATH"
 
-# Add cargo tools to the path.
+# Add cargo binaries to the path.
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# Add cargo source .
-export RUST_SRC_PATH="$HOME/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src"
+# Ruby version management.
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
