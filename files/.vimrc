@@ -37,6 +37,8 @@ Plug 'houtsnip/vim-emacscommandline'
 " Languages
 " ************************************************************
 Plug 'rust-lang/rust.vim'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'pangloss/vim-javascript'
 
 if has('nvim')
   " Asynchronous completion engine.
