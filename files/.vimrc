@@ -268,7 +268,7 @@ endfunction
 " Configure ripgrep to output single line results in color.
 let s:fzf_rg_source  = 'rg --column --no-heading --smart-case --color always %s'
 " Configure fzf to handle color and show a preview window.
-let s:fzf_rg_options = '--ansi --multi --preview "~/.functions/fzf-column-preview.sh {}"'
+let s:fzf_rg_options = '--ansi --multi --preview "~/.zsh_functions/fzf-column-preview.sh {}"'
 " Configure fzf to use our custom function when result is selected.
 let s:fzf_rg_sink    = function('s:OpenRgResult')
 
