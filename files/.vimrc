@@ -8,11 +8,11 @@ else
   call plug#begin('~/.vim/plugged')
 endif
 
-" The solarized light & dark theme.
-Plug 'altercation/vim-colors-solarized'
+" The nord theme.
+Plug 'arcticicestudio/nord-vim'
 " A useful status bar.
 Plug 'vim-airline/vim-airline'
-" Contains a status bar theme for solarized.
+" Contains a status bar theme for nord.
 Plug 'vim-airline/vim-airline-themes'
 " Utils for opening files.
 Plug 'compactcode/open.vim'
@@ -89,9 +89,8 @@ set noshowmode
 " Show a status bar
 set laststatus=2
 
-" Use the solarized color scheme
-set background=dark
-silent! colorscheme solarized
+" Use the nord color scheme
+colorscheme nord
 
 
 " ************************************************************
