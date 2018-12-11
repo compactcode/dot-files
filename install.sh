@@ -13,7 +13,6 @@ ln -vsf "$MY_PATH/files/.functions" ~
 ln -vsf "$MY_PATH/files/.gemrc" ~
 ln -vsf "$MY_PATH/files/.gitconfig" ~
 ln -vsf "$MY_PATH/files/.gitignore" ~
-ln -vsf "$MY_PATH/files/.hushlogin" ~
 ln -vsf "$MY_PATH/files/.inputrc" ~
 ln -vsf "$MY_PATH/files/.rspec" ~
 ln -vsf "$MY_PATH/files/.scripts" ~
