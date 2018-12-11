@@ -6,7 +6,7 @@ MY_PATH=`( cd "$MY_PATH" && pwd )`
 mkdir -p ~/.local/share/nvim
 mkdir -p ~/.config
 
-ln -vsf "$MY_PATH/files/.aliases" ~
+ln -vsf "$MY_PATH/files/.bash_aliases" ~
 ln -vsf "$MY_PATH/files/.bash_profile" ~
 ln -vsf "$MY_PATH/files/.bashrc" ~
 ln -vsf "$MY_PATH/files/.functions" ~
