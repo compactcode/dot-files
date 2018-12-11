@@ -3,7 +3,6 @@
 MY_PATH=`dirname "$0"`
 MY_PATH=`( cd "$MY_PATH" && pwd )`
 
-mkdir -p ~/.local/share/nvim
 mkdir -p ~/.config
 
 ln -vsf "$MY_PATH/files/.bash_aliases" ~
