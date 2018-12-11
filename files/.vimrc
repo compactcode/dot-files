@@ -41,11 +41,6 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'pangloss/vim-javascript'
 
 if has('nvim')
-  " Asynchronous completion engine.
-  Plug 'roxma/nvim-completion-manager'
-  " Completions for rust.
-  Plug 'roxma/nvim-cm-racer'
-  Plug 'racer-rust/vim-racer'
   " Snippet engine.
   Plug 'SirVer/ultisnips'
   " Snippet library.
@@ -53,10 +48,6 @@ if has('nvim')
   " Syntax checking.
   Plug 'neomake/neomake'
 end
-
-au FileType rust nmap gd <Plug>(rust-def)
-au FileType rust nmap gs <Plug>(rust-def-split)
-au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 call plug#end()
 
@@ -287,14 +278,6 @@ command! -nargs=0 RgCurrentWord call fzf#run(fzf#wrap('fzf', {'source': printf(s
 
 " Search the project for occurences of the current word
 nnoremap <Leader>s :RgCurrentWord<CR>
-
-" ************************************************************
-" (plugin) nvim-completion-manager
-" ************************************************************
-
-inoremap <expr> <CR> pumvisible() ? "\<c-y>\<cr>" : "\<CR>"
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " ************************************************************
 " (plugin) ultiSnips
