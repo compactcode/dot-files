@@ -59,4 +59,4 @@ fj() {
 # Select a frequently used directory.
 alias j="fj"
 # Go straight to the most frequently used directory.
-alias jj="fasd -dlR | head -1"
+alias jj="cd `fasd -dlR | head -1`"
