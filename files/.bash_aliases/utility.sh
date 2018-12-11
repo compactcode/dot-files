@@ -1,3 +1,3 @@
-alias ls='ls -G'
-alias l='ls -la'
+alias cat='bat'
+alias l='exa -la'
 alias md='mkdir -p'
