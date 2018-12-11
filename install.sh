@@ -16,6 +16,5 @@ ln -vsf "$MY_PATH/files/.gitignore" ~
 ln -vsf "$MY_PATH/files/.inputrc" ~
 ln -vsf "$MY_PATH/files/.rspec" ~
 ln -vsf "$MY_PATH/files/.vim" ~
-ln -vsf "$MY_PATH/files/.config/nvim" ~/.config
-ln -vsf "$MY_PATH/files/.local/share/nvim/site" ~/.local/share/nvim
+ln -vsf "$MY_PATH/files/.vim/config/nvim" ~/.config
 ln -vsf "$MY_PATH/files/.zshrc" ~
