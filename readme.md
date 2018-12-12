@@ -28,6 +28,10 @@ git clone git://github.com/compactcode/dot-files.git && ./dot-files/install.sh
 * `brew install bat`
 * `brew install exa`
 
+### Terminal
+
+* I use [Alacritty](https://github.com/jwilm/alacritty) as a terminal emulator.
+
 ### Shell
 
 I use zsh rather than bash.

@@ -5,6 +5,7 @@ MY_PATH=`( cd "$MY_PATH" && pwd )`
 
 mkdir -p ~/.config
 
+ln -vsf "$MY_PATH/files/.alacritty.yml" ~
 ln -vsf "$MY_PATH/files/.bash_aliases" ~
 ln -vsf "$MY_PATH/files/.bash_profile" ~
 ln -vsf "$MY_PATH/files/.bashrc" ~
