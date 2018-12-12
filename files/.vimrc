@@ -41,12 +41,18 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'pangloss/vim-javascript'
 
 if has('nvim')
-  " Snippet engine.
-  Plug 'SirVer/ultisnips'
-  " Snippet library.
-  Plug 'honza/vim-snippets'
   " Syntax checking.
   Plug 'neomake/neomake'
+
+  " Autocomplete
+  Plug 'roxma/nvim-yarp'
+  Plug 'ncm2/ncm2'
+  Plug 'ncm2/ncm2-bufword'
+
+  " Snippet engine.
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+  Plug 'ncm2/ncm2-ultisnips'
 end
 
 call plug#end()
@@ -230,6 +236,7 @@ nnoremap <Leader>= :EasyAlign =<CR>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
+
 " ************************************************************
 " (plugin) fzf.vim
 " ************************************************************
@@ -238,6 +245,7 @@ let g:fzf_history_dir = '~/.fzf-history'
 
 " Select a file to open
 nnoremap <Leader>t :FZF<CR>
+
 
 " ************************************************************
 " (plugin) fzf-mru.vim
@@ -278,12 +286,21 @@ command! -nargs=0 RgCurrentWord call fzf#run(fzf#wrap('fzf', {'source': printf(s
 " Search the project for occurences of the current word
 nnoremap <Leader>s :RgCurrentWord<CR>
 
+
 " ************************************************************
 " (plugin) ultiSnips
 " ************************************************************
 
+" Press enter key to trigger snippet expansion.
+inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
+
+" Remove the default expansion binging to tab. We will use ncm2 completion instead.
+let g:UltiSnipsExpandTrigger="<c-j>"
+
+" Use tab to move around within an expansion.
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+
 
 " ************************************************************
 " (plugin) neomake
@@ -291,3 +308,18 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
 " Auto check on save.
 autocmd! BufWritePost * Neomake
+
+
+" ************************************************************
+" (plugin) ncm2
+" ************************************************************
+
+" Enable for all buffers.
+autocmd! BufEnter * call ncm2#enable_for_buffer()
+
+" Prevent unwanted completions and enable the completion menu.
+set completeopt=noinsert,menu
+
+" Use tab to move around the completion menu.
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
