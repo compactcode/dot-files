@@ -3,6 +3,7 @@ window:
 
   font:
     size: 14.0
+    use_thin_strokes: true
 
 key_bindings:
   - { key: V,        mods: Command, action: Paste }
