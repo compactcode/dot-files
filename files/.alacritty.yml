@@ -1,5 +1,5 @@
 window:
-  start_maximized: true
+  startup_mode: Maximized
 
   font:
     size: 14.0
