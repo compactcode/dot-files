@@ -23,6 +23,14 @@
     (
       vim_configurable.customize {
         name = "vim";
+        vimrcConfig.plug.plugins = with pkgs.vimPlugins; [
+          # The nord theme.
+          arcticicestudio/nord-vim
+          # A useful status bar.
+          vim-airline/vim-airline
+          # Contains a status bar theme for nord.
+          vim-airline/vim-airline-themes
+        ];
         vimrcConfig.customRC = ''
           " ************************************************************
           " General
