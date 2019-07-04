@@ -23,13 +23,20 @@
     (
       vim_configurable.customize {
         name = "vim";
-        vimrcConfig.plug.plugins = [
-          # The nord theme.
-          { rtp = "arcticicestudio/nord-vim"; }
-          # A useful status bar.
-          { rtp = "vim-airline/vim-airline"; }
-          # Contains a status bar theme for nord.
-          { rtp = "vim-airline/vim-airline-themes"; }
+        vimrcConfig.vam.knownPlugins = [
+        vimrcConfig.vam.pluginDictionaries = [
+          { names = [
+              # A useful status bar.
+              "vim-airline"
+              "vim-airline-themes"
+
+              # Quickly change quotes/parens e.g. ' => ", ( => {
+              "vim-surround"
+
+              # Use . to repeat commands from plugins.
+              "vim-repeat"
+            ];
+          }
         ];
         vimrcConfig.customRC = ''
           " ************************************************************
