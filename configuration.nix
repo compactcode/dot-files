@@ -23,13 +23,13 @@
     (
       vim_configurable.customize {
         name = "vim";
-        vimrcConfig.plug.plugins = with pkgs.vimPlugins; [
+        vimrcConfig.plug.plugins = [
           # The nord theme.
-          arcticicestudio/nord-vim
+          { rtp = "arcticicestudio/nord-vim"; }
           # A useful status bar.
-          vim-airline/vim-airline
+          { rtp = "vim-airline/vim-airline"; }
           # Contains a status bar theme for nord.
-          vim-airline/vim-airline-themes
+          { rtp = "vim-airline/vim-airline-themes"; }
         ];
         vimrcConfig.customRC = ''
           " ************************************************************
@@ -39,7 +39,6 @@
           " Make these files completely invisible to vim
           set wildignore+=*/.git/*,*/.hg/*,*/.sass-cache/*,*node_modules/*
           set wildignore+=*.png,*.gif,*.jpg,*.ico,*.pdf,*.DS_Store,*.pyc
-
 
           " ************************************************************
           "  Display
