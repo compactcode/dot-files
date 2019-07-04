@@ -1,9 +1,16 @@
 { config, pkgs, ... }:
 
 {
+  system.stateVersion = "19.03";
+
   imports =
     [
       ./hardware-configuration.nix
+      # Add home-manager module
+      "${builtins.fetchGit {
+        ref = "release-19.03";
+        url = "https://github.com/rycee/home-manager";
+      }}/nixos"
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -13,10 +20,8 @@
   time.timeZone = "Australia/Melbourne";
 
   environment.systemPackages = with pkgs; [
-    firefox
     git
-    vim
-    zsh
+    ripgrep
   ];
 
   services.xserver = {
@@ -32,7 +37,26 @@
     };
   };
 
-  users.defaultUserShell = pkgs.zsh;
+  users.users.shandogs = {
+    isNormalUser = true;
+    description = "Shanon McQuay";
+    extraGroups = [ "wheel" ];
+  }
 
-  system.stateVersion = "19.03";
+  home-manager.users.shandogs = { pkgs, ... }: {
+    programs.neovim = {
+      enable = true;
+      vimAlias = true;
+    };
+
+    programs.zsh = {
+      enable = true;
+    };
+
+    programs.skim = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+  };
+
 }
