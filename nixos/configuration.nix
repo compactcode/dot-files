@@ -17,17 +17,25 @@ in {
 
   imports =
     [
+      # NOTE: Run `nixos-generate-config` to generate.
       ./hardware-configuration.nix
-      # Add home-manager module
+      # NOTE: Requires git to be installed before `nixos-install` will work.
       "${builtins.fetchGit {
         ref = "release-19.03";
         url = "https://github.com/rycee/home-manager";
       }}/nixos"
     ];
 
-  boot.loader.systemd-boot.enable = true;
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = false;
+    };
+    systemd-boot = {
+      enable = true;
+    };
+  };
 
-  networking.hostName = "shandogs";
+  networking.hostName = "nixbox";
 
   time.timeZone = "Australia/Melbourne";
 
