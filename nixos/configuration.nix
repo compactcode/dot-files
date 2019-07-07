@@ -36,13 +36,18 @@
 
   services.xserver = {
     enable = true;
+
     desktopManager = {
-      default = "xfce";
+      default = "none";
       xterm = {
         enable = false;
       };
-      xfce = {
+    };
+
+    windowManager = {
+      i3 = {
         enable = true;
+        package = pkgs.i3-gaps;
       };
     };
   };
@@ -67,10 +72,10 @@
     imports = [
       ./home/alacritty.nix
       ./home/git.nix
+      ./home/i3.nix
       ./home/neovim.nix
       ./home/skim.nix
       ./home/zsh.nix
     ];
   };
-
 }
