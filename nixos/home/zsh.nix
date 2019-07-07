@@ -2,6 +2,8 @@
 
 {
   home.packages = with pkgs; [
+    bat
+    exa
     zsh-prezto
   ];
 
@@ -41,6 +43,7 @@
       grh  = "${pkgs.git}/bin/git reset --HEAD";
       gs   = "${pkgs.git}/bin/git status";
       l    = "${pkgs.exa}/bin/exa -la";
+      b    = "${pkgs.bat}/bin/bat";
       md   = "mkdir -p";
     };
   };

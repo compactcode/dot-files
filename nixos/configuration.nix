@@ -28,8 +28,6 @@
   time.timeZone = "Australia/Melbourne";
 
   environment.systemPackages = with pkgs; [
-    bat
-    exa
     firefox
     git
     ripgrep
@@ -70,13 +68,9 @@
       ./home/alacritty.nix
       ./home/git.nix
       ./home/neovim.nix
+      ./home/skim.nix
       ./home/zsh.nix
     ];
-
-    programs.skim = {
-      enable = true;
-      enableZshIntegration = true;
-    };
   };
 
 }
