@@ -78,50 +78,11 @@ in {
   };
 
   home-manager.users.shandogs = { pkgs, ... }: {
-    home.packages = with pkgs; [
-      zsh-prezto
-    ];
-
     imports = [
       ./home/alacritty.nix
+      ./home/zsh.nix
     ];
 
-    programs.zsh = {
-      enable = true;
-      initExtra = ''
-        zstyle ':prezto:load' pmodule \
-          'environment' \
-          'editor' \
-          'fasd' \
-          'directory' \
-          'history' \
-          'prompt'
-
-        zstyle ':prezto:module:prompt' theme 'pure'
-
-        source ${pkgs.zsh-prezto}/init.zsh
-
-      '';
-      sessionVariables = {
-        SKIM_DEFAULT_COMMAND = "rg --files --hidden | grep -v '\.git'";
-        SKIM_DEFAULT_OPTIONS = "--reverse --height 40%";
-      };
-      shellAliases = {
-        g    = "git";
-        gars = "git add . && git reset --hard";
-        gc   = "git commit";
-        gca  = "git commit --amend";
-        gcp  = "git cherry-pick";
-        gco  = "git checkout";
-        gd   = "git diff";
-        glr  = "git pull --rebase";
-        glg  = "git log --stat";
-        grh  = "git reset --HEAD";
-        gs   = "git status";
-        l    = "exa -la";
-        md   = "mkdir -p";
-      };
-    };
 
     programs.git = {
       enable = true;
