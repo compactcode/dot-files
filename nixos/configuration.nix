@@ -68,21 +68,10 @@
   home-manager.users.shandogs = { pkgs, ... }: {
     imports = [
       ./home/alacritty.nix
+      ./home/git.nix
       ./home/neovim.nix
       ./home/zsh.nix
     ];
-
-    programs.git = {
-      enable = true;
-      userName = "Shanon McQuay";
-      userEmail = "shanonmcquay@gmail.com";
-      extraConfig = {
-        github = {
-          username = "compactcode";
-        };
-      };
-    };
-
 
     programs.skim = {
       enable = true;
