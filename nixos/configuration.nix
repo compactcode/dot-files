@@ -28,6 +28,7 @@
   time.timeZone = "Australia/Melbourne";
 
   environment.systemPackages = with pkgs; [
+    dash
     firefox
     git
     ripgrep
@@ -56,10 +57,12 @@
 
   users = {
     defaultUserShell = pkgs.zsh;
+
     users = {
       root = {
         hashedPassword = "$6$Ol1IgIkZqEqHkDk$X51v4AgMAKXhqpMjfM451dvu71YnMlYdK4lZk/ZFx0m4A/eEPuUfMAYyYwVNjDHMtoNXz6QeoSQg4lHQtHtzX1";
       };
+
       shandogs = {
         isNormalUser = true;
         extraGroups = [ "wheel" ];
@@ -74,8 +77,10 @@
       ./home/git.nix
       ./home/i3.nix
       ./home/neovim.nix
+      ./home/rofi.nix
       ./home/skim.nix
       ./home/zsh.nix
     ];
   };
+
 }
