@@ -10,6 +10,7 @@
       TERM: xterm-256color
 
     window:
+      decorations: none
       font:
         size: 14.0
 
