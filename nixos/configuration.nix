@@ -36,10 +36,23 @@
     zsh
   ];
 
-  fonts.fonts = [
-    # Use v4 until i3status-rust is updated.
-    pkgs.font-awesome_4
-  ];
+  fonts = {
+    fonts = with pkgs; [
+      source-code-pro
+      source-sans-pro
+      source-serif-pro
+      font-awesome_4
+      font-awesome_5
+    ];
+
+    fontconfig = {
+      defaultFonts = {
+        monospace = [ "Source Code Pro" ];
+        sansSerif = [ "Source Sans Pro" ];
+        serif     = [ "Source Serif Pro" ];
+      };
+    };
+  };
 
   services.xserver = {
     enable = true;

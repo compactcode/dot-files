@@ -37,6 +37,7 @@
   };
 
   home.file.".config/i3/status.toml".text = ''
+    theme = "modern"
     icons = "awesome"
 
     [[block]]
