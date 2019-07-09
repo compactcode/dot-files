@@ -32,6 +32,7 @@
 
     shellAliases = {
       g    = "${pkgs.git}/bin/git";
+      ga   = "${pkgs.git}/bin/git add .";
       gars = "${pkgs.git}/bin/git add . && git reset --hard";
       gc   = "${pkgs.git}/bin/git commit";
       gca  = "${pkgs.git}/bin/git commit --amend";
