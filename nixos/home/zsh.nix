@@ -46,6 +46,7 @@
       l    = "${pkgs.exa}/bin/exa -la";
       b    = "${pkgs.bat}/bin/bat";
       md   = "mkdir -p";
+      v    = "vim";
     };
   };
 }
