@@ -6,7 +6,7 @@
   imports =
     [
       # NOTE: Run `nixos-generate-config` to generate.
-      ./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
       # NOTE: Requires git to be installed before `nixos-install` will work.
       "${builtins.fetchGit {
         ref = "release-19.03";
