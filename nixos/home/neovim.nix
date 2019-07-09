@@ -11,6 +11,15 @@ let customVimPlugins = {
       sha256 = "1s3jd8g7xnqn9pbg4s127ai9qm7zb6nvrmww842iz8qs3nmvf60v";
     };
   };
+  picker = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-picker";
+    src = pkgs.fetchFromGitHub {
+      owner = "srstevenson";
+      repo = "vim-picker";
+      rev = "786cc73492510062adcff47e7b92a09ccbf2a471";
+      sha256 = "176rzis3rmn0vkl1swc1yxdy6paivfp08dkivlp2c1ffwqw640z2";
+    };
+  };
 };
 
 in {
@@ -115,10 +124,21 @@ in {
 
         " Copy selection to the system clipboard
         vnoremap <Leader>c "+y
+
+
+        " ************************************************************
+        " (plugin) picker
+        " ************************************************************
+
+        " Fuzzy find files.
+        nmap <unique> <leader>t <Plug>(PickerEdit)
+        " Fuzzy find buffers.
+        nmap <unique> <leader>b <Plug>(PickerBuffer)
       '';
 
       plug.plugins = with pkgs.vimPlugins // customVimPlugins; [
         nord
+        picker
 
         vim-airline
         vim-airline-themes

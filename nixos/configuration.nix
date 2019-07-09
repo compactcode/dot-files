@@ -30,6 +30,7 @@
   environment.systemPackages = with pkgs; [
     dash
     firefox
+    fzy
     git
     ripgrep
     zsh
