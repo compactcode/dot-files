@@ -36,6 +36,11 @@
     zsh
   ];
 
+  fonts.fonts = [
+    # Use v4 until i3status-rust is updated.
+    pkgs.font-awesome_4
+  ];
+
   services.xserver = {
     enable = true;
 
@@ -49,7 +54,12 @@
     windowManager = {
       i3 = {
         enable = true;
+
         package = pkgs.i3-gaps;
+
+        extraPackages = with pkgs; [
+          i3status-rust
+        ];
       };
     };
   };

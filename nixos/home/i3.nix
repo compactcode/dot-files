@@ -28,6 +28,45 @@
         inner = 12;
         outer = 12;
       };
+
+      bars = [{
+        position = "top";
+        statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3/status.toml";
+      }];
     };
   };
+
+  home.file.".config/i3/status.toml".text = ''
+    icons = "awesome"
+
+    [[block]]
+    block = "disk_space"
+    path = "/"
+    alias = "/"
+    info_type = "available"
+    unit = "GB"
+    interval = 20
+    warning = 20.0
+    alert = 10.0
+
+    [[block]]
+    block = "memory"
+    display_type = "memory"
+    format_mem = "{Mup}%"
+    format_swap = "{SUp}%"
+
+    [[block]]
+    block = "cpu"
+    interval = 1
+
+    [[block]]
+    block = "load"
+    interval = 1
+    format = "{1m}"
+
+    [[block]]
+    block = "time"
+    interval = 60
+    format = "%a %l:%M %p"
+  '';
 }
