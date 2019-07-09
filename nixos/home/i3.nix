@@ -17,8 +17,11 @@
         "Mod1+k" = "focus up";
         "Mod1+l" = "focus right";
 
-        # Logout.
-        "Mod1+q" = "exec i3-msg exit";
+        # Fullscreen current window.
+        "Mod1+f" = "fullscreen toggle";
+
+        # Kill current window.
+        "Mod1+w" = "kill";
       };
 
       gaps = {
