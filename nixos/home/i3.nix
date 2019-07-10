@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
-{
+let colors = import ./colors.nix;
+
+in {
   xsession.windowManager.i3 = {
     enable = true;
 
@@ -35,6 +37,9 @@
         fonts = [
           "monospace 10"
         ];
+        colors = {
+          background = colors.background;
+        };
       }];
     };
   };
