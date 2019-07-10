@@ -45,8 +45,15 @@ in {
   };
 
   home.file.".config/i3/status.toml".text = ''
-    theme = "modern"
-    icons = "awesome"
+    [theme]
+    name = "modern"
+
+    [theme.overrides]
+    idle_bg = "${colors.background}"
+    idle_fg = "${colors.foreground}"
+
+    [icons]
+    name = "awesome"
 
     [[block]]
     block = "disk_space"
