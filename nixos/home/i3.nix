@@ -41,6 +41,16 @@ in {
           background = colors.background;
         };
       }];
+
+      colors = {
+        focused = {
+          border      = colors.border;
+          childBorder = colors.border;
+          background  = colors.background;
+          text        = colors.foreground;
+          indicator   = colors.critical_background;
+        };
+      };
     };
   };
 

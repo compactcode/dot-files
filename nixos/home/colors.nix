@@ -4,6 +4,8 @@ in {
   background          = "#2D303B";
   foreground          = "#C4CBD4";
 
+  border              = light_foreground;
+
   info_background     = "#65ACFF";
   info_foreground     = light_foreground;
 
