@@ -32,6 +32,9 @@
       bars = [{
         position = "top";
         statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3/status.toml";
+        fonts = [
+          "monospace 10"
+        ];
       }];
     };
   };
