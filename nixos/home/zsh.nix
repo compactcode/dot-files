@@ -32,7 +32,7 @@
 
     shellAliases = {
       g    = "${pkgs.git}/bin/git";
-      ga   = "${pkgs.git}/bin/git add .";
+      ga   = "${pkgs.git}/bin/git add";
       gars = "${pkgs.git}/bin/git add . && git reset --hard";
       gc   = "${pkgs.git}/bin/git commit";
       gca  = "${pkgs.git}/bin/git commit --amend";
@@ -41,7 +41,7 @@
       gd   = "${pkgs.git}/bin/git diff";
       glr  = "${pkgs.git}/bin/git pull --rebase";
       glg  = "${pkgs.git}/bin/git log --stat";
-      grh  = "${pkgs.git}/bin/git reset --HEAD";
+      grh  = "${pkgs.git}/bin/git reset HEAD";
       gs   = "${pkgs.git}/bin/git status";
       l    = "${pkgs.exa}/bin/exa -la";
       b    = "${pkgs.bat}/bin/bat";
