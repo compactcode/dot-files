@@ -103,6 +103,7 @@
       ./home/skim.nix
       ./home/zsh.nix
     ];
-  };
 
+    home.file.".background-image".source = "${pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom}/share/artwork/gnome/nix-wallpaper-simple-dark-gray_bottom.png";
+  };
 }
