@@ -11,8 +11,6 @@
 
     window:
       decorations: none
-      font:
-        size: 14.0
 
     key_bindings:
       - { key: Paste, action: Paste }
