@@ -64,6 +64,11 @@
       };
     };
 
+    displayManager.lightdm.greeters.mini = {
+      enable = true;
+      user   = "shandogs";
+    };
+
     windowManager = {
       i3 = {
         enable = true;
