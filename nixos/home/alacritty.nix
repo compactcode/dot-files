@@ -10,7 +10,9 @@
       TERM: xterm-256color
 
     window:
-      decorations: none
+      padding:
+        x: 10
+        y: 10
 
     key_bindings:
       - { key: Paste, action: Paste }

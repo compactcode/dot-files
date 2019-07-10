@@ -28,7 +28,7 @@ in {
 
       gaps = {
         inner = 12;
-        outer = 12;
+        outer = 6;
       };
 
       bars = [{
@@ -50,6 +50,10 @@ in {
           text        = colors.foreground;
           indicator   = colors.critical_background;
         };
+      };
+
+      window = {
+        border = 2;
       };
     };
   };
