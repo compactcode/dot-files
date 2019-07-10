@@ -49,8 +49,10 @@ in {
     name = "modern"
 
     [theme.overrides]
-    idle_bg = "${colors.background}"
-    idle_fg = "${colors.foreground}"
+    idle_bg     = "${colors.background}"
+    idle_fg     = "${colors.foreground}"
+    critical_bg = "${colors.critical_background}"
+    critical_fg = "${colors.critical_foreground}"
 
     [icons]
     name = "awesome"
