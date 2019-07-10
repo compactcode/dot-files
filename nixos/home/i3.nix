@@ -44,11 +44,21 @@ in {
 
       colors = {
         focused = {
-          border      = colors.border;
-          childBorder = colors.border;
           background  = colors.background;
           text        = colors.foreground;
-          indicator   = colors.critical_background;
+
+          border      = colors.foreground;
+          childBorder = colors.foreground;
+          indicator   = colors.foreground;
+        };
+
+        unfocused = {
+          background  = colors.background;
+          text        = colors.foreground;
+
+          border      = colors.border;
+          childBorder = colors.border;
+          indicator   = colors.border;
         };
       };
 
