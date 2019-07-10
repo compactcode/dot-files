@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
-{
+let 
+  theme = import ./home/theme.nix;
+  wallpaperSmall = pkgs.copyPathToStore ./art/wallpaper-1280x720.jpg;
+  wallpaperLarge = pkgs.copyPathToStore ./art/wallpaper-3480x2160.jpg;
+
+in {
   system.stateVersion = "19.03";
 
   imports =
@@ -60,14 +65,31 @@
 
     desktopManager = {
       default = "none";
+
       xterm = {
         enable = false;
+      };
+
+      wallpaper = {
+        mode = "fill";
       };
     };
 
     displayManager.lightdm.greeters.mini = {
       enable = true;
       user   = "shandogs";
+      extraConfig = ''
+        [greeter]
+        show-password-label = false
+
+        [greeter-theme]
+        background-image = "${wallpaperSmall}"
+        background-color = "${theme.black}"
+        window-color     = "${theme.darker}"
+        border-color     = "${theme.darkest}"
+        text-color       = "${theme.lightest}"
+        error-color      = "${theme.warning}"
+      '';
     };
 
     windowManager = {
@@ -110,6 +132,6 @@
       ./home/zsh.nix
     ];
 
-    home.file.".background-image".source = "${pkgs.nixos-artwork.wallpapers.simple-dark-gray-bottom}/share/artwork/gnome/nix-wallpaper-simple-dark-gray_bottom.png";
+    home.file.".background-image".source = wallpaperLarge;
   };
 }

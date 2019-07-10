@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-let colors = import ./colors.nix;
+let theme = import ./theme.nix;
 
 in {
   xsession.windowManager.i3 = {
@@ -38,27 +38,27 @@ in {
           "monospace 10"
         ];
         colors = {
-          background = colors.background;
+          background = theme.darkest;
         };
       }];
 
       colors = {
         focused = {
-          background  = colors.background;
-          text        = colors.foreground;
+          background  = theme.dark;
+          text        = theme.lightest;
 
-          border      = colors.foreground;
-          childBorder = colors.foreground;
-          indicator   = colors.foreground;
+          border      = theme.darker;
+          childBorder = theme.darker;
+          indicator   = theme.darker;
         };
 
         unfocused = {
-          background  = colors.background;
-          text        = colors.foreground;
+          background  = theme.dark;
+          text        = theme.lightest;
 
-          border      = colors.border;
-          childBorder = colors.border;
-          indicator   = colors.border;
+          border      = theme.darkest;
+          childBorder = theme.darkest;
+          indicator   = theme.darkest;
         };
       };
 
@@ -73,12 +73,12 @@ in {
     name = "modern"
 
     [theme.overrides]
-    idle_bg     = "${colors.background}"
-    idle_fg     = "${colors.foreground}"
-    info_bg     = "${colors.info_background}"
-    info_fg     = "${colors.info_foreground}"
-    critical_bg = "${colors.critical_background}"
-    critical_fg = "${colors.critical_foreground}"
+    idle_bg     = "${theme.darkest}"
+    idle_fg     = "${theme.light}"
+    info_bg     = "${theme.info}"
+    info_fg     = "${theme.darkest}"
+    critical_bg = "${theme.warning}"
+    critical_fg = "${theme.darkest}"
 
     [icons]
     name = "awesome"
