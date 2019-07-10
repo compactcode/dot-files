@@ -51,6 +51,8 @@ in {
     [theme.overrides]
     idle_bg     = "${colors.background}"
     idle_fg     = "${colors.foreground}"
+    info_bg     = "${colors.info_background}"
+    info_fg     = "${colors.info_foreground}"
     critical_bg = "${colors.critical_background}"
     critical_fg = "${colors.critical_foreground}"
 
