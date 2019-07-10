@@ -75,21 +75,25 @@ in {
       };
     };
 
-    displayManager.lightdm.greeters.mini = {
+    displayManager.lightdm ={
       enable = true;
-      user   = "shandogs";
-      extraConfig = ''
-        [greeter]
-        show-password-label = false
 
-        [greeter-theme]
-        background-image = "${wallpaperSmall}"
-        background-color = "${theme.black}"
-        window-color     = "${theme.darker}"
-        border-color     = "${theme.darkest}"
-        text-color       = "${theme.lightest}"
-        error-color      = "${theme.warning}"
-      '';
+      greeters.mini = {
+        enable = true;
+        user   = "shandogs";
+        extraConfig = ''
+          [greeter]
+          show-password-label = false
+
+          [greeter-theme]
+          background-image = "${wallpaperSmall}"
+          background-color = "${theme.black}"
+          window-color     = "${theme.darker}"
+          border-color     = "${theme.darkest}"
+          text-color       = "${theme.lightest}"
+          error-color      = "${theme.warning}"
+        '';
+      };
     };
 
     windowManager = {
@@ -103,6 +107,15 @@ in {
         ];
       };
     };
+
+  };
+
+  services.compton = {
+    enable    = true;
+    fade      = true;
+    fadeDelta = 5;
+    activeOpacity   = "0.9";
+    inactiveOpacity = "0.8";
   };
 
   users = {
