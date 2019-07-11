@@ -2,7 +2,7 @@
 
 let 
   theme = import ./home/theme.nix;
-  wallpaperLarge = pkgs.copyPathToStore ./art/wallpaper-3480x2160.jpg;
+  wallpaperLarge = pkgs.copyPathToStore ./art/wallpaper-coffee-3840x2560.jpg;
 
 in {
   system.stateVersion = "19.03";
