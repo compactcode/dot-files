@@ -2,7 +2,6 @@
 
 let 
   theme = import ./home/theme.nix;
-  wallpaperSmall = pkgs.copyPathToStore ./art/wallpaper-1280x720.jpg;
   wallpaperLarge = pkgs.copyPathToStore ./art/wallpaper-3480x2160.jpg;
 
 in {
@@ -86,7 +85,7 @@ in {
           show-password-label = false
 
           [greeter-theme]
-          background-image = "${wallpaperSmall}"
+          background-image = ""
           background-color = "${theme.black}"
           window-color     = "${theme.darker}"
           border-color     = "${theme.darkest}"
