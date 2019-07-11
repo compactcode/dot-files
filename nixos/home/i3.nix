@@ -9,7 +9,7 @@ in {
     config = {
       keybindings = {
         # Default terminal application.
-        "Mod1+Return" = "exec alacritty";
+        "Mod1+Return" = "exec --no-startup-id alacritty";
 
         "Mod1+1" = "workspace 1";
         "Mod1+2" = "workspace 2";
