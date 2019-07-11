@@ -11,6 +11,10 @@ in {
         # Default terminal application.
         "Mod1+Return" = "exec alacritty";
 
+        "Mod1+1" = "workspace 1";
+        "Mod1+2" = "workspace 2";
+        "Mod1+3" = "workspace 3";
+
         # Default launcher.
         "Mod1+d" = "exec rofi -show run -lines 10";
 
@@ -39,6 +43,12 @@ in {
         ];
         colors = {
           background = theme.darkest;
+
+          focusedWorkspace = {
+            background  = theme.darkest;
+            text        = theme.light;
+            border      = theme.light;
+          };
         };
       }];
 
