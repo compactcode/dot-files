@@ -110,11 +110,12 @@ in {
   };
 
   services.compton = {
-    enable    = true;
-    fade      = true;
+    enable = true;
+    fade = true;
+    shadow = true;
     fadeDelta = 5;
-    activeOpacity   = "0.9";
-    inactiveOpacity = "0.8";
+    activeOpacity = "0.95";
+    inactiveOpacity = "0.85";
   };
 
   users = {
