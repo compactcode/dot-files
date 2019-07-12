@@ -35,6 +35,7 @@
       ga   = "${pkgs.git}/bin/git add";
       gars = "${pkgs.git}/bin/git add . && git reset --hard";
       gc   = "${pkgs.git}/bin/git commit";
+      gcm  = "${pkgs.git}/bin/git commit -m";
       gca  = "${pkgs.git}/bin/git commit --amend";
       gcp  = "${pkgs.git}/bin/git cherry-pick";
       gco  = "${pkgs.git}/bin/git checkout";
@@ -42,6 +43,7 @@
       glr  = "${pkgs.git}/bin/git pull --rebase";
       glg  = "${pkgs.git}/bin/git log --stat";
       grh  = "${pkgs.git}/bin/git reset HEAD";
+      grm  = "${pkgs.git}/bin/git rm";
       gs   = "${pkgs.git}/bin/git status";
       l    = "${pkgs.exa}/bin/exa -la";
       b    = "${pkgs.bat}/bin/bat";
