@@ -46,6 +46,7 @@
       grm  = "${pkgs.git}/bin/git rm";
       gs   = "${pkgs.git}/bin/git status";
       l    = "${pkgs.exa}/bin/exa -la";
+      lt   = "${pkgs.exa}/bin/exa -l --tree";
       b    = "${pkgs.bat}/bin/bat";
       md   = "mkdir -p";
       v    = "vim";
