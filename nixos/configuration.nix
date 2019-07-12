@@ -2,7 +2,6 @@
 
 let 
   theme = import ./home/theme.nix;
-  wallpaperLarge = pkgs.copyPathToStore ./art/wallpaper-coffee-3840x2560.jpg;
 
 in {
   system.stateVersion = "19.03";
@@ -148,6 +147,6 @@ in {
       ./home/zsh.nix
     ];
 
-    home.file.".background-image".source = wallpaperLarge;
+    home.file.".background-image".source = pkgs.copyPathToStore ./art/wallpaper-coffee-3840x2560.jpg;
   };
 }
