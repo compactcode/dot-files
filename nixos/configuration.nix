@@ -112,10 +112,13 @@ in {
   services.compton = {
     enable = true;
     fade = true;
-    shadow = true;
     fadeDelta = 5;
+    shadow = true;
     activeOpacity = "0.95";
     inactiveOpacity = "0.85";
+    opacityRules = [
+      "99:class_g = 'Firefox'"
+    ];
   };
 
   users = {
