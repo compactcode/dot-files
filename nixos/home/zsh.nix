@@ -22,12 +22,12 @@
       zstyle ':prezto:module:prompt' theme 'pure'
 
       source ${pkgs.zsh-prezto}/init.zsh
-
     '';
 
     sessionVariables = {
-      SKIM_DEFAULT_COMMAND = "${pkgs.ripgrep}/bin/rg --files --hidden | grep -v '\.git'";
+      SKIM_DEFAULT_COMMAND = "rg --files --hidden | grep -v '\.git'";
       SKIM_DEFAULT_OPTIONS = "--reverse --height 40%";
+      EDITOR               = "vim";
     };
 
     shellAliases = {
