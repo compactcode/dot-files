@@ -92,6 +92,8 @@ in {
     };
 
     windowManager = {
+      default = "i3";
+
       i3 = {
         enable = true;
 
