@@ -20,12 +20,12 @@ mkfs.fat -F 32 -n boot /dev/sda1
 mkfs.ext4 -L nixos /dev/sda2
 
 # Wait for disk labels to be ready.
-sleep 2
+sleep 4
 
 # Mount the primary & boot partitions.
 mount /dev/disk/by-label/nixos /mnt
 mkdir /mnt/boot
 mount /dev/disk/by-label/boot  /mnt/boot
 
-# Prepare a directory to upload or nix configuration 
+# Prepare a directory to upload our nix configuration.
 mkdir -p /mnt/etc/nixos
