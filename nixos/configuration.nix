@@ -80,9 +80,6 @@ in {
         enable = true;
         user   = "shandogs";
         extraConfig = ''
-          [greeter]
-          show-password-label = false
-
           [greeter-theme]
           background-image = ""
           background-color = "${theme.black}"
