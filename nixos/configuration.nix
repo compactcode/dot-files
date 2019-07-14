@@ -30,6 +30,10 @@ in {
 
   time.timeZone = "Australia/Melbourne";
 
+  hardware.pulseaudio = {
+    enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     dash
     firefox
