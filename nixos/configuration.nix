@@ -139,6 +139,7 @@ in {
   home-manager.users.shandogs = { pkgs, ... }: {
     imports = [
       ./home/alacritty.nix
+      ./home/direnv.nix
       ./home/git.nix
       ./home/i3.nix
       ./home/neovim.nix
