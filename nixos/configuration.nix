@@ -137,6 +137,10 @@ in {
   };
 
   home-manager.users.shandogs = { pkgs, ... }: {
+    home.packages = with pkgs; [
+      thunderbird
+    ];
+
     imports = [
       ./home/alacritty.nix
       ./home/direnv.nix
