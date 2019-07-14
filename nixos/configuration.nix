@@ -137,7 +137,12 @@ in {
   };
 
   home-manager.users.shandogs = { pkgs, ... }: {
+    nixpkgs.config = {
+      allowUnfree = true;
+    };
+
     home.packages = with pkgs; [
+      slack
       thunderbird
     ];
 
