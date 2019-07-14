@@ -145,6 +145,7 @@ in {
         vim-nix
         vim-surround
         vim-repeat
+        vim-gitgutter
       ];
     };
   };
