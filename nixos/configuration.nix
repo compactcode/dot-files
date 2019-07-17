@@ -37,6 +37,7 @@ in {
   environment.systemPackages = with pkgs; [
     dash
     firefox
+    fd
     feh
     fzy
     git
