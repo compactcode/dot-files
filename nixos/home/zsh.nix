@@ -25,9 +25,7 @@
     '';
 
     sessionVariables = {
-      SKIM_DEFAULT_COMMAND = "rg --files --hidden | grep -v '\.git'";
-      SKIM_DEFAULT_OPTIONS = "--reverse --height 40%";
-      EDITOR               = "vim";
+      EDITOR = "vim";
     };
 
     shellAliases = {
