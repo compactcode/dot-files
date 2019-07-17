@@ -1,8 +1,7 @@
 { pkgs, ... }:
 
-
 let customVimPlugins = {
-  nord = pkgs.vimUtils.buildVimPlugin {
+  custom-nord = pkgs.vimUtils.buildVimPlugin {
     name = "nord";
     src = pkgs.fetchFromGitHub {
       owner = "arcticicestudio";
@@ -11,7 +10,7 @@ let customVimPlugins = {
       sha256 = "1s3jd8g7xnqn9pbg4s127ai9qm7zb6nvrmww842iz8qs3nmvf60v";
     };
   };
-  picker = pkgs.vimUtils.buildVimPlugin {
+  custom-picker = pkgs.vimUtils.buildVimPlugin {
     name = "vim-picker";
     src = pkgs.fetchFromGitHub {
       owner = "srstevenson";
@@ -130,21 +129,51 @@ in {
         " (plugin) picker
         " ************************************************************
 
-        " Fuzzy find files.
+        " Fuzzy find files
         nmap <unique> <leader>t <Plug>(PickerEdit)
-        " Fuzzy find buffers.
+        " Fuzzy find buffers
         nmap <unique> <leader>b <Plug>(PickerBuffer)
+
+
+        " ************************************************************
+        " (plugin) deoplete
+        " ************************************************************
+
+        " Auto start deoplete
+        let g:deoplete#enable_at_startup = 1
+
+        " Expand an autocomplete option or jump within the current expansion
+        imap <C-k> <Plug>(neosnippet_expand_or_jump)
+        smap <C-k> <Plug>(neosnippet_expand_or_jump)
+        xmap <C-k> <Plug>(neosnippet_expand_target)
       '';
 
       plug.plugins = with pkgs.vimPlugins // customVimPlugins; [
-        nord
-        picker
+        # Theme
+        custom-nord
 
+        # Fuzzy finder
+        custom-picker
+
+        # Autocompletion
+        deoplete-nvim
+
+        # Snippets
+        neosnippet-vim
+        neosnippet-snippets
+
+        # Status bar
         vim-airline
         vim-airline-themes
+
+        # Languages
         vim-nix
+
+        # Shortcuts for working with parentheses
         vim-surround
         vim-repeat
+
+        # Display git diff in the gutter
         vim-gitgutter
       ];
     };
