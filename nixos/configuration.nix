@@ -39,7 +39,6 @@ in {
     firefox
     fd
     feh
-    fzy
     git
     ripgrep
     zsh

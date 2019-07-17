@@ -10,13 +10,13 @@ let customVimPlugins = {
       sha256 = "1s3jd8g7xnqn9pbg4s127ai9qm7zb6nvrmww842iz8qs3nmvf60v";
     };
   };
-  custom-picker = pkgs.vimUtils.buildVimPlugin {
-    name = "vim-picker";
+  custom-skim = pkgs.vimUtils.buildVimPlugin {
+    name = "skim";
     src = pkgs.fetchFromGitHub {
-      owner = "srstevenson";
-      repo = "vim-picker";
-      rev = "786cc73492510062adcff47e7b92a09ccbf2a471";
-      sha256 = "176rzis3rmn0vkl1swc1yxdy6paivfp08dkivlp2c1ffwqw640z2";
+      owner = "lotabout";
+      repo = "skim";
+      rev = "711eab5c0031cd31a0750a7ab054a7492c33c8cc";
+      sha256 = "1gj98pf0wq0lx56aaw981kcmq7a769k0lw5cjp3bancgkssk6wmz";
     };
   };
 };
@@ -126,13 +126,11 @@ in {
 
 
         " ************************************************************
-        " (plugin) picker
+        " (plugin) skim
         " ************************************************************
 
         " Fuzzy find files
-        nmap <unique> <leader>t <Plug>(PickerEdit)
-        " Fuzzy find buffers
-        nmap <unique> <leader>b <Plug>(PickerBuffer)
+        nnoremap <leader>t :SK<CR>
 
 
         " ************************************************************
@@ -153,7 +151,7 @@ in {
         custom-nord
 
         # Fuzzy finder
-        custom-picker
+        custom-skim
 
         # Autocompletion
         deoplete-nvim
