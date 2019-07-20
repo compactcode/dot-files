@@ -35,15 +35,14 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
-    bat
-    dash
-    exa
-    fd
-    feh
+    bat     # cat replacement
+    exa     # ls replacement
+    fd      # find replacement
+    feh     # required to set desktop background
     firefox
     git
-    ripgrep
-    zsh
+    ripgrep # grep replacement
+    zsh     # bash replacement
   ];
 
   fonts = {

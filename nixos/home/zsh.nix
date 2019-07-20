@@ -26,15 +26,10 @@
     };
 
     shellAliases = {
-      # ls replacement
       l  = "${pkgs.exa}/bin/exa -la";
-      # ls tree view
       lt = "${pkgs.exa}/bin/exa -l --tree";
-      # cat replacement
       b  = "${pkgs.bat}/bin/bat";
-      # shortcut
       md = "mkdir -p";
-      # Shortcut
       v  = "vim";
     };
   };
