@@ -35,10 +35,12 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
+    bat
     dash
-    firefox
+    exa
     fd
     feh
+    firefox
     git
     ripgrep
     zsh
