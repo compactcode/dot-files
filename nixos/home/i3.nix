@@ -49,6 +49,12 @@ in {
             text        = theme.light;
             border      = theme.light;
           };
+
+          inactiveWorkspace = {
+            background  = theme.darkest;
+            text        = theme.light;
+            border      = theme.darkest;
+          };
         };
       }];
 
