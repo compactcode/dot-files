@@ -14,7 +14,6 @@
       zstyle ':prezto:load' pmodule \
         'environment' \
         'editor' \
-        'fasd' \
         'directory' \
         'history' \
         'prompt'
