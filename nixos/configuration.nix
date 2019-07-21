@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, callPackage, pkgs, ... }:
 
 let 
   theme = import ./home/theme.nix;
@@ -141,8 +141,14 @@ in {
   };
 
   home-manager.users.shandogs = { pkgs, ... }: {
-    nixpkgs.config = {
-      allowUnfree = true;
+    nixpkgs = {
+      config = {
+        allowUnfree = true;
+      };
+
+      overlays = [
+        (import ./pkgs/default.nix)
+      ];
     };
 
     home.packages = with pkgs; [

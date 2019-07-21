@@ -132,6 +132,19 @@ in {
         " Fuzzy find files
         nnoremap <leader>t :SK<CR>
 
+        " ************************************************************
+        " (plugin) skim + fre
+        " ************************************************************
+
+        " Record edited files
+        autocmd BufNewFile,BufRead * ! fre_store_edited <amatch>
+
+        " Fuzzy find recently edited files
+        nnoremap <silent> <leader>f :call skim#run(skim#wrap('SKIM', {
+          \ 'source':  'zsh -c fre_list_edited',
+          \ 'down':    '40%',
+          \ 'options': '-no-sort --tiebreak=index'
+          \ }))<CR>
 
         " ************************************************************
         " (plugin) deoplete
