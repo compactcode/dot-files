@@ -158,6 +158,7 @@ in {
 
     imports = [
       ./home/alacritty.nix
+      ./home/bin.nix
       ./home/direnv.nix
       ./home/fre.nix
       ./home/git.nix
