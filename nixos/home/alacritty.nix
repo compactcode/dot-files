@@ -5,7 +5,7 @@
     alacritty
   ];
 
-  home.file.".config/alacritty/alacritty.yml".text = ''
+  xdg.configFile."alacritty/alacritty.yml".text = ''
     env:
       TERM: xterm-256color
 

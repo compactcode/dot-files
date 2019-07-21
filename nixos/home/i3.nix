@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let theme = import ./theme.nix;
 
@@ -37,7 +37,7 @@ in {
 
       bars = [{
         position = "top";
-        statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3/status.toml";
+        statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${config.xdg.configHome}/i3/status.toml";
         fonts = [
           "monospace 10"
         ];
@@ -84,7 +84,7 @@ in {
     };
   };
 
-  home.file.".config/i3/status.toml".text = ''
+  xdg.configFile."i3/status.toml".text = ''
     [theme]
     name = "modern"
 
