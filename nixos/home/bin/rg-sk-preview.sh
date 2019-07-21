@@ -57,4 +57,4 @@ FIRST=$(($CENTER-$LINES/3))
 FIRST=$(($FIRST < 1 ? 1 : $FIRST))
 LAST=$((${FIRST}+${LINES}-1))
 
-bat --color always --theme base16 -r $FIRST:$LAST $FILE
+bat --color always -r $FIRST:$LAST $FILE

@@ -158,6 +158,7 @@ in {
 
     imports = [
       ./home/alacritty.nix
+      ./home/bat.nix
       ./home/bin.nix
       ./home/direnv.nix
       ./home/fre.nix
