@@ -26,7 +26,7 @@
       - { key: Minus, action: DecreaseFontSize, mods: Super }
 
     scrolling:
-      history: 10000
+      history: 5000
       multiplier: 3
       faux_multiplier: 3
       auto_scroll: false
