@@ -25,6 +25,12 @@
       - { key: Add,   action: IncreaseFontSize, mods: Super }
       - { key: Minus, action: DecreaseFontSize, mods: Super }
 
+    scrolling:
+      history: 10000
+      multiplier: 3
+      faux_multiplier: 3
+      auto_scroll: false
+
     # Nord Theme
     colors:
       primary:
