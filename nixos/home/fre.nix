@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   home.packages = with pkgs; [
     fre
   ];
 
-  # List the recently edited files.
+  # List recently edited files.
   xdg.dataFile."bin/recently-edited-list" = {
     executable = true;
     text = ''
@@ -21,50 +21,62 @@
     text = ''
       #!/bin/sh
 
-      if [[ -n $1 ]]
-      then
+      if [ -n "$1" ]; then
         ${pkgs.fre}/bin/fre --add $1 --store_name edited
       fi
     '';
   };
 
-  programs.zsh.initExtra = ''
-    fre_store_pwd() {
-      ${pkgs.fre}/bin/fre --add "$(pwd)" --store_name dirs
-    }
+  # List frequently used directories.
+  xdg.dataFile."bin/frequent-directory-list" = {
+    executable = true;
+    text = ''
+      #!/bin/sh
 
-    fre_list_dirs() {
       ${pkgs.fre}/bin/fre --sorted --store_name dirs
-    }
+    '';
+  };
 
+  # Add a directory to the list of frequently used directories.
+  xdg.dataFile."bin/frequent-directory-add" = {
+    executable = true;
+    text = ''
+      #!/bin/sh
+
+      if [ -n "$1" ]; then
+        ${pkgs.fre}/bin/fre --add $1 --store_name dirs
+      fi
+    '';
+  };
+
+  programs.zsh.initExtra = ''
     # Enable chpwd function hooks.
     typeset -ga chpwd_functions
 
+    _fre_chpwd_function() {
+      ${config.xdg.dataHome}/bin/frequent-directory-add "$(pwd)"
+    }
+
     # Enable chpwd storage hook.
-    chpwd_functions+=fre_store_pwd
+    chpwd_functions+=_fre_chpwd_function
 
-    fre_jump() {
-      local search_pattern selected_directory
-
-      search_pattern=$1
-
-      if [[ -n $search_pattern ]]
-      then
+    # Navigate to a recently used directory.
+    jump() {
+      if [ -n "$1" ]; then
         # If an argument was provided then autojump.
-        selected_directory="$(fre_list_dirs | grep $search_pattern | head -1)"
+        SELECTED_DIRECTORY="$(${config.xdg.dataHome}/bin/frequent-directory-list | grep $1 | head -1)"
       else
         # If no argument was provided then show a selection menu.
-        selected_directory="$(fre_list_dirs | ${pkgs.skim}/bin/sk --no-sort)"
+        SELECTED_DIRECTORY="$(${config.xdg.dataHome}/bin/frequent-directory-list | ${pkgs.skim}/bin/sk --no-sort)"
       fi
 
-      if [[ -n $selected_directory ]]
-      then
-        cd $selected_directory
+      if [ -n "$SELECTED_DIRECTORY" ]; then
+        cd $SELECTED_DIRECTORY
       fi
     }
   '';
 
   programs.zsh.shellAliases = {
-    j = "fre_jump";
+    j = "jump";
   };
 }
