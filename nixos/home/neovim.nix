@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let customVimPlugins = {
   custom-nord = pkgs.vimUtils.buildVimPlugin {
@@ -138,11 +138,11 @@ in {
         " ************************************************************
 
         " Record edited files
-        autocmd BufNewFile,BufRead * ! fre_store_edited <amatch>
+        autocmd BufNewFile,BufRead * ! ${config.xdg.dataHome}/bin/recently-edited-add <amatch>
 
         " Fuzzy find recently edited files
         nnoremap <silent> <leader>f :call skim#run(skim#wrap('SKIM', {
-          \ 'source':  'zsh -c fre_list_edited',
+          \ 'source':  '${config.xdg.dataHome}/bin/recently-edited-list',
           \ 'down':    '40%',
           \ 'options': '-no-sort --tiebreak=index'
           \ }))<CR>
@@ -172,7 +172,7 @@ in {
         let s:sk_rg_source = 'rg --column --no-heading --smart-case --color always %s'
 
         " Configure skim to handle color and show a preview of results
-        let s:sk_rg_options = '--ansi --preview "~/.local/share/bin/rg-sk-preview.sh {}"'
+        let s:sk_rg_options = '--ansi --preview "${config.xdg.dataHome}/bin/rg-sk-preview.sh {}"'
 
         " Configure skim to use our custom function when a result is selected.
         let s:sk_rg_sink = function('s:OpenRgResult')

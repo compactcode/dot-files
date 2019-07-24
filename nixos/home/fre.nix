@@ -5,21 +5,28 @@
     fre
   ];
 
-  # We use .zshenv so that the commands are available in non interactive shells (vim).
-  home.file.".zshenv".text = ''
-    # Helper command to record when a file is edited.
-    fre_store_edited() {
+  # List the recently edited files.
+  xdg.dataFile."bin/recently-edited-list" = {
+    executable = true;
+    text = ''
+      #!/bin/sh
+
+      ${pkgs.fre}/bin/fre --sorted --store_name edited --sort_method recent
+    '';
+  };
+
+  # Add a file to the list of recently edited files.
+  xdg.dataFile."bin/recently-edited-add" = {
+    executable = true;
+    text = ''
+      #!/bin/sh
+
       if [[ -n $1 ]]
       then
         ${pkgs.fre}/bin/fre --add $1 --store_name edited
       fi
-    }
-
-    # Helper to list edited files.
-    fre_list_edited() {
-      ${pkgs.fre}/bin/fre --sorted --store_name edited
-    }
-  '';
+    '';
+  };
 
   programs.zsh.initExtra = ''
     fre_store_pwd() {
