@@ -97,7 +97,7 @@ in {
         nnoremap Y y$
 
         " Quickly insert whitespace in normal mode
-        nnoremap <Space> i<Space><Esc>l
+        nnoremap <space> i<space><Esc>l
 
         " Quickly save all files and re run the last command
         nnoremap ! :wa<CR>:!!<CR>
@@ -132,6 +132,7 @@ in {
         " Fuzzy find files
         nnoremap <leader>t :SK<CR>
 
+
         " ************************************************************
         " (plugin) skim + fre
         " ************************************************************
@@ -145,6 +146,47 @@ in {
           \ 'down':    '40%',
           \ 'options': '-no-sort --tiebreak=index'
           \ }))<CR>
+
+
+        " ************************************************************
+        " (plugin) skim + rg
+        " ************************************************************
+
+        " A function to edit a file from a rg search result.
+        "
+        " e.g: rg --column --no-heading bundler
+        "
+        " => config/boot.rb:3:10:require 'bundler/setup' # Set up gems listed in the Gemfile.
+        function! s:OpenRgResult(selected_line)
+          let file   = split(a:selected_line, ":")[0]
+          let row    = split(a:selected_line, ":")[1]
+          let column = split(a:selected_line, ":")[2]
+
+          execute 'edit' . ' ' . file
+          execute row
+          normal! column . '|'
+          normal! zz
+        endfunction
+
+        " Configure ripgrep to output single line results in color
+        let s:sk_rg_source = 'rg --column --no-heading --smart-case --color always %s'
+
+        " Configure skim to handle color and show a preview of results
+        let s:sk_rg_options = '--ansi --preview "~/.local/share/bin/rg-sk-preview.sh {}"'
+
+        " Configure skim to use our custom function when a result is selected.
+        let s:sk_rg_sink = function('s:OpenRgResult')
+
+        " Find current word in project
+        command! -nargs=1 Rg call skim#run(skim#wrap('SKIM', {
+          \ 'source':  printf(s:sk_rg_source, <f-args>),
+          \ 'down':    '40%',
+          \ 'options': s:sk_rg_options,
+          \ 'sink':    s:sk_rg_sink
+          \ }))
+
+        nnoremap <leader>s :Rg<space>
+
 
         " ************************************************************
         " (plugin) deoplete

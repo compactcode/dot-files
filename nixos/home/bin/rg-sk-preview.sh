@@ -6,7 +6,7 @@
 #
 # e.g: rg --column --no-heading bundler
 #
-# => config/boot.rb:3:10:require 'bundler/setup' # Set up gems listed in the Gemfile.
+# => config/boot.rb:3:10
 
 REVERSE="\x1b[7m"
 RESET="\x1b[m"
@@ -28,11 +28,6 @@ CENTER=${INPUT[1]}
 if [ ! -r "$FILE" ]; then
   echo "File not found ${FILE}"
   exit 1
-fi
-
-if [[ "$(file --mime "$FILE")" =~ binary ]]; then
-  echo "$1 is a binary file"
-  exit 0
 fi
 
 if [ -z "$CENTER" ]; then
@@ -57,4 +52,4 @@ FIRST=$(($CENTER-$LINES/3))
 FIRST=$(($FIRST < 1 ? 1 : $FIRST))
 LAST=$((${FIRST}+${LINES}-1))
 
-bat --color always -r $FIRST:$LAST $FILE
+awk "NR >= $FIRST && NR <= $LAST {if (NR == $CENTER) printf(\"$REVERSE%5d %s\n$RESET\", NR, \$0); else printf(\"%5d %s\n\", NR, \$0)}" $FILE
