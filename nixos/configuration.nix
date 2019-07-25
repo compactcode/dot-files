@@ -1,6 +1,6 @@
-{ config, callPackage, pkgs, ... }:
+{ pkgs, ... }:
 
-let 
+let
   theme = import ./home/theme.nix;
 
 in {
@@ -10,12 +10,14 @@ in {
     [
       # NOTE: Run `nixos-generate-config` to generate.
       /etc/nixos/hardware-configuration.nix
-      # NOTE: Requires git to be installed before `nixos-install` will work.
-      "${builtins.fetchGit {
-        ref = "release-19.03";
-        url = "https://github.com/rycee/home-manager";
-      }}/nixos"
+      <home-manager/nixos>
     ];
+
+  nixpkgs = {
+    overlays = [
+      (import ./pkgs/default.nix)
+    ];
+  };
 
   boot.loader = {
     efi = {
@@ -150,11 +152,6 @@ in {
         (import ./pkgs/default.nix)
       ];
     };
-
-    home.packages = with pkgs; [
-      slack
-      thunderbird
-    ];
 
     imports = [
       ./home/alacritty.nix

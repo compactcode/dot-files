@@ -2,6 +2,6 @@
 
 {
   xdg.configFile."bat/config".text = ''
-    --theme="OneHalfDark"
+    --theme="base16"
   '';
 }
