@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  theme = import ./home/theme.nix;
+  theme = import ./home/themes/base_16_nord.nix;
 
 in {
   system.stateVersion = "19.03";
@@ -89,11 +89,11 @@ in {
         extraConfig = ''
           [greeter-theme]
           background-image = ""
-          background-color = "${theme.black}"
-          window-color     = "${theme.darker}"
-          border-color     = "${theme.darkest}"
-          text-color       = "${theme.lightest}"
-          error-color      = "${theme.warning}"
+          background-color = "${theme.base00}"
+          window-color     = "${theme.base03}"
+          border-color     = "${theme.base01}"
+          text-color       = "${theme.base05}"
+          error-color      = "${theme.base0C}"
         '';
       };
     };
@@ -155,13 +155,13 @@ in {
 
     imports = [
       ./home/alacritty.nix
-      ./home/bat.nix
       ./home/bin.nix
       ./home/direnv.nix
       ./home/fre.nix
       ./home/git.nix
       ./home/i3.nix
       ./home/neovim.nix
+      ./home/programs/bat.nix
       ./home/rofi.nix
       ./home/skim.nix
       ./home/zsh.nix

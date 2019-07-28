@@ -1,6 +1,6 @@
 { pkgs, config, ... }:
 
-let theme = import ./theme.nix;
+let theme = import ./themes/base_16_nord.nix;
 
 in {
   xsession.windowManager.i3 = {
@@ -37,49 +37,96 @@ in {
 
       bars = [{
         position = "top";
+
         statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${config.xdg.configHome}/i3/status.toml";
+
         fonts = [
           "monospace 10"
         ];
+
         colors = {
-          background = theme.darkest;
+          background = theme.base00;
+          separator  = theme.base01;
+          statusline = theme.base04;
 
           focusedWorkspace = {
-            background  = theme.darkest;
-            text        = theme.light;
-            border      = theme.light;
+            background  = theme.base03;
+            text        = theme.base0D;
+            border      = theme.base03;
+          };
+
+          activeWorkspace = {
+            background  = theme.base03;
+            text        = theme.base0D;
+            border      = theme.base03;
           };
 
           inactiveWorkspace = {
-            background  = theme.darkest;
-            text        = theme.light;
-            border      = theme.darkest;
+            background  = theme.base01;
+            text        = theme.base05;
+            border      = theme.base03;
+          };
+
+          urgentWorkspace = {
+            background  = theme.base08;
+            text        = theme.base00;
+            border      = theme.base08;
+          };
+
+          bindingMode = {
+            background  = theme.base0A;
+            text        = theme.base00;
+            border      = theme.base00;
           };
         };
       }];
 
       colors = {
-        focused = {
-          background  = theme.dark;
-          text        = theme.lightest;
+        background  = theme.base07;
 
-          border      = theme.darker;
-          childBorder = theme.darker;
-          indicator   = theme.darker;
+        focused = {
+          border      = theme.base03;
+          background  = theme.base0D;
+          text        = theme.base00;
+          indicator   = theme.base0D;
+          childBorder = theme.base03;
+        };
+
+        focusedInactive = {
+          border      = theme.base01;
+          background  = theme.base01;
+          text        = theme.base05;
+          indicator   = theme.base03;
+          childBorder = theme.base01;
         };
 
         unfocused = {
-          background  = theme.dark;
-          text        = theme.lightest;
+          border      = theme.base01;
+          background  = theme.base00;
+          text        = theme.base05;
+          indicator   = theme.base01;
+          childBorder = theme.base01;
+        };
 
-          border      = theme.darkest;
-          childBorder = theme.darkest;
-          indicator   = theme.darkest;
+        urgent = {
+          border      = theme.base08;
+          background  = theme.base08;
+          text        = theme.base00;
+          indicator   = theme.base08;
+          childBorder = theme.base08;
+        };
+
+        placeholder = {
+          border      = theme.base00;
+          background  = theme.base00;
+          text        = theme.base05;
+          indicator   = theme.base00;
+          childBorder = theme.base00;
         };
       };
 
       window = {
-        border = 2;
+        border = 1;
       };
     };
   };
@@ -89,12 +136,16 @@ in {
     name = "modern"
 
     [theme.overrides]
-    idle_bg     = "${theme.darkest}"
-    idle_fg     = "${theme.light}"
-    info_bg     = "${theme.info}"
-    info_fg     = "${theme.darkest}"
-    critical_bg = "${theme.warning}"
-    critical_fg = "${theme.darkest}"
+    idle_bg     = "${theme.base00}"
+    idle_fg     = "${theme.base05}"
+    good_bg     = "${theme.base00}"
+    good_fg     = "${theme.base05}"
+    info_bg     = "${theme.base00}"
+    info_fg     = "${theme.base05}"
+    warning_bg  = "${theme.base0A}"
+    warning_fg  = "${theme.base00}"
+    critical_bg = "${theme.base0C}"
+    critical_fg = "${theme.base00}"
 
     [icons]
     name = "awesome"
