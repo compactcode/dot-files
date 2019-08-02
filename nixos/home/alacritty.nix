@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
-{
+let theme = import ./themes/base_16_nord.nix;
+
+in {
   home.packages = with pkgs; [
     alacritty
   ];
@@ -31,31 +33,33 @@
       faux_multiplier: 3
       auto_scroll: false
 
-    # Nord Theme
     colors:
       primary:
-        background: '0x2E3440'
-        foreground: '0xD8DEE9'
+        background: '0x${theme.base00}'
+        foreground: '0x${theme.base04}'
+
       cursor:
-        text: '0x2E3440'
-        cursor: '0xD8DEE9'
+        text:   '0x${theme.base00}'
+        cursor: '0x${theme.base04}'
+
       normal:
-        black: '0x3B4252'
-        red: '0xBF616A'
-        green: '0xA3BE8C'
-        yellow: '0xEBCB8B'
-        blue: '0x81A1C1'
-        magenta: '0xB48EAD'
-        cyan: '0x88C0D0'
-        white: '0xE5E9F0'
+        black:   '0x${theme.base01}'
+        red:     '0x${theme.base0B}'
+        green:   '0x${theme.base0E}'
+        yellow:  '0x${theme.base0D}'
+        blue:    '0x${theme.base09}'
+        magenta: '0x${theme.base0F}'
+        cyan:    '0x${theme.base08}'
+        white:   '0x${theme.base05}'
+
       bright:
-        black: '0x4C566A'
-        red: '0xBF616A'
-        green: '0xA3BE8C'
-        yellow: '0xEBCB8B'
-        blue: '0x81A1C1'
-        magenta: '0xB48EAD'
-        cyan: '0x8FBCBB'
-        white: '0xECEFF4'
+        black:   '0x${theme.base03}'
+        red:     '0x${theme.base0B}'
+        green:   '0x${theme.base0E}'
+        yellow:  '0x${theme.base0D}'
+        blue:    '0x${theme.base09}'
+        magenta: '0x${theme.base0F}'
+        cyan:    '0x${theme.base07}'
+        white:   '0x${theme.base06}'
   '';
 }

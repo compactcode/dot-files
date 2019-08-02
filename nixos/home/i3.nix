@@ -45,83 +45,83 @@ in {
         ];
 
         colors = {
-          background = theme.base00;
-          separator  = theme.base01;
-          statusline = theme.base04;
+          background = theme.base00-hex;
+          separator  = theme.base01-hex;
+          statusline = theme.base04-hex;
 
           focusedWorkspace = {
-            background  = theme.base03;
-            text        = theme.base0D;
-            border      = theme.base03;
+            background  = theme.base03-hex;
+            text        = theme.base0D-hex;
+            border      = theme.base03-hex;
           };
 
           activeWorkspace = {
-            background  = theme.base03;
-            text        = theme.base0D;
-            border      = theme.base03;
+            background  = theme.base03-hex;
+            text        = theme.base0D-hex;
+            border      = theme.base03-hex;
           };
 
           inactiveWorkspace = {
-            background  = theme.base01;
-            text        = theme.base05;
-            border      = theme.base03;
+            background  = theme.base01-hex;
+            text        = theme.base05-hex;
+            border      = theme.base03-hex;
           };
 
           urgentWorkspace = {
-            background  = theme.base08;
-            text        = theme.base00;
-            border      = theme.base08;
+            background  = theme.base08-hex;
+            text        = theme.base00-hex;
+            border      = theme.base08-hex;
           };
 
           bindingMode = {
-            background  = theme.base0A;
-            text        = theme.base00;
-            border      = theme.base00;
+            background  = theme.base0A-hex;
+            text        = theme.base00-hex;
+            border      = theme.base00-hex;
           };
         };
       }];
 
       colors = {
-        background  = theme.base07;
+        background  = theme.base07-hex;
 
         focused = {
-          border      = theme.base03;
-          background  = theme.base0D;
-          text        = theme.base00;
-          indicator   = theme.base0D;
-          childBorder = theme.base03;
+          border      = theme.base03-hex;
+          background  = theme.base0D-hex;
+          text        = theme.base00-hex;
+          indicator   = theme.base0D-hex;
+          childBorder = theme.base03-hex;
         };
 
         focusedInactive = {
-          border      = theme.base01;
-          background  = theme.base01;
-          text        = theme.base05;
-          indicator   = theme.base03;
-          childBorder = theme.base01;
+          border      = theme.base01-hex;
+          background  = theme.base01-hex;
+          text        = theme.base05-hex;
+          indicator   = theme.base03-hex;
+          childBorder = theme.base01-hex;
         };
 
         unfocused = {
-          border      = theme.base01;
-          background  = theme.base00;
-          text        = theme.base05;
-          indicator   = theme.base01;
-          childBorder = theme.base01;
+          border      = theme.base01-hex;
+          background  = theme.base00-hex;
+          text        = theme.base05-hex;
+          indicator   = theme.base01-hex;
+          childBorder = theme.base01-hex;
         };
 
         urgent = {
-          border      = theme.base08;
-          background  = theme.base08;
-          text        = theme.base00;
-          indicator   = theme.base08;
-          childBorder = theme.base08;
+          border      = theme.base08-hex;
+          background  = theme.base08-hex;
+          text        = theme.base00-hex;
+          indicator   = theme.base08-hex;
+          childBorder = theme.base08-hex;
         };
 
         placeholder = {
-          border      = theme.base00;
-          background  = theme.base00;
-          text        = theme.base05;
-          indicator   = theme.base00;
-          childBorder = theme.base00;
+          border      = theme.base00-hex;
+          background  = theme.base00-hex;
+          text        = theme.base05-hex;
+          indicator   = theme.base00-hex;
+          childBorder = theme.base00-hex;
         };
       };
 
@@ -136,16 +136,16 @@ in {
     name = "modern"
 
     [theme.overrides]
-    idle_bg     = "${theme.base00}"
-    idle_fg     = "${theme.base05}"
-    good_bg     = "${theme.base00}"
-    good_fg     = "${theme.base05}"
-    info_bg     = "${theme.base00}"
-    info_fg     = "${theme.base05}"
-    warning_bg  = "${theme.base0A}"
-    warning_fg  = "${theme.base00}"
-    critical_bg = "${theme.base0C}"
-    critical_fg = "${theme.base00}"
+    idle_bg     = "${theme.base00-hex}"
+    idle_fg     = "${theme.base05-hex}"
+    good_bg     = "${theme.base00-hex}"
+    good_fg     = "${theme.base05-hex}"
+    info_bg     = "${theme.base00-hex}"
+    info_fg     = "${theme.base05-hex}"
+    warning_bg  = "${theme.base0A-hex}"
+    warning_fg  = "${theme.base00-hex}"
+    critical_bg = "${theme.base0C-hex}"
+    critical_fg = "${theme.base00-hex}"
 
     [icons]
     name = "awesome"

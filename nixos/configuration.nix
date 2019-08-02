@@ -89,11 +89,11 @@ in {
         extraConfig = ''
           [greeter-theme]
           background-image = ""
-          background-color = "${theme.base00}"
-          window-color     = "${theme.base03}"
-          border-color     = "${theme.base01}"
-          text-color       = "${theme.base05}"
-          error-color      = "${theme.base0C}"
+          background-color = "${theme.base00-hex}"
+          window-color = "${theme.base03-hex}"
+          border-color = "${theme.base01-hex}"
+          text-color = "${theme.base05-hex}"
+          error-color = "${theme.base0C-hex}"
         '';
       };
     };
