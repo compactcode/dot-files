@@ -1,6 +1,6 @@
 { pkgs, config, ... }:
 
-let theme = import ./themes/base_16_nord.nix;
+let theme = import ./themes/base_16_current.nix;
 
 in {
   xsession.windowManager.i3 = {

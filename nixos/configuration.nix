@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  theme = import ./home/themes/base_16_nord.nix;
+  theme = import ./home/themes/base_16_current.nix;
 
 in {
   system.stateVersion = "19.03";
