@@ -2,10 +2,10 @@
 
 {
   imports = [
-    ../bat.nix
-    ../fre.nix
-    ../neovim.nix
-    ../skim.nix
-    ../zsh.nix
+    ./basic/bat.nix
+    ./basic/fre.nix
+    ./basic/neovim.nix
+    ./basic/skim.nix
+    ./basic/zsh.nix
   ];
 }
