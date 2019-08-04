@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-let theme = import ./themes/base_16_current.nix;
+let theme = import ../../themes/base_16_current.nix;
 
 in {
   home.packages = with pkgs; [

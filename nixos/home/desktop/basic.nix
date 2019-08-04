@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ../alacritty.nix
-    ../i3.nix
-    ../rofi.nix
+    ./basic/alacritty.nix
+    ./basic/i3.nix
+    ./basic/rofi.nix
   ];
 }
