@@ -163,9 +163,8 @@ in {
 
     imports = [
       ./home/terminal/basic.nix
+      ./home/terminal/development.nix
       ./home/alacritty.nix
-      ./home/direnv.nix
-      ./home/git.nix
       ./home/i3.nix
       ./home/rofi.nix
     ];
