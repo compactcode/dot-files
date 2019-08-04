@@ -144,10 +144,6 @@ in {
 
   home-manager.users.shandogs = { pkgs, ... }: {
     nixpkgs = {
-      config = {
-        allowUnfree = true;
-      };
-
       overlays = [
         (import ./pkgs/default.nix)
       ];
