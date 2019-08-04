@@ -164,9 +164,7 @@ in {
     imports = [
       ./home/terminal/basic.nix
       ./home/terminal/development.nix
-      ./home/alacritty.nix
-      ./home/i3.nix
-      ./home/rofi.nix
+      ./home/desktop/basic.nix
     ];
 
     home.file.".background-image".source = pkgs.copyPathToStore ./art/wallpaper-coffee-3840x2560.jpg;
