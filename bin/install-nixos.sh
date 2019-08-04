@@ -2,9 +2,6 @@
 
 set -ex
 
-# Generate the hardware config.
-nixos-generate-config --root /mnt
-
 # Our base channel.
 nix-channel --add https://nixos.org/channels/nixos-19.03 nixos
 
@@ -16,6 +13,9 @@ nix-channel --add https://github.com/rycee/home-manager/archive/release-19.03.ta
 
 # Load the new channels.
 nix-channel --update
+
+# Select the machine to install.
+ln -sf /mnt/etc/nixos/machines/nixvm.nix /mnt/etc/nixos/configuration.nix
 
 # 🚀
 nixos-install

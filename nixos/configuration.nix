@@ -6,12 +6,9 @@ let
 in {
   system.stateVersion = "19.03";
 
-  imports =
-    [
-      # NOTE: Run `nixos-generate-config` to generate.
-      /etc/nixos/hardware-configuration.nix
-      <home-manager/nixos>
-    ];
+  imports = [
+    <home-manager/nixos>
+  ];
 
   nixpkgs = {
     overlays = [
@@ -27,8 +24,6 @@ in {
       enable = true;
     };
   };
-
-  networking.hostName = "nixbox";
 
   time.timeZone = "Australia/Melbourne";
 
@@ -111,7 +106,6 @@ in {
         ];
       };
     };
-
   };
 
   services.compton = {
