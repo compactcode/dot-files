@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../direnv.nix
-    ../git.nix
+    ./development/direnv.nix
+    ./development/git.nix
   ];
 }
