@@ -142,6 +142,22 @@ in {
     };
   };
 
+  home-manager.users.root = { pkgs, ... }: {
+    nixpkgs = {
+      overlays = [
+        (import ./pkgs/default.nix)
+      ];
+    };
+
+    imports = [
+      ./home/fre.nix
+      ./home/programs/bat.nix
+      ./home/neovim.nix
+      ./home/skim.nix
+      ./home/zsh.nix
+    ];
+  };
+
   home-manager.users.shandogs = { pkgs, ... }: {
     nixpkgs = {
       overlays = [
