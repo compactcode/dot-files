@@ -5,5 +5,5 @@
     --theme="nord"
   '';
 
-  xdg.configFile."bat/themes/nord.tmTheme".source = ../themes/base_16_nord.tmTheme;
+  xdg.configFile."bat/themes/nord.tmTheme".source = ./themes/base_16_nord.tmTheme;
 }

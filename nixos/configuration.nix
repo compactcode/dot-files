@@ -150,8 +150,8 @@ in {
     };
 
     imports = [
+      ./home/bat.nix
       ./home/fre.nix
-      ./home/programs/bat.nix
       ./home/neovim.nix
       ./home/skim.nix
       ./home/zsh.nix
@@ -167,12 +167,12 @@ in {
 
     imports = [
       ./home/alacritty.nix
+      ./home/bat.nix
       ./home/direnv.nix
       ./home/fre.nix
       ./home/git.nix
       ./home/i3.nix
       ./home/neovim.nix
-      ./home/programs/bat.nix
       ./home/rofi.nix
       ./home/skim.nix
       ./home/zsh.nix
