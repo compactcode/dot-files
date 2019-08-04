@@ -150,11 +150,7 @@ in {
     };
 
     imports = [
-      ./home/bat.nix
-      ./home/fre.nix
-      ./home/neovim.nix
-      ./home/skim.nix
-      ./home/zsh.nix
+      ./home/terminal/basic.nix
     ];
   };
 
@@ -166,16 +162,12 @@ in {
     };
 
     imports = [
+      ./home/terminal/basic.nix
       ./home/alacritty.nix
-      ./home/bat.nix
       ./home/direnv.nix
-      ./home/fre.nix
       ./home/git.nix
       ./home/i3.nix
-      ./home/neovim.nix
       ./home/rofi.nix
-      ./home/skim.nix
-      ./home/zsh.nix
     ];
 
     home.file.".background-image".source = pkgs.copyPathToStore ./art/wallpaper-coffee-3840x2560.jpg;
