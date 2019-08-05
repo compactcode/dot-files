@@ -1,10 +1,6 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    zsh-prezto
-  ];
-
   programs.zsh = {
     enable = true;
 

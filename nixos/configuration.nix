@@ -32,14 +32,15 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
-    bat     # cat replacement
-    exa     # ls replacement
-    fd      # find replacement
-    feh     # required to set desktop background
-    firefox
+    bat
+    exa
+    fd
+    fre
     git
-    ripgrep # grep replacement
-    zsh     # bash replacement
+    ripgrep
+    skim
+    zsh
+    zsh-prezto
   ];
 
   fonts = {
@@ -159,6 +160,11 @@ in {
       ./home/terminal/basic.nix
       ./home/terminal/development.nix
       ./home/desktop/basic.nix
+    ];
+
+    home.packages = with pkgs; [
+      feh
+      firefox
     ];
 
     home.file.".background-image".source = pkgs.copyPathToStore ./art/wallpaper-coffee-3840x2560.jpg;

@@ -1,10 +1,6 @@
 { pkgs, config, ... }:
 
 {
-  home.packages = with pkgs; [
-    fre
-  ];
-
   # List recently edited files.
   xdg.dataFile."bin/recently-edited-list" = {
     executable = true;
