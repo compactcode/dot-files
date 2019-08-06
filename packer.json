@@ -16,6 +16,7 @@
 			"systemctl start sshd<enter>"
     ],
     "iso_interface": "sata",
+    "hard_drive_interface": "sata",
     "hard_drive_nonrotational": "true",
     "vboxmanage": [
 			["modifyvm", "{{.Name}}", "--memory", 4000],
