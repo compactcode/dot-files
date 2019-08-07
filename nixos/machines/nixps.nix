@@ -5,17 +5,35 @@
     ../configuration.nix
   ];
 
-  boot.initrd.availableKernelModules = [];
+  boot = {
+    initrd = {
+      availableKernelModules = [];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-label/nixos";
-      fsType = "ext4";
+      luks.devices."nixos-decrypted" = {
+        device = "/dev/disk/by-partlabel/primary";
+      };
     };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-label/boot";
-      fsType = "vfat";
+    loader = {
+      efi = {
+        canTouchEfiVariables = false;
+      };
+
+      systemd-boot = {
+        enable = true;
+      };
     };
+  };
+
+  fileSystems."/" = {
+    device = "/dev/disk/by-label/nixos";
+    fsType = "ext4";
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-label/boot";
+    fsType = "vfat";
+  };
 
   nix.maxJobs = lib.mkDefault 4;
 

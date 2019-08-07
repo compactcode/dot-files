@@ -15,7 +15,7 @@ nix-channel --add https://github.com/rycee/home-manager/archive/release-19.03.ta
 nix-channel --update
 
 # Select the machine to install.
-ln -sf /mnt/etc/nixos/machines/nixvm.nix /mnt/etc/nixos/configuration.nix
+ln -s /mnt/etc/dotfiles/nixos/machines/nixvm.nix /mnt/etc/nixos/configuration.nix
 
 # 🚀
 nixos-install

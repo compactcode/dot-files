@@ -16,15 +16,6 @@ in {
     ];
   };
 
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = false;
-    };
-    systemd-boot = {
-      enable = true;
-    };
-  };
-
   time.timeZone = "Australia/Melbourne";
 
   hardware.pulseaudio = {

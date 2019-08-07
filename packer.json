@@ -41,7 +41,7 @@
     {
       "type": "file",
       "source": "nixos/",
-      "destination": "/mnt/etc/nixos/"
+      "destination": "/mnt/etc/dotfiles/nixos/"
     },
     {
       "type": "shell",
