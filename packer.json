@@ -46,6 +46,12 @@
     {
       "type": "shell",
       "scripts": [
+        "bin/install-channels.sh"
+      ]
+    },
+    {
+      "type": "shell",
+      "scripts": [
         "bin/install-nixos.sh"
       ]
     }
