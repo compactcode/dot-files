@@ -17,14 +17,14 @@ parted $DRIVE_NAME -- mkpart primary $BOOT_SIZE 100%
 # Enable the boot partition.
 parted $DRIVE_NAME -- set 1 boot on
 
-# Encrypt the primary partition.
+# Setup encryption on the primary partition.
 echo 'secret' | cryptsetup luksFormat /dev/disk/by-partlabel/primary
-# Decrypt the primary partition and mount it.
+# Mount a decrypted version of the encrypted primary partition.
 echo 'secret' | cryptsetup luksOpen /dev/disk/by-partlabel/primary nixos-decrypted
 
 # Format the boot partition.
 mkfs.fat -F 32 -n boot /dev/disk/by-partlabel/ESP
-# Format the decrypted primary partition.
+# Format the decrypted version of the primary partition.
 mkfs.ext4 -L nixos /dev/mapper/nixos-decrypted
 
 # Wait for disk labels to be ready.
