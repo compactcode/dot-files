@@ -1,5 +1,5 @@
 {
-	"builders": [{
+  "builders": [{
     "type": "virtualbox-iso",
     "guest_os_type": "Other_64",
     "iso_url": "https://releases.nixos.org/nixos/19.03/nixos-19.03.173052.aef662d2eb5/nixos-minimal-19.03.173052.aef662d2eb5-x86_64-linux.iso",
@@ -8,23 +8,23 @@
     "disk_size": 16000,
     "boot_wait": "5s",
     "boot_command": [
-			"<enter>",
-			"<wait40s>",
-			"passwd<enter><wait>",
-			"secret<enter><wait>",
-			"secret<enter><wait>",
-			"systemctl start sshd<enter>"
+      "<enter>",
+      "<wait40s>",
+      "passwd<enter><wait>",
+      "secret<enter><wait>",
+      "secret<enter><wait>",
+      "systemctl start sshd<enter>"
     ],
     "iso_interface": "sata",
     "hard_drive_interface": "sata",
     "hard_drive_nonrotational": "true",
     "vboxmanage": [
-			["modifyvm", "{{.Name}}", "--memory", 4000],
-			["modifyvm", "{{.Name}}", "--cpus", 2],
-			["modifyvm", "{{.Name}}", "--firmware", "efi"],
-			["modifyvm", "{{.Name}}", "--paravirtprovider", "kvm"],
-			["modifyvm", "{{.Name}}", "--nictype1", "virtio"]
-		],
+      ["modifyvm", "{{.Name}}", "--memory", 4000],
+      ["modifyvm", "{{.Name}}", "--cpus", 2],
+      ["modifyvm", "{{.Name}}", "--firmware", "efi"],
+      ["modifyvm", "{{.Name}}", "--paravirtprovider", "kvm"],
+      ["modifyvm", "{{.Name}}", "--nictype1", "virtio"]
+    ],
     "vm_name": "nix_vm",
     "ssh_username": "root",
     "ssh_password": "secret",
