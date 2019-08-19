@@ -151,6 +151,7 @@ in {
       ./home/terminal/basic.nix
       ./home/terminal/development.nix
       ./home/desktop/basic.nix
+      ./home/desktop/security.nix
     ];
 
     home.packages = with pkgs; [
