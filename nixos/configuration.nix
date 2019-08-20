@@ -28,6 +28,7 @@ in {
     fd
     fre
     git
+    htop
     ripgrep
     skim
     zsh
