@@ -14,6 +14,8 @@
 
       zstyle ':prezto:module:prompt' theme 'pure'
 
+      PURE_GIT_PULL=0
+
       source ${pkgs.zsh-prezto}/init.zsh
     '';
 
