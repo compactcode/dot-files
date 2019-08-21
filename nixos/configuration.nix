@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 let
+  settings = import ./settings.nix;
   theme = import ./home/themes/base_16_current.nix;
 
 in {
@@ -74,7 +75,7 @@ in {
 
       greeters.mini = {
         enable = true;
-        user   = "shandogs";
+        user = settings.user.username;
         extraConfig = ''
           [greeter-theme]
           background-image = ""
@@ -127,13 +128,13 @@ in {
 
     users = {
       root = {
-        hashedPassword = "$6$Ol1IgIkZqEqHkDk$X51v4AgMAKXhqpMjfM451dvu71YnMlYdK4lZk/ZFx0m4A/eEPuUfMAYyYwVNjDHMtoNXz6QeoSQg4lHQtHtzX1";
+        hashedPassword = settings.user.hashedPassword;
       };
 
-      shandogs = {
+      ${settings.user.username} = {
         isNormalUser = true;
         extraGroups = [ "wheel" ];
-        hashedPassword = "$6$Ol1IgIkZqEqHkDk$X51v4AgMAKXhqpMjfM451dvu71YnMlYdK4lZk/ZFx0m4A/eEPuUfMAYyYwVNjDHMtoNXz6QeoSQg4lHQtHtzX1";
+        hashedPassword = settings.user.hashedPassword;
       };
     };
   };
@@ -150,7 +151,7 @@ in {
     ];
   };
 
-  home-manager.users.shandogs = { pkgs, ... }: {
+  home-manager.users.${settings.user.username} = { pkgs, ... }: {
     nixpkgs = {
       overlays = [
         (import ./pkgs/default.nix)

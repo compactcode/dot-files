@@ -1,18 +1,16 @@
 { pkgs, ... }:
 
-{
+let
+  settings = import ../../../settings.nix;
+
+in {
   programs.git = {
     enable = true;
-    userName = "Shanon McQuay";
-    userEmail = "shanonmcquay@gmail.com";
-    extraConfig = {
-      github = {
-        username = "compactcode";
-      };
-    };
+    userName = settings.user.name;
+    userEmail = settings.user.email;
     signing = {
       signByDefault = true;
-      key = "BF2AD40D0652EF0B";
+      key = settings.user.gpg.signingKey;
     };
   };
 
