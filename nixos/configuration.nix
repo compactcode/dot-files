@@ -161,6 +161,7 @@ in {
     imports = [
       ./home/terminal/basic.nix
       ./home/terminal/development.nix
+      ./home/terminal/email.nix
       ./home/desktop/basic.nix
       ./home/desktop/security.nix
     ];
