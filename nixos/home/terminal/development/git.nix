@@ -10,6 +10,10 @@
         username = "compactcode";
       };
     };
+    signing = {
+      signByDefault = true;
+      key = "BF2AD40D0652EF0B";
+    };
   };
 
   programs.zsh.shellAliases = {
