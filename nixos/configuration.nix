@@ -31,6 +31,7 @@ in {
     htop
     ripgrep
     skim
+    yubikey-personalization
     zsh
     zsh-prezto
   ];
@@ -112,6 +113,14 @@ in {
       "99:class_g = 'Firefox'"
     ];
   };
+
+  services.pcscd = {
+    enable = true;
+  };
+
+  services.udev.packages = with pkgs; [
+    yubikey-personalization
+  ];
 
   users = {
     defaultUserShell = pkgs.zsh;
