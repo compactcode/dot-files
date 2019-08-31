@@ -39,5 +39,5 @@
 
   nix.maxJobs = lib.mkDefault 8;
 
-  networking.hostName = "nixps";
+  networking.hostName = "nixpad";
 }
