@@ -35,6 +35,8 @@
     fsType = "vfat";
   };
 
+  hardware.cpu.intel.updateMicrocode = true;
+
   nix.maxJobs = lib.mkDefault 8;
 
   networking.hostName = "nixps";
