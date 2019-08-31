@@ -39,6 +39,10 @@
 
   services.tlp.enable = true;
 
+  services.xserver.videoDrivers = [
+    "intel"
+  ];
+
   networking.hostName = "nixpad";
 
   nix.maxJobs = lib.mkDefault 8;
