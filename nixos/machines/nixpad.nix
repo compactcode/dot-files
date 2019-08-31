@@ -31,7 +31,7 @@
     fsType = "vfat";
   };
 
-  nix.maxJobs = lib.mkDefault 4;
+  nix.maxJobs = lib.mkDefault 8;
 
   networking.hostName = "nixps";
 }
