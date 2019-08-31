@@ -8,6 +8,9 @@ BOOT_SIZE=512MiB
 # The drive we will be installing on.
 DRIVE_NAME=/dev/sda
 
+# The encryption password for drive we will be installing on.
+DRIVE_PASSWORD='secret'
+
 # Partition using gpt as required by UEFI.
 parted $DRIVE_NAME -- mklabel gpt
 # Boot partition
@@ -18,9 +21,9 @@ parted $DRIVE_NAME -- mkpart primary $BOOT_SIZE 100%
 parted $DRIVE_NAME -- set 1 boot on
 
 # Setup encryption on the primary partition.
-echo 'secret' | cryptsetup luksFormat /dev/disk/by-partlabel/primary
+echo $DRIVE_PASSWORD | cryptsetup luksFormat /dev/disk/by-partlabel/primary
 # Mount a decrypted version of the encrypted primary partition.
-echo 'secret' | cryptsetup luksOpen /dev/disk/by-partlabel/primary nixos-decrypted
+echo $DRIVE_PASSWORD | cryptsetup luksOpen /dev/disk/by-partlabel/primary nixos-decrypted
 
 # Format the boot partition.
 mkfs.fat -F 32 -n boot /dev/disk/by-partlabel/ESP
