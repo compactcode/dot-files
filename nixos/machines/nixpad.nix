@@ -7,7 +7,11 @@
 
   boot = {
     initrd = {
-      availableKernelModules = [];
+      availableKernelModules = [
+        "xhci_pci"
+        "nvme"
+        "usb_storage"
+      ];
 
       luks.devices."nixos-decrypted" = {
         device = "/dev/disk/by-partlabel/primary";
