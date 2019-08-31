@@ -37,7 +37,9 @@
 
   hardware.cpu.intel.updateMicrocode = true;
 
-  nix.maxJobs = lib.mkDefault 8;
+  services.tlp.enable = true;
 
   networking.hostName = "nixpad";
+
+  nix.maxJobs = lib.mkDefault 8;
 }
