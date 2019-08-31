@@ -28,9 +28,9 @@ mkfs.ext4 -L nixos /dev/mapper/nixos-decrypted
 sleep 4
 
 # Mount the primary & boot partitions.
-mount /dev/disk/by-label/nixos /mnt
+mount -o noatime /dev/disk/by-label/nixos /mnt
 mkdir /mnt/boot
-mount /dev/disk/by-label/boot  /mnt/boot
+mount -o noatime /dev/disk/by-label/boot  /mnt/boot
 
 # Prepare a directory to place dotfiles.
 mkdir -p /mnt/etc/dotfiles/nixos
