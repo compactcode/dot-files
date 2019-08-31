@@ -34,6 +34,10 @@
   "provisioners": [
     {
       "type": "shell",
+      "environment_vars": [
+        "INSTALL_DRIVE_NAME=/dev/sda",
+        "INSTALL_DRIVE_PASSWORD='secret'"
+      ],
       "scripts": [
         "bin/prepare-uefi-filesystem.sh"
       ]
