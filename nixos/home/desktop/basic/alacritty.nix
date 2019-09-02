@@ -19,13 +19,10 @@ in {
     key_bindings:
       - { key: Paste, action: Paste }
       - { key: Copy,  action: Copy  }
-
-      # OSX Hangups.
       - { key: C,     action: Copy,             mods: Super }
       - { key: V,     action: Paste,            mods: Super }
-      - { key: K,     action: ClearHistory,     mods: Super }
-      - { key: Add,   action: IncreaseFontSize, mods: Super }
-      - { key: Minus, action: DecreaseFontSize, mods: Super }
+      - { key: Equals,   action: IncreaseFontSize, mods: Super }
+      - { key: Subtract, action: DecreaseFontSize, mods: Super }
 
     scrolling:
       history: 5000
