@@ -35,17 +35,27 @@
     fsType = "vfat";
   };
 
+  # Enable intel microcode updates.
   hardware.cpu.intel.updateMicrocode = true;
 
+  # Enable power saving mode.
   services.tlp.enable = true;
 
-  services.xserver.videoDrivers = [
-    "intel"
-  ];
+  services.xserver = {
+    # Enable touchpad support.
+    libinput = {
+      enable = true;
+    };
+
+    videoDrivers = [
+      "intel"
+    ];
+  };
 
   networking = {
     hostName = "nixpad";
 
+    # Enable wireless support.
     wireless = {
       enable = true;
     };
