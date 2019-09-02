@@ -101,6 +101,9 @@ in {
         ];
       };
     };
+
+    # Turn caps lock into another ctrl.
+    xkbOptions = "ctrl:nocaps";
   };
 
   services.compton = {
