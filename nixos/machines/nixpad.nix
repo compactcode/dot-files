@@ -45,6 +45,7 @@
     # Enable touchpad support.
     libinput = {
       enable = true;
+      accelSpeed = "0.5";
     };
 
     videoDrivers = [
