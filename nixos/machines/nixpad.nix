@@ -43,7 +43,13 @@
     "intel"
   ];
 
-  networking.hostName = "nixpad";
+  networking = {
+    hostName = "nixpad";
+
+    wireless = {
+      enable = true;
+    };
+  };
 
   nix.maxJobs = lib.mkDefault 8;
 }
