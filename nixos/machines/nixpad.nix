@@ -37,8 +37,15 @@
     fsType = "vfat";
   };
 
-  # Enable intel microcode updates.
-  hardware.cpu.intel.updateMicrocode = true;
+  hardware = {
+    # Enable bluetooth support.
+    bluetooth = {
+      enable = true;
+    };
+
+    # Enable intel microcode updates.
+    cpu.intel.updateMicrocode = true;
+  };
 
   # Enable power saving mode.
   services.tlp.enable = true;
@@ -50,6 +57,7 @@
       accelSpeed = "0.5";
     };
 
+    # Use the cpu video driver for power efficiency.
     videoDrivers = [
       "intel"
     ];
