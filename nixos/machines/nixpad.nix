@@ -38,6 +38,8 @@
   };
 
   hardware = {
+    enableRedistributableFirmware = true;
+
     # Enable bluetooth support.
     bluetooth = {
       enable = true;
