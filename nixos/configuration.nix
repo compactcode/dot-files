@@ -23,6 +23,13 @@ in {
     enable = true;
   };
 
+  # Detect and managing network connections.
+  networking = {
+    networkmanager = {
+      enable = true;
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     bat
     exa
@@ -118,6 +125,7 @@ in {
     ];
   };
 
+  # Enable support for gpg smart cards.
   services.pcscd = {
     enable = true;
   };

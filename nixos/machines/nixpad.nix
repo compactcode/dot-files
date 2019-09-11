@@ -67,11 +67,6 @@
 
   networking = {
     hostName = "nixpad";
-
-    # Enable wireless support.
-    wireless = {
-      enable = true;
-    };
   };
 
   nix.maxJobs = lib.mkDefault 8;
