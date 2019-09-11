@@ -69,5 +69,10 @@
     hostName = "nixpad";
   };
 
+  # Detect and manage bluetooth connections.
+  environment.systemPackages = with pkgs; [
+    blueman
+  ];
+
   nix.maxJobs = lib.mkDefault 8;
 }

@@ -21,6 +21,9 @@ in {
 
   hardware.pulseaudio = {
     enable = true;
+
+    # Include bluetooth support.
+    package = pkgs.pulseaudioFull;
   };
 
   # Detect and managing network connections.
