@@ -60,6 +60,8 @@ in {
 
     # Detect and manage bluetooth connections.
     blueman
+    # Detect and manage multiple monitors.
+    arandr
   ];
 
   fonts = {
