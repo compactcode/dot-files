@@ -58,10 +58,12 @@ in {
   ] ++ [
     # X11 utilities.
 
-    # Detect and manage bluetooth connections.
-    blueman
     # Detect and manage multiple monitors.
     arandr
+    # Detect and manage bluetooth connections.
+    blueman
+    # Set background images.
+    feh
   ];
 
   fonts = {
@@ -182,7 +184,7 @@ in {
     ];
   };
 
-  home-manager.users.${settings.user.username} = { pkgs, ... }: {
+  home-manager.users.${settings.user.username} = { ... }: {
     nixpkgs = {
       overlays = [
         (import ./pkgs/default.nix)
@@ -194,14 +196,8 @@ in {
       ./home/terminal/development.nix
       ./home/terminal/email.nix
       ./home/desktop/basic.nix
+      ./home/desktop/general.nix
       ./home/desktop/security.nix
     ];
-
-    home.packages = with pkgs; [
-      feh
-      firefox
-    ];
-
-    home.file.".background-image".source = pkgs.copyPathToStore ./art/wallpaper-coffee-3840x2560.jpg;
   };
 }
