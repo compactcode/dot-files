@@ -11,17 +11,23 @@ in {
         # Default terminal application.
         "Mod1+Return" = "exec --no-startup-id alacritty";
 
+        # Switch to workspace.
         "Mod1+1" = "workspace 1";
         "Mod1+2" = "workspace 2";
         "Mod1+3" = "workspace 3";
         "Mod1+4" = "workspace 4";
         "Mod1+5" = "workspace 5";
 
+        # Move applications to another workspace.
         "Mod1+Shift+1" = "move container to workspace 1";
         "Mod1+Shift+2" = "move container to workspace 2";
         "Mod1+Shift+3" = "move container to workspace 3";
         "Mod1+Shift+4" = "move container to workspace 4";
         "Mod1+Shift+5" = "move container to workspace 5";
+
+        # Move workspace to another monitor.
+        "Mod1+Shift+l" = "move workspace to output left";
+        "Mod1+Shift+r" = "move workspace to output right";
 
         # Default launcher.
         "Mod1+d" = "exec rofi -show run -lines 10";
