@@ -41,11 +41,6 @@
     # Enable firmware for bluetooth/wireless (Intel® Wireless-AC 9560).
     enableRedistributableFirmware = true;
 
-    # Enable bluetooth support.
-    bluetooth = {
-      enable = true;
-    };
-
     # Enable intel microcode updates.
     cpu.intel.updateMicrocode = true;
   };
@@ -69,11 +64,6 @@
   networking = {
     hostName = "nixpad";
   };
-
-  # Detect and manage bluetooth connections.
-  environment.systemPackages = with pkgs; [
-    blueman
-  ];
 
   nix.maxJobs = lib.mkDefault 8;
 }

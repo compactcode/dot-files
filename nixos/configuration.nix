@@ -19,11 +19,19 @@ in {
 
   time.timeZone = "Australia/Melbourne";
 
-  hardware.pulseaudio = {
-    enable = true;
+  hardware = {
+    # Enable bluetooth support.
+    bluetooth = {
+      enable = true;
+    };
 
-    # Include bluetooth support.
-    package = pkgs.pulseaudioFull;
+    # Enable sound.
+    pulseaudio = {
+      enable = true;
+
+      # Include bluetooth headphone support.
+      package = pkgs.pulseaudioFull;
+    };
   };
 
   # Detect and managing network connections.
@@ -34,6 +42,8 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
+    # Command line utilities.
+
     bat
     exa
     fd
@@ -45,6 +55,11 @@ in {
     yubikey-personalization
     zsh
     zsh-prezto
+  ] ++ [
+    # X11 utilities.
+
+    # Detect and manage bluetooth connections.
+    blueman
   ];
 
   fonts = {
