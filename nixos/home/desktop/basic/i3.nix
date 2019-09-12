@@ -14,6 +14,14 @@ in {
         "Mod1+1" = "workspace 1";
         "Mod1+2" = "workspace 2";
         "Mod1+3" = "workspace 3";
+        "Mod1+4" = "workspace 4";
+        "Mod1+5" = "workspace 5";
+
+        "Mod1+Shift+1" = "move container to workspace 1";
+        "Mod1+Shift+2" = "move container to workspace 2";
+        "Mod1+Shift+3" = "move container to workspace 3";
+        "Mod1+Shift+4" = "move container to workspace 4";
+        "Mod1+Shift+5" = "move container to workspace 5";
 
         # Default launcher.
         "Mod1+d" = "exec rofi -show run -lines 10";
