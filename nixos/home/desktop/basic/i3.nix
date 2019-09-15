@@ -145,6 +145,13 @@ in {
     };
   };
 
+  services = {
+    # Add the network manager applet to the i3 bar tray.
+    blueman-applet = {
+      enable = true;
+    };
+  };
+
   xdg.configFile."i3/status.toml".text = ''
     [theme]
     name = "modern"
