@@ -58,8 +58,13 @@ in {
   ] ++ [
     # X11 utilities.
 
+    # Arc theme for GTK appliactions.
+    arc-theme
+    arc-icon-theme
     # Detect and manage multiple monitors.
     arandr
+    # Detect and apply themes for GTK applications.
+    lxappearance-gtk3
     # Detect and manage bluetooth connections.
     blueman
     # Set background images.
