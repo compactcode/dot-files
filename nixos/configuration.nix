@@ -156,6 +156,13 @@ in {
     yubikey-personalization
   ];
 
+  programs = {
+    # Add the network manager applet to the i3 bar tray.
+    nm-applet = {
+      enable = true;
+    };
+  };
+
   users = {
     defaultUserShell = pkgs.zsh;
 
