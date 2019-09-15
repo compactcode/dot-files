@@ -44,31 +44,41 @@ in {
   environment.systemPackages = with pkgs; [
     # Command line utilities.
 
+    # cat replacement.
     bat
+    # ls replacement.
     exa
+    # find replacement.
     fd
+    # frequency/recency tracker.
     fre
+    # version control.
     git
+    # top replacement.
     htop
+    # grep replacement.
     ripgrep
+    # fuzzy finder
     skim
     yubikey-personalization
+    # bash replacement.
     zsh
+    # lightweight zsh framework.
     zsh-prezto
   ] ++ [
     # X11 utilities.
 
+    # Detect and manage multiple monitors.
+    arandr
     # Arc theme for GTK appliactions.
     arc-theme
     arc-icon-theme
-    # Detect and manage multiple monitors.
-    arandr
-    # Detect and apply themes for GTK applications.
-    lxappearance-gtk3
     # Detect and manage bluetooth connections.
     blueman
     # Set background images.
     feh
+    # Detect and apply themes for GTK applications.
+    lxappearance-gtk3
   ];
 
   fonts = {
