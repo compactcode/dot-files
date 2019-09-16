@@ -43,6 +43,9 @@
 
     # Enable intel microcode updates.
     cpu.intel.updateMicrocode = true;
+
+    # Disable GPU completely to reduce power usage.
+    nvidiaOptimus.disable = true;
   };
 
   # Enable power saving mode.
@@ -54,11 +57,6 @@
       enable = true;
       accelSpeed = "0.5";
     };
-
-    # Use the cpu video driver for power efficiency.
-    videoDrivers = [
-      "intel"
-    ];
   };
 
   networking = {
