@@ -20,6 +20,11 @@ in {
   time.timeZone = "Australia/Melbourne";
 
   hardware = {
+    # Enable setting screen brightness.
+    brightnessctl = {
+      enable = true;
+    };
+
     # Enable bluetooth support.
     bluetooth = {
       enable = true;
@@ -75,6 +80,8 @@ in {
     arc-icon-theme
     # Detect and manage bluetooth connections.
     blueman
+    # Set screen brightness.
+    brightnessctl
     # Set background images.
     feh
     # Detect and apply themes for GTK applications.

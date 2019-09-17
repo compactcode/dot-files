@@ -38,6 +38,11 @@
   };
 
   hardware = {
+    # Enable setting the screen brightness.
+    brightnessctl = {
+      enable = true;
+    };
+
     # Enable firmware for bluetooth/wireless (Intel® Wireless-AC 9560).
     enableRedistributableFirmware = true;
 
