@@ -35,6 +35,11 @@
     ];
 
     kernelPackages = pkgs.linuxPackages_latest;
+
+    kernelParams = [
+      # Enable framebuffer compression for power saving.
+      "i915.enable_fbc=1"
+    ];
   };
 
   fileSystems."/" = {
