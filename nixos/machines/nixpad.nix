@@ -53,18 +53,24 @@
   };
 
   hardware = {
-    # Enable setting the screen brightness.
-    brightnessctl = {
-      enable = true;
-    };
-
     # Enable firmware for bluetooth/wireless (Intel® Wireless-AC 9560).
     enableRedistributableFirmware = true;
 
     # Enable intel microcode updates.
     cpu.intel.updateMicrocode = true;
 
-    # Disable GPU completely to reduce power usage.
+    # Enable intel opengl hardware acceleration.
+    opengl = {
+      enable = true;
+
+      extraPackages = with pkgs; [
+        vaapiIntel
+        vaapiVdpau
+        libvdpau-va-gl
+      ];
+    };
+
+    # Disable the Nvidia GPU completely to reduce power usage.
     nvidiaOptimus.disable = true;
   };
 
