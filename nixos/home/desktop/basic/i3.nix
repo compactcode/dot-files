@@ -197,6 +197,11 @@ in {
     format = "{1m}"
 
     [[block]]
+    block = "battery"
+    interval = 10
+    format = "{percentage}% {time}"
+
+    [[block]]
     block = "time"
     interval = 60
     format = "%a %l:%M %p"
