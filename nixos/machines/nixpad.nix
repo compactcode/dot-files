@@ -24,6 +24,16 @@
       };
     };
 
+    # Used on newer thinkpads for tlp power saving.
+    extraModulePackages = with config.boot.kernelPackages; [
+      acpi_call
+    ];
+
+    # Used on newer thinkpads for tlp power saving.
+    kernelModules = [
+      "acpi_call"
+    ];
+
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
