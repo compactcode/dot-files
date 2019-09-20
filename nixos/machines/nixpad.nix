@@ -78,7 +78,10 @@
     nvidiaOptimus.disable = true;
   };
 
-  # Enable power saving mode.
+  # Enable cpu specific power saving features.
+  services.thermald.enable = true;
+
+  # Enable general power saving features.
   services.tlp.enable = true;
 
   services.xserver = {
