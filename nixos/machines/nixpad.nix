@@ -78,6 +78,9 @@
     nvidiaOptimus.disable = true;
   };
 
+  # Enable updating firmware via the command line.
+  services.fwupd.enable = true;
+
   # Enable cpu specific power saving features.
   services.thermald.enable = true;
 
