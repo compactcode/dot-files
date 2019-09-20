@@ -185,21 +185,20 @@ in {
     block = "memory"
     display_type = "memory"
     format_mem = "{Mup}%"
-    format_swap = "{SUp}%"
+    clickable = false
 
     [[block]]
     block = "cpu"
     interval = 1
 
     [[block]]
-    block = "load"
-    interval = 1
-    format = "{1m}"
-
-    [[block]]
     block = "battery"
     interval = 10
     format = "{percentage}% {time}"
+
+    [[block]]
+    block = "sound"
+    step_width = 5
 
     [[block]]
     block = "time"

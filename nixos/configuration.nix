@@ -195,7 +195,10 @@ in {
 
       ${settings.user.username} = {
         isNormalUser = true;
-        extraGroups = [ "wheel" ];
+        extraGroups = [
+          "wheel"
+          "video"
+        ];
         hashedPassword = settings.user.hashedPassword;
       };
     };
