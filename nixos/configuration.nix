@@ -196,8 +196,8 @@ in {
       ${settings.user.username} = {
         isNormalUser = true;
         extraGroups = [
-          "wheel"
-          "video"
+          "wheel" # Enable sudo.
+          "video" # Enable setting brightness without sudo.
         ];
         hashedPassword = settings.user.hashedPassword;
       };
