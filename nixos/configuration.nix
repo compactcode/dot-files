@@ -86,6 +86,8 @@ in {
     feh
     # Detect and apply themes for GTK applications.
     lxappearance-gtk3
+    # Detect and manage audio devices.
+    pavucontrol
   ];
 
   fonts = {
