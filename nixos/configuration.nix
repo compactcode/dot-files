@@ -171,6 +171,13 @@ in {
     ];
   };
 
+  # Adjust screen color temperature based on the time of day.
+  services.redshift = {
+    enable = true;
+    latitude = "-37.814";
+    longitude = "144.96332";
+  };
+
   # Enable support for gpg smart cards.
   services.pcscd = {
     enable = true;
