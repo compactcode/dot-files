@@ -6,6 +6,7 @@ let
 in {
   home.packages = with pkgs; [
     neomutt
+    urlscan
   ];
 
   accounts.email = {
@@ -82,6 +83,7 @@ in {
     bind index,pager \CK sidebar-prev # Ctrl-Shift-K - Previous Mailbox
     bind index,pager \CJ sidebar-next # Ctrl-Shift-J - Next Mailbox
     bind index,pager \CO sidebar-open # Ctrl-Shift-O - Open Highlighted Mailbox
+    macro index,pager \cb "<pipe-message> ${pkgs.urlscan}/bin/urlscan<Enter>" # Open URLs
 
     # Index Theme.
     color index yellow default '.*'
