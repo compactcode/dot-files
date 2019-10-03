@@ -78,6 +78,9 @@
     nvidiaOptimus.disable = true;
   };
 
+  # Enable periodic trim for long term SSD performance.
+  services.fstrim.enable = true;
+
   # Enable updating firmware via the command line.
   services.fwupd.enable = true;
 
