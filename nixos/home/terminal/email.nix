@@ -52,9 +52,10 @@ in {
   };
 
   xdg.configFile."neomutt/neomuttrc".text = ''
+    set mailcap_path = "${config.xdg.configHome}/neomutt/mailcap"
     set header_cache = "${config.xdg.cacheHome}/neomutt"
-    set mbox_type = Maildir
     set folder = "${config.xdg.dataHome}/mail/personal"
+    set mbox_type = Maildir
 
     set sendmail="${pkgs.msmtp}/bin/msmtp"
 
@@ -112,5 +113,10 @@ in {
     color normal default default
     color status brightyellow black
     color underline black default
+  '';
+
+  # How to open various mime types.
+  xdg.configFile."neomutt/mailcap".text = ''
+    text/html; firefox %s; copiousoutput;
   '';
 }
