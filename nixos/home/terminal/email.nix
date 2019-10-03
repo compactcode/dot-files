@@ -33,10 +33,20 @@ in {
         create = "both";
         expunge = "both";
       };
+
+      msmtp = {
+        enable = true;
+      };
     };
   };
 
+  # Retrieve email and store locally.
   programs.mbsync = {
+    enable = true;
+  };
+
+  # Send email.
+  programs.msmtp = {
     enable = true;
   };
 
@@ -44,6 +54,8 @@ in {
     set header_cache = "${config.xdg.cacheHome}/neomutt"
     set mbox_type = Maildir
     set folder = "${config.xdg.dataHome}/mail/personal"
+
+    set sendmail="${pkgs.msmtp}/bin/msmtp"
 
     set from = "${settings.user.email}"
     set realname = "${settings.user.name}"
@@ -60,7 +72,7 @@ in {
     set sort = 'reverse-date'
 
     # Sidebar config.
-    mailboxes =Inbox =Sent =Drafts =Trash =Spam
+    mailboxes +Inbox +Sent +Drafts +Trash +Spam
     set sidebar_visible = yes
     set sidebar_format = '%B%?F? [%F]?%* %?N?%N/? %?S?%S?'
     set sidebar_width = 20
