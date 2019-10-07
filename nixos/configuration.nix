@@ -236,6 +236,7 @@ in {
       ./home/terminal/basic.nix
       ./home/terminal/development.nix
       ./home/terminal/email.nix
+      ./home/terminal/files.nix
       ./home/desktop/basic.nix
       ./home/desktop/general.nix
       ./home/desktop/security.nix

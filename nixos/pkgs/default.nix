@@ -5,6 +5,9 @@ in (
   self: super: {
     fre = super.callPackage ./fre.nix {};
 
+    # 1.9.2 ranger doesn't handle padding on the terminal emulator window.
+    ranger = super.callPackage ./ranger.nix {};
+
     # 19.03 skim is missing a lot of improvements.
     skim = unstable.skim;
 
