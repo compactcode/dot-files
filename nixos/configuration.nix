@@ -5,7 +5,7 @@ let
   theme = import ./home/themes/base_16_current.nix;
 
 in {
-  system.stateVersion = "19.03";
+  system.stateVersion = "19.09";
 
   imports = [
     <home-manager/nixos>
@@ -18,6 +18,11 @@ in {
   };
 
   time.timeZone = "Australia/Melbourne";
+
+  location = {
+    latitude = -37.814;
+    longitude = 144.96332;
+  };
 
   hardware = {
     # Enable setting screen brightness.
@@ -174,8 +179,6 @@ in {
   # Adjust screen color temperature based on the time of day.
   services.redshift = {
     enable = true;
-    latitude = "-37.814";
-    longitude = "144.96332";
   };
 
   # Enable support for gpg smart cards.
