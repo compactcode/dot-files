@@ -5,7 +5,7 @@ let
   theme = import ./home/themes/base_16_current.nix;
 
 in {
-  system.stateVersion = "19.09";
+  system.stateVersion = "19.03";
 
   imports = [
     <home-manager/nixos>
