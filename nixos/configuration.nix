@@ -66,6 +66,8 @@ in {
     git
     # top replacement.
     htop
+    # system sensor access.
+    lm_sensors
     # grep replacement.
     ripgrep
     # fuzzy finder

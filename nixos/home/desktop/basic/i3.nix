@@ -182,7 +182,20 @@ in {
 
     [[block]]
     block = "cpu"
-    interval = 1
+    interval = 2
+    format = "{utilization}% {frequency}GHz"
+
+    [[block]]
+    block = "load"
+    format = "{1m} {5m}"
+    interval = 2
+
+    [[block]]
+    block = "temperature"
+    collapsed = false
+    interval = 4
+    format = "{min}-{max}°"
+    chip = "coretemp-isa-*"
 
     [[block]]
     block = "battery"
