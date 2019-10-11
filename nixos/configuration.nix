@@ -243,6 +243,7 @@ in {
       ./home/terminal/email.nix
       ./home/terminal/files.nix
       ./home/desktop/basic.nix
+      ./home/desktop/keys.nix
       ./home/desktop/general.nix
       ./home/desktop/security.nix
     ];
