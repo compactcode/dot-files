@@ -39,6 +39,9 @@ in {
       # Languages
       vim-nix
 
+      # Preview colors inline.
+      vim-css-color
+
       # Shortcuts for working with parentheses
       vim-surround
       vim-repeat
