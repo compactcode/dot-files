@@ -6,6 +6,11 @@
     firefox
   ];
 
+  # Ensure config gets propogated to user services.
+  xsession = {
+    enable = true;
+  };
+
   imports = [
     ./basic/alacritty.nix
     ./basic/i3.nix
