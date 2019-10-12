@@ -8,9 +8,6 @@ in {
 
     config = {
       keybindings = {
-        # Default terminal application.
-        "Mod1+Return" = "exec --no-startup-id alacritty";
-
         # Switch to workspace.
         "Mod1+1" = "workspace 1";
         "Mod1+2" = "workspace 2";
@@ -29,9 +26,7 @@ in {
         "Mod1+Shift+l" = "move workspace to output left";
         "Mod1+Shift+r" = "move workspace to output right";
 
-        # Default launcher.
-        "Mod1+d" = "exec rofi -show run -lines 10";
-
+        # Move focus between widnows.
         "Mod1+h" = "focus left";
         "Mod1+j" = "focus down";
         "Mod1+k" = "focus up";
