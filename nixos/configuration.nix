@@ -84,8 +84,6 @@ in {
     # Arc theme for GTK appliactions.
     arc-theme
     arc-icon-theme
-    # Detect and manage bluetooth connections.
-    blueman
     # Set screen brightness.
     brightnessctl
     # Preferred web browser
@@ -136,6 +134,11 @@ in {
     xkbOptions = "ctrl:nocaps";
   };
 
+  # Detect and managing bluetooth connections.
+  services.blueman = {
+    enable = true;
+  };
+
   services.compton = {
     enable = true;
     fade = true;
@@ -163,7 +166,7 @@ in {
   ];
 
   programs = {
-    # Add the network manager applet to the i3 bar tray.
+    # Add the network manager to the status bar.
     nm-applet = {
       enable = true;
     };

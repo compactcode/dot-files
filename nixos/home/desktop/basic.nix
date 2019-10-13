@@ -10,6 +10,12 @@ in {
   };
 
   services = {
+    # Add the bluetooth manager to the status bar.
+    blueman-applet = {
+      enable = true;
+    };
+
+    # Set a background image.
     random-background = {
       enable = true;
       imageDirectory = toString ./art;
