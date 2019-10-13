@@ -127,6 +127,13 @@ in {
     displayManager.lightdm ={
       enable = true;
 
+      # Skip login since we just unlocked the encrypted drive.
+      autoLogin = {
+        enable = true;
+        user = settings.user.username;
+      };
+
+      # The lock screen.
       greeters.mini = {
         enable = true;
         user = settings.user.username;
