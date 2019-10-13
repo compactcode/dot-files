@@ -19,7 +19,7 @@ in {
 
       "super + space" = "${launcher} '${lib.getBin pkgs.rofi}/bin/rofi -show run --lines 10'";
       "{super, alt} + Return" = "${launcher} '${lib.getBin pkgs.alacritty}/bin/alacritty'";
-      "super + w" = "${launcher} '${lib.getBin pkgs.firefox}/bin/firefox'";
+      "super + w" = "${launcher} '${lib.getBin "firefox-sandboxed"}'";
       "super + shift + l" = "${launcher} '${lib.getBin pkgs.lightdm}/bin/dm-tool lock'";
     };
   };

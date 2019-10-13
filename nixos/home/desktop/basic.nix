@@ -4,10 +4,6 @@ let
   launcher = "${lib.getBin pkgs.i3}/bin/i3-msg exec";
 
 in {
-  home.packages = with pkgs; [
-    firefox
-  ];
-
   # Ensure config gets propogated to user services.
   xsession = {
     enable = true;

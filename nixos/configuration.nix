@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 let
   settings = import ./settings.nix;
@@ -89,6 +89,8 @@ in {
     blueman
     # Set screen brightness.
     brightnessctl
+    # Preferred web browser
+    firefox
     # Detect and apply themes for GTK applications.
     lxappearance-gtk3
     # Detect and manage audio devices.
@@ -180,6 +182,15 @@ in {
     # Add the network manager applet to the i3 bar tray.
     nm-applet = {
       enable = true;
+    };
+  };
+
+  # Sandbox certain programs to mitigate damage from security breaches.
+  programs.firejail = {
+    enable = true;
+
+    wrappedBinaries = {
+      firefox-sandboxed = "${lib.getBin pkgs.firefox}/bin/firefox";
     };
   };
 
