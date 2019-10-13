@@ -1,6 +1,9 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
-{
+let
+  launcher = "${lib.getBin pkgs.i3}/bin/i3-msg exec";
+
+in {
   home.packages = with pkgs; [
     # The default web browser.
     firefox
@@ -15,6 +18,11 @@
     random-background = {
       enable = true;
       imageDirectory = toString ./art;
+    };
+
+    screen-locker = {
+      enable = true;
+      lockCmd = "${launcher} '${lib.getBin pkgs.lightdm}/bin/dm-tool lock'";
     };
   };
 
