@@ -89,8 +89,6 @@ in {
     blueman
     # Set screen brightness.
     brightnessctl
-    # Set background images.
-    feh
     # Detect and apply themes for GTK applications.
     lxappearance-gtk3
     # Detect and manage audio devices.
@@ -123,10 +121,6 @@ in {
 
       xterm = {
         enable = false;
-      };
-
-      wallpaper = {
-        mode = "fill";
       };
     };
 
