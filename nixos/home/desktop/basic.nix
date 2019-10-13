@@ -18,11 +18,6 @@ in {
       enable = true;
       imageDirectory = toString ./art;
     };
-
-    screen-locker = {
-      enable = true;
-      lockCmd = "${launcher} '${lib.getBin pkgs.lightdm}/bin/dm-tool lock'";
-    };
   };
 
   imports = [
