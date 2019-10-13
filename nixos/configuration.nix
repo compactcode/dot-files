@@ -116,12 +116,9 @@ in {
   services.xserver = {
     enable = true;
 
+    # A dummy desktop manager, we use .xsession instead.
     desktopManager = {
-      default = "none";
-
-      xterm = {
-        enable = false;
-      };
+      default = "xterm";
     };
 
     displayManager.lightdm ={
@@ -146,20 +143,6 @@ in {
           text-color = "${theme.base05-hex}"
           error-color = "${theme.base0C-hex}"
         '';
-      };
-    };
-
-    windowManager = {
-      default = "i3";
-
-      i3 = {
-        enable = true;
-
-        package = pkgs.i3-gaps;
-
-        extraPackages = with pkgs; [
-          i3status-rust
-        ];
       };
     };
 
