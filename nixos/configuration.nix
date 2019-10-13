@@ -2,7 +2,6 @@
 
 let
   settings = import ./settings.nix;
-  theme = import ./home/themes/base_16_current.nix;
 
 in {
   system.stateVersion = "19.03";
@@ -130,21 +129,6 @@ in {
       autoLogin = {
         enable = true;
         user = settings.user.username;
-      };
-
-      # The lock screen.
-      greeters.mini = {
-        enable = true;
-        user = settings.user.username;
-        extraConfig = ''
-          [greeter-theme]
-          background-image = ""
-          background-color = "${theme.base00-hex}"
-          window-color = "${theme.base03-hex}"
-          border-color = "${theme.base01-hex}"
-          text-color = "${theme.base05-hex}"
-          error-color = "${theme.base0C-hex}"
-        '';
       };
     };
 
