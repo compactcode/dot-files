@@ -4,6 +4,9 @@
   services.sxhkd = {
     enable = true;
 
+    # Make system commands available.
+    extraPath = "/run/current-system/sw/bin/";
+
     keybindings = {
       "XF86AudioMute" = "${lib.getBin pkgs.pulseaudio}/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle";
       "XF86AudioLowerVolume" = "${lib.getBin pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%";
