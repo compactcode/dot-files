@@ -28,7 +28,7 @@ in {
         global = {
           follow = "keyboard"; # Show notifications where the keyboard has foucs.
           format = "<b>%s</b>\\n%b";
-          font = "${settings.font.sansFamily} ${settings.font.defaultSize}";
+          font = "${settings.font.sansFamily} ${settings.font.defaultSize.pixels}";
           frame_width = 2; # Border size.
           geometry = "350x5-18+42"; # Size & location of notifications.
           horizontal_padding = 6;

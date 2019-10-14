@@ -1,6 +1,8 @@
 { pkgs, config, ... }:
 
-let theme = import ../../themes/base_16_current.nix;
+let
+  settings = import ../../../settings.nix;
+  theme = import ../../themes/base_16_current.nix;
 
 in {
   xsession.windowManager.i3 = {
@@ -52,7 +54,7 @@ in {
         statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${config.xdg.configHome}/i3/status.toml";
 
         fonts = [
-          "monospace 10"
+          "${settings.font.monoFamily} ${settings.font.defaultSize.points}"
         ];
 
         colors = {

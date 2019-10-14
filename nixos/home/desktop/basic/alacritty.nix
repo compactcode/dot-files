@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
-let theme = import ../../themes/base_16_current.nix;
+let
+  settings = import ../../../settings.nix;
+  theme = import ../../themes/base_16_current.nix;
 
 in {
   home.packages = with pkgs; [
@@ -25,7 +27,16 @@ in {
       - { key: Subtract, action: DecreaseFontSize, mods: Super }
 
     font:
-      size: 8
+      bold:
+        family: '${settings.font.monoFamily}'
+      bold_italitc:
+        family: '${settings.font.monoFamily}'
+      italic:
+        family: '${settings.font.monoFamily}'
+      normal:
+        family: '${settings.font.monoFamily}'
+
+      size: ${settings.font.defaultSize.points}
 
     scrolling:
       history: 5000
