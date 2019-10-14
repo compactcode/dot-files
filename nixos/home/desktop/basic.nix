@@ -15,6 +15,11 @@ in {
       enable = true;
     };
 
+    # Display desktop notfications.
+    dunst = {
+      enable = true;
+    };
+
     # Set a background image.
     random-background = {
       enable = true;
