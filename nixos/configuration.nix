@@ -139,6 +139,7 @@ in {
     enable = true;
   };
 
+  # Opacity and drop shadows on windows.
   services.compton = {
     enable = true;
     fade = true;

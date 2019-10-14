@@ -1,4 +1,10 @@
 {
+  font = {
+    monoFamily = "Source Code Pro";
+    sansFamily = "Source Sans Pro";
+    defaultSize = "10";
+  };
+
   user = {
     name = "Shanon McQuay";
     email = "hi@shan.dog";
