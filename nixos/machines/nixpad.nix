@@ -87,6 +87,9 @@
   # Enable cpu specific power saving features.
   services.thermald.enable = true;
 
+  # Enable fix for lenovo cpu throttling issue.
+  services.throttled.enable = true;
+
   # Enable general power saving features.
   services.tlp.enable = true;
 
