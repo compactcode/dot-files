@@ -118,5 +118,6 @@ in {
   # How to open various mime types.
   xdg.configFile."neomutt/mailcap".text = ''
     text/html; firefox %s; copiousoutput;
+    application/pdf; zathura %s; copiousoutput;
   '';
 }
