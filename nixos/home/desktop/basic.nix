@@ -7,6 +7,7 @@ let
 in {
   home.packages = with pkgs; [
     pinta # Lightweight image editor.
+    zathura # Lighteight pdf viewier.
   ];
 
   # Ensure config gets propogated to user services.

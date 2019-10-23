@@ -21,8 +21,11 @@
   # How to open various file types.
   # https://github.com/ranger/ranger/blob/master/ranger/config/rifle.conf
   xdg.configFile."ranger/rifle.conf".text = ''
-    mime ^text = ${lib.getBin pkgs.neovim}/bin/nvim -- "$@"
+    ext pdf, X, flag f = ${lib.getBin pkgs.zathura}/bin/zathura -- "$@"
+
     mime ^image, X, flag f = ${lib.getBin pkgs.pinta}/bin/pinta -- "$@"
+
+    mime ^text = ${lib.getBin pkgs.neovim}/bin/nvim -- "$@"
   '';
 
   # How to preview various mime types.
