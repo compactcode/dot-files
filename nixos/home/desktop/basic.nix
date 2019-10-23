@@ -6,7 +6,7 @@ let
 
 in {
   home.packages = with pkgs; [
-    libnotify
+    pinta # Lightweight image editor.
   ];
 
   # Ensure config gets propogated to user services.
