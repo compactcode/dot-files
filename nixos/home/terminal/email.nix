@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   settings = import ../../settings.nix;
@@ -57,7 +57,7 @@ in {
     set folder = "${config.xdg.dataHome}/mail/personal"
     set mbox_type = Maildir
 
-    set sendmail="${pkgs.msmtp}/bin/msmtp"
+    set sendmail="${lib.getBin pkgs.msmtp}/bin/msmtp"
 
     set from = "${settings.user.email}"
     set realname = "${settings.user.name}"
@@ -117,7 +117,8 @@ in {
 
   # How to open various mime types.
   xdg.configFile."neomutt/mailcap".text = ''
-    text/html; firefox %s; copiousoutput;
-    application/pdf; zathura %s; copiousoutput;
+    text/html; ${lib.getBin pkgs.firefox}/bin/firefox %s; copiousoutput;
+    image/*; ${lib.getBin pkgs.sxiv}/bin/sxiv %s
+    application/pdf; ${lib.getBin pkgs.zathura}/bin/zathura %s; copiousoutput;
   '';
 }

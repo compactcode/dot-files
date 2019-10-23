@@ -6,8 +6,9 @@ let
 
 in {
   home.packages = with pkgs; [
+    sxiv # Lightweight image viewer.
     pinta # Lightweight image editor.
-    zathura # Lighteight pdf viewier.
+    zathura # Lightweight pdf viewer.
   ];
 
   # Ensure config gets propogated to user services.
