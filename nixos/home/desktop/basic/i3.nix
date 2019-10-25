@@ -178,6 +178,7 @@ in {
     display_type = "memory"
     format_mem = "{Mup}%"
     clickable = false
+    interval = 4
 
     [[block]]
     block = "cpu"
@@ -187,7 +188,7 @@ in {
     [[block]]
     block = "load"
     format = "{1m} {5m}"
-    interval = 2
+    interval = 4
 
     [[block]]
     block = "temperature"
@@ -203,7 +204,7 @@ in {
 
     [[block]]
     block = "sound"
-    step_width = 5
+    step_width = 6
 
     [[block]]
     block = "time"
