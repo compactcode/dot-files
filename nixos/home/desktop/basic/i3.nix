@@ -30,7 +30,7 @@ in {
         "Mod1+Shift+l" = "move workspace to output left";
         "Mod1+Shift+r" = "move workspace to output right";
 
-        # Move focus between widnows.
+        # Move focus between windows.
         "Mod1+h" = "focus left";
         "Mod1+j" = "focus down";
         "Mod1+k" = "focus up";
@@ -41,6 +41,12 @@ in {
 
         # Kill current window.
         "Mod1+w" = "kill";
+
+        # Split window horizontally.
+        "Mod1+x" =" split h";
+
+        # Split window verticalally.
+        "Mod1+v" =" split v";
       };
 
       gaps = {
