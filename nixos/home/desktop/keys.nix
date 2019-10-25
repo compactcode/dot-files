@@ -1,7 +1,7 @@
 { lib, pkgs, ... }:
 
 let
-  launcher = "${lib.getBin pkgs.i3}/bin/i3-msg exec";
+  launcher = "${lib.getBin pkgs.i3}/bin/i3-msg exec --no-startup-id";
 
 in {
   services.sxhkd = {
