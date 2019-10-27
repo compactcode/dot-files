@@ -1,7 +1,12 @@
 { config, lib, pkgs, ... }:
 
 let
+  desktop = config.xdg.userDirs.desktop;
+
   launcher = "${lib.getBin pkgs.i3}/bin/i3-msg exec";
+  mv = "${lib.getBin pkgs.coreutils}/bin/mv";
+  pinta = "${lib.getBin pkgs.pinta}/bin/pinta";
+  scrot = "${lib.getBin pkgs.scrot}/bin/scrot";
 
 in {
   services.sxhkd = {
@@ -27,9 +32,12 @@ in {
       "super + shift + l" = "${launcher} '${lib.getBin pkgs.xautolock}/bin/xautolock -locknow'";
 
       # Screenshot the current window.
-      "Print" = "${lib.getBin pkgs.scrot}/bin/scrot -u -e '${lib.getBin pkgs.coreutils}/bin/mv $f \\${config.xdg.userDirs.desktop}/'";
-      # Screenshot the whole screen.
-      "super + Print" = "${lib.getBin pkgs.scrot}/bin/scrot -e '${lib.getBin pkgs.coreutils}/bin/mv $f \\${config.xdg.userDirs.desktop}/'";
+      "Print" = "${scrot} -u -e '${mv} $f \\${desktop}/'";
+      "shift + Print" = "${scrot} -u -e '${mv} $f \\${desktop}/; ${pinta} \\${desktop}/$f'";
+
+      # Screenshot the entire display.
+      "super + Print" = "${scrot} -e '${mv} $f \\${desktop}/'";
+      "super + shift + Print" = "${scrot} -e '${mv} $f \\${desktop}/; ${pinta} \\${desktop}/$f'";
     };
   };
 }
