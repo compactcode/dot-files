@@ -9,10 +9,16 @@ in {
     sxiv # Lightweight image viewer.
     pinta # Lightweight image editor.
     zathura # Lightweight pdf viewer.
+    scrot # Lightweight screenshot tool.
   ];
 
   # Ensure config gets propogated to user services.
   xsession = {
+    enable = true;
+  };
+
+  # Create common user dirs.
+  xdg.userDirs = {
     enable = true;
   };
 
