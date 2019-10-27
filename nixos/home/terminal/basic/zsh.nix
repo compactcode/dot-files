@@ -24,10 +24,11 @@
     };
 
     shellAliases = {
+      b  = "${pkgs.bat}/bin/bat";
       l  = "${pkgs.exa}/bin/exa -la";
       lt = "${pkgs.exa}/bin/exa -l --tree";
-      b  = "${pkgs.bat}/bin/bat";
       md = "mkdir -p";
+      o = "xdg-open";
       v  = "vim";
     };
   };
