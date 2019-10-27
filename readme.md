@@ -2,11 +2,15 @@
 
 This repo contains both system and user configuration for [NixOS](https://nixos.org/).
 
+![overview](https://i.imgur.com/r2C0wGo.png)
+
 ## Desktop
 
 I'm running a minimal setup with hand picked components & applications.
 
+* [lightdm](https://wiki.archlinux.org/index.php/LightDM)
 * [i3](https://wiki.archlinux.org/index.php/I3)
+* [compton](https://wiki.archlinux.org/index.php/Compton)
 * [dunst](https://wiki.archlinux.org/index.php/Dunst)
 
 ### i3 components
@@ -17,7 +21,13 @@ I'm running a minimal setup with hand picked components & applications.
 
 ## Theme
 
+![theme](https://i.imgur.com/ezM1FR8.png)
+
 The primary theme is [Nord](https://www.nordtheme.com/) with [Arc-Dark](https://github.com/horst3180/Arc-theme#arc-dark) for GTK applications.
+
+The font is [Source Code Pro](http://adobe-fonts.github.io/source-code-pro/).
+
+Window opacity and drop shadows are applied using compton.
 
 ## Key Bindings
 
