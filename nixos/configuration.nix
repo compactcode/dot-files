@@ -149,8 +149,8 @@ in {
     fade = true;
     fadeDelta = 5;
     shadow = true;
-    activeOpacity = "0.95";
-    inactiveOpacity = "0.85";
+    activeOpacity = "0.975";
+    inactiveOpacity = "0.950";
     opacityRules = [
       "99:class_g = 'Firefox'"
     ];
