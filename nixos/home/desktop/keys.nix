@@ -24,10 +24,14 @@ in {
 
       # Open an interactive application launcher.
       "super + space" = "${launcher} '${lib.getBin pkgs.rofi}/bin/rofi -show run --lines 10'";
+      "super + s" = "${launcher} '${config.xdg.dataFile."bin/duckduckgo".target}'";
+
       # Launch a new terminal.
       "{super, alt} + Return" = "${launcher} '${lib.getBin pkgs.alacritty}/bin/alacritty'";
+
       # Launch firefox.
-      "super + w" = "${launcher} '${lib.getBin "firefox-sandboxed"}'";
+      "super + w" = "${launcher} 'firefox-sandboxed'";
+
       # Lock the screen.
       "super + shift + l" = "${launcher} '${lib.getBin pkgs.xautolock}/bin/xautolock -locknow'";
 
