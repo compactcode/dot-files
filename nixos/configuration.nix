@@ -67,8 +67,6 @@ in {
     fre
     # version control.
     git
-    # top replacement.
-    htop
     # system sensor access.
     lm_sensors
     # grep replacement.
