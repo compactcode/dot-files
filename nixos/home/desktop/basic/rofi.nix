@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 let theme = import ../../themes/base_16_current.nix;
 
