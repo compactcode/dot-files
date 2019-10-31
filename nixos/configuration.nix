@@ -197,6 +197,7 @@ in {
         extraGroups = [
           "wheel" # Enable sudo.
           "video" # Enable setting brightness without sudo.
+          "networkmanager" # Enable changing network settings without sudo.
         ];
         hashedPassword = settings.user.hashedPassword;
       };
