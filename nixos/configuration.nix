@@ -57,43 +57,26 @@ in {
   environment.systemPackages = with pkgs; [
     # Command line utilities.
 
-    # cat replacement.
-    bat
-    # ls replacement.
-    exa
-    # find replacement.
-    fd
-    # frequency/recency tracker.
-    fre
-    # version control.
-    git
-    # system sensor access.
-    lm_sensors
-    # grep replacement.
-    ripgrep
-    # fuzzy finder
-    skim
-    yubikey-personalization
-    # bash replacement.
-    zsh
-    # lightweight zsh framework.
-    zsh-prezto
+    bat # cat replacement.
+    exa # ls replacement.
+    fd # find replacement.
+    fre # frequency/recency tracker.
+    git # version control.
+    lm_sensors # system sensor access.
+    ripgrep # grep replacement.
+    skim # fuzzy finder.
+    zsh # bash replacement.
+    zsh-prezto # lightweight zsh framework.
   ] ++ [
     # X11 utilities.
 
-    # Detect and manage multiple monitors.
-    arandr
-    # Arc theme for GTK appliactions.
-    arc-theme
-    arc-icon-theme
-    # Set screen brightness.
-    brightnessctl
-    # Preferred web browser
-    firefox
-    # Detect and apply themes for GTK applications.
-    lxappearance-gtk3
-    # Detect and manage audio devices.
-    pavucontrol
+    arandr # Detect and manage multiple monitors.
+    arc-icon-theme # Arc icon theme for GTK appliactions.
+    arc-theme # Arc theme for GTK appliactions.
+    brightnessctl # Set screen brightness.
+    firefox # Preferred web browser
+    lxappearance-gtk3 # Detect and apply themes for GTK applications.
+    pavucontrol # Detect and manage audio devices.
   ];
 
   fonts = {
@@ -163,10 +146,6 @@ in {
   services.pcscd = {
     enable = true;
   };
-
-  services.udev.packages = with pkgs; [
-    yubikey-personalization
-  ];
 
   programs = {
     # Add the network manager to the status bar.
