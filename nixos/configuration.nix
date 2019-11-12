@@ -63,6 +63,8 @@ in {
     fre # frequency/recency tracker.
     git # version control.
     lm_sensors # system sensor access.
+    pciutils # pci debugging.
+    glxinfo # gfx debugging.
     ripgrep # grep replacement.
     skim # fuzzy finder.
     zsh # bash replacement.
