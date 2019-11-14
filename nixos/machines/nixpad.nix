@@ -91,7 +91,13 @@
   services.throttled.enable = true;
 
   # Enable general power saving features.
-  services.tlp.enable = true;
+  services.tlp = {
+    enable = true;
+    extraConfig = ''
+      CPU_SCALING_GOVERNOR_ON_AC=powersave
+      CPU_SCALING_GOVERNOR_ON_BAT=powersave
+    '';
+  };
 
   services.xserver = {
     # Enable touchpad support.
