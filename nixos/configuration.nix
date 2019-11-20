@@ -63,6 +63,7 @@ in {
     fre # frequency/recency tracker.
     git # version control.
     lm_sensors # system sensor access.
+    nfs-utils # mount nfs drives.
     pciutils # pci debugging.
     glxinfo # gfx debugging.
     ripgrep # grep replacement.
