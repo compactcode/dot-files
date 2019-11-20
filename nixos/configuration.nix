@@ -64,6 +64,7 @@ in {
     git # version control.
     glxinfo # gfx debugging.
     lm_sensors # system sensor access.
+    exfat # mount exfat drives.
     nfs-utils # mount nfs drives.
     pciutils # pci debugging.
     ripgrep # grep replacement.
@@ -78,7 +79,6 @@ in {
     arc-theme # Arc theme for GTK appliactions.
     brightnessctl # Set screen brightness.
     firefox # Preferred web browser.
-    mpv # Lightweight video player.
     lxappearance-gtk3 # Detect and apply themes for GTK applications.
     pavucontrol # Detect and manage audio devices.
   ];

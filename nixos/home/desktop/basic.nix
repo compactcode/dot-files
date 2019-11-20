@@ -76,6 +76,12 @@ in {
       enable = true;
       imageDirectory = toString ./art;
     };
+
+    # Manage removeable media.
+    udiskie = {
+      enable = true;
+      tray = "auto";
+    };
   };
 
   imports = [
