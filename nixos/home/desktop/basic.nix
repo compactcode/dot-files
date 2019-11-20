@@ -6,10 +6,11 @@ let
 
 in {
   home.packages = with pkgs; [
-    sxiv # Lightweight image viewer.
+    mpv # Lightweight video player.
     pinta # Lightweight image editor.
-    zathura # Lightweight pdf viewer.
     scrot # Lightweight screenshot tool.
+    sxiv # Lightweight image viewer.
+    zathura # Lightweight pdf viewer.
   ];
 
   # Ensure config gets propogated to user services.
