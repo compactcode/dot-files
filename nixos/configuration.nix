@@ -62,10 +62,10 @@ in {
     fd # find replacement.
     fre # frequency/recency tracker.
     git # version control.
+    glxinfo # gfx debugging.
     lm_sensors # system sensor access.
     nfs-utils # mount nfs drives.
     pciutils # pci debugging.
-    glxinfo # gfx debugging.
     ripgrep # grep replacement.
     skim # fuzzy finder.
     zsh # bash replacement.
@@ -77,7 +77,8 @@ in {
     arc-icon-theme # Arc icon theme for GTK appliactions.
     arc-theme # Arc theme for GTK appliactions.
     brightnessctl # Set screen brightness.
-    firefox # Preferred web browser
+    firefox # Preferred web browser.
+    mpv # Lightweight video player.
     lxappearance-gtk3 # Detect and apply themes for GTK applications.
     pavucontrol # Detect and manage audio devices.
   ];
