@@ -141,6 +141,11 @@ in {
     ];
   };
 
+  # Redis database for development.
+  services.redis = {
+    enable = true;
+  };
+
   # Adjust screen color temperature based on the time of day.
   services.redshift = {
     enable = true;
@@ -149,6 +154,17 @@ in {
   # Enable support for gpg smart cards.
   services.pcscd = {
     enable = true;
+  };
+
+  # Postgres database for development.
+  services.postgresql = {
+    enable = true;
+    ensureUsers = [{
+      name = settings.user.username;
+      ensurePermissions = {
+        "ALL TABLES IN SCHEMA public" = "ALL PRIVILEGES";
+      };
+    }];
   };
 
   programs = {
