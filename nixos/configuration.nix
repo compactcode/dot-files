@@ -220,6 +220,13 @@ in {
       overlays = [
         (import ./pkgs/default.nix)
       ];
+
+      # Allow certain unfree programs to be installed.
+      config = {
+        allowUnfreePredicate = pkg: builtins.elem (pkg.pname) [
+          "slack"
+        ];
+      };
     };
 
     imports = [
