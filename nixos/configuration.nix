@@ -14,6 +14,11 @@ in {
     overlays = [
       (import ./pkgs/default.nix)
     ];
+
+    # Allow unfree programs to be installed.
+    config = {
+      allowUnfree = true;
+    };
   };
 
   time.timeZone = "Australia/Melbourne";

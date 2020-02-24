@@ -39,11 +39,6 @@
     ];
 
     kernelPackages = pkgs.linuxPackages_latest;
-
-    kernelParams = [
-      # Enable framebuffer compression for power saving.
-      "i915.enable_fbc=1"
-    ];
   };
 
   fileSystems."/" = {
@@ -74,8 +69,19 @@
       ];
     };
 
-    # Disable the Nvidia GPU completely to reduce power usage.
-    nvidiaOptimus.disable = true;
+    nvidia = {
+      # Prevent screen tearing.
+      modesetting = {
+        enable = true;
+      };
+
+      # Exclusively use the NVIDIA GPU.
+      optimus_prime = {
+        enable = true;
+        nvidiaBusId = "PCI:60:0:0";
+        intelBusId = "PCI:0:2:0";
+      };
+    };
   };
 
   # Enable periodic trim for long term SSD performance.
@@ -105,6 +111,9 @@
       enable = true;
       accelSpeed = "0.5";
     };
+
+    # Enable the proprietary NVIDIA drivers.
+    videoDrivers = [ "nvidia" ];
   };
 
   networking = {
