@@ -55,6 +55,16 @@
     # Enable firmware for bluetooth/wireless (Intel® Wireless-AC 9560).
     enableRedistributableFirmware = true;
 
+    # Enable bluetooth support.
+    bluetooth = {
+      enable = true;
+    };
+
+    # Enable setting screen brightness.
+    brightnessctl = {
+      enable = true;
+    };
+
     # Enable intel microcode updates.
     cpu.intel.updateMicrocode = true;
 
@@ -82,6 +92,11 @@
         intelBusId = "PCI:0:2:0";
       };
     };
+  };
+
+  # Detect and managing bluetooth connections.
+  services.blueman = {
+    enable = true;
   };
 
   # Enable periodic trim for long term SSD performance.

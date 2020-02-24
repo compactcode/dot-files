@@ -29,21 +29,9 @@ in {
   };
 
   hardware = {
-    # Enable setting screen brightness.
-    brightnessctl = {
-      enable = true;
-    };
-
-    # Enable bluetooth support.
-    bluetooth = {
-      enable = true;
-    };
-
     # Enable sound.
     pulseaudio = {
       enable = true;
-
-      # Include bluetooth headphone support.
       package = pkgs.pulseaudioFull;
     };
   };
@@ -52,10 +40,6 @@ in {
   networking = {
     networkmanager = {
       enable = true;
-
-      wifi = {
-        powersave = true;
-      };
     };
   };
 
@@ -82,7 +66,6 @@ in {
     arandr # Detect and manage multiple monitors.
     arc-icon-theme # Arc icon theme for GTK appliactions.
     arc-theme # Arc theme for GTK appliactions.
-    brightnessctl # Set screen brightness.
     firefox # Preferred web browser.
     lxappearance-gtk3 # Detect and apply themes for GTK applications.
     pavucontrol # Detect and manage audio devices.
@@ -126,11 +109,6 @@ in {
 
     # Turn caps lock into another ctrl.
     xkbOptions = "ctrl:nocaps";
-  };
-
-  # Detect and managing bluetooth connections.
-  services.blueman = {
-    enable = true;
   };
 
   # Opacity and drop shadows on windows.
@@ -200,7 +178,7 @@ in {
         isNormalUser = true;
         extraGroups = [
           "wheel" # Enable sudo.
-          "video" # Enable setting brightness without sudo.
+          "video" # Enable changing screen settings without sudo.
           "networkmanager" # Enable changing network settings without sudo.
         ];
         hashedPassword = settings.user.hashedPassword;
