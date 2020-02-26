@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ex
+
 brew install bat
 brew install chruby
 brew install exa
