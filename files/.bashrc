@@ -1,29 +1,42 @@
-export EDITOR=vim
+export EDITOR=nvim
 
 export FZF_DEFAULT_COMMAND="rg --files --hidden | grep -v '\.git'"
 export FZF_DEFAULT_OPTS="--reverse --height 40%"
 
-source ~/.bash_aliases/bundler.sh
-source ~/.bash_aliases/git.sh
-source ~/.bash_aliases/rg.sh
-source ~/.bash_aliases/utility.sh
-source ~/.bash_aliases/vim.sh
+# Ruby
+alias be='bundle exec'
+alias bi='bundle install'
+alias bu='bundle update'
 
-# Add homebrew binaries to the path.
-export PATH="/usr/local/bin:$PATH"
+# Git
+alias g='git'
+alias ga='git add'
+alias gars='git add . && git reset --hard'
+alias gc='git commit -v'
+alias gca='git commit --amend'
+alias gco='git checkout'
+alias gcp='git cherry-pick'
+alias gd='git diff'
+alias glg='git log --stat'
+alias glr='git pull --rebase'
+alias gp='git push'
+alias grh='git reset HEAD'
+alias grs='git reset --hard'
+alias gs='git status'
 
-# Add npm binaries to the path.
-export PATH="/usr/local/share/npm/bin:$PATH"
+# Vim
+alias v='nvim'
 
-# Add cargo binaries to the path.
-export PATH="$HOME/.cargo/bin:$PATH"
+# Utility
+alias l='exa -la'
+alias md='mkdir -p'
+
+# Add homebrew utilities to the path.
+export PATH="/home/linuxbrew/.linuxbrew/bin/:$PATH"
 
 # Ruby version management.
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-
-# Disable the pure prompt from making remote git fetch.
-export PURE_GIT_PULL=0
+source /home/linuxbrew/.linuxbrew/opt/chruby/share/chruby/chruby.sh
+source /home/linuxbrew/.linuxbrew/opt/chruby/share/chruby/auto.sh
 
 # GPG Prompt.
 export "GPG_TTY=$(tty)"

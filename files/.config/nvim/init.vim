@@ -1,12 +1,4 @@
-if has('nvim')
-  call plug#begin('~/.local/share/nvim/plugged')
-else
-  set encoding=utf-8
-
-  set nocompatible
-
-  call plug#begin('~/.vim/plugged')
-endif
+call plug#begin('~/.local/share/nvim/plugged')
 
 " The nord theme.
 Plug 'arcticicestudio/nord-vim'
@@ -39,15 +31,6 @@ Plug 'houtsnip/vim-emacscommandline'
 Plug 'rust-lang/rust.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'pangloss/vim-javascript'
-
-if has('nvim')
-  " Syntax checking.
-  Plug 'neomake/neomake'
-
-  " Snippet engine.
-  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
-end
 
 call plug#end()
 
@@ -270,7 +253,7 @@ endfunction
 " Configure ripgrep to output single line results in color.
 let s:fzf_rg_source  = 'rg --column --no-heading --smart-case --color always %s'
 " Configure fzf to handle color and show a preview window.
-let s:fzf_rg_options = '--ansi --multi --preview "~/.zsh_functions/fzf-column-preview.sh {}"'
+let s:fzf_rg_options = '--ansi --multi --preview "~/.local/share/sh/fzf-column-preview.sh {}"'
 " Configure fzf to use our custom function when result is selected.
 let s:fzf_rg_sink    = function('s:OpenRgResult')
 
@@ -279,20 +262,3 @@ command! -nargs=0 RgCurrentWord call fzf#run(fzf#wrap('fzf', {'source': printf(s
 
 " Search the project for occurences of the current word
 nnoremap <Leader>s :RgCurrentWord<CR>
-
-
-" ************************************************************
-" (plugin) ultiSnips
-" ************************************************************
-
-" Use tab to move around within an expansion.
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
-
-
-" ************************************************************
-" (plugin) neomake
-" ************************************************************
-
-" Auto check on save.
-autocmd! BufWritePost * Neomake
