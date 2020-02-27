@@ -10,6 +10,7 @@ mkdir -p ~/.local/share
 
 ln -vsf  "$MY_PATH/files/.bashrc"                "$HOME"
 ln -vsf  "$MY_PATH/files/.zshrc"                 "$HOME"
+ln -vsf  "$MY_PATH/files/.gemrc"                 "$HOME"
 ln -vsfn "$MY_PATH/files/.config/git"            "$HOME/.config/git"
 ln -vsfn "$MY_PATH/files/.config/nvim"           "$HOME/.config/nvim"
 ln -vsfn "$MY_PATH/files/.local/share/nvim/site" "$HOME/.local/share/nvim/site"
