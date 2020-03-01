@@ -21,3 +21,7 @@ git clone git://github.com/compactcode/dot-files.git && ./dot-files/install.sh
 * Create Postgres User
 
 `sudo -u postgres createuser -s shandogs`
+
+* Enable Postgres localhost Connections
+
+https://gist.github.com/p1nox/4953113
