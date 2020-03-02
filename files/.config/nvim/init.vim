@@ -31,6 +31,7 @@ Plug 'houtsnip/vim-emacscommandline'
 Plug 'rust-lang/rust.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'pangloss/vim-javascript'
+Plug 'slim-template/vim-slim'
 
 call plug#end()
 
