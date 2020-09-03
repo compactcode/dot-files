@@ -6,4 +6,4 @@ set -ex
 ln -s /mnt/etc/dotfiles/nixos/machines/nixvm.nix /mnt/etc/nixos/configuration.nix
 
 # 🚀
-nixos-install
+sudo -i nixos-install --no-root-passwd

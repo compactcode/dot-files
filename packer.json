@@ -2,9 +2,8 @@
   "builders": [{
     "type": "virtualbox-iso",
     "guest_os_type": "Other_64",
-    "iso_url": "https://releases.nixos.org/nixos/19.03/nixos-19.03.173052.aef662d2eb5/nixos-minimal-19.03.173052.aef662d2eb5-x86_64-linux.iso",
-    "iso_checksum": "bd65b50a0516b7a071372ee6dad3cbdeba3ec84f932d1915b86959fa9e4f963a",
-    "iso_checksum_type": "sha256",
+    "iso_url": "https://releases.nixos.org/nixos/20.03/nixos-20.03.2823.fc966732c89/nixos-minimal-20.03.2823.fc966732c89-x86_64-linux.iso",
+    "iso_checksum": "edb5c11dcb2bc400e3940196d00ccfa21884671d80f59485983ae09c8bd9693f",
     "disk_size": 16000,
     "boot_wait": "5s",
     "boot_command": [
@@ -13,7 +12,8 @@
       "passwd<enter><wait>",
       "secret<enter><wait>",
       "secret<enter><wait>",
-      "systemctl start sshd<enter>"
+      "systemctl start sshd<enter><wait>",
+      "secret<enter><wait>"
     ],
     "iso_interface": "sata",
     "hard_drive_interface": "sata",
@@ -26,7 +26,7 @@
       ["modifyvm", "{{.Name}}", "--nictype1", "virtio"]
     ],
     "vm_name": "nix_vm",
-    "ssh_username": "root",
+    "ssh_username": "nixos",
     "ssh_password": "secret",
     "shutdown_command": "shutdown -P now",
     "post_shutdown_delay": "10s"
