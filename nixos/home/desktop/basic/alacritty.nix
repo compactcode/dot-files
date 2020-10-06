@@ -41,8 +41,6 @@ in {
     scrolling:
       history: 5000
       multiplier: 3
-      faux_multiplier: 3
-      auto_scroll: false
 
     colors:
       primary:
