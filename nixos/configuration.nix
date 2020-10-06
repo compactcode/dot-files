@@ -119,7 +119,7 @@ in {
   };
 
   # Opacity and drop shadows on windows.
-  services.compton = {
+  services.picom = {
     enable = true;
     fade = true;
     fadeDelta = 5;
