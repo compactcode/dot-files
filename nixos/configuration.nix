@@ -215,7 +215,9 @@ in {
       config = {
         allowUnfreePredicate = pkg: builtins.elem (pkg.pname) [
           "slack"
+          "faac"
           "discord"
+          "zoom-us"
         ];
       };
     };

@@ -8,5 +8,7 @@
     slack
     # Voice communication.
     discord
+    # Video communication.
+    zoom-us
   ];
 }
