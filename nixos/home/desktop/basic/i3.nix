@@ -204,11 +204,6 @@ in {
     chip = "coretemp-isa-*"
 
     [[block]]
-    block = "battery"
-    interval = 10
-    format = "{percentage}% {time}"
-
-    [[block]]
     block = "sound"
     step_width = 6
 
