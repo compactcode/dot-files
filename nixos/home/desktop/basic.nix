@@ -24,11 +24,6 @@ in {
   };
 
   services = {
-    # Add the bluetooth manager to the status bar.
-    blueman-applet = {
-      enable = true;
-    };
-
     # Display desktop notfications.
     dunst = {
       enable = true;
