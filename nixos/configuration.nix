@@ -92,18 +92,25 @@ in {
   services.xserver = {
     enable = true;
 
-    # A dummy desktop manager, we use .xsession instead.
     desktopManager = {
-      default = "xterm";
+      xterm.enable = false;
     };
 
-    displayManager.lightdm ={
-      enable = true;
-
-      # Skip login since we just unlocked the encrypted drive.
-      autoLogin = {
+    displayManager = {
+      lightdm = {
         enable = true;
-        user = settings.user.username;
+
+        # Skip login since we just unlocked the encrypted drive.
+        autoLogin = {
+          enable = true;
+          user = settings.user.username;
+        };
+      };
+    };
+
+    windowManager = {
+      i3 = {
+        enable = true;
       };
     };
 
