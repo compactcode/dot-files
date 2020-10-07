@@ -67,7 +67,7 @@ in {
     arc-icon-theme # Arc icon theme for GTK appliactions.
     arc-theme # Arc theme for GTK appliactions.
     firefox # Preferred web browser.
-    lxappearance-gtk3 # Detect and apply themes for GTK applications.
+    lxappearance # Detect and apply themes for GTK applications.
     pavucontrol # Detect and manage audio devices.
   ];
 
@@ -97,14 +97,14 @@ in {
     };
 
     displayManager = {
+      # Skip login since we just unlocked the encrypted drive.
+      autoLogin = {
+        enable = true;
+        user = settings.user.username;
+      };
+
       lightdm = {
         enable = true;
-
-        # Skip login since we just unlocked the encrypted drive.
-        autoLogin = {
-          enable = true;
-          user = settings.user.username;
-        };
       };
     };
 
@@ -124,8 +124,8 @@ in {
     fade = true;
     fadeDelta = 5;
     shadow = true;
-    activeOpacity = "0.975";
-    inactiveOpacity = "0.950";
+    activeOpacity = 0.975;
+    inactiveOpacity = 0.950;
     opacityRules = [
       "99:class_g = 'Firefox'"
     ];

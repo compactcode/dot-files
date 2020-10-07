@@ -2,8 +2,8 @@
   "builders": [{
     "type": "virtualbox-iso",
     "guest_os_type": "Other_64",
-    "iso_url": "https://releases.nixos.org/nixos/20.03/nixos-20.03.2823.fc966732c89/nixos-minimal-20.03.2823.fc966732c89-x86_64-linux.iso",
-    "iso_checksum": "edb5c11dcb2bc400e3940196d00ccfa21884671d80f59485983ae09c8bd9693f",
+    "iso_url": "https://channels.nixos.org/nixos-20.09-small/latest-nixos-minimal-x86_64-linux.iso",
+    "iso_checksum": "348ab2d0733eadac8abd30eac9b2457d933dd01e4d07eee3dfd805e05376fa3f",
     "disk_size": 16000,
     "boot_wait": "5s",
     "boot_command": [
