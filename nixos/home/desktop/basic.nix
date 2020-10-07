@@ -19,8 +19,21 @@ in {
   };
 
   # Create common user dirs.
-  xdg.userDirs = {
-    enable = true;
+  xdg = {
+    mime = {
+      enable = true;
+    };
+
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "image/jpeg" = "sxiv.desktop"
+      };
+    };
+
+    userDirs = {
+      enable = true;
+    };
   };
 
   services = {
