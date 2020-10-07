@@ -27,7 +27,9 @@ in {
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "image/jpeg" = "sxiv.desktop"
+        "application/pdf" = "zathura.desktop";
+        "image/jpeg"      = "sxiv.desktop";
+        "image/png"       = "sxiv.desktop";
       };
     };
 
