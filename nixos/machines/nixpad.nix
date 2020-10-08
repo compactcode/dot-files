@@ -75,14 +75,10 @@
     };
 
     nvidia = {
-      # Prevent screen tearing.
-      modesetting = {
-        enable = true;
-      };
-
-      # Exclusively use the NVIDIA GPU.
-      optimus_prime = {
-        enable = true;
+      prime = {
+        offload = {
+          enable = true;
+        };
         nvidiaBusId = "PCI:60:0:0";
         intelBusId = "PCI:0:2:0";
       };
