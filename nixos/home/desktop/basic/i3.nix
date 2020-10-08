@@ -168,6 +168,9 @@ in {
 
     [icons]
     name = "awesome"
+    [icons.overrides]
+    net_wired = ""
+    net_wireless = ""
 
     [[block]]
     block = "disk_space"
@@ -202,6 +205,11 @@ in {
     interval = 4
     format = "{min}-{max}°"
     chip = "coretemp-isa-*"
+
+    [[block]]
+    block = "net"
+    device = "wlp0s20f3"
+    interval = 4
 
     [[block]]
     block = "sound"
