@@ -60,11 +60,6 @@
       enable = true;
     };
 
-    # Enable setting screen brightness.
-    brightnessctl = {
-      enable = true;
-    };
-
     # Enable intel microcode updates.
     cpu.intel.updateMicrocode = true;
 
