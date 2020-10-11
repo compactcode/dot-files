@@ -149,12 +149,6 @@ in {
   # Postgres database for development.
   services.postgresql = {
     enable = true;
-    ensureUsers = [{
-      name = settings.user.username;
-      ensurePermissions = {
-        "ALL TABLES IN SCHEMA public" = "ALL PRIVILEGES";
-      };
-    }];
   };
 
   programs = {
