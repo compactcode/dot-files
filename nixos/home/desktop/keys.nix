@@ -23,7 +23,7 @@ in {
       "XF86MonBrightnessUp" = "${lib.getBin pkgs.brightnessctl}/bin/brightnessctl s +5%";
 
       # Open an interactive application launcher.
-      "super + space" = "${launcher} '${lib.getBin pkgs.rofi}/bin/rofi -show run --lines 10'";
+      "super + space" = "${launcher} '${lib.getBin pkgs.rofi}/bin/rofi -show drun --lines 10'";
       "super + s" = "${launcher} '${config.xdg.dataFile."bin/duckduckgo".target}'";
 
       # Launch a new terminal.
