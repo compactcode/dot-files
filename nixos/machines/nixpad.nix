@@ -38,6 +38,11 @@
       "acpi_call"
     ];
 
+    # Required for throttled when running on the 5.9 kernel.
+    kernelParams = [
+      "msr.allow_writes=on"
+    ];
+
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
