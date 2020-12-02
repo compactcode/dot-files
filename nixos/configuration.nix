@@ -149,13 +149,14 @@ in {
   # Postgres database for development.
   services.postgresql = {
     enable = true;
-  };
 
-  programs = {
-    # Add the network manager to the status bar.
-    nm-applet = {
-      enable = true;
-    };
+    package = pkgs.postgresql_12;
+
+    # Enable passwordless local access.
+    authentication = lib.mkForce ''
+      local all all trust
+      host all all ::1/128 trust
+    '';
   };
 
   # Sandbox certain programs to mitigate damage from security breaches.
@@ -222,7 +223,6 @@ in {
       ./home/terminal/files.nix
       ./home/desktop/basic.nix
       ./home/desktop/keys.nix
-      ./home/desktop/general.nix
       ./home/desktop/security.nix
     ];
   };

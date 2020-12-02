@@ -6,11 +6,15 @@ let
 
 in {
   home.packages = with pkgs; [
+    discord # Voice communication.
+    libreoffice # Spreadsheet & word documents.
     mpv # Lightweight video player.
     pinta # Lightweight image editor.
     scrot # Lightweight screenshot tool.
+    slack # Text communication.
     sxiv # Lightweight image viewer.
     zathura # Lightweight pdf viewer.
+    zoom-us # Video communication.
   ];
 
   # Ensure config gets propogated to user services.
@@ -79,6 +83,16 @@ in {
           timeout = 10;
         };
       };
+    };
+
+    # Add the network manager to the status bar.
+    network-manager-applet = {
+      enable = true;
+    };
+
+    # Add the audio manager to the status bar.
+    pasystray = {
+      enable = true;
     };
 
     # Set a background image.
