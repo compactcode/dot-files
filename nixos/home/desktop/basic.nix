@@ -13,6 +13,7 @@ in {
     scrot # Lightweight screenshot tool.
     slack # Text communication.
     sxiv # Lightweight image viewer.
+    steam # Video games.
     zathura # Lightweight pdf viewer.
     zoom-us # Video communication.
   ];

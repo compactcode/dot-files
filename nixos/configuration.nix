@@ -29,10 +29,17 @@ in {
   };
 
   hardware = {
+    # Steam support
+    opengl = {
+      extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
+      driSupport32Bit = true;
+    };
+
     # Enable sound.
     pulseaudio = {
       enable = true;
       package = pkgs.pulseaudioFull;
+      support32Bit = true;
     };
   };
 
@@ -208,8 +215,11 @@ in {
 
       # Allow certain unfree programs to be installed.
       config = {
-        allowUnfreePredicate = pkg: builtins.elem (pkg.pname) [
+        allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
           "slack"
+          "steam"
+          "steam-original"
+          "steam-runtime"
           "faac"
           "discord"
           "zoom-us"
