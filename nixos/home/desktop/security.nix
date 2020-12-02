@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    aws-vault
     gnupg
     i3lock-color
     pass
