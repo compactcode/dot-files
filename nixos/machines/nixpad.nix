@@ -120,6 +120,13 @@
 
   networking = {
     hostName = "nixpad";
+
+    # Enable wifi powersaving.
+    networkmanager = {
+      wifi = {
+        powersave = true;
+      };
+    };
   };
 
   nix.maxJobs = lib.mkDefault 8;
