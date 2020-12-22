@@ -8,9 +8,12 @@
   boot = {
     initrd = {
       availableKernelModules = [
-        "xhci_pci"
+        "ahci"
         "nvme"
+        "sd_mod"
         "usb_storage"
+        "usbhid"
+        "xhci_pci"
       ];
 
       luks.devices."nixos-decrypted" = {
@@ -27,6 +30,10 @@
         enable = true;
       };
     };
+
+    kernelModules = [
+      "kvm-intel"
+    ];
 
     kernelPackages = pkgs.linuxPackages_latest;
   };
@@ -74,7 +81,7 @@
   };
 
   networking = {
-    hostName = "nixpad";
+    hostName = "nixbox";
   };
 
   nix.maxJobs = lib.mkDefault 8;
