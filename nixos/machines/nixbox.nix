@@ -78,6 +78,14 @@
   services.xserver = {
     # Enable the proprietary NVIDIA drivers.
     videoDrivers = [ "nvidia" ];
+
+    # The external monitor was not being selected as primary.
+    xrandrHeads = [
+      {
+        output = "DP-2";
+        primary = true;
+      }
+    ];
   };
 
   networking = {
