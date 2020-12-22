@@ -208,7 +208,6 @@ in {
 
     [[block]]
     block = "net"
-    device = "wlp0s20f3"
     interval = 4
 
     [[block]]
