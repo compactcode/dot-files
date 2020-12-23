@@ -71,10 +71,7 @@ in {
     # X11 utilities.
 
     arandr # Detect and manage multiple monitors.
-    arc-icon-theme # Arc icon theme for GTK appliactions.
-    arc-theme # Arc theme for GTK appliactions.
     firefox # Preferred web browser.
-    lxappearance # Detect and apply themes for GTK applications.
     pavucontrol # Detect and manage audio devices.
   ];
 
@@ -151,6 +148,12 @@ in {
   # Enable support for gpg smart cards.
   services.pcscd = {
     enable = true;
+  };
+
+  services.dbus = {
+    packages = with pkgs; [
+      gnome3.dconf
+    ];
   };
 
   # Postgres database for development.
