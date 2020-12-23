@@ -223,7 +223,6 @@ in {
 
     imports = [
       ./home/terminal/basic.nix
-      ./home/terminal/files.nix
       ./home/desktop/basic.nix
       ./home/desktop/keys.nix
       ./home/desktop/security.nix

@@ -10,7 +10,7 @@ I'm running a minimal setup with hand picked components & applications.
 
 * [lightdm](https://wiki.archlinux.org/index.php/LightDM)
 * [i3](https://wiki.archlinux.org/index.php/I3)
-* [compton](https://wiki.archlinux.org/index.php/Compton)
+* [picom](https://wiki.archlinux.org/index.php/picom)
 * [dunst](https://wiki.archlinux.org/index.php/Dunst)
 
 ### i3 components
@@ -27,7 +27,7 @@ The primary theme is [Nord](https://www.nordtheme.com/) with [Arc-Dark](https://
 
 The font is [Source Code Pro](http://adobe-fonts.github.io/source-code-pro/).
 
-Window opacity and drop shadows are applied using compton.
+Window opacity and drop shadows are applied using picom.
 
 ## Key Bindings
 
@@ -48,9 +48,3 @@ I run this configuration on the following machines:
 
 * [ThinkPad P43s](./docs/thinkpad.md)
 * [VirtualBox](./docs/virtualbox.md)
-
-## Workflows
-
-### Browsing files.
-
-I'm using the text based [ranger](https://github.com/ranger/ranger) browsing & previewing files.
