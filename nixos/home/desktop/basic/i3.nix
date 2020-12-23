@@ -18,6 +18,10 @@ in {
         "Mod1+3" = "workspace 3";
         "Mod1+4" = "workspace 4";
         "Mod1+5" = "workspace 5";
+        "Mod1+6" = "workspace 6";
+        "Mod1+7" = "workspace 7";
+        "Mod1+8" = "workspace 8";
+        "Mod1+9" = "workspace 9";
 
         # Move applications to another workspace.
         "Mod1+Shift+1" = "move container to workspace 1";
@@ -25,6 +29,10 @@ in {
         "Mod1+Shift+3" = "move container to workspace 3";
         "Mod1+Shift+4" = "move container to workspace 4";
         "Mod1+Shift+5" = "move container to workspace 5";
+        "Mod1+Shift+6" = "move container to workspace 6";
+        "Mod1+Shift+7" = "move container to workspace 7";
+        "Mod1+Shift+8" = "move container to workspace 8";
+        "Mod1+Shift+9" = "move container to workspace 9";
 
         # Move workspace to another monitor.
         "Mod1+Shift+l" = "move workspace to output left";
@@ -146,6 +154,10 @@ in {
 
       window = {
         border = 1;
+      };
+
+      assigns = {
+        "9" = [{ class = "^Steam$"; title = "^Steam$"; }];
       };
     };
   };
