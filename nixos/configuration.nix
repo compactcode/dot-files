@@ -52,21 +52,11 @@ in {
 
   environment.systemPackages = with pkgs; [
     # Command line utilities.
-
-    bat # cat replacement.
-    exa # ls replacement.
-    fd # find replacement.
-    fre # frequency/recency tracker.
-    git # version control.
     glxinfo # gfx debugging.
     lm_sensors # system sensor access.
     exfat # mount exfat drives.
     nfs-utils # mount nfs drives.
     pciutils # pci debugging.
-    ripgrep # grep replacement.
-    skim # fuzzy finder.
-    zsh # bash replacement.
-    zsh-prezto # lightweight zsh framework.
   ] ++ [
     # X11 utilities.
 
@@ -150,6 +140,7 @@ in {
     enable = true;
   };
 
+  # Required 
   services.dbus = {
     packages = with pkgs; [
       gnome3.dconf
@@ -232,7 +223,6 @@ in {
 
     imports = [
       ./home/terminal/basic.nix
-      ./home/terminal/development.nix
       ./home/terminal/files.nix
       ./home/desktop/basic.nix
       ./home/desktop/keys.nix
