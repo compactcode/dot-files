@@ -4,7 +4,7 @@ let
   settings = import ./settings.nix;
 
 in {
-  system.stateVersion = "20.03";
+  system.stateVersion = "20.09";
 
   imports = [
     <home-manager/nixos>
