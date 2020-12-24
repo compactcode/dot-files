@@ -45,6 +45,9 @@ in {
         signByDefault = true;
         key = settings.user.gpg.signingKey;
       };
+      delta = {
+        enable = true;
+      };
     };
 
     # process viewing
