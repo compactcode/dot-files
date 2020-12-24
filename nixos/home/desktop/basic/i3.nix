@@ -157,6 +157,9 @@ in {
       };
 
       assigns = {
+        "2" = [
+          { class = "^Firefox$"; }
+        ];
         "5" = [
           { class = "^Slack$"; }
           { class = "^discord$"; }
