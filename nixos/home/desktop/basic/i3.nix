@@ -157,7 +157,13 @@ in {
       };
 
       assigns = {
-        "9" = [{ class = "^Steam$"; title = "^Steam$"; }];
+        "5" = [
+          { class = "^Slack$"; }
+          { class = "^discord$"; }
+        ];
+        "9" = [
+          { class = "^Steam$"; title = "^Steam$"; }
+        ];
       };
     };
   };
