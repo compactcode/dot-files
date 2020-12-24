@@ -160,6 +160,7 @@ in {
         "5" = [
           { class = "^Slack$"; }
           { class = "^discord$"; }
+          { class = "^Signal$"; }
         ];
         "9" = [
           { class = "^Steam$"; title = "^Steam$"; }

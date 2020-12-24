@@ -11,6 +11,7 @@ in {
     mpv # Lightweight video player.
     pinta # Lightweight image editor.
     scrot # Lightweight screenshot tool.
+    signal-desktop # Text communication.
     slack # Text communication.
     sxiv # Lightweight image viewer.
     steam # Video games.
