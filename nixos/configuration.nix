@@ -169,6 +169,14 @@ in {
     };
   };
 
+  virtualisation.docker = {
+    enable = true;
+
+    autoPrune = {
+      enable = true;
+    };
+  };
+
   users = {
     defaultUserShell = pkgs.zsh;
 
@@ -182,6 +190,7 @@ in {
         extraGroups = [
           "wheel" # Enable sudo.
           "video" # Enable changing screen settings without sudo.
+          "docker" # Enable using docker without sudo.
           "networkmanager" # Enable changing network settings without sudo.
         ];
         hashedPassword = settings.user.hashedPassword;
