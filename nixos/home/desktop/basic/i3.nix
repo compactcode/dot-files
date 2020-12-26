@@ -166,7 +166,7 @@ in {
           { class = "^Signal$"; }
         ];
         "9" = [
-          { class = "^Steam$"; title = "^Steam$"; }
+          { class = "^Steam$"; }
         ];
       };
     };
