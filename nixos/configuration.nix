@@ -70,8 +70,11 @@ in {
       source-code-pro
       source-sans-pro
       source-serif-pro
-      font-awesome_4
-      font-awesome_5
+      (
+        nerdfonts.override {
+          fonts = [ "FiraCode"];
+        }
+      )
     ];
 
     fontconfig = {
