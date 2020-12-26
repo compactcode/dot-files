@@ -74,6 +74,11 @@
   # Enable general power saving features.
   services.tlp = {
     enable = true;
+
+    # The GRACE SDAC doesn't support USB autosuspend.
+    settings = {
+      USB_BLACKLIST = "21b4:0144";
+    };
   };
 
   services.xserver = {
