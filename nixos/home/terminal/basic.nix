@@ -70,6 +70,12 @@ in {
       ];
     };
 
+    # bash prompt.
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
     # bash replacement.
     zsh = {
       enable = true;
@@ -82,12 +88,7 @@ in {
           "editor"
           "directory"
           "history"
-          "prompt"
         ];
-
-        prompt = {
-          theme = "pure";
-        };
       };
 
       sessionVariables = {
