@@ -223,12 +223,13 @@ in {
       # Allow certain unfree programs to be installed.
       config = {
         allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+          "discord"
+          "faac"
           "slack"
+          "spotify"
           "steam"
           "steam-original"
           "steam-runtime"
-          "faac"
-          "discord"
           "zoom-us"
         ];
       };

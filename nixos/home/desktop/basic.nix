@@ -13,8 +13,9 @@ in {
     scrot # Lightweight screenshot tool.
     signal-desktop # Text communication.
     slack # Text communication.
-    sxiv # Lightweight image viewer.
+    spotify # Music player.
     steam # Video games.
+    sxiv # Lightweight image viewer.
     zathura # Lightweight pdf viewer.
     zoom-us # Video communication.
   ];

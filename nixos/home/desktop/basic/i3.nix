@@ -157,13 +157,16 @@ in {
       };
 
       assigns = {
-        "2" = [
+        "1" = [
           { class = "^Firefox$"; }
         ];
         "5" = [
           { class = "^Slack$"; }
           { class = "^discord$"; }
           { class = "^Signal$"; }
+        ];
+        "8" = [
+          { class = "^Spotify$"; }
         ];
         "9" = [
           { class = "^Steam$"; }
