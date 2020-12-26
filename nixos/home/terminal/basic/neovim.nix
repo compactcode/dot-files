@@ -131,7 +131,7 @@ in {
       nnoremap <Leader>, :nohlsearch<CR>
 
       " Open a file browser in the directory of the current file.
-      nnoremap <Leader>o :silent ! ${pkgs.alacritty}/bin/alacritty -e ${pkgs.ranger}/bin/ranger %:h &<CR>
+      nnoremap <Leader>o :silent ! ${pkgs.alacritty}/bin/alacritty -e ${pkgs.lf}/bin/lf %:h &<CR>
 
       " ************************************************************
       " Insert mode key bindings

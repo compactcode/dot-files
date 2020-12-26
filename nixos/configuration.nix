@@ -52,9 +52,9 @@ in {
 
   environment.systemPackages = with pkgs; [
     # Command line utilities.
+    exfat # mount exfat drives.
     glxinfo # gfx debugging.
     lm_sensors # system sensor access.
-    exfat # mount exfat drives.
     nfs-utils # mount nfs drives.
     pciutils # pci debugging.
     usbutils # usb debugging.

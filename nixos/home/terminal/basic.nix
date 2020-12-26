@@ -20,17 +20,15 @@ in {
     # cat replacement.
     bat = {
       enable = true;
-
       config = {
         theme = "nord";
       };
-
       themes = {
         nord = (builtins.readFile ../themes/base_16_nord.tmTheme);
       };
     };
 
-    # autoloader
+    # environment autoloading.
     direnv = {
       enable = true;
       enableZshIntegration = true;
@@ -50,13 +48,18 @@ in {
       };
     };
 
-    # process viewing
+    # process viewing.
     htop = {
       enable = true;
       fields = [
          "PID" "USER" "M_SIZE" "M_RESIDENT" "PERCENT_CPU" "PERCENT_MEM" "TIME" "COMM"
       ];
       showProgramPath = false;
+    };
+
+    # file managing.
+    lf = {
+      enable = true;
     };
 
     # fuzzy finding.
