@@ -57,6 +57,7 @@ in {
     exfat # mount exfat drives.
     nfs-utils # mount nfs drives.
     pciutils # pci debugging.
+    usbutils # usb debugging.
   ] ++ [
     # X11 utilities.
 
