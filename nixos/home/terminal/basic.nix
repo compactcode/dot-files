@@ -74,20 +74,21 @@ in {
     zsh = {
       enable = true;
 
-      initExtra = ''
-        zstyle ':prezto:load' pmodule \
-          'environment' \
-          'editor' \
-          'directory' \
-          'history' \
-          'prompt'
+      prezto = {
+        enable = true;
 
-        zstyle ':prezto:module:prompt' theme 'pure'
+        pmodules = [
+          "environment"
+          "editor"
+          "directory"
+          "history"
+          "prompt"
+        ];
 
-        PURE_GIT_PULL=0
-
-        source ${pkgs.zsh-prezto}/init.zsh
-      '';
+        prompt = {
+          theme = "pure";
+        };
+      };
 
       sessionVariables = {
         EDITOR = "vim";
