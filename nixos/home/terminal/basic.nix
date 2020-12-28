@@ -87,6 +87,7 @@ in {
         enable = true;
 
         pmodules = [
+          "archive"
           "environment"
           "editor"
           "directory"
