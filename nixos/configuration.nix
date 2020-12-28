@@ -53,6 +53,7 @@ in {
   environment.systemPackages = with pkgs; [
     # Command line utilities.
     exfat # mount exfat drives.
+    ethtool # ethernet debugging.
     glxinfo # gfx debugging.
     lm_sensors # system sensor access.
     nfs-utils # mount nfs drives.
@@ -71,6 +72,7 @@ in {
       source-code-pro
       source-sans-pro
       source-serif-pro
+      font-awesome
       (
         nerdfonts.override {
           fonts = [ "FiraCode"];

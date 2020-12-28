@@ -192,7 +192,7 @@ in {
     critical_fg = "${theme.base00-hex}"
 
     [icons]
-    name = "awesome"
+    name = "awesome5"
     [icons.overrides]
     net_wired = ""
     net_wireless = ""
@@ -233,7 +233,8 @@ in {
 
     [[block]]
     block = "net"
-    interval = 4
+    device = "eno1"
+    interval = 2
 
     [[block]]
     block = "sound"
