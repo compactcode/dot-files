@@ -1,13 +1,13 @@
 { pkgs, config, ... }:
 
 let customVimPlugins = {
-  custom-skim = pkgs.vimUtils.buildVimPlugin {
-    name = "skim";
+  vim-slim-custom = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-slim";
     src = pkgs.fetchFromGitHub {
-      owner = "lotabout";
-      repo = "skim";
-      rev = "711eab5c0031cd31a0750a7ab054a7492c33c8cc";
-      sha256 = "1gj98pf0wq0lx56aaw981kcmq7a769k0lw5cjp3bancgkssk6wmz";
+      owner = "slim-template";
+      repo = "vim-slim";
+      rev = "f0758ea1c585d53b9c239177a8b891d8bbbb6fbb";
+      sha256 = "0vqfn3638fi1i1m5dbglfg02qdgkqkf5ap224bp0695l33256hbn";
     };
   };
 };
@@ -19,9 +19,6 @@ in {
     vimAlias = true;
 
     plugins = with pkgs.vimPlugins // customVimPlugins; [
-      # Fuzzy finder
-      custom-skim
-
       # Autocompletion
       deoplete-nvim
 
@@ -32,12 +29,16 @@ in {
       # Theme
       nord-vim
 
+      # Fuzzy finder
+      skim-vim
+
       # Status bar
       vim-airline
       vim-airline-themes
 
       # Languages
       vim-nix
+      vim-slim-custom
 
       # Preview colors inline.
       vim-css-color
