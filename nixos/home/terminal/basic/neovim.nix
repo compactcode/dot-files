@@ -32,6 +32,9 @@ in {
       # Fuzzy finder
       skim-vim
 
+      # Floating preview windows
+      float-preview-nvim
+
       # Status bar
       vim-airline
       vim-airline-themes
@@ -40,7 +43,7 @@ in {
       vim-nix
       vim-slim-custom
 
-      # Preview colors inline.
+      # Preview colors inline
       vim-css-color
 
       # Shortcuts for working with parentheses
@@ -88,6 +91,9 @@ in {
 
       " Allow buffers to be backgrounded without saving
       set hidden
+
+      " Disable the default insert completion preview window.
+      set completeopt-=preview
 
       " ************************************************************
       " Search
@@ -224,6 +230,14 @@ in {
       imap <C-k> <Plug>(neosnippet_expand_or_jump)
       smap <C-k> <Plug>(neosnippet_expand_or_jump)
       xmap <C-k> <Plug>(neosnippet_expand_target)
+
+
+      " ************************************************************
+      " (plugin) float-preview
+      " ************************************************************
+
+      " Display a floating insert completion preview window next to the content.
+      let g:float_preview#docked = 0
     '';
   };
 
