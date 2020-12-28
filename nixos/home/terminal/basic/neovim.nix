@@ -140,6 +140,9 @@ in {
       " Open a file browser in the directory of the current file.
       nnoremap <Leader>o :silent ! ${pkgs.alacritty}/bin/alacritty -e ${pkgs.lf}/bin/lf %:h &<CR>
 
+      " Open a git history viewer with the current file.
+      nnoremap <Leader>g :silent ! ${pkgs.alacritty}/bin/alacritty -e ${pkgs.tig}/bin/tig log % &<CR>
+
       " ************************************************************
       " Insert mode key bindings
       " ************************************************************

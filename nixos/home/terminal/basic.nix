@@ -14,6 +14,7 @@ in {
     fd # find replacement.
     fre # frequency/recency tracker.
     ripgrep # grep replacement.
+    tig # git viewer.
   ];
 
   programs = {
