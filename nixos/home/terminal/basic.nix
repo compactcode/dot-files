@@ -10,6 +10,7 @@ in {
   ];
 
   home.packages = with pkgs; [
+    du-dust # du replacement.
     exa # ls replacement.
     fd # find replacement.
     fre # frequency/recency tracker.
