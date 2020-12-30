@@ -34,9 +34,11 @@ in {
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "application/pdf" = "zathura.desktop";
-        "image/jpeg"      = "sxiv.desktop";
-        "image/png"       = "sxiv.desktop";
+        "application/pdf"        = "zathura.desktop";
+        "image/jpeg"             = "sxiv.desktop";
+        "image/png"              = "sxiv.desktop";
+        "x-scheme-handler/http"  = "firefox.desktop";
+        "x-scheme-handler/https" = "firefox.desktop";
       };
     };
 

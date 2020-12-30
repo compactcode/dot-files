@@ -99,6 +99,7 @@ in {
 
       sessionVariables = {
         EDITOR = "vim";
+        BROWSER = "firefox-sandboxed";
       };
 
       shellAliases = {
