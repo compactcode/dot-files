@@ -90,81 +90,84 @@ in {
     };
   };
 
-  services.xserver = {
-    enable = true;
+  services = {
+    dbus = {
+      enable = true;
 
-    desktopManager = {
-      xterm.enable = false;
+      packages = with pkgs; [
+        gnome3.dconf
+      ];
     };
 
-    displayManager = {
-      # Skip login since we just unlocked the encrypted drive.
-      autoLogin = {
-        enable = true;
-        user = settings.user.username;
-      };
-
-      lightdm = {
-        enable = true;
-      };
+    # Opacity and drop shadows on windows.
+    picom = {
+      enable = true;
+      fade = true;
+      fadeDelta = 5;
+      shadow = true;
+      activeOpacity = 0.975;
+      inactiveOpacity = 0.950;
+      opacityRules = [
+        "99:class_g = 'Firefox'"
+      ];
     };
 
-    windowManager = {
-      i3 = {
-        enable = true;
-      };
+    # Enable support for gpg smart cards.
+    pcscd = {
+      enable = true;
     };
 
-    # Turn caps lock into another ctrl.
-    xkbOptions = "ctrl:nocaps";
-  };
+    # Postgres database for development.
+    postgresql = {
+      enable = true;
 
-  # Opacity and drop shadows on windows.
-  services.picom = {
-    enable = true;
-    fade = true;
-    fadeDelta = 5;
-    shadow = true;
-    activeOpacity = 0.975;
-    inactiveOpacity = 0.950;
-    opacityRules = [
-      "99:class_g = 'Firefox'"
-    ];
-  };
+      package = pkgs.postgresql_12;
 
-  # Redis database for development.
-  services.redis = {
-    enable = true;
-  };
+      # Enable passwordless local access.
+      authentication = lib.mkForce ''
+        local all all trust
+        host all all ::1/128 trust
+      '';
+    };
 
-  # Adjust screen color temperature based on the time of day.
-  services.redshift = {
-    enable = true;
-  };
+    # Redis database for development.
+    redis = {
+      enable = true;
+    };
 
-  # Enable support for gpg smart cards.
-  services.pcscd = {
-    enable = true;
-  };
+    # Adjust screen color temperature based on the time of day.
+    redshift = {
+      enable = true;
+    };
 
-  # Required 
-  services.dbus = {
-    packages = with pkgs; [
-      gnome3.dconf
-    ];
-  };
+    xserver = {
+      enable = true;
 
-  # Postgres database for development.
-  services.postgresql = {
-    enable = true;
+      desktopManager = {
+        xterm.enable = false;
+      };
 
-    package = pkgs.postgresql_12;
+      displayManager = {
+        # Skip login since we just unlocked the encrypted drive.
+        autoLogin = {
+          enable = true;
+          user = settings.user.username;
+        };
 
-    # Enable passwordless local access.
-    authentication = lib.mkForce ''
-      local all all trust
-      host all all ::1/128 trust
-    '';
+        lightdm = {
+          enable = true;
+        };
+      };
+
+      windowManager = {
+        i3 = {
+          enable = true;
+        };
+      };
+
+      # Turn caps lock into another ctrl.
+      xkbOptions = "ctrl:nocaps";
+    };
   };
 
   # Sandbox certain programs to mitigate damage from security breaches.
