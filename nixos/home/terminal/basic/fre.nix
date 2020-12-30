@@ -7,7 +7,7 @@
     text = ''
       #!/bin/sh
 
-      ${pkgs.fre}/bin/fre --sorted --store_name edited --sort_method recent
+      ${pkgs.fre}/bin/fre --sorted --store_name edited --sort_method recent | xargs realpath -q -s
     '';
   };
 
