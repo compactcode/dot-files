@@ -70,9 +70,9 @@ in {
         global = {
           follow = "keyboard"; # Show notifications where the keyboard has foucs.
           format = "<b>%s</b>\\n%b";
-          font = "${settings.font.sansFamily} ${settings.font.defaultSize.pixels}";
+          font = "${settings.font.sansFamily} ${settings.font.defaultSize.points}";
           frame_width = 2; # Border size.
-          geometry = "350x5-18+42"; # Size & location of notifications.
+          geometry = "400x5-18+42"; # Size & location of notifications.
           horizontal_padding = 6;
           markup = "yes"; # Enable basic markup in messages.
           padding = 6; # Vertical padding
