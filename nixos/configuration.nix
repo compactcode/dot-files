@@ -208,6 +208,25 @@ in {
     };
   };
 
+  # Automount NAS NFS volumes on demand.
+  fileSystems = {
+    "/nas/documents" = {
+      device = "192.168.1.200:/mnt/storage/documents";
+      fsType = "nfs";
+      options = [ "x-systemd.automount" "noauto" ];
+    };
+    "/nas/media" = {
+      device = "192.168.1.200:/mnt/storage/media";
+      fsType = "nfs";
+      options = [ "x-systemd.automount" "noauto" ];
+    };
+    "/nas/photos" = {
+      device = "192.168.1.200:/mnt/storage/photos";
+      fsType = "nfs";
+      options = [ "x-systemd.automount" "noauto" ];
+    };
+  };
+
   home-manager.users.root = { pkgs, ... }: {
     nixpkgs = {
       overlays = [
