@@ -4,11 +4,21 @@ let
   settings = import ../../../settings.nix;
   theme = import ../../themes/base_16_current.nix;
 
+  # Fix for intermittent application crashes.
+
+  # https://github.com/NixOS/nixpkgs/issues/98245
+  i3-gaps-backport = pkgs.i3-gaps.overrideAttrs (oldAttrs: rec {
+    version = "4.18.3";
+    src = pkgs.fetchurl {
+      url = "https://github.com/Airblader/i3/releases/download/${version}/i3-${version}.tar.bz2";
+      sha256 = "1hcakwyz78lgp8mhqv7pw86jlb3m415pfql1q19rkijnhm3fn3ci";
+    };
+  });
 in {
   xsession.windowManager.i3 = {
     enable = true;
 
-    package = pkgs.i3-gaps;
+    package = i3-gaps-backport;
 
     config = {
       keybindings = {
@@ -154,6 +164,12 @@ in {
 
       window = {
         border = 1;
+        titlebar = false;
+      };
+
+      floating = {
+        border = 1;
+        titlebar = false;
       };
 
       assigns = {
@@ -196,6 +212,10 @@ in {
     [icons.overrides]
     net_wired = ""
     net_wireless = ""
+
+    [[block]]
+    block = "focused_window"
+    max_width = 40
 
     [[block]]
     block = "disk_space"
