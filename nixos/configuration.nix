@@ -63,7 +63,8 @@ in {
     # X11 utilities.
 
     arandr # Detect and manage multiple monitors.
-    firefox # Preferred web browser.
+    chromium # Web browser.
+    firefox # Web browser.
     pavucontrol # Detect and manage audio devices.
   ];
 
