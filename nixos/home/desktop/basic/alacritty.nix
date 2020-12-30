@@ -14,6 +14,7 @@ in {
       TERM: xterm-256color
 
     window:
+      dynamic_title: true
       padding:
         x: 10
         y: 10
