@@ -10,11 +10,14 @@ in {
   ];
 
   home.packages = with pkgs; [
+    aws-vault # secure aws credential handling.
     du-dust # du replacement.
     exa # ls replacement.
     fd # find replacement.
     file # file type detector.
     fre # frequency/recency tracker.
+    gnupg # gpg tools.
+    pass # gpg based password manager.
     ripgrep # grep replacement.
     tig # git viewer.
   ];
@@ -101,6 +104,7 @@ in {
       sessionVariables = {
         EDITOR = "vim";
         BROWSER = "firefox-sandboxed";
+        AWS_VAULT_BACKEND = "pass";
       };
 
       shellAliases = {
@@ -126,6 +130,17 @@ in {
         o    = "xdg-open";
         v    = "vim";
       };
+    };
+  };
+
+  services = {
+    gpg-agent = {
+      enable = true;
+      enableSshSupport = true;
+      enableScDaemon = true;
+      sshKeys = [
+        "D5340EDC116D6C8DFFE80518525712D7E2616FBB"
+      ];
     };
   };
 }
