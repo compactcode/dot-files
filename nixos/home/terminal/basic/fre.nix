@@ -1,13 +1,15 @@
 { pkgs, config, ... }:
 
 {
-  # List recently edited files.
+  # List recently edited files relative to the current directory.
   xdg.dataFile."bin/recently-edited-list" = {
     executable = true;
     text = ''
       #!/bin/sh
 
-      ${pkgs.fre}/bin/fre --sorted --store_name edited --sort_method recent | xargs realpath -q -s
+      ${pkgs.fre}/bin/fre --sorted --store_name edited --sort_method recent | \
+        grep $(pwd) | \
+        xargs realpath -eqs --relative-base="$(pwd)"
     '';
   };
 
