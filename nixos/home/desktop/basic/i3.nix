@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ lib, pkgs, config, ... }:
 
 let
   settings = import ../../../settings.nix;
@@ -15,6 +15,17 @@ let
     };
   });
 in {
+  home.packages = with pkgs; [
+    i3lock-color
+  ];
+
+  services = {
+    screen-locker = {
+      enable = true;
+      lockCmd = "${lib.getBin pkgs.i3lock-color}/bin/i3lock-color -n -c 000000";
+    };
+  };
+
   xsession.windowManager.i3 = {
     enable = true;
 
