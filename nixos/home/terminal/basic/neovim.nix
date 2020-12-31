@@ -150,7 +150,7 @@ in {
       " Insert mode key bindings
       " ************************************************************
 
-      " Quickly exit insert mode
+      " Quickly exit insert mode and save any changes.
       inoremap kj <Esc> :update<CR>
 
 
@@ -168,7 +168,11 @@ in {
 
       " Fuzzy find files
       nnoremap <leader>t :FZF<CR>
-      nnoremap <leader>s :Rg<space>
+
+      " Find the entered text within the current directory.
+      nnoremap <leader>r :Rg<space>
+      " Find the current word within the current directory.
+      nnoremap <leader>s :Rg <C-R><C-W><CR>
 
 
       " ************************************************************
