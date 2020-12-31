@@ -63,7 +63,7 @@
         SELECTED_DIRECTORY="$(${config.xdg.dataHome}/bin/frequent-directory-list | grep $1 | head -1)"
       else
         # If no argument was provided then show a selection menu.
-        SELECTED_DIRECTORY="$(${config.xdg.dataHome}/bin/frequent-directory-list | ${pkgs.skim}/bin/sk --no-sort)"
+        SELECTED_DIRECTORY="$(${config.xdg.dataHome}/bin/frequent-directory-list | ${pkgs.fzf}/bin/fzf --no-sort)"
       fi
 
       if [ -n "$SELECTED_DIRECTORY" ]; then

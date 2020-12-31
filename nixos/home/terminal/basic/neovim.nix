@@ -30,7 +30,7 @@ in {
       nord-vim
 
       # Fuzzy finder
-      skim-vim
+      fzf-vim
 
       # Floating preview windows
       float-preview-nvim
@@ -163,26 +163,25 @@ in {
 
 
       " ************************************************************
-      " (plugin) skim
+      " (plugin) fzf
       " ************************************************************
 
       " Fuzzy find files
-      nnoremap <leader>t :SK<CR>
+      nnoremap <leader>t :FZF<CR>
       nnoremap <leader>s :Rg<space>
 
 
       " ************************************************************
-      " (plugin) skim + fre
+      " (plugin) fzf + fre
       " ************************************************************
 
       " Record edited files
       autocmd BufNewFile,BufRead * ! ${config.xdg.dataHome}/bin/recently-edited-add <amatch>
 
       " Fuzzy find recently edited files
-      nnoremap <silent> <leader>f :call skim#run(skim#wrap('SKIM', {
+      nnoremap <leader>f :call fzf#run(fzf#wrap({
         \ 'source':  '${config.xdg.dataHome}/bin/recently-edited-list',
-        \ 'down':    '40%',
-        \ 'options': '-no-sort --tiebreak=index'
+        \ 'options': '--no-sort --tiebreak=index'
         \ }))<CR>
 
 

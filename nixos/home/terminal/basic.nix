@@ -13,6 +13,7 @@ in {
     du-dust # du replacement.
     exa # ls replacement.
     fd # find replacement.
+    file # file type detector.
     fre # frequency/recency tracker.
     ripgrep # grep replacement.
     tig # git viewer.
@@ -65,7 +66,7 @@ in {
     };
 
     # fuzzy finding.
-    skim = {
+    fzf = {
       enable = true;
       enableZshIntegration = true;
       defaultCommand = "${lib.getBin pkgs.fd}/bin/fd --type f";
