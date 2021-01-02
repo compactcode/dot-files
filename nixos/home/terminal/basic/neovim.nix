@@ -10,6 +10,24 @@ let customVimPlugins = {
       sha256 = "0vqfn3638fi1i1m5dbglfg02qdgkqkf5ap224bp0695l33256hbn";
     };
   };
+  alternate-vim-custom = pkgs.vimUtils.buildVimPlugin {
+    name = "alternate-";
+    src = pkgs.fetchFromGitHub {
+      owner = "compactcode";
+      repo = "alternate.vim";
+      rev = "1686379566665f9d4b633ca47dba59d83e119a62";
+      sha256 = "07d5k3sg0rbvwfgwbx72a2wvlcdgx5ik1i588kf03p0dqn2ga444";
+    };
+  };
+  open-vim-custom = pkgs.vimUtils.buildVimPlugin {
+    name = "open";
+    src = pkgs.fetchFromGitHub {
+      owner = "compactcode";
+      repo = "open.vim";
+      rev = "5fc9cdf41989a28c0d5ad01d59b2e3d5468822df";
+      sha256 = "0syl8d58y2ghhd5hi06ci0zc7fc5hy85f37p7q6542p5d2whqdj9";
+    };
+  };
 };
 
 in {
@@ -52,6 +70,11 @@ in {
 
       # Display git diff in the gutter
       vim-gitgutter
+
+      # Utils for finding source/test files.
+      alternate-vim-custom
+      # Utils for opening files.
+      open-vim-custom
     ];
 
     extraConfig = ''
@@ -145,6 +168,11 @@ in {
 
       " Open a git history viewer with the current file.
       nnoremap <Leader>g :silent ! ${pkgs.alacritty}/bin/alacritty -e ${pkgs.tig}/bin/tig log % &<CR>
+
+      " Switch between test and implementation files
+      nnoremap <Leader>a :Open(alternate#FindAlternate())<CR>
+      nnoremap <Leader>h :OpenHorizontal(alternate#FindAlternate())<CR>
+      nnoremap <Leader>v :OpenVertical(alternate#FindAlternate())<CR>
 
       " ************************************************************
       " Insert mode key bindings
