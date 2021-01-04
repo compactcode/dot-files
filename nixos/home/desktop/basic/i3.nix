@@ -31,6 +31,15 @@ in {
 
     package = i3-gaps-backport;
 
+    extraConfig = ''
+      set $web      "1:"
+      set $code     "2:"
+      set $code-alt "3:"
+      set $chat     "5:"
+      set $music    "8:"
+      set $games    "9:"
+    '';
+
     config = {
       fonts = [
         "${settings.font.monoFamily} ${settings.font.defaultSize.points}"
@@ -38,26 +47,26 @@ in {
 
       keybindings = {
         # Switch to workspace.
-        "Mod1+1" = "workspace 1";
-        "Mod1+2" = "workspace 2";
-        "Mod1+3" = "workspace 3";
+        "Mod1+1" = "workspace $web";
+        "Mod1+2" = "workspace $code";
+        "Mod1+3" = "workspace $code-alt";
         "Mod1+4" = "workspace 4";
-        "Mod1+5" = "workspace 5";
+        "Mod1+5" = "workspace $chat";
         "Mod1+6" = "workspace 6";
         "Mod1+7" = "workspace 7";
-        "Mod1+8" = "workspace 8";
-        "Mod1+9" = "workspace 9";
+        "Mod1+8" = "workspace $music";
+        "Mod1+9" = "workspace $games";
 
         # Move applications to another workspace.
-        "Mod1+Shift+1" = "move container to workspace 1";
-        "Mod1+Shift+2" = "move container to workspace 2";
-        "Mod1+Shift+3" = "move container to workspace 3";
+        "Mod1+Shift+1" = "move container to workspace $web";
+        "Mod1+Shift+2" = "move container to workspace $code";
+        "Mod1+Shift+3" = "move container to workspace $code-alt";
         "Mod1+Shift+4" = "move container to workspace 4";
-        "Mod1+Shift+5" = "move container to workspace 5";
+        "Mod1+Shift+5" = "move container to workspace $chat";
         "Mod1+Shift+6" = "move container to workspace 6";
         "Mod1+Shift+7" = "move container to workspace 7";
-        "Mod1+Shift+8" = "move container to workspace 8";
-        "Mod1+Shift+9" = "move container to workspace 9";
+        "Mod1+Shift+8" = "move container to workspace music";
+        "Mod1+Shift+9" = "move container to workspace $games";
 
         # Move workspace to another monitor.
         "Mod1+Shift+l" = "move workspace to output left";
@@ -189,18 +198,18 @@ in {
       };
 
       assigns = {
-        "1" = [
+        "$web" = [
           { class = "^Firefox$"; }
         ];
-        "5" = [
+        "$chat" = [
           { class = "^Slack$"; }
           { class = "^discord$"; }
           { class = "^Signal$"; }
         ];
-        "8" = [
+        "$music" = [
           { class = "^Spotify$"; }
         ];
-        "9" = [
+        "$games" = [
           { class = "^Steam$"; }
         ];
       };
