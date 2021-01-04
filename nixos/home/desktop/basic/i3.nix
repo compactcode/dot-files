@@ -32,6 +32,10 @@ in {
     package = i3-gaps-backport;
 
     config = {
+      fonts = [
+        "${settings.font.monoFamily} ${settings.font.defaultSize.points}"
+      ];
+
       keybindings = {
         # Switch to workspace.
         "Mod1+1" = "workspace 1";
@@ -89,6 +93,7 @@ in {
         statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${config.xdg.configHome}/i3/status.toml";
 
         fonts = [
+          "${settings.font.nerdFamily} ${settings.font.defaultSize.points}"
           "${settings.font.monoFamily} ${settings.font.defaultSize.points}"
         ];
 

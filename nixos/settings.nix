@@ -1,5 +1,6 @@
 {
   font = {
+    nerdFamily = "Font Awesome";
     monoFamily = "Source Code Pro";
     sansFamily = "Source Sans Pro";
 
