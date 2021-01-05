@@ -47,15 +47,16 @@ in {
 
       keybindings = {
         # Switch to workspace.
-        "Mod1+1" = "workspace $web";
-        "Mod1+2" = "workspace $code";
-        "Mod1+3" = "workspace $code-alt";
-        "Mod1+4" = "workspace 4";
-        "Mod1+5" = "workspace $chat";
-        "Mod1+6" = "workspace 6";
-        "Mod1+7" = "workspace 7";
-        "Mod1+8" = "workspace $music";
-        "Mod1+9" = "workspace $games";
+        "Mod1+1"   = "workspace $web";
+        "Mod1+2"   = "workspace $code";
+        "Mod1+3"   = "workspace $code-alt";
+        "Mod1+4"   = "workspace 4";
+        "Mod1+5"   = "workspace $chat";
+        "Mod1+6"   = "workspace 6";
+        "Mod1+7"   = "workspace 7";
+        "Mod1+8"   = "workspace $music";
+        "Mod1+9"   = "workspace $games";
+        "Mod1+Tab" = "workspace back_and_forth";
 
         # Move applications to another workspace.
         "Mod1+Shift+1" = "move container to workspace $web";
