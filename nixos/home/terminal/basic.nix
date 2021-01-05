@@ -114,6 +114,10 @@ in {
 
       shellAliases = {
         b    = "${pkgs.bat}/bin/bat";
+        be   = "bundle exec";
+        ber  = "bundle exec rspec";
+        berc  = "bundle exec rails console";
+        bers  = "bundle exec rails server";
         g    = "${pkgs.git}/bin/git";
         ga   = "${pkgs.git}/bin/git add";
         gars = "${pkgs.git}/bin/git add . && git reset --hard";
