@@ -5,6 +5,12 @@ let
   theme = import ../themes/base_16_current.nix;
 
 in {
+  imports = [
+    ./basic/alacritty.nix
+    ./basic/i3.nix
+    ./basic/rofi.nix
+  ];
+
   home.packages = with pkgs; [
     discord # Voice communication.
     libreoffice # Spreadsheet & word documents.
@@ -126,10 +132,4 @@ in {
       tray = "auto";
     };
   };
-
-  imports = [
-    ./basic/alacritty.nix
-    ./basic/i3.nix
-    ./basic/rofi.nix
-  ];
 }
