@@ -86,10 +86,13 @@ in {
         "Mod1+w" = "kill";
 
         # Split window horizontally.
-        "Mod1+x" =" split h";
+        "Mod1+x" = "split h";
 
         # Split window verticalally.
-        "Mod1+v" =" split v";
+        "Mod1+v" = "split v";
+
+        # Toggle between stacking/tabbed/split.
+        "Mod1+t" = "layout toggle";
       };
 
       gaps = {
