@@ -65,7 +65,7 @@ in {
         "Mod1+Shift+5" = "move container to workspace $chat";
         "Mod1+Shift+6" = "move container to workspace 6";
         "Mod1+Shift+7" = "move container to workspace 7";
-        "Mod1+Shift+8" = "move container to workspace music";
+        "Mod1+Shift+8" = "move container to workspace $music";
         "Mod1+Shift+9" = "move container to workspace $games";
 
         # Move workspace to another monitor.
@@ -208,6 +208,7 @@ in {
         ];
         "$music" = [
           { class = "^Spotify$"; }
+          { class = "^Pulseeffects$"; }
         ];
         "$games" = [
           { class = "^Steam$"; }

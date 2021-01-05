@@ -120,6 +120,11 @@ in {
       enable = true;
     };
 
+    # Add an audio effects manager.
+    pulseeffects = {
+      enable = true;
+    };
+
     # Set a background image.
     random-background = {
       enable = true;
