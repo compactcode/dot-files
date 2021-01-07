@@ -75,6 +75,9 @@ in {
       alternate-vim-custom
       # Utils for opening files.
       open-vim-custom
+
+      # Make it easier to run test files in a terminal.
+      vim-test
     ];
 
     extraConfig = ''
@@ -191,14 +194,18 @@ in {
 
 
       " ************************************************************
+      " Terminal mode key bindings
+      " ************************************************************
+
+      " Quickly exit insert mode.
+      tmap <C-o> <C-\><C-n>
+
+      " ************************************************************
       " (plugin) fzf
       " ************************************************************
 
       " Fuzzy find files
       nnoremap <leader>t :FZF<CR>
-
-      " Find the entered text within the current directory.
-      nnoremap <leader>r :Rg<space>
       " Find the current word within the current directory.
       nnoremap <leader>s :Rg <C-R><C-W><CR>
 
@@ -236,6 +243,23 @@ in {
 
       " Display a floating insert completion preview window next to the content.
       let g:float_preview#docked = 0
+
+
+      " ************************************************************
+      " (plugin) vim-test
+      " ************************************************************
+
+      " Run tests in a terminal split.
+      let test#strategy = "neovim"
+
+      " Run the current file.
+      nnoremap <leader>r :TestFile<CR>
+
+      " Run the selected test within the current file.
+      nnoremap <leader>n :TestNearest<CR>
+
+      " Save the current file and re-run the most recent test.
+      nnoremap ! :update<CR>:TestLast<CR>
     '';
   };
 }
