@@ -100,9 +100,6 @@ in {
       " Use the nord colorscheme
       colorscheme nord
 
-      " Update the terminal title when opening files
-      set title
-
       " ************************************************************
       " Editing
       " ************************************************************

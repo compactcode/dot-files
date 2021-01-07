@@ -244,10 +244,6 @@ in {
     net_wireless = ""
 
     [[block]]
-    block = "focused_window"
-    max_width = 40
-
-    [[block]]
     block = "disk_space"
     path = "/"
     alias = "/"
