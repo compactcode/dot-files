@@ -201,6 +201,9 @@ in {
       " (plugin) fzf
       " ************************************************************
 
+      " Quickly repeat previous searches.
+      let g:fzf_history_dir = '${config.xdg.dataHome}/fzf/.fzf-history'
+
       " Fuzzy find files
       nnoremap <leader>t :FZF<CR>
       " Find the current word within the current directory.
