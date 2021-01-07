@@ -117,8 +117,9 @@ in {
         b    = "${pkgs.bat}/bin/bat";
         be   = "bundle exec";
         ber  = "bundle exec rspec";
-        berc  = "bundle exec rails console";
-        bers  = "bundle exec rails server";
+        berc = "bundle exec rails console";
+        bers = "bundle exec rails server";
+        bi   = "bundle install";
         g    = "${pkgs.git}/bin/git";
         ga   = "${pkgs.git}/bin/git add";
         gars = "${pkgs.git}/bin/git add . && git reset --hard";
