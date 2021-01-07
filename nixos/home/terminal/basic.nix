@@ -20,6 +20,7 @@ in {
     pass # gpg based password manager.
     ripgrep # grep replacement.
     tig # git viewer.
+    unzip # opening zip archives.
   ];
 
   programs = {
