@@ -107,13 +107,15 @@ in {
     # Opacity and drop shadows on windows.
     picom = {
       enable = true;
+      backend = "glx";
       fade = true;
       fadeDelta = 5;
-      shadow = true;
       inactiveOpacity = 0.950;
       opacityRules = [
         "100:class_g = 'Firefox'"
       ];
+      shadow = true;
+      vSync = true;
     };
 
     # Enable support for gpg smart cards.
