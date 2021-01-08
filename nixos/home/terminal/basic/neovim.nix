@@ -48,6 +48,9 @@ in {
       neosnippet-vim
       neosnippet-snippets
 
+      # Linting
+      neomake
+
       # Theme
       nord-vim
 
@@ -248,6 +251,12 @@ in {
       " Display a floating insert completion preview window next to the content.
       let g:float_preview#docked = 0
 
+      " ************************************************************
+      " (plugin) neomake
+      " ************************************************************
+
+      " Run linting automatically.
+      autocmd VimEnter * call neomake#configure#automake('nrwi', 500)
 
       " ************************************************************
       " (plugin) vim-test
