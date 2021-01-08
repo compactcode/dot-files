@@ -100,9 +100,10 @@ in {
 
         pmodules = [
           "archive"
-          "environment"
-          "editor"
           "directory"
+          "completion"
+          "editor"
+          "environment"
           "history"
         ];
       };
