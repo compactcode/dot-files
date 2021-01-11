@@ -35,9 +35,10 @@ in {
       set $web      "1:"
       set $code     "2:"
       set $code-alt "3:"
-      set $code-alt "3:"
       set $files    "4:"
       set $chat     "5:"
+      set $open     "6:"
+      set $open-alt "7:"
       set $music    "8:"
       set $games    "9:"
     '';
@@ -54,8 +55,8 @@ in {
         "Mod1+3"   = "workspace $code-alt";
         "Mod1+4"   = "workspace $files";
         "Mod1+5"   = "workspace $chat";
-        "Mod1+6"   = "workspace 6";
-        "Mod1+7"   = "workspace 7";
+        "Mod1+6"   = "workspace $open";
+        "Mod1+7"   = "workspace $open-alt";
         "Mod1+8"   = "workspace $music";
         "Mod1+9"   = "workspace $games";
         "Mod1+Tab" = "workspace back_and_forth";
@@ -66,8 +67,8 @@ in {
         "Mod1+Shift+3" = "move container to workspace $code-alt";
         "Mod1+Shift+4" = "move container to workspace $files";
         "Mod1+Shift+5" = "move container to workspace $chat";
-        "Mod1+Shift+6" = "move container to workspace 6";
-        "Mod1+Shift+7" = "move container to workspace 7";
+        "Mod1+Shift+6" = "move container to workspace $open";
+        "Mod1+Shift+7" = "move container to workspace $open-alt";
         "Mod1+Shift+8" = "move container to workspace $music";
         "Mod1+Shift+9" = "move container to workspace $games";
 
