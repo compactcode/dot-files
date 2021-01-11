@@ -71,15 +71,17 @@ in {
         "Mod1+Shift+8" = "move container to workspace $music";
         "Mod1+Shift+9" = "move container to workspace $games";
 
-        # Move workspace to another monitor.
-        "Mod1+Shift+l" = "move workspace to output left";
-        "Mod1+Shift+r" = "move workspace to output right";
-
         # Move focus between windows.
         "Mod1+h" = "focus left";
         "Mod1+j" = "focus down";
         "Mod1+k" = "focus up";
         "Mod1+l" = "focus right";
+
+        # Move current window within the current workspace.
+        "Mod1+Shift+h" = "move left";
+        "Mod1+Shift+j" = "move down";
+        "Mod1+Shift+k" = "move up";
+        "Mod1+Shift+l" = "move right";
 
         # Fullscreen current window.
         "Mod1+f" = "fullscreen toggle";
