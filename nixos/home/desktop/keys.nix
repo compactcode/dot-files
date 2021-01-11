@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  desktop = config.xdg.userDirs.desktop;
+  download = config.xdg.userDirs.download;
 
   launcher = "${lib.getBin pkgs.i3}/bin/i3-msg exec";
   mv = "${lib.getBin pkgs.coreutils}/bin/mv";
@@ -36,12 +36,12 @@ in {
       "super + shift + l" = "${launcher} '${lib.getBin pkgs.xautolock}/bin/xautolock -locknow'";
 
       # Screenshot the current window.
-      "Print" = "${scrot} -u -e '${mv} $f \\${desktop}/'";
-      "shift + Print" = "${scrot} -u -e '${mv} $f \\${desktop}/; ${pinta} \\${desktop}/$f'";
+      "Print" = "${scrot} -u -e '${mv} $f \\${download}/'";
+      "shift + Print" = "${scrot} -u -e '${mv} $f \\${download}/; ${pinta} \\${download}/$f'";
 
       # Screenshot the entire display.
-      "super + Print" = "${scrot} -e '${mv} $f \\${desktop}/'";
-      "super + shift + Print" = "${scrot} -e '${mv} $f \\${desktop}/; ${pinta} \\${desktop}/$f'";
+      "super + Print" = "${scrot} -e '${mv} $f \\${download}/'";
+      "super + shift + Print" = "${scrot} -e '${mv} $f \\${download}/; ${pinta} \\${download}/$f'";
     };
   };
 }
