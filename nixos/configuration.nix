@@ -46,7 +46,10 @@ in {
   networking = {
     # Split development.
     hosts = {
-      "127.0.0.1" = [ "api.split.test" "go.split.test" ];
+      "127.0.0.1" = [
+        "api.go.split.test"
+        "go.split.test"
+      ];
     };
 
     # Detect and manage network connections.
@@ -258,6 +261,7 @@ in {
         allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
           "discord"
           "faac"
+          "postman"
           "slack"
           "spotify"
           "steam"

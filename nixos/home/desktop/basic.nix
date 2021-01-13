@@ -16,6 +16,7 @@ in {
     libreoffice # Spreadsheet & word documents.
     mpv # Lightweight video player.
     pinta # Lightweight image editor.
+    postman # API interaction.
     scrot # Lightweight screenshot tool.
     signal-desktop # Text communication.
     slack # Text communication.
