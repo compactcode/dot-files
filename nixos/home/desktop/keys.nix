@@ -36,12 +36,7 @@ in {
       "super + shift + l" = "${launcher} '${lib.getBin pkgs.xautolock}/bin/xautolock -locknow'";
 
       # Screenshot the current window.
-      "Print" = "${scrot} -u -e '${mv} $f \\${download}/'";
       "shift + Print" = "${scrot} -u -e '${mv} $f \\${download}/; ${pinta} \\${download}/$f'";
-
-      # Screenshot the entire display.
-      "super + Print" = "${scrot} -e '${mv} $f \\${download}/'";
-      "super + shift + Print" = "${scrot} -e '${mv} $f \\${download}/; ${pinta} \\${download}/$f'";
     };
   };
 }
