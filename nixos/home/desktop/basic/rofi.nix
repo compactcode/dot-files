@@ -16,6 +16,8 @@ in {
   programs.rofi = {
     enable = true;
 
+    terminal = "${lib.getBin pkgs.alacritty}/bin/alacritty";
+
     colors = {
       window = {
         background = theme.base00-hex;

@@ -110,9 +110,9 @@ in {
       };
 
       sessionVariables = {
-        EDITOR = "vim";
-        BROWSER = "firefox-sandboxed";
         AWS_VAULT_BACKEND = "pass";
+        BROWSER = "firefox-sandboxed";
+        EDITOR = "vim";
       };
 
       shellAliases = {
