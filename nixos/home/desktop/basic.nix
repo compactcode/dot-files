@@ -17,7 +17,6 @@ in {
     mpv # Lightweight video player.
     pinta # Lightweight image editor.
     postman # API interaction.
-    scrot # Lightweight screenshot tool.
     signal-desktop # Text communication.
     slack # Text communication.
     spotify # Music player.

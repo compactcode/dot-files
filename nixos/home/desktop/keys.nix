@@ -3,10 +3,11 @@
 let
   download = config.xdg.userDirs.download;
 
+  date = "${lib.getBin pkgs.coreutils}/bin/date";
   launcher = "${lib.getBin pkgs.i3}/bin/i3-msg exec";
-  mv = "${lib.getBin pkgs.coreutils}/bin/mv";
+  maim = "${lib.getBin pkgs.maim}/bin/maim";
   pinta = "${lib.getBin pkgs.pinta}/bin/pinta";
-  scrot = "${lib.getBin pkgs.scrot}/bin/scrot";
+  xdotool = "${lib.getBin pkgs.xdotool}/bin/xdotool";
 
 in {
   services.sxhkd = {
@@ -35,8 +36,11 @@ in {
       # Lock the screen.
       "super + shift + l" = "${launcher} '${lib.getBin pkgs.xautolock}/bin/xautolock -locknow'";
 
+      # Screenshot a selected area.
+      "Print" = "file=$(${date} +%s).png; ${maim} -u -s ${download}/$file; ${pinta} ${download}/$file";
+
       # Screenshot the current window.
-      "shift + Print" = "${scrot} -u -e '${mv} $f \\${download}/; ${pinta} \\${download}/$f'";
+      "shift + Print" = "file=$(${date} +%s).png; ${maim} -i $(${xdotool} getactivewindow) ${download}/$file; ${pinta} ${download}/$file";
     };
   };
 }
