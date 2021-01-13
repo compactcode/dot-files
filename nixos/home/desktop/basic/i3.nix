@@ -294,6 +294,6 @@ in {
     [[block]]
     block = "time"
     interval = 60
-    format = "%a %l:%M %p"
+    format = "%d %b %l:%M %p"
   '';
 }
