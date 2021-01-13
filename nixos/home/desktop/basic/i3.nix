@@ -84,6 +84,12 @@ in {
         "Mod1+Shift+k" = "move up";
         "Mod1+Shift+l" = "move right";
 
+        # Resize current window.
+        "Mod1+Shift+Left"  = "resize shrink width 2 px or 2 ppt";
+        "Mod1+Shift+Down"  = "resize grow height 2 px or 2 ppt";
+        "Mod1+Shift+Up"    = "resize shrink height 2 px or 2 ppt";
+        "Mod1+Shift+Right" = "resize grow width 2 px or 2 ppt";
+
         # Fullscreen current window.
         "Mod1+f" = "fullscreen toggle";
 
