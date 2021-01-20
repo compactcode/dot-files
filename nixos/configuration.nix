@@ -67,6 +67,7 @@ in {
     nfs-utils # mount nfs drives.
     pciutils # pci debugging.
     usbutils # usb debugging.
+    libfido2 # fido2/webauthn authentication.
   ] ++ [
     # X11 utilities.
 
