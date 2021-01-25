@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   settings = import ../../settings.nix;
@@ -23,6 +23,49 @@ in {
     unzip # opening zip archives.
   ];
 
+  accounts = {
+    email = {
+      maildirBasePath = "${config.xdg.dataHome}/mail";
+
+      accounts = {
+        personal = {
+          primary = true;
+          address = settings.user.email;
+          realName = settings.user.name;
+          userName = settings.user.email;
+          passwordCommand = "pass ${settings.user.email}/token";
+
+          imap = {
+            host = "imap.fastmail.com";
+          };
+
+          smtp = {
+            host = "smtp.fastmail.com";
+          };
+
+          mbsync = {
+            enable = true;
+
+            create = "both";
+            expunge = "both";
+          };
+
+          msmtp = {
+            enable = true;
+          };
+
+          notmuch = {
+            enable = true;
+          };
+
+          astroid = {
+            enable = true;
+          };
+        };
+      };
+    };
+  };
+
   programs = {
     # cat replacement.
     bat = {
@@ -40,6 +83,17 @@ in {
       enable = true;
       enableZshIntegration = true;
       enableNixDirenvIntegration = true;
+    };
+
+    # fuzzy finding.
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+      defaultCommand = "${lib.getBin pkgs.fd}/bin/fd --type f";
+      defaultOptions = [
+        "--reverse"
+        "--height 40%"
+      ];
     };
 
     # version control.
@@ -70,15 +124,19 @@ in {
       enable = true;
     };
 
-    # fuzzy finding.
-    fzf = {
+    # retrieve email.
+    mbsync = {
       enable = true;
-      enableZshIntegration = true;
-      defaultCommand = "${lib.getBin pkgs.fd}/bin/fd --type f";
-      defaultOptions = [
-        "--reverse"
-        "--height 40%"
-      ];
+    };
+
+    # send email.
+    msmtp = {
+      enable = true;
+    };
+
+    # index email.
+    notmuch = {
+      enable = true;
     };
 
     # bash prompt.

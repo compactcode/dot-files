@@ -67,6 +67,16 @@ in {
     };
   };
 
+  programs = {
+    astroid = {
+      enable = true;
+      pollScript = ''
+        ${lib.getBin pkgs.isync}/bin/mbsync -a
+        ${lib.getBin pkgs.notmuch}/bin/notmuch new
+      '';
+    };
+  };
+
   services = {
     # Display desktop notfications.
     dunst = {
