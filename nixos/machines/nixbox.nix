@@ -36,6 +36,11 @@
       "kvm-intel"
     ];
 
+    # Eliminate coil whine while idle.
+    kernelParams = [
+      "intel_idle.max_cstate=1"
+    ];
+
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
