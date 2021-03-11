@@ -57,24 +57,10 @@
   hardware = {
     # Enable intel microcode updates.
     cpu.intel.updateMicrocode = true;
-
-    # Enable intel opengl hardware acceleration.
-    opengl = {
-      enable = true;
-
-      extraPackages = with pkgs; [
-        vaapiIntel
-        vaapiVdpau
-        libvdpau-va-gl
-      ];
-    };
   };
 
   # Enable periodic trim for long term SSD performance.
   services.fstrim.enable = true;
-
-  # Enable updating firmware via the command line.
-  services.fwupd.enable = true;
 
   # Enable general power saving features.
   services.tlp = {

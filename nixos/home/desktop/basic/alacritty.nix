@@ -24,8 +24,6 @@ in {
       - { key: Copy,     action: Copy  }
       - { key: C,        action: Copy,             mods: Super }
       - { key: V,        action: Paste,            mods: Super }
-      - { key: Equals,   action: IncreaseFontSize, mods: Super }
-      - { key: Subtract, action: DecreaseFontSize, mods: Super }
 
     font:
       bold:

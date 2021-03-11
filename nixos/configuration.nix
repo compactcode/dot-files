@@ -29,17 +29,10 @@ in {
   };
 
   hardware = {
-    # Steam support
-    opengl = {
-      extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
-      driSupport32Bit = true;
-    };
-
     # Enable sound.
     pulseaudio = {
       enable = true;
       package = pkgs.pulseaudioFull;
-      support32Bit = true;
     };
   };
 
@@ -182,12 +175,19 @@ in {
     };
   };
 
-  # Sandbox certain programs to mitigate damage from security breaches.
-  programs.firejail = {
-    enable = true;
+  programs = {
+    # Sandbox certain programs to mitigate damage from security breaches.
+    firejail = {
+      enable = true;
 
-    wrappedBinaries = {
-      firefox-sandboxed = "${lib.getBin pkgs.firefox}/bin/firefox";
+      wrappedBinaries = {
+        firefox-sandboxed = "${lib.getBin pkgs.firefox}/bin/firefox";
+      };
+    };
+
+    # Video games.
+    steam = {
+      enable = true;
     };
   };
 
@@ -265,10 +265,11 @@ in {
           "postman"
           "slack"
           "spotify"
+          "spotify-unwrapped"
           "steam"
           "steam-original"
           "steam-runtime"
-          "zoom-us"
+          "zoom"
         ];
       };
     };

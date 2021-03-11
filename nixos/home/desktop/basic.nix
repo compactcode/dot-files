@@ -13,14 +13,12 @@ in {
 
   home.packages = with pkgs; [
     discord # Voice communication.
-    libreoffice # Spreadsheet & word documents.
     mpv # Lightweight video player.
     pinta # Lightweight image editor.
     postman # API interaction.
     signal-desktop # Text communication.
     slack # Text communication.
     spotify # Music player.
-    steam # Video games.
     sxiv # Lightweight image viewer.
     zathura # Lightweight pdf viewer.
     zoom-us # Video communication.
@@ -127,11 +125,6 @@ in {
 
     # Add the audio manager to the status bar.
     pasystray = {
-      enable = true;
-    };
-
-    # Add an audio effects manager.
-    pulseeffects = {
       enable = true;
     };
 

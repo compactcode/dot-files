@@ -3,17 +3,6 @@
 let
   settings = import ../../../settings.nix;
   theme = import ../../themes/base_16_current.nix;
-
-  # Fix for intermittent application crashes.
-
-  # https://github.com/NixOS/nixpkgs/issues/98245
-  i3-gaps-backport = pkgs.i3-gaps.overrideAttrs (oldAttrs: rec {
-    version = "4.18.3";
-    src = pkgs.fetchurl {
-      url = "https://github.com/Airblader/i3/releases/download/${version}/i3-${version}.tar.bz2";
-      sha256 = "1hcakwyz78lgp8mhqv7pw86jlb3m415pfql1q19rkijnhm3fn3ci";
-    };
-  });
 in {
   home.packages = with pkgs; [
     i3lock-color
@@ -29,7 +18,7 @@ in {
   xsession.windowManager.i3 = {
     enable = true;
 
-    package = i3-gaps-backport;
+    package = pkgs.i3-gaps;
 
     extraConfig = ''
       set $web      "1:"
@@ -274,7 +263,7 @@ in {
     [[block]]
     block = "cpu"
     interval = 2
-    format = "{utilization}% {frequency}GHz"
+    format = "{utilization} {frequency}"
 
     [[block]]
     block = "load"
