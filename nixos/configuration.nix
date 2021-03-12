@@ -37,6 +37,11 @@ in {
   };
 
   networking = {
+    # Enable firewall.
+    firewall = {
+      enable = true;
+    };
+
     # Split development.
     hosts = {
       "127.0.0.1" = [
