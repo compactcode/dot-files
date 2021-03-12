@@ -11,6 +11,7 @@ in {
   services = {
     screen-locker = {
       enable = true;
+      inactiveInterval = 5;
       lockCmd = "${lib.getBin pkgs.i3lock-color}/bin/i3lock-color -n -c 000000";
     };
   };
