@@ -71,10 +71,7 @@ in {
     bat = {
       enable = true;
       config = {
-        theme = "nord";
-      };
-      themes = {
-        nord = (builtins.readFile ../themes/base_16_nord.tmTheme);
+        theme = "Nord";
       };
     };
 
