@@ -106,6 +106,11 @@ in {
       ];
     };
 
+    # Backup in case native applications like Discord/Zoom break.
+    flatpak = {
+      enable = true;
+    };
+
     # Opacity and drop shadows on windows.
     picom = {
       enable = true;
@@ -192,6 +197,13 @@ in {
 
     # Video games.
     steam = {
+      enable = true;
+    };
+  };
+
+  # Enable flatpak apps to have system integration (dbus etc).
+  xdg = {
+    portal = {
       enable = true;
     };
   };
