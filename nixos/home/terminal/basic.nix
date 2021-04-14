@@ -59,7 +59,7 @@ in {
             enable = true;
           };
 
-          astroid = {
+          notmuch = {
             enable = true;
           };
         };
@@ -68,6 +68,10 @@ in {
   };
 
   programs = {
+    alot = {
+      enable = true;
+    };
+
     # cat replacement.
     bat = {
       enable = true;
@@ -135,6 +139,17 @@ in {
     # index email.
     notmuch = {
       enable = true;
+
+      extraConfig = {
+        query.split = "to:shanon@splitpayments.com.au AND NOT tag:killed";
+      };
+
+      search = {
+        excludeTags = [
+          "killed"
+          "spam"
+        ];
+      };
     };
 
     # bash prompt.
