@@ -83,12 +83,13 @@ in {
       settings = {
         global = {
           follow = "keyboard"; # Show notifications where the keyboard has foucs.
-          format = "<b>%s</b>\\n%b";
           font = "${settings.font.sansFamily} ${settings.font.defaultSize.points}";
+          format = "<b>%s</b>\\n%b";
           frame_width = 2; # Border size.
           geometry = "400x5-18+42"; # Size & location of notifications.
           horizontal_padding = 6;
           markup = "yes"; # Enable basic markup in messages.
+          max_icon_size = 32; # Put a limit on image/icon size.
           padding = 6; # Vertical padding
           separator_color = "frame"; # Match to the frame color.
           separator_height = 2; # Space between notifications.
