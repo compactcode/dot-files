@@ -156,11 +156,6 @@ in {
     starship = {
       enable = true;
       enableZshIntegration = true;
-      settings = {
-        aws = {
-          disabled = true;
-        };
-      };
     };
 
     # bash replacement.
