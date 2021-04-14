@@ -21,6 +21,7 @@ in {
     ripgrep # grep replacement.
     tig # git viewer.
     unzip # opening zip archives.
+    w3m # html viewer.
   ];
 
   accounts = {
