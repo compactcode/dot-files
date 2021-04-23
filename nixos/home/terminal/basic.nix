@@ -58,6 +58,62 @@ in {
           notmuch = {
             enable = true;
           };
+        };
+
+        split = {
+          address = "shanon@splitpayments.com.au";
+          realName = settings.user.name;
+          userName = "shanon@splitpayments.com.au";
+          passwordCommand = "pass shanon@splitpayments.com.au/token";
+
+          imap = {
+            host = "imap.gmail.com";
+          };
+
+          smtp = {
+            host = "smtp.gmail.com";
+          };
+
+          mbsync = {
+            enable = true;
+
+            create = "both";
+            expunge = "both";
+          };
+
+          msmtp = {
+            enable = true;
+          };
+
+          notmuch = {
+            enable = true;
+          };
+        };
+
+        legacy = {
+          address = "shanonmcquay@gmail.com";
+          realName = settings.user.name;
+          userName = "shanonmcquay@gmail.com";
+          passwordCommand = "pass shanonmcquay@gmail.com/token";
+
+          imap = {
+            host = "imap.gmail.com";
+          };
+
+          smtp = {
+            host = "smtp.gmail.com";
+          };
+
+          mbsync = {
+            enable = true;
+
+            create = "both";
+            expunge = "both";
+          };
+
+          msmtp = {
+            enable = true;
+          };
 
           notmuch = {
             enable = true;
