@@ -14,8 +14,11 @@
         "sr_mod"
       ];
 
-      luks.devices."nixos-decrypted" = {
-        device = "/dev/disk/by-partlabel/primary";
+      luks.devices = {
+        unlocked = {
+          device = "/dev/disk/by-partlabel/primary";
+          preLVM = true;
+        };
       };
     };
 
@@ -26,14 +29,14 @@
     };
   };
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-label/nixos";
-    fsType = "ext4";
-  };
-
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/boot";
     fsType = "vfat";
+  };
+
+  fileSystems."/" = {
+    device = "/dev/unlocked-lvm/nixos";
+    fsType = "ext4";
   };
 
   nix.maxJobs = lib.mkDefault 2;
