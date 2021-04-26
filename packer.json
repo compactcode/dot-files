@@ -3,8 +3,8 @@
     "type": "virtualbox-iso",
     "guest_os_type": "Other_64",
     "iso_url": "https://channels.nixos.org/nixos-20.09-small/latest-nixos-minimal-x86_64-linux.iso",
-    "iso_checksum": "348ab2d0733eadac8abd30eac9b2457d933dd01e4d07eee3dfd805e05376fa3f",
-    "disk_size": 16000,
+    "iso_checksum": "260f978ad988700b7618d44d780d2df2a50e330a2cfb48a3ad38606e09fb7ccd",
+    "disk_size": 32000,
     "boot_wait": "5s",
     "boot_command": [
       "<enter>",
