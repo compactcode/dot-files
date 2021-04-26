@@ -18,6 +18,7 @@
 
       luks.devices = {
         unlocked = {
+          allowDiscards = true;
           device = "/dev/disk/by-partlabel/primary";
           preLVM = true;
         };
@@ -36,6 +37,7 @@
     };
 
     kernelModules = [
+      "amdgpu"
       "kvm-amd"
     ];
 
@@ -52,12 +54,24 @@
     fsType = "ext4";
   };
 
-  # Enable periodic trim for long term SSD performance.
-  services.fstrim.enable = true;
+  hardware = {
+    # Enable amd microcode updates.
+    cpu.amd.updateMicrocode = true;
+  };
+
+  services = {
+    # Enable periodic trim for long term SSD performance.
+    fstrim = {
+      enable = true;
+    };
+
+    # Enable the amd drivers.
+    videoDrivers = [ "amdgpu" ];
+  };
 
   networking = {
     hostName = "medusa";
   };
 
-  nix.maxJobs = lib.mkDefault 8;
+  nix.maxJobs = lib.mkDefault 12;
 }
