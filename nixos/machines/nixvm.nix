@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../configuration.nix
+    ../configuration-lite.nix
   ];
 
   boot = {
@@ -15,9 +15,8 @@
       ];
 
       luks.devices = {
-        unlocked = {
+        nixos-decrypted = {
           device = "/dev/disk/by-partlabel/primary";
-          preLVM = true;
         };
       };
     };
@@ -35,7 +34,7 @@
   };
 
   fileSystems."/" = {
-    device = "/dev/unlocked-lvm/nixos";
+    device = "/dev/disk/by-label/nixos";
     fsType = "ext4";
   };
 
