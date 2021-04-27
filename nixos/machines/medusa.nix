@@ -57,6 +57,9 @@
   hardware = {
     # Enable amd microcode updates.
     cpu.amd.updateMicrocode = true;
+
+    # Enable nonfree firmware.
+    enableRedistributableFirmware = true;
   };
 
   services = {
