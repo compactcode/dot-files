@@ -68,8 +68,10 @@
       enable = true;
     };
 
-    # Enable the amd drivers.
-    videoDrivers = [ "amdgpu" ];
+    xserver = {
+      # Enable the amd drivers.
+      videoDrivers = [ "amdgpu" ];
+    };
   };
 
   networking = {
