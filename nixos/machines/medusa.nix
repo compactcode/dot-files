@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../configuration-lite.nix
+    ../configuration.nix
   ];
 
   boot = {
