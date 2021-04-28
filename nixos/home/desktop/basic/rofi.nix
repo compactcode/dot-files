@@ -9,7 +9,7 @@ in {
     text = ''
       #!/bin/sh
 
-      ${lib.getBin pkgs.rofi}/bin/rofi -dmenu -lines 0 -p duckduckgo | xargs -I{} firefox-sandboxed 'https://duckduckgo.com/?q={}'
+      ${lib.getBin pkgs.rofi}/bin/rofi -dmenu -lines 0 -p duckduckgo | xargs -I{} firefox 'https://duckduckgo.com/?q={}'
     '';
   };
 

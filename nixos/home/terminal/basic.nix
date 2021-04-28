@@ -233,7 +233,7 @@ in {
 
       sessionVariables = {
         AWS_VAULT_BACKEND = "pass";
-        BROWSER = "firefox-sandboxed";
+        BROWSER = "firefox";
         EDITOR = "vim";
       };
 

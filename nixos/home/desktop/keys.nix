@@ -31,7 +31,7 @@ in {
       "{super, alt} + Return" = "${launcher} '${lib.getBin pkgs.alacritty}/bin/alacritty'";
 
       # Launch firefox.
-      "super + w" = "${launcher} 'firefox-sandboxed'";
+      "super + w" = "${launcher} '${lib.getBin pkgs.firefox}/bin/firefox'";
 
       # Lock the screen.
       "super + shift + l" = "${launcher} '${lib.getBin pkgs.xautolock}/bin/xautolock -locknow'";
