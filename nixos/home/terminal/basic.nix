@@ -157,15 +157,20 @@ in {
     # version control.
     git = {
       enable = true;
-      userName = settings.user.name;
-      userEmail = settings.user.email;
+      delta = {
+        enable = true;
+      };
+      ignores = [
+        ".direnv"
+        ".envrc"
+        "shell.nix"
+      ];
       signing = {
         signByDefault = true;
         key = settings.user.gpg.signingKey;
       };
-      delta = {
-        enable = true;
-      };
+      userName = settings.user.name;
+      userEmail = settings.user.email;
     };
 
     # process viewing.
