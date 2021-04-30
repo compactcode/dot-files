@@ -104,7 +104,7 @@ in {
       bars = [{
         position = "top";
 
-        statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${config.xdg.configHome}/i3/status.toml";
+        statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${config.xdg.configHome}/i3status-rust/config-default.toml";
 
         fonts = [
           "${settings.font.nerdFamily} ${settings.font.defaultSize.points}"
@@ -222,74 +222,86 @@ in {
     };
   };
 
-  xdg.configFile."i3/status.toml".text = ''
-    [theme]
-    name = "modern"
+  programs = {
+    i3status-rust = {
+      enable = true;
 
-    [theme.overrides]
-    idle_bg     = "${theme.base00-hex}"
-    idle_fg     = "${theme.base05-hex}"
-    good_bg     = "${theme.base00-hex}"
-    good_fg     = "${theme.base05-hex}"
-    info_bg     = "${theme.base00-hex}"
-    info_fg     = "${theme.base05-hex}"
-    warning_bg  = "${theme.base0A-hex}"
-    warning_fg  = "${theme.base00-hex}"
-    critical_bg = "${theme.base0C-hex}"
-    critical_fg = "${theme.base00-hex}"
+      bars = {
+        default = {
+          blocks = [
+            {
+              block = "disk_space";
+              path = "/";
+              alias = "/";
+              info_type = "available";
+              unit = "GB";
+            }
+            {
+              block = "memory";
+              display_type = "memory";
+              format_mem = "{Mup}%";
+              interval = 4;
+              clickable = false;
+            }
+            {
+              block = "cpu";
+              interval = 2;
+              format = "{utilization} {frequency}";
+            }
+            {
+              block = "load";
+              format = "{1m} {5m}";
+              interval = 4;
+            }
+            {
+              block = "temperature";
+              collapsed = false;
+              interval = 4;
+              format = "{max}°";
+              chip = "k10temp-pci-*";
+            }
+            {
+              block = "net";
+              device = "eno1";
+              interval = 2;
+            }
+            {
+              block = "sound";
+              step_width = 6;
+            }
+            {
+              block = "time";
+              interval = 60;
+              format = "%d %b %l:%M %p";
+            }
+          ];
 
-    [icons]
-    name = "awesome5"
-    [icons.overrides]
-    net_wired = ""
-    net_wireless = ""
-
-    [[block]]
-    block = "disk_space"
-    path = "/"
-    alias = "/"
-    info_type = "available"
-    unit = "GB"
-    interval = 20
-    warning = 20.0
-    alert = 10.0
-
-    [[block]]
-    block = "memory"
-    display_type = "memory"
-    format_mem = "{Mup}%"
-    clickable = false
-    interval = 4
-
-    [[block]]
-    block = "cpu"
-    interval = 2
-    format = "{utilization} {frequency}"
-
-    [[block]]
-    block = "load"
-    format = "{1m} {5m}"
-    interval = 4
-
-    [[block]]
-    block = "temperature"
-    collapsed = false
-    interval = 4
-    format = "{min}-{max}°"
-    chip = "coretemp-isa-*"
-
-    [[block]]
-    block = "net"
-    device = "eno1"
-    interval = 2
-
-    [[block]]
-    block = "sound"
-    step_width = 6
-
-    [[block]]
-    block = "time"
-    interval = 60
-    format = "%d %b %l:%M %p"
-  '';
+          settings = {
+            theme =  {
+              name = "modern";
+              overrides = {
+                idle_bg     = "${theme.base00-hex}";
+                idle_fg     = "${theme.base05-hex}";
+                good_bg     = "${theme.base00-hex}";
+                good_fg     = "${theme.base05-hex}";
+                info_bg     = "${theme.base00-hex}";
+                info_fg     = "${theme.base05-hex}";
+                warning_bg  = "${theme.base0A-hex}";
+                warning_fg  = "${theme.base00-hex}";
+                critical_bg = "${theme.base0C-hex}";
+                critical_fg = "${theme.base00-hex}";
+              };
+            };
+            icons = {
+              name = "awesome5";
+              overrides = {
+                net_wired = "";
+                net_wireless = "";
+              };
+            };
+          };
+        };
+      };
+    };
+  };
 }
