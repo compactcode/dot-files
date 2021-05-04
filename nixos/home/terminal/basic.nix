@@ -79,6 +79,14 @@ in {
 
             create = "both";
             expunge = "both";
+
+            patterns = ["*" "![Gmail]*"];
+
+            extraConfig = {
+              channel = {
+                Sync = "All";
+              };
+            };
           };
 
           msmtp = {
@@ -109,6 +117,14 @@ in {
 
             create = "both";
             expunge = "both";
+
+            patterns = ["*" "![Gmail]*"];
+
+            extraConfig = {
+              channel = {
+                Sync = "All";
+              };
+            };
           };
 
           msmtp = {
