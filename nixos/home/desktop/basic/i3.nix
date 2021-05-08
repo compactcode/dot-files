@@ -195,6 +195,10 @@ in {
       window = {
         border = 1;
         titlebar = false;
+
+        commands = [
+          { command = "move to workspace $music"; criteria = { class = "Spotify"; }; }
+        ];
       };
 
       floating = {
@@ -210,10 +214,6 @@ in {
           { class = "^Slack$"; }
           { class = "^discord$"; }
           { class = "^Signal$"; }
-        ];
-        "$music" = [
-          { class = "^Spotify$"; }
-          { class = "^Pulseeffects$"; }
         ];
         "$games" = [
           { class = "^Steam$"; }
