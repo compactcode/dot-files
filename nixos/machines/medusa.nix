@@ -59,6 +59,11 @@
 
     # Enable nonfree firmware.
     enableRedistributableFirmware = true;
+
+    # Manage razer peripherals.
+    openrazer = {
+      enable = true;
+    };
   };
 
   services = {

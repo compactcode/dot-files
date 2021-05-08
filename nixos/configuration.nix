@@ -227,10 +227,11 @@ in {
       ${settings.user.username} = {
         isNormalUser = true;
         extraGroups = [
-          "wheel" # Enable sudo.
-          "video" # Enable changing screen settings without sudo.
-          "docker" # Enable using docker without sudo.
-          "networkmanager" # Enable changing network settings without sudo.
+          "wheel"          # Allow sudo.
+          "video"          # Allow changing screen settings.
+          "plugdev"        # Allow changing razer peripheral settings.
+          "docker"         # Allow using docker.
+          "networkmanager" # Allow changing network settings.
         ];
         hashedPassword = settings.user.hashedPassword;
       };
