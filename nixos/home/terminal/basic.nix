@@ -201,6 +201,10 @@ in {
     # file managing.
     lf = {
       enable = true;
+
+      previewer = {
+        source = "${lib.getBin pkgs.pistol}/bin/pistol";
+      };
     };
 
     # retrieve email.
