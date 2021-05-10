@@ -22,6 +22,7 @@ in {
     tig # git viewer.
     unzip # opening zip archives.
     w3m # html viewer.
+    xsv # csv viewer.
   ];
 
   accounts = {
