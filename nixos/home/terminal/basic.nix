@@ -9,21 +9,29 @@ in {
     ./basic/neovim.nix
   ];
 
-  home.packages = with pkgs; [
-    aws-vault # secure aws credential handling.
-    du-dust # du replacement.
-    exa # ls replacement.
-    fd # find replacement.
-    file # file type detector.
-    fre # frequency/recency tracker.
-    gnupg # gpg tools.
-    pass # gpg based password manager.
-    ripgrep # grep replacement.
-    tig # git viewer.
-    unzip # opening zip archives.
-    w3m # html viewer.
-    xsv # csv viewer.
-  ];
+  home = {
+    packages = with pkgs; [
+      aws-vault # secure aws credential handling.
+      du-dust # du replacement.
+      exa # ls replacement.
+      fd # find replacement.
+      file # file type detector.
+      fre # frequency/recency tracker.
+      gnupg # gpg tools.
+      ripgrep # grep replacement.
+      tig # git viewer.
+      unzip # opening zip archives.
+      w3m # html viewer.
+      xsv # csv viewer.
+    ];
+
+    sessionVariables = {
+      AWS_VAULT_BACKEND = "pass";
+      AWS_VAULT_PROMPT = "pass";
+      BROWSER = "firefox";
+      EDITOR = "vim";
+    };
+  };
 
   accounts = {
     email = {
@@ -263,12 +271,6 @@ in {
           "environment"
           "history"
         ];
-      };
-
-      sessionVariables = {
-        AWS_VAULT_BACKEND = "pass";
-        BROWSER = "firefox";
-        EDITOR = "vim";
       };
 
       shellAliases = {
