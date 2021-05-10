@@ -58,14 +58,15 @@ in {
 
   environment.systemPackages = with pkgs; [
     # Command line utilities.
-    exfat # mount exfat drives.
+    dnsutils # dns debugging.
     ethtool # ethernet debugging.
+    exfat # mount exfat drives.
     glxinfo # gfx debugging.
+    libfido2 # fido2/webauthn authentication.
     lm_sensors # system sensor access.
     nfs-utils # mount nfs drives.
     pciutils # pci debugging.
     usbutils # usb debugging.
-    libfido2 # fido2/webauthn authentication.
   ] ++ [
     # X11 utilities.
 
