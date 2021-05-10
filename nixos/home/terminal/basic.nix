@@ -141,6 +141,7 @@ in {
   };
 
   programs = {
+    # email client.
     alot = {
       enable = true;
     };
@@ -232,6 +233,13 @@ in {
           "spam"
         ];
       };
+    };
+
+    # gpg password manager.
+    password-store = {
+      enable = true;
+
+      package = pkgs.pass.withExtensions (exts: [ exts.pass-otp ]);
     };
 
     # bash prompt.
