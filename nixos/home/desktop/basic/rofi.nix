@@ -9,14 +9,16 @@ in {
     text = ''
       #!/bin/sh
 
-      ${lib.getBin pkgs.rofi}/bin/rofi -dmenu -lines 0 -p duckduckgo | xargs -I{} firefox 'https://duckduckgo.com/?q={}'
+      rofi -dmenu -lines 0 -p duckduckgo | xargs -I{} firefox 'https://duckduckgo.com/?q={}'
     '';
   };
 
   programs.rofi = {
     enable = true;
 
-    terminal = "${lib.getBin pkgs.alacritty}/bin/alacritty";
+    extraConfig = {
+      modi = "drun,calc";
+    };
 
     colors = {
       window = {
@@ -37,5 +39,13 @@ in {
         };
       };
     };
+
+    package = pkgs.rofi.override {
+      plugins = [
+        pkgs.rofi-calc
+      ];
+    };
+
+    terminal = "alacritty";
   };
 }
