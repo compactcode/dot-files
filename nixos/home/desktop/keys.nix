@@ -29,10 +29,13 @@ in {
       # Open a calculator.
       "super + c" = "rofi -show calc -modi calc -no-show-match -no-sort";
 
-      # Launch a new terminal.
+      # Open a file browser.
+      "super + f" = "alacritty -e lf";
+
+      # Open a new terminal.
       "{super, alt} + Return" = "${launcher} '${lib.getBin pkgs.alacritty}/bin/alacritty'";
 
-      # Launch firefox.
+      # Open a web browser.
       "super + w" = "firefox";
 
       # Lock the screen.
