@@ -41,6 +41,8 @@ in {
         "application/pdf"        = "zathura.desktop";
         "image/jpeg"             = "sxiv.desktop";
         "image/png"              = "sxiv.desktop";
+        "inode/directory"        = "lf.desktop";
+        "text/plain"             = "nvim.desktop";
         "x-scheme-handler/http"  = "firefox.desktop";
         "x-scheme-handler/https" = "firefox.desktop";
       };
@@ -48,6 +50,8 @@ in {
 
     userDirs = {
       enable = true;
+
+      createDirectories = true;
     };
   };
 
