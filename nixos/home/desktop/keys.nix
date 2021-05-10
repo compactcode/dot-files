@@ -30,7 +30,7 @@ in {
       "super + c" = "rofi -show calc -modi calc -no-show-match -no-sort";
 
       # Open a file browser.
-      "super + f" = "alacritty -e lf";
+      "super + f" = "${launcher} 'alacritty -e lf'";
 
       # Open a new terminal.
       "{super, alt} + Return" = "${launcher} '${lib.getBin pkgs.alacritty}/bin/alacritty'";
