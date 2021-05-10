@@ -36,7 +36,7 @@ in {
       "{super, alt} + Return" = "${launcher} '${lib.getBin pkgs.alacritty}/bin/alacritty'";
 
       # Open a web browser.
-      "super + w" = "firefox";
+      "super + w" = "${launcher} firefox";
 
       # Lock the screen.
       "super + shift + l" = "${lib.getBin pkgs.xautolock}/bin/xautolock -locknow";
