@@ -30,6 +30,7 @@ in {
       AWS_VAULT_PROMPT = "pass";
       BROWSER = "firefox";
       EDITOR = "vim";
+      LF_ICONS="di=:fi=:ex=:ln=:*.png=:*.pdf=:*.csv=:*.rb=:*.js=:*.json=ﬥ:*.nix=:*.yml=:";
     };
   };
 
@@ -214,6 +215,10 @@ in {
 
       previewer = {
         source = "${lib.getBin pkgs.pistol}/bin/pistol";
+      };
+
+      settings = {
+        icons = true;
       };
     };
 

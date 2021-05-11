@@ -1,8 +1,9 @@
 {
   font = {
-    nerdFamily = "Font Awesome";
-    monoFamily = "Source Code Pro";
-    sansFamily = "Source Sans Pro";
+    iconFamily  = "SauceCodePro Nerd Font Mono";
+    monoFamily  = "Source Code Pro";
+    sansFamily  = "Source Sans Pro";
+    serifFamily = "Source Sans Pro";
 
     defaultSize = {
       pixels = "12";

@@ -26,15 +26,6 @@ in {
       - { key: V,        action: Paste,            mods: Super }
 
     font:
-      bold:
-        family: '${settings.font.monoFamily}'
-      bold_italitc:
-        family: '${settings.font.monoFamily}'
-      italic:
-        family: '${settings.font.monoFamily}'
-      normal:
-        family: '${settings.font.monoFamily}'
-
       size: ${settings.font.defaultSize.points}
 
     scrolling:

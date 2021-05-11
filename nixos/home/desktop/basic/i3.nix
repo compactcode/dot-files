@@ -23,21 +23,17 @@ in {
 
     extraConfig = ''
       set $web      "1:"
-      set $code     "2:"
-      set $code-alt "3:"
+      set $code     "2:"
+      set $code-alt "3:"
       set $files    "4:"
       set $chat     "5:"
       set $open     "6:"
       set $open-alt "7:"
       set $music    "8:"
-      set $games    "9:"
+      set $games    "9:"
     '';
 
     config = {
-      fonts = [
-        "${settings.font.monoFamily} ${settings.font.defaultSize.points}"
-      ];
-
       keybindings = {
         # Switch to workspace.
         "Mod1+1"   = "workspace $web";
@@ -107,8 +103,7 @@ in {
         statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${config.xdg.configHome}/i3status-rust/config-default.toml";
 
         fonts = [
-          "${settings.font.nerdFamily} ${settings.font.defaultSize.points}"
-          "${settings.font.monoFamily} ${settings.font.defaultSize.points}"
+          "${settings.font.iconFamily} ${settings.font.defaultSize.points}"
         ];
 
         colors = {
@@ -293,10 +288,20 @@ in {
               };
             };
             icons = {
-              name = "awesome5";
               overrides = {
+                cogs = " ";
+                cpu = " ";
+                memory_mem = " ";
+                net_down = "";
+                net_up = "";
                 net_wired = "";
                 net_wireless = "";
+                thermometer = " ";
+                time = " ";
+                volume_empty = " ";
+                volume_full = " ";
+                volume_half = "奔 ";
+                volume_muted = "ﱝ ";
               };
             };
           };

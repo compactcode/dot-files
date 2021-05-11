@@ -81,20 +81,39 @@ in {
       source-code-pro
       source-sans-pro
       source-serif-pro
-      font-awesome
       (
         nerdfonts.override {
-          fonts = [ "FiraCode"];
+          fonts = [ "SourceCodePro"];
         }
       )
     ];
 
     fontconfig = {
+      allowBitmaps = true;
+
       defaultFonts = {
-        monospace = [ "Source Code Pro" ];
-        sansSerif = [ "Source Sans Pro" ];
-        serif     = [ "Source Serif Pro" ];
+        emoji = [
+          settings.font.iconFamily
+        ];
+        monospace = [
+          settings.font.monoFamily
+          settings.font.iconFamily
+        ];
+        sansSerif = [
+          settings.font.sansFamily
+          settings.font.iconFamily
+        ];
+        serif = [
+          settings.font.serifFamily
+          settings.font.iconFamily
+        ];
       };
+
+      useEmbeddedBitmaps = true;
+    };
+
+    fontDir = {
+      enable = true;
     };
   };
 
