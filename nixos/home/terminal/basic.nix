@@ -23,6 +23,7 @@ in {
       unzip # opening zip archives.
       w3m # html viewer.
       xsv # csv viewer.
+      chafa # image viewer.
     ];
 
     sessionVariables = {
@@ -215,11 +216,17 @@ in {
 
       previewer = {
         source = pkgs.writeShellScript "preview.sh" ''
-          #!/bin/sh
+          #!/usr/bin/env bash
+
+          FILE_PATH="$1"
+          HEIGHT="$2"
 
           case "$1" in
-              *.csv) xsv sample 25 "$1" | xsv table;;
-              *) bat --color=always "$1";;
+              *.csv) xsv sample 25 "$FILE_PATH" | xsv table;;
+              *.jpeg) chafa --fill=block --symbols=block -c 256 -s 80x"$HEIGHT" "$FILE_PATH";;
+              *.jpg) chafa --fill=block --symbols=block -c 256 -s 80x"$HEIGHT" "$FILE_PATH";;
+              *.png) chafa --fill=block --symbols=block -c 256 -s 80x"$HEIGHT" "$FILE_PATH";;
+              *) bat --color=always "$FILE_PATH";;
           esac
         '';
       };

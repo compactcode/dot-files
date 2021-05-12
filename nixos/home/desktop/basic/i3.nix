@@ -125,7 +125,7 @@ in {
         "Mod1+w" = "kill";
 
         # Open a new terminal.
-        "Mod1+Return" = "exec alacritty";
+        "Mod1+Return" = "exec --no-startup-id alacritty";
 
         # Open a file browser in the downloads directory.
         "Mod4+d" = "workspace $files; exec --no-startup-id alacritty -e lf ${downloadsDir}";
@@ -140,7 +140,7 @@ in {
         "Mod4+Shift+l" = "exec --no-startup-id ${lib.getBin pkgs.xautolock}/bin/xautolock -locknow";
 
         # Open a web browser.
-        "Mod4+w" = "workspace $web; exec firefox --new-tab about:home";
+        "Mod4+w" = "workspace $web; exec --no-startup-id firefox --new-tab about:home";
 
         # Screenshot a selected area.
         "Print" = "exec --no-startup-id ${config.xdg.dataFile."bin/screenshot-area".target}";

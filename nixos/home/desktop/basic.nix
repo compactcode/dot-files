@@ -38,6 +38,7 @@ in {
     mimeApps = {
       enable = true;
       defaultApplications = {
+        "application/csv"        = "nvim.desktop";
         "application/pdf"        = "zathura.desktop";
         "image/jpeg"             = "sxiv.desktop";
         "image/png"              = "sxiv.desktop";
