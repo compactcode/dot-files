@@ -214,11 +214,19 @@ in {
       enable = true;
 
       previewer = {
-        source = "${lib.getBin pkgs.pistol}/bin/pistol";
+        source = pkgs.writeShellScript "preview.sh" ''
+          #!/bin/sh
+
+          case "$1" in
+              *.csv) xsv sample 25 "$1" | xsv table;;
+              *) bat --color=always "$1";;
+          esac
+        '';
       };
 
       settings = {
         icons = true;
+        incsearch = true;
       };
     };
 
