@@ -12,18 +12,19 @@ in {
   home = {
     packages = with pkgs; [
       aws-vault # secure aws credential handling.
+      chafa # image viewer.
       du-dust # du replacement.
       exa # ls replacement.
       fd # find replacement.
       file # file type detector.
       fre # frequency/recency tracker.
       gnupg # gpg tools.
+      poppler_utils # pdf viewer.
       ripgrep # grep replacement.
       tig # git viewer.
       unzip # opening zip archives.
       w3m # html viewer.
       xsv # csv viewer.
-      chafa # image viewer.
     ];
 
     sessionVariables = {
@@ -225,6 +226,7 @@ in {
               *.csv) xsv sample 25 "$FILE_PATH" | xsv table;;
               *.jpeg) chafa --fill=block --symbols=block -c 256 -s 80x"$HEIGHT" "$FILE_PATH";;
               *.jpg) chafa --fill=block --symbols=block -c 256 -s 80x"$HEIGHT" "$FILE_PATH";;
+              *.pdf) pdftotext -l 5 -nopgbrk -q -- "$FILE_PATH" -;;
               *.png) chafa --fill=block --symbols=block -c 256 -s 80x"$HEIGHT" "$FILE_PATH";;
               *) bat --color=always "$FILE_PATH";;
           esac
