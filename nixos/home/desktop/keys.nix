@@ -10,6 +10,37 @@ let
   xdotool = "${lib.getBin pkgs.xdotool}/bin/xdotool";
 
 in {
+  # Screenshot a selected area.
+  xdg.dataFile."bin/screenshot-area" = {
+    executable = true;
+    text = ''
+      #!/usr/bin/env bash
+
+      file=$(${date} +%s).png
+
+      ${maim} -u -s ${download}/$file
+
+      # Handle when area selection is cancelled.
+      if [[ -f "${download}/$file" ]]; then
+        ${pinta} ${download}/$file
+      fi
+    '';
+  };
+
+  # Screenshot the current window.
+  xdg.dataFile."bin/screenshot-window" = {
+    executable = true;
+    text = ''
+      #!/bin/sh
+
+      file=$(${date} +%s).png
+
+      ${maim} -i $(${xdotool} getactivewindow) ${download}/$file
+
+      ${pinta} ${download}/$file
+    '';
+  };
+
   services.sxhkd = {
     enable = true;
 
@@ -42,10 +73,10 @@ in {
       "super + shift + l" = "${lib.getBin pkgs.xautolock}/bin/xautolock -locknow";
 
       # Screenshot a selected area.
-      "Print" = "file=$(${date} +%s).png; ${maim} -u -s ${download}/$file; ${pinta} ${download}/$file";
+      "Print" = "${launcher} '${config.xdg.dataFile."bin/screenshot-area".target}'";
 
       # Screenshot the current window.
-      "shift + Print" = "file=$(${date} +%s).png; ${maim} -i $(${xdotool} getactivewindow) ${download}/$file; ${pinta} ${download}/$file";
+      "shift + Print" = "${launcher} '${config.xdg.dataFile."bin/screenshot-window".target}'";
     };
   };
 }
