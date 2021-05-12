@@ -308,7 +308,9 @@ in {
         grh  = "${pkgs.git}/bin/git reset HEAD";
         grm  = "${pkgs.git}/bin/git rm";
         gs   = "${pkgs.git}/bin/git status";
-        l    = "${pkgs.exa}/bin/exa -la";
+        l    = "${pkgs.exa}/bin/exa -la --icons --no-permissions --no-user";
+        la   = "${pkgs.exa}/bin/exa -la";
+        ll   = "${pkgs.exa}/bin/exa -la --icons";
         lt   = "${pkgs.exa}/bin/exa -l --tree";
         md   = "mkdir -p";
         o    = "xdg-open";
