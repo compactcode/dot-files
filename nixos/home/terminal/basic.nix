@@ -30,7 +30,7 @@ in {
       AWS_VAULT_PROMPT = "pass";
       BROWSER = "firefox";
       EDITOR = "vim";
-      LF_ICONS="di=:fi=:ex=:ln=:*.png=:*.pdf=:*.csv=:*.rb=:*.js=:*.json=ﬥ:*.nix=:*.yml=:";
+      LF_ICONS="di=:fi=:ex=:ln=:*.png=:*.jpg=:*.jpeg=:*.pdf=:*.csv=:*.rb=:*.js=:*.json=ﬥ:*.nix=:*.yml=:";
     };
   };
 
