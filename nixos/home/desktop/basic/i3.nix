@@ -3,10 +3,43 @@
 let
   settings = import ../../../settings.nix;
   theme = import ../../themes/base_16_current.nix;
+
+  downloadsDir = config.xdg.userDirs.download;
 in {
   home.packages = with pkgs; [
     i3lock-color
   ];
+
+  # Screenshot a selected area.
+  xdg.dataFile."bin/screenshot-area" = {
+    executable = true;
+    text = ''
+      #!/usr/bin/env bash
+
+      file=$(${lib.getBin pkgs.coreutils}/bin/date +%s).png
+
+      ${lib.getBin pkgs.maim}/bin/maim -u -s ${downloadsDir}/$file
+
+      # Handle when area selection is cancelled.
+      if [[ -f "${downloadsDir}/$file" ]]; then
+        ${lib.getBin pkgs.pinta}/bin/pinta ${downloadsDir}/$file
+      fi
+    '';
+  };
+
+  # Screenshot the current window.
+  xdg.dataFile."bin/screenshot-window" = {
+    executable = true;
+    text = ''
+      #!/bin/sh
+
+      file=$(${lib.getBin pkgs.coreutils}/bin/date +%s).png
+
+      ${lib.getBin pkgs.maim}/bin/maim -i $(${lib.getBin pkgs.xdotool}/bin/xdotool getactivewindow) ${downloadsDir}/$file
+
+      ${lib.getBin pkgs.pinta}/bin/pinta ${downloadsDir}/$file
+    '';
+  };
 
   services = {
     screen-locker = {
@@ -79,8 +112,8 @@ in {
         # Fullscreen current window.
         "Mod1+f" = "fullscreen toggle";
 
-        # Kill current window.
-        "Mod1+w" = "kill";
+        # Toggle between stacking/tabbed/split.
+        "Mod1+t" = "layout toggle";
 
         # Split window horizontally.
         "Mod1+x" = "split h";
@@ -88,8 +121,32 @@ in {
         # Split window verticalally.
         "Mod1+v" = "split v";
 
-        # Toggle between stacking/tabbed/split.
-        "Mod1+t" = "layout toggle";
+        # Kill current window.
+        "Mod1+w" = "kill";
+
+        # Open a new terminal.
+        "Mod1+Return" = "exec alacritty";
+
+        # Open a file browser in the downloads directory.
+        "Mod4+d" = "workspace $files; exec --no-startup-id alacritty -e lf ${downloadsDir}";
+
+        # Open a file browser.
+        "Mod4+f" = "workspace $files; exec --no-startup-id alacritty -e lf";
+
+        # Open an interactive application launcher.
+        "Mod4+space" = "exec --no-startup-id rofi -show drun --lines 10";
+
+        # Lock the screen.
+        "Mod4+Shift+l" = "exec --no-startup-id ${lib.getBin pkgs.xautolock}/bin/xautolock -locknow";
+
+        # Open a web browser.
+        "Mod4+w" = "workspace $web; exec firefox --new-tab about:home";
+
+        # Screenshot a selected area.
+        "Print" = "exec --no-startup-id ${config.xdg.dataFile."bin/screenshot-area".target}";
+
+        # Screenshot the current window.
+        "Shift+Print" = "exec --no-startup-id ${config.xdg.dataFile."bin/screenshot-window".target}";
       };
 
       gaps = {

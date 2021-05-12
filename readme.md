@@ -29,10 +29,6 @@ The font is [Source Code Pro](http://adobe-fonts.github.io/source-code-pro/).
 
 Window opacity and drop shadows are applied using picom.
 
-## Key Bindings
-
-I'm using [sxhkd](https://github.com/baskerville/sxhkd) to manage system shortcuts.
-
 ## Terminal
 
 * [alacritty](https://github.com/jwilm/alacritty)
