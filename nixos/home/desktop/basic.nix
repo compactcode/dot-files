@@ -14,6 +14,7 @@ in {
   home.packages = with pkgs; [
     discord # Voice communication.
     mpv # Lightweight video player.
+    xclip # Clipboard access.
     pinta # Lightweight image editor.
     postman # API interaction.
     signal-desktop # Text communication.
@@ -23,6 +24,16 @@ in {
     zathura # Lightweight pdf viewer.
     zoom-us # Video communication.
   ];
+
+  xdg.configFile."sxiv/exec/key-handler" = {
+    executable = true;
+    text = ''
+      #!/bin/sh
+      case "$1" in
+      "C-x") xclip -in -filter | tr '\n' ' ' | xclip -in -selection clipboard ;;
+      esac
+    '';
+  };
 
   # Ensure config gets propogated to user services.
   xsession = {
@@ -41,6 +52,7 @@ in {
         "application/csv"        = "nvim.desktop";
         "application/pdf"        = "zathura.desktop";
         "image/jpeg"             = "sxiv.desktop";
+        "image/jpg"              = "sxiv.desktop";
         "image/png"              = "sxiv.desktop";
         "inode/directory"        = "lf.desktop";
         "text/plain"             = "nvim.desktop";
