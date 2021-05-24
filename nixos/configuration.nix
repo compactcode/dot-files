@@ -6,6 +6,13 @@ let
 in {
   system.stateVersion = "20.09";
 
+  nix = {
+    package = pkgs.nixUnstable;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
   imports = [
     <home-manager/nixos>
   ];

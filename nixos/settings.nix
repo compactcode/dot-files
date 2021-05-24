@@ -6,8 +6,8 @@
     serifFamily = "Source Sans Pro";
 
     defaultSize = {
-      pixels = "12";
-      points = "9";
+      pixels = 12;
+      points = 9;
     };
   };
 
