@@ -35,7 +35,6 @@ in {
     enable = true;
 
     withRuby = false;
-    withPython = false;
     withPython3 = true;
 
     vimAlias = true;
