@@ -7,7 +7,7 @@
 
     defaultSize = {
       pixels = "12";
-      points = "9";
+      points = 9.0;
     };
   };
 

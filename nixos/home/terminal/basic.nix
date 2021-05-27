@@ -205,10 +205,12 @@ in {
     # process viewing.
     htop = {
       enable = true;
-      fields = [
-         "PID" "USER" "M_SIZE" "M_RESIDENT" "PERCENT_CPU" "PERCENT_MEM" "TIME" "COMM"
-      ];
-      showProgramPath = false;
+      settings = {
+        fields = [
+           "PID" "USER" "M_SIZE" "M_RESIDENT" "PERCENT_CPU" "PERCENT_MEM" "TIME" "COMM"
+        ];
+        show_program_path = false;
+      };
     };
 
     # file managing.

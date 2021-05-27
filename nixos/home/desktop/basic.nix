@@ -90,7 +90,7 @@ in {
       settings = {
         global = {
           follow = "keyboard"; # Show notifications where the keyboard has foucs.
-          font = "${settings.font.sansFamily} ${settings.font.defaultSize.points}";
+          font = "${settings.font.sansFamily} ${toString(settings.font.defaultSize.points)}";
           format = "<b>%s</b>\\n%b";
           frame_width = 2; # Border size.
           geometry = "400x5-18+42"; # Size & location of notifications.

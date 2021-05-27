@@ -159,9 +159,12 @@ in {
 
         statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${config.xdg.configHome}/i3status-rust/config-default.toml";
 
-        fonts = [
-          "${settings.font.iconFamily} ${settings.font.defaultSize.points}"
-        ];
+        fonts = {
+          names = [
+            settings.font.iconFamily
+          ];
+          size = settings.font.defaultSize.points;
+        };
 
         colors = {
           background = theme.base00-hex;

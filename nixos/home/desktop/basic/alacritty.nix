@@ -26,7 +26,7 @@ in {
       - { key: V,        action: Paste,            mods: Super }
 
     font:
-      size: ${settings.font.defaultSize.points}
+      size: ${toString(settings.font.defaultSize.points)}
 
     scrolling:
       history: 5000
