@@ -21,6 +21,13 @@ in {
     };
   };
 
+  nix = {
+    package = pkgs.nixUnstable;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
   time.timeZone = "Australia/Melbourne";
 
   location = {
