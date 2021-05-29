@@ -284,22 +284,13 @@ in {
     };
   };
 
-  home-manager.users.root = { pkgs, ... }: {
-    nixpkgs = {
-      overlays = [
-        (import ./pkgs/default.nix)
-      ];
-    };
-
-    imports = [
-      ./home/terminal/basic.nix
-    ];
-  };
-
   home-manager.users.${settings.user.username} = { ... }: {
     nixpkgs = {
       overlays = [
         (import ./pkgs/default.nix)
+        (import (builtins.fetchTarball {
+          url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+        }))
       ];
 
       # Allow certain unfree programs to be installed.

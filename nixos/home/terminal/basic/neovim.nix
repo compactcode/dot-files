@@ -50,6 +50,10 @@ in {
       # Linting
       neomake
 
+      # Incremental syntax highlighting.
+      nvim-treesitter
+      playground
+
       # Theme
       nord-vim
 
@@ -63,8 +67,7 @@ in {
       vim-airline
       vim-airline-themes
 
-      # Languages
-      vim-nix
+      # Languages (not supported by tree-sitter).
       vim-slim-custom
 
       # Preview colors inline
@@ -84,6 +87,10 @@ in {
 
       # Make it easier to run test files in a terminal.
       vim-test
+    ];
+
+    extraPackages = with pkgs; [
+      gcc # Add a C compiler for tree-sitter.
     ];
 
     extraConfig = ''
@@ -256,6 +263,26 @@ in {
 
       " Run linting automatically.
       autocmd VimEnter * call neomake#configure#automake('nrwi', 500)
+
+      " ************************************************************
+      " (plugin) tree-sitter
+      " ************************************************************
+
+      autocmd BufRead,BufNewFile *.nix setf nix
+
+      lua <<EOF
+        require 'nvim-treesitter.configs'.setup {
+          ensure_installed = "maintained",
+
+          highlight = {
+            enable = true
+          },
+
+          indent = {
+            enable = false
+          },
+        }
+      EOF
 
       " ************************************************************
       " (plugin) vim-test
