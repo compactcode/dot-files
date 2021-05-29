@@ -12,15 +12,16 @@ in {
   ];
 
   home.packages = with pkgs; [
+    _1password-gui # Password manager.
     discord # Voice communication.
     mpv # Lightweight video player.
-    xclip # Clipboard access.
     pinta # Lightweight image editor.
     postman # API interaction.
     signal-desktop # Text communication.
     slack # Text communication.
     spotify # Music player.
     sxiv # Lightweight image viewer.
+    xclip # Clipboard access.
     zathura # Lightweight pdf viewer.
     zoom-us # Video communication.
   ];

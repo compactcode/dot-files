@@ -305,6 +305,7 @@ in {
       # Allow certain unfree programs to be installed.
       config = {
         allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+          "1password"
           "discord"
           "faac"
           "postman"
