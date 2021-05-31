@@ -387,7 +387,10 @@ in {
           ensure_installed = "maintained",
 
           highlight = {
-            enable = true
+            enable = true,
+            custom_captures = {
+              ["symbol"] = "TSVariable",
+            },
           },
 
           indent = {
