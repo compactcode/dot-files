@@ -285,6 +285,15 @@ in {
           options = {
             icons_enabled = true,
             theme = 'nord',
+            component_separators = {'|', '|'},
+          },
+          sections = {
+            lualine_a = {'mode'},
+            lualine_b = {'branch'},
+            lualine_c = {'filename'},
+            lualine_x = {'encoding', 'fileformat', {'filetype', colored = false}},
+            lualine_y = {'progress'},
+            lualine_z = {'location'}
           },
         }
       EOF
@@ -339,7 +348,7 @@ in {
             results_width = 0.8,
             border = {},
             borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
-            color_devicons = true,
+            color_devicons = false,
             use_less = true,
             set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
             file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
