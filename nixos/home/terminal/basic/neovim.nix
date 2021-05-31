@@ -123,9 +123,6 @@ in {
       " Disable code folding
       set nofoldenable
 
-      " Use the nord colorscheme
-      colorscheme nord
-
       " ************************************************************
       " Editing
       " ************************************************************
@@ -268,13 +265,6 @@ in {
       " Display a floating insert completion preview window next to the content.
       let g:float_preview#docked = 0
 
-      " ************************************************************
-      " (plugin) neomake
-      " ************************************************************
-
-      " Run linting automatically.
-      autocmd VimEnter * call neomake#configure#automake('nrwi', 500)
-
 
       " ************************************************************
       " (plugin) lualine
@@ -297,6 +287,28 @@ in {
           },
         }
       EOF
+
+
+      " ************************************************************
+      " (plugin) neomake
+      " ************************************************************
+
+      " Run linting automatically.
+      autocmd VimEnter * call neomake#configure#automake('nrwi', 500)
+
+
+      " ************************************************************
+      " (plugin) nord.nvim
+      " ************************************************************
+
+      lua <<EOF
+        vim.g.nord_contrast = false
+        vim.g.nord_borders = true
+        vim.g.nord_disable_background = true
+
+        require('nord').set()
+      EOF
+
 
       " ************************************************************
       " (plugin) telescope
