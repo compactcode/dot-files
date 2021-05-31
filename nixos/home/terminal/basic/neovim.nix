@@ -44,7 +44,7 @@ in {
     enable = true;
 
     withRuby = false;
-    withPython3 = true;
+    withPython3 = false;
 
     vimAlias = true;
 
