@@ -78,8 +78,7 @@ in {
       float-preview-nvim
 
       # Status bar
-      vim-airline
-      vim-airline-themes
+      lualine-nvim
 
       # Languages (not supported by tree-sitter).
       vim-slim-custom
@@ -275,6 +274,20 @@ in {
 
       " Run linting automatically.
       autocmd VimEnter * call neomake#configure#automake('nrwi', 500)
+
+
+      " ************************************************************
+      " (plugin) lualine
+      " ************************************************************
+
+      lua <<EOF
+        require('lualine').setup {
+          options = {
+            icons_enabled = true,
+            theme = 'nord',
+          },
+        }
+      EOF
 
       " ************************************************************
       " (plugin) telescope
