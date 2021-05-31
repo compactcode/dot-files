@@ -257,6 +257,8 @@ in {
       smap <C-k> <Plug>(neosnippet_expand_or_jump)
       xmap <C-k> <Plug>(neosnippet_expand_target)
 
+      autocmd FileType TelescopePrompt call deoplete#custom#buffer_option('auto_complete', v:false)
+
 
       " ************************************************************
       " (plugin) float-preview
@@ -280,7 +282,7 @@ in {
           sections = {
             lualine_a = {'mode'},
             lualine_b = {'branch'},
-            lualine_c = {'filename'},
+            lualine_c = {{'filename', file_status = true, path = 1}},
             lualine_x = {'encoding', 'fileformat', {'filetype', colored = false}},
             lualine_y = {'progress'},
             lualine_z = {'location'}
