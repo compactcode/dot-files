@@ -50,24 +50,26 @@ in {
 
     plugins = with pkgs.vimPlugins // customVimPlugins; [
       # Autocompletion
-      deoplete-nvim
+      nvim-compe
 
       # Snippets
-      neosnippet-vim
-      neosnippet-snippets
+      vim-vsnip
+      friendly-snippets
 
       # Linting
       neomake
 
-      # Syntax highlighting.
+      # Syntax highlighting
       nvim-treesitter
       nvim-treesitter-textobjects
 
-      # Telescope.
-      popup-nvim
-      plenary-nvim
+      # Fuzzy finder
       telescope-nvim
+
+      # Dependancies
       nvim-web-devicons
+      plenary-nvim
+      popup-nvim
 
       # Theme
       nord-nvim-custom
@@ -75,13 +77,10 @@ in {
       # Fuzzy finder
       fzf-vim
 
-      # Floating preview windows
-      float-preview-nvim
-
       # Status bar
       lualine-nvim
 
-      # Languages (not supported by tree-sitter).
+      # Languages (not supported by tree-sitter)
       vim-slim-custom
 
       # Preview colors inline
@@ -94,17 +93,17 @@ in {
       # Display git diff in the gutter
       vim-gitgutter
 
-      # Utils for finding source/test files.
+      # Utils for finding source/test files
       alternate-vim-custom
-      # Utils for opening files.
+      # Utils for opening files
       open-vim-custom
 
-      # Make it easier to run test files in a terminal.
+      # Make it easier to run test files in a terminal
       vim-test
     ];
 
     extraPackages = with pkgs; [
-      gcc # Add a C compiler for tree-sitter.
+      gcc # Add a C compiler for tree-sitter
     ];
 
     extraConfig = ''
@@ -141,9 +140,6 @@ in {
 
       " Allow buffers to be backgrounded without saving
       set hidden
-
-      " Disable the default insert completion preview window.
-      set completeopt-=preview
 
       " ************************************************************
       " Search
@@ -247,27 +243,36 @@ in {
 
 
       " ************************************************************
-      " (plugin) deoplete
+      " (plugin) vsnip
       " ************************************************************
 
-      " Auto start deoplete
-      let g:deoplete#enable_at_startup = 1
-
-      " Expand an autocomplete option or jump within the current expansion
-      imap <C-k> <Plug>(neosnippet_expand_or_jump)
-      smap <C-k> <Plug>(neosnippet_expand_or_jump)
-      xmap <C-k> <Plug>(neosnippet_expand_target)
-
-      autocmd FileType TelescopePrompt call deoplete#custom#buffer_option('auto_complete', v:false)
-
+      imap <expr> <C-k> vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+      smap <expr> <C-k> vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
 
       " ************************************************************
-      " (plugin) float-preview
+      " (plugin) compe
       " ************************************************************
 
-      " Display a floating insert completion preview window next to the content.
-      let g:float_preview#docked = 0
+      lua <<EOF
+        vim.o.completeopt = "menuone,noselect"
 
+        require('compe').setup {
+          enabled = true;
+          autocomplete = true;
+          preselect = 'enable';
+          documentation = true;
+
+          source = {
+            path = true;
+            buffer = true;
+            nvim_lsp = true;
+            vsnip = true;
+          };
+        }
+      EOF
+
+      " Accept the completion.
+      inoremap <silent><expr> <CR> compe#confirm('<CR>')
 
       " ************************************************************
       " (plugin) lualine
@@ -307,9 +312,11 @@ in {
       lua <<EOF
         vim.g.nord_contrast = false
         vim.g.nord_borders = true
-        vim.g.nord_disable_background = true
+        vim.g.nord_disable_background = false
 
         require('nord').set()
+
+        vim.cmd('highlight link CompeDocumentation Pmenu')
       EOF
 
 
@@ -342,29 +349,9 @@ in {
             selection_caret = "> ",
             entry_prefix = "  ",
             initial_mode = "insert",
-            selection_strategy = "reset",
             sorting_strategy = "ascending",
-            layout_strategy = "horizontal",
-            layout_defaults = {
-              horizontal = {
-                mirror = false,
-              },
-              vertical = {
-                mirror = false,
-              },
-            },
             file_sorter =  require'telescope.sorters'.get_fzy_sorter,
-            generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
-            shorten_path = true,
-            winblend = 0,
-            width = 0.75,
-            preview_cutoff = 120,
-            results_height = 1,
-            results_width = 0.8,
-            border = {},
-            borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
             color_devicons = false,
-            use_less = true,
             set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
             file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
             grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
