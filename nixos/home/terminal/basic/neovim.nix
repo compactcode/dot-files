@@ -61,6 +61,7 @@ in {
 
       # Syntax highlighting.
       nvim-treesitter
+      nvim-treesitter-textobjects
 
       # Telescope.
       popup-nvim
@@ -391,6 +392,18 @@ in {
 
           indent = {
             enable = false
+          },
+
+          textobjects = {
+            select = {
+              enable = true,
+              keymaps = {
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["ab"] = "@block.outer",
+                ["ib"] = "@block.inner",
+              },
+            },
           },
         }
       EOF
