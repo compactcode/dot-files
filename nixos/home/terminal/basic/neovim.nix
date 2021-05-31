@@ -1,15 +1,6 @@
 { pkgs, config, ... }:
 
 let customVimPlugins = {
-  vim-slim-custom = pkgs.vimUtils.buildVimPlugin {
-    name = "vim-slim";
-    src = pkgs.fetchFromGitHub {
-      owner = "slim-template";
-      repo = "vim-slim";
-      rev = "f0758ea1c585d53b9c239177a8b891d8bbbb6fbb";
-      sha256 = "0vqfn3638fi1i1m5dbglfg02qdgkqkf5ap224bp0695l33256hbn";
-    };
-  };
   alternate-vim-custom = pkgs.vimUtils.buildVimPlugin {
     name = "alternate-";
     src = pkgs.fetchFromGitHub {
@@ -19,6 +10,15 @@ let customVimPlugins = {
       sha256 = "07d5k3sg0rbvwfgwbx72a2wvlcdgx5ik1i588kf03p0dqn2ga444";
     };
   };
+  nord-nvim-custom = pkgs.vimUtils.buildVimPlugin {
+    name = "nord-nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "shaunsingh";
+      repo = "nord.nvim";
+      rev = "6860c64a3002f6dbcf36c0baf7bda8c34c5083c8";
+      sha256 = "0a036xgsklqv2zwlcpyhdrip8mvgqhyb4vcsp7gwp5241917bia3";
+    };
+  };
   open-vim-custom = pkgs.vimUtils.buildVimPlugin {
     name = "open";
     src = pkgs.fetchFromGitHub {
@@ -26,6 +26,15 @@ let customVimPlugins = {
       repo = "open.vim";
       rev = "5fc9cdf41989a28c0d5ad01d59b2e3d5468822df";
       sha256 = "0syl8d58y2ghhd5hi06ci0zc7fc5hy85f37p7q6542p5d2whqdj9";
+    };
+  };
+  vim-slim-custom = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-slim";
+    src = pkgs.fetchFromGitHub {
+      owner = "slim-template";
+      repo = "vim-slim";
+      rev = "f0758ea1c585d53b9c239177a8b891d8bbbb6fbb";
+      sha256 = "0vqfn3638fi1i1m5dbglfg02qdgkqkf5ap224bp0695l33256hbn";
     };
   };
 };
@@ -60,7 +69,7 @@ in {
       nvim-web-devicons
 
       # Theme
-      nord-vim
+      nord-nvim-custom
 
       # Fuzzy finder
       fzf-vim
@@ -222,8 +231,6 @@ in {
       " Quickly repeat previous searches.
       let g:fzf_history_dir = '${config.xdg.dataHome}/fzf/.fzf-history'
 
-      " Fuzzy find files
-      nnoremap <leader>t :FZF<CR>
       " Find the current word within the current directory.
       nnoremap <leader>s :Rg <C-R><C-W><CR>
 
@@ -274,8 +281,16 @@ in {
       " ************************************************************
 
       lua <<EOF
+        local actions = require('telescope.actions')
+
         require('telescope').setup {
           defaults = {
+            mappings = {
+              i = {
+                ["<C-j>"] = actions.move_selection_next,
+                ["<C-k>"] = actions.move_selection_previous,
+              }
+            },
             vimgrep_arguments = {
               'rg',
               '--color=never',
@@ -320,6 +335,9 @@ in {
           }
         }
       EOF
+
+      " Fuzzy find files
+      nnoremap <leader>t :Telescope find_files<CR>
 
       " ************************************************************
       " (plugin) tree-sitter
