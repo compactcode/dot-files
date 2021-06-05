@@ -206,8 +206,15 @@ in {
     htop = {
       enable = true;
       settings = {
-        fields = [
-           "PID" "USER" "M_SIZE" "M_RESIDENT" "PERCENT_CPU" "PERCENT_MEM" "TIME" "COMM"
+        fields = with config.lib.htop.fields; [
+          PID
+          USER
+          M_SIZE
+          M_RESIDENT
+          PERCENT_CPU
+          PERCENT_MEM
+          TIME
+          COMM
         ];
         show_program_path = false;
       };
