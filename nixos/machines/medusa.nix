@@ -41,6 +41,10 @@
     ];
 
     kernelPackages = pkgs.linuxPackages_latest;
+
+    kernelParams = [
+      "amdgpu.ppfeaturemask=0xffffffff" # Allow gpu power control.
+    ];
   };
 
   fileSystems."/boot" = {
