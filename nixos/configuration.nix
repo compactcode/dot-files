@@ -36,10 +36,10 @@ in {
   };
 
   hardware = {
-    # Enable sound.
-    pulseaudio = {
-      enable = true;
-      package = pkgs.pulseaudioFull;
+    opengl = {
+      extraPackages32 = with pkgs.pkgsi686Linux; [
+        pipewire # needed until https://github.com/NixOS/nixpkgs/pull/126142 is merged.
+      ];
     };
   };
 
@@ -138,6 +138,11 @@ in {
       enable = true;
     };
 
+    # Enable support for gpg smart cards.
+    pcscd = {
+      enable = true;
+    };
+
     # Opacity and drop shadows on windows.
     picom = {
       enable = true;
@@ -154,9 +159,20 @@ in {
       vSync = true;
     };
 
-    # Enable support for gpg smart cards.
-    pcscd = {
+    # Enable sound.
+    pipewire = {
       enable = true;
+
+      # ALSA emulation for backwards compatability.
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+
+      # PulseAudio emulation for backwards compatability.
+      pulse = {
+        enable = true;
+      };
     };
 
     # Postgres database for development.
