@@ -224,9 +224,6 @@ in {
       " Quickly repeat previous searches.
       let g:fzf_history_dir = '${config.xdg.dataHome}/fzf/.fzf-history'
 
-      " Find the current word within the current directory.
-      nnoremap <leader>s :Rg <C-R><C-W><CR>
-
 
       " ************************************************************
       " (plugin) fzf + fre
@@ -362,6 +359,9 @@ in {
 
       " Fuzzy find files
       nnoremap <leader>t :Telescope find_files<CR>
+
+      " Find the current word within the current directory.
+      nnoremap <leader>s :Telescope grep_string<CR>
 
       " ************************************************************
       " (plugin) tree-sitter
