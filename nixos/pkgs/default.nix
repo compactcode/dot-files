@@ -7,6 +7,6 @@
     i3status-rust = super.callPackage ./i3status-rust.nix {};
 
     # discord will not run unless on the latest version at all times.
-    discord = super.callPackage ./discord/default.nix {};
+    # discord = super.callPackage ./discord/default.nix {};
   }
 )
