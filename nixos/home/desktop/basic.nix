@@ -21,6 +21,7 @@ in {
     slack # Text communication.
     spotify # Music player.
     sxiv # Lightweight image viewer.
+    todoist-electron # Task manager.
     xclip # Clipboard access.
     zathura # Lightweight pdf viewer.
     zoom-us # Video communication.
