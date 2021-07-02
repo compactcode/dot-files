@@ -66,10 +66,19 @@ in {
       # Fuzzy finder
       telescope-nvim
 
-      # Dependancies
+      # [dep] lualine
+      # [dep] nvim-tree
+      # [dep] telescope
       nvim-web-devicons
+
+      # [dep] telescope
       plenary-nvim
+
+      # [dep] telescope
       popup-nvim
+
+      # File browser
+      nvim-tree-lua
 
       # Theme
       nord-nvim-custom
@@ -182,9 +191,6 @@ in {
 
       " Clear search highlights
       nnoremap <Leader>, :nohlsearch<CR>
-
-      " Open a file browser in the directory of the current file.
-      nnoremap <Leader>o :silent ! ${pkgs.alacritty}/bin/alacritty -e ${pkgs.lf}/bin/lf %:h &<CR>
 
       " Open a git history viewer with the current file.
       nnoremap <Leader>g :silent ! ${pkgs.alacritty}/bin/alacritty -e ${pkgs.tig}/bin/tig log % &<CR>
@@ -315,6 +321,16 @@ in {
 
         vim.cmd('highlight link CompeDocumentation Pmenu')
       EOF
+
+
+      " ************************************************************
+      " (plugin) nvim-tree
+      " ************************************************************
+
+      let g:nvim_tree_width = 40
+      let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ]
+
+      nnoremap <Leader>o :NvimTreeFindFile<CR>
 
 
       " ************************************************************
