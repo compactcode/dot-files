@@ -38,7 +38,7 @@ in {
   hardware = {
     opengl = {
       extraPackages32 = with pkgs.pkgsi686Linux; [
-        pipewire # needed until https://github.com/NixOS/nixpkgs/pull/126142 is merged.
+        pipewire # [steam] needed until https://github.com/NixOS/nixpkgs/pull/126142 is merged.
       ];
     };
   };
@@ -74,6 +74,9 @@ in {
     nfs-utils # mount nfs drives.
     pciutils # pci debugging.
     usbutils # usb debugging.
+     # [steam] needed until https://github.com/NixOS/nixpkgs/issues/128021 is resolved.
+    (steam.override { extraProfile = ''unset VK_ICD_FILENAMES''; })
+    steam-run-native
   ] ++ [
     # X11 utilities.
 
