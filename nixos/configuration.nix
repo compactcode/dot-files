@@ -74,8 +74,15 @@ in {
     nfs-utils # mount nfs drives.
     pciutils # pci debugging.
     usbutils # usb debugging.
-     # [steam] needed until https://github.com/NixOS/nixpkgs/issues/128021 is resolved.
-    (steam.override { extraProfile = ''unset VK_ICD_FILENAMES''; })
+    (
+      steam.override {
+        # [steam] needed until https://github.com/NixOS/nixpkgs/issues/128021 is resolved.
+        extraProfile = ''unset VK_ICD_FILENAMES'';
+        extraPkgs = pkgs: [
+          ibus # [steam] needed for metro exodus.
+        ];
+      }
+    )
     steam-run-native
   ] ++ [
     # X11 utilities.
