@@ -75,7 +75,6 @@ in {
         ];
       }
     )
-    steam-run-native
   ] ++ [
     # X11 utilities.
 
@@ -158,6 +157,9 @@ in {
         "100:class_g = 'zoom'"
       ];
       shadow = true;
+      shadowExclude = [
+        "class_g = 'Firefox' && argb"
+      ];
       vSync = true;
     };
 
