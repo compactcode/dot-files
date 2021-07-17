@@ -357,7 +357,7 @@ in {
               '--column',
               '--smart-case'
             },
-            prompt_position = "top",
+            layout_strategy = "horizontal",
             prompt_prefix = "> ",
             selection_caret = "> ",
             entry_prefix = "  ",

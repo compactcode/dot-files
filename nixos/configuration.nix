@@ -306,9 +306,6 @@ in {
     nixpkgs = {
       overlays = [
         (import ./pkgs/default.nix)
-        (import (builtins.fetchTarball {
-          url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-        }))
       ];
 
       # Allow unfree programs to be installed.
