@@ -294,7 +294,7 @@ in {
             {
               block = "memory";
               display_type = "memory";
-              format_mem = "{Mup}%";
+              format_mem = "{mem_used_percents}";
               interval = 4;
               clickable = false;
             }
@@ -312,7 +312,7 @@ in {
               block = "temperature";
               collapsed = false;
               interval = 4;
-              format = "{max}°";
+              format = "{max}";
               chip = "k10temp-pci-*";
             }
             {
@@ -350,8 +350,8 @@ in {
             icons = {
               overrides = {
                 cogs = " ";
-                cpu = " ";
-                memory_mem = " ";
+                cpu = "";
+                memory_mem = "";
                 net_down = "";
                 net_up = "";
                 net_wired = "";
