@@ -35,14 +35,6 @@ in {
     longitude = 144.96332;
   };
 
-  hardware = {
-    opengl = {
-      extraPackages32 = with pkgs.pkgsi686Linux; [
-        pipewire # [steam] needed until https://github.com/NixOS/nixpkgs/pull/126142 is merged.
-      ];
-    };
-  };
-
   networking = {
     # Enable firewall.
     firewall = {
