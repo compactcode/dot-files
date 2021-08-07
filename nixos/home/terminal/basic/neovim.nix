@@ -86,6 +86,12 @@ in {
       # Fuzzy finder
       fzf-vim
 
+      # LSP
+      nvim-lspconfig
+
+      # LSP UI
+      lspsaga-nvim
+
       # Status bar
       lualine-nvim
 
@@ -263,7 +269,10 @@ in {
           enabled = true;
           autocomplete = true;
           preselect = 'enable';
-          documentation = true;
+          documentation = {
+            border = 'single';
+            winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder"
+          };
 
           source = {
             path = true;
@@ -272,10 +281,34 @@ in {
             vsnip = true;
           };
         }
+
+        vim.cmd('highlight link CompeDocumentation Pmenu')
       EOF
 
+      " Manually trigger autocomplete.
+      inoremap <silent><expr> <C-Space> compe#complete()
       " Accept the completion.
       inoremap <silent><expr> <CR> compe#confirm('<CR>')
+
+      " ************************************************************
+      " (plugin) lspconfig
+      " ************************************************************
+
+      lua <<EOF
+        local lsp = require('lspconfig')
+
+        lsp.rust_analyzer.setup {}
+      EOF
+
+      " ************************************************************
+      " (plugin) lspsaga
+      " ************************************************************
+
+      lua <<EOF
+        local saga = require('lspsaga')
+
+        saga.init_lsp_saga()
+      EOF
 
       " ************************************************************
       " (plugin) lualine
