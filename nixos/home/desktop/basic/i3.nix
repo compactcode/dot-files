@@ -316,6 +316,13 @@ in {
               chip = "k10temp-pci-*";
             }
             {
+              block = "temperature";
+              collapsed = false;
+              interval = 4;
+              format = "{max}";
+              chip = "amdgpu-pci-*";
+            }
+            {
               block = "net";
               device = "eno1";
               interval = 2;
