@@ -29,7 +29,7 @@ in {
       size: ${toString(settings.font.defaultSize.points)}
 
     scrolling:
-      history: 5000
+      history: 10000
       multiplier: 3
 
     colors:
