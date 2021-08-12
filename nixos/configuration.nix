@@ -255,10 +255,16 @@ in {
     };
   };
 
-  virtualisation.docker = {
-    enable = true;
+  virtualisation = {
+    docker = {
+      enable = true;
 
-    autoPrune = {
+      autoPrune = {
+        enable = true;
+      };
+    };
+
+    lxd = {
       enable = true;
     };
   };
@@ -274,11 +280,12 @@ in {
       ${settings.user.username} = {
         isNormalUser = true;
         extraGroups = [
-          "wheel"          # Allow sudo.
-          "video"          # Allow changing screen settings.
-          "plugdev"        # Allow changing razer peripheral settings.
           "docker"         # Allow using docker.
+          "lxd"            # Allow using lxd.
           "networkmanager" # Allow changing network settings.
+          "plugdev"        # Allow changing razer peripheral settings.
+          "video"          # Allow changing screen settings.
+          "wheel"          # Allow sudo.
         ];
         hashedPassword = settings.user.hashedPassword;
       };
