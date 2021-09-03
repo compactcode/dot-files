@@ -73,10 +73,10 @@ in {
         };
 
         split = {
-          address = "shanon@splitpayments.com.au";
+          address = "shanon@zepto.com.au";
           realName = settings.user.name;
-          userName = "shanon@splitpayments.com.au";
-          passwordCommand = "pass shanon@splitpayments.com.au/token";
+          userName = "shanon@zepto.com.au";
+          passwordCommand = "pass shanon@zepto.com.au/token";
 
           imap = {
             host = "imap.gmail.com";
@@ -265,7 +265,7 @@ in {
       enable = true;
 
       extraConfig = {
-        query.split = "to:shanon@splitpayments.com.au AND NOT tag:killed";
+        query.zepto = "to:shanon@zepto.com.au AND NOT tag:killed";
       };
 
       search = {
