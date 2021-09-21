@@ -134,7 +134,7 @@ in {
         "Mod4+f" = "workspace $files; exec --no-startup-id alacritty -e lf";
 
         # Open an interactive application launcher.
-        "Mod4+space" = "exec --no-startup-id rofi -show drun --lines 10";
+        "Mod4+space" = "exec --no-startup-id rofi -show drun";
 
         # Lock the screen.
         "Mod4+Shift+l" = "exec --no-startup-id ${lib.getBin pkgs.xautolock}/bin/xautolock -locknow";
