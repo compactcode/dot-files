@@ -3,17 +3,26 @@
 {
   home = {
     sessionVariables = {
-      # Use nvim as the default editor.
+      # nvim as the default editor.
       EDITOR = "nvim";
-      # Replace ssh with the system gpg agent.
+      # replace ssh with the system gpg agent.
       SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)";
-      # Use nvim as the default editor.
+      # nvim as the default editor.
       VISUAL = "nvim";
     };
     stateVersion = "22.11";
   };
 
   programs = {
+    # environment loading.
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv = {
+        enable = true;
+      };
+    };
+
     # version control.
     git = {
       enable = true;
@@ -45,8 +54,21 @@
       ];
     };
 
+    # gpg based password manager.
+    password-store = {
+      enable = true;
+
+      package = pkgs.pass.withExtensions (exts: [ exts.pass-otp ]);
+    };
+
     # shell prompt.
     starship = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
+    # smart cd with jumping.
+    zoxide = {
       enable = true;
       enableZshIntegration = true;
     };
@@ -90,6 +112,7 @@
         md   = "mkdir -p";
         o    = "xdg-open";
         v    = "nvim";
+        j    = "z";
       };
     };
   };

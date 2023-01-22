@@ -155,6 +155,7 @@
     };
 
     systemPackages = with pkgs; [
+      aws-vault # aws credential handling.
       bat # cat replacement.
       dnsutils # dns debugging.
       du-dust # du replacement.
@@ -167,6 +168,7 @@
       podman-compose # docker compose for podman.
       ripgrep # grep replacement.
       usbutils # usb debugging.
+      xsv # csv viewer.
       zig # c replacement.
     ];
   };
