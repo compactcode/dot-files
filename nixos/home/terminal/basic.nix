@@ -18,7 +18,6 @@ in {
       fd # find replacement.
       file # file type detector.
       fre # frequency/recency tracker.
-      gnupg # gpg tools.
       poppler_utils # pdf viewer.
       ripgrep # grep replacement.
       tig # git viewer.
@@ -190,17 +189,6 @@ in {
         o    = "xdg-open";
         v    = "vim";
       };
-    };
-  };
-
-  services = {
-    gpg-agent = {
-      enable = true;
-      enableSshSupport = true;
-      enableScDaemon = true;
-      sshKeys = [
-        "D5340EDC116D6C8DFFE80518525712D7E2616FBB"
-      ];
     };
   };
 }
