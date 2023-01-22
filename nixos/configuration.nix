@@ -11,10 +11,6 @@ in {
   ];
 
   nixpkgs = {
-    overlays = [
-      (import ./pkgs/default.nix)
-    ];
-
     # Allow unfree programs to be installed.
     config = {
       allowUnfree = true;
@@ -198,23 +194,13 @@ in {
       enable = true;
 
       desktopManager = {
-        xterm.enable = false;
+        gnome = {
+          enable = true;
+        };
       };
 
       displayManager = {
-        # Skip login since we just unlocked the encrypted drive.
-        autoLogin = {
-          enable = true;
-          user = settings.user.username;
-        };
-
-        lightdm = {
-          enable = true;
-        };
-      };
-
-      windowManager = {
-        i3 = {
+        gdm = {
           enable = true;
         };
       };

@@ -95,34 +95,6 @@ in {
       };
     };
 
-    # file managing.
-    lf = {
-      enable = true;
-
-      previewer = {
-        source = pkgs.writeShellScript "preview.sh" ''
-          #!/usr/bin/env bash
-
-          FILE_PATH="$1"
-          HEIGHT="$2"
-
-          case "$1" in
-              *.csv) xsv sample 25 "$FILE_PATH" | xsv table;;
-              *.jpeg) chafa --fill=block --symbols=block -c 256 -s 80x"$HEIGHT" "$FILE_PATH";;
-              *.jpg) chafa --fill=block --symbols=block -c 256 -s 80x"$HEIGHT" "$FILE_PATH";;
-              *.pdf) pdftotext -l 5 -nopgbrk -q -- "$FILE_PATH" -;;
-              *.png) chafa --fill=block --symbols=block -c 256 -s 80x"$HEIGHT" "$FILE_PATH";;
-              *) bat --color=always "$FILE_PATH";;
-          esac
-        '';
-      };
-
-      settings = {
-        icons = true;
-        incsearch = true;
-      };
-    };
-
     # gpg password manager.
     password-store = {
       enable = true;
