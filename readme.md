@@ -37,10 +37,3 @@ Window opacity and drop shadows are applied using picom.
 * [exa](https://the.exa.website/)
 * [skim](https://github.com/lotabout/skim)
 * [neovim](https://neovim.io/)
-
-## Machines
-
-I run this configuration on the following machines:
-
-* [ThinkPad P43s](./docs/thinkpad.md)
-* [VirtualBox](./docs/virtualbox.md)
