@@ -164,6 +164,7 @@
       git # version control.
       neovim # text editing.
       pciutils # pci debugging.
+      podman-compose # docker compose for podman.
       ripgrep # grep replacement.
       usbutils # usb debugging.
       zig # c replacement.
@@ -218,6 +219,13 @@
     fonts = with pkgs; [
       (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
     ];
+  };
+
+  virtualisation = {
+    # Docker like container engine.
+    podman = {
+      enable = true;
+    };
   };
 
   # Enable flatpak apps to have system integration (dbus etc).
