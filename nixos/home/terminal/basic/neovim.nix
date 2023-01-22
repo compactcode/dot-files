@@ -236,21 +236,6 @@ in {
       " Quickly repeat previous searches.
       let g:fzf_history_dir = '${config.xdg.dataHome}/fzf/.fzf-history'
 
-
-      " ************************************************************
-      " (plugin) fzf + fre
-      " ************************************************************
-
-      " Record edited files
-      autocmd BufNewFile,BufRead * ! ${config.xdg.dataHome}/bin/recently-edited-add <amatch>
-
-      " Fuzzy find recently edited files
-      nnoremap <leader>f :call fzf#run(fzf#wrap({
-        \ 'source':  '${config.xdg.dataHome}/bin/recently-edited-list',
-        \ 'options': '--no-sort --tiebreak=index'
-        \ }))<CR>
-
-
       " ************************************************************
       " (plugin) vsnip
       " ************************************************************

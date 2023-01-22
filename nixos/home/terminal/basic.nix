@@ -5,7 +5,6 @@ let
 
 in {
   imports = [
-    ./basic/fre.nix
     ./basic/neovim.nix
   ];
 
@@ -17,7 +16,6 @@ in {
       exa # ls replacement.
       fd # find replacement.
       file # file type detector.
-      fre # frequency/recency tracker.
       poppler_utils # pdf viewer.
       ripgrep # grep replacement.
       tig # git viewer.
