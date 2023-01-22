@@ -155,6 +155,7 @@
     };
 
     systemPackages = with pkgs; [
+      bat # cat replacement.
       du-dust # du replacement.
       exa # ls replacement.
       fd # find replacement.
