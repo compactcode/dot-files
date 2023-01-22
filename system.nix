@@ -156,13 +156,16 @@
 
     systemPackages = with pkgs; [
       bat # cat replacement.
+      dnsutils # dns debugging.
       du-dust # du replacement.
       exa # ls replacement.
       fd # find replacement.
       fzf # fuzzy finder.
       git # version control.
       neovim # text editing.
+      pciutils # pci debugging.
       ripgrep # grep replacement.
+      usbutils # usb debugging.
       zig # c replacement.
     ];
   };
@@ -187,7 +190,7 @@
   };
 
   programs = {
-    # Password manager.
+    # Password manager, installed here for access to the kernel keyring.
     _1password-gui = {
       enable = true;
       polkitPolicyOwners = [
@@ -195,7 +198,7 @@
       ];
     };
 
-    # Web browser.
+    # Web browser, installed here for access to the kernel keyring.
     firefox = {
       enable = true;
     };

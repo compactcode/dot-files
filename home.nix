@@ -3,8 +3,11 @@
 {
   home = {
     sessionVariables = {
+      # Use nvim as the default editor.
       EDITOR = "nvim";
+      # Replace ssh with the system gpg agent.
       SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)";
+      # Use nvim as the default editor.
       VISUAL = "nvim";
     };
     stateVersion = "22.11";
@@ -14,6 +17,7 @@
     # version control.
     git = {
       enable = true;
+      # use delta for nice diff output.
       delta = {
         enable = true;
       };
