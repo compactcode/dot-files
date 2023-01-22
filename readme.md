@@ -1,18 +1,18 @@
-# My configuration for terminal based software development.
+# My system configuration
 
-This repo contains system and most user configuration for [NixOS](https://nixos.org/).
+System and user configuration for [NixOS](https://nixos.org/).
 
 ## Desktop
 
-I'm running a standard gnome setup.
+* [gnome](https://www.gnome.org/)
 
 ## Graphical Applications
 
-I use flatpak for managing graphical applications.
+I use [flathub](https://flathub.org/home) for most graphical applications.
 
 ## Editor
 
-I use [neovim](https://neovim.io/) but my config lives outside of NixOS.
+I use [neovim](https://neovim.io/) with [mutable config](https://github.com/compactcode/neovim) managed by git.
 
 ## Terminal
 
