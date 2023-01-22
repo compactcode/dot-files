@@ -1,14 +1,53 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   home = {
     sessionVariables = {
       EDITOR = "nvim";
+      SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)";
+      VISUAL = "nvim";
     };
     stateVersion = "22.11";
   };
 
   programs = {
+    # version control.
+    git = {
+      enable = true;
+      delta = {
+        enable = true;
+      };
+      ignores = [
+        ".direnv"
+        ".envrc"
+        "shell.nix"
+      ];
+      signing = {
+        signByDefault = true;
+        key = "BF2AD40D0652EF0B";
+      };
+      userName = "Shanon McQuay";
+      userEmail = "hi@shan.dog";
+    };
+
+    # fuzzy finder.
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+      defaultCommand = "${lib.getBin pkgs.fd}/bin/fd --type f";
+      defaultOptions = [
+        "--reverse"
+          "--height 40%"
+      ];
+    };
+
+    # shell prompt.
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
+    # shell.
     zsh = {
       enable = true;
 
@@ -25,11 +64,6 @@
 
       shellAliases = {
         b    = "${pkgs.bat}/bin/bat";
-        be   = "bundle exec";
-        ber  = "bundle exec rspec";
-        berc = "bundle exec rails console";
-        bers = "bundle exec rails server";
-        bi   = "bundle install";
         g    = "${pkgs.git}/bin/git";
         ga   = "${pkgs.git}/bin/git add";
         gars = "${pkgs.git}/bin/git add . && git reset --hard";
