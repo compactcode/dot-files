@@ -66,15 +66,6 @@ in {
     nfs-utils # mount nfs drives.
     pciutils # pci debugging.
     usbutils # usb debugging.
-    (
-      steam.override {
-        # [steam] needed until https://github.com/NixOS/nixpkgs/issues/128021 is resolved.
-        extraProfile = ''unset VK_ICD_FILENAMES'';
-        extraPkgs = pkgs: [
-          ibus # [steam] needed for metro exodus.
-        ];
-      }
-    )
   ] ++ [
     # X11 utilities.
 
@@ -241,11 +232,6 @@ in {
       wrappedBinaries = {
         firefox-sandboxed = "${lib.getBin pkgs.firefox}/bin/firefox";
       };
-    };
-
-    # Video games.
-    steam = {
-      enable = true;
     };
   };
 
