@@ -4,10 +4,6 @@ let
   settings = import ../../settings.nix;
 
 in {
-  imports = [
-    ./basic/neovim.nix
-  ];
-
   home = {
     packages = with pkgs; [
       aws-vault # secure aws credential handling.
