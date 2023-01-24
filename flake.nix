@@ -13,12 +13,15 @@
 
       pkgs = import nixpkgs {
         inherit system;
+
+        config.allowUnfree = true;
       };
     in {
       nixosConfigurations.medusa = nixpkgs.lib.nixosSystem {
-        inherit system;
+        inherit system pkgs;
 
         modules = [
+          ./hardware/desktop.nix
           ./system.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
