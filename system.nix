@@ -1,11 +1,62 @@
 { pkgs, ... }:
 
 {
+  boot = {
+    loader = {
+      # Allow displaying boot options.
+      efi.canTouchEfiVariables = true;
+
+      # Use system as the boot manager.
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 5;
+      };
+    };
+
+    # Use the latest kernel.
+    kernelPackages = pkgs.linuxPackages_latest;
+  };
+
+  environment = {
+    gnome = {
+      # Gnome packages I don't use.
+      excludePackages = with pkgs; [
+        gnome.cheese
+        gnome.gnome-maps
+        gnome.gnome-music
+        gnome.gnome-weather
+        gnome.simple-scan
+      ];
+    };
+
+    systemPackages = with pkgs; [
+      aws-vault # aws credential handling.
+      bat # cat replacement.
+      dnsutils # dns debugging.
+      du-dust # du replacement.
+      exa # ls replacement.
+      fd # find replacement.
+      fzf # fuzzy finder.
+      git # version control.
+      neovim # text editing.
+      pciutils # pci debugging.
+      podman-compose # docker compose for podman.
+      ripgrep # grep replacement.
+      usbutils # usb debugging.
+      xsv # csv viewer.
+      zig # c replacement.
+    ];
+  };
+
+  fonts = {
+    # Install an nerd font for the icons.
+    fonts = with pkgs; [
+      (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
+    ];
+  };
+
   # Use English.
   i18n.defaultLocale = "en_US.UTF-8";
-
-  # The timezone to Melbourne.
-  time.timeZone = "Australia/Melbourne";
 
   # Set location to Melbourne.
   location = {
@@ -22,6 +73,33 @@
     # Detect and manage network connections.
     networkmanager = {
       enable = true;
+    };
+  };
+
+  # Enable flakes.
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  programs = {
+    # Password manager, installed here for access to the kernel keyring.
+    _1password-gui = {
+      enable = true;
+      polkitPolicyOwners = [
+        "shandogs"
+      ];
+    };
+
+    # Web browser, installed here for access to the kernel keyring.
+    firefox = {
+      enable = true;
+    };
+
+    # Encryption, signing & authentication.
+    gnupg = {
+      agent = {
+        enable = true;
+        # Use yubikey for SHH via gpg.
+        enableSSHSupport = true;
+      };
     };
   };
 
@@ -51,36 +129,11 @@
       xkbOptions = "ctrl:nocaps";
     };
   };
-  
-  environment = {
-    gnome = {
-      excludePackages = with pkgs; [
-        gnome.cheese
-        gnome.gnome-maps
-        gnome.gnome-music
-        gnome.gnome-weather
-        gnome.simple-scan
-      ];
-    };
 
-    systemPackages = with pkgs; [
-      aws-vault # aws credential handling.
-      bat # cat replacement.
-      dnsutils # dns debugging.
-      du-dust # du replacement.
-      exa # ls replacement.
-      fd # find replacement.
-      fzf # fuzzy finder.
-      git # version control.
-      neovim # text editing.
-      pciutils # pci debugging.
-      podman-compose # docker compose for podman.
-      ripgrep # grep replacement.
-      usbutils # usb debugging.
-      xsv # csv viewer.
-      zig # c replacement.
-    ];
-  };
+  system.stateVersion = "22.11";
+
+  # The timezone to Melbourne.
+  time.timeZone = "Australia/Melbourne";
 
   # Setup users.
   users = {
@@ -101,37 +154,6 @@
     };
   };
 
-  programs = {
-    # Password manager, installed here for access to the kernel keyring.
-    _1password-gui = {
-      enable = true;
-      polkitPolicyOwners = [
-        "shandogs"
-      ];
-    };
-
-    # Web browser, installed here for access to the kernel keyring.
-    firefox = {
-      enable = true;
-    };
-
-    # Encryption, signing & authentication.
-    gnupg = {
-      agent = {
-        enable = true;
-        # Use yubikey for SHH via gpg.
-        enableSSHSupport = true;
-      };
-    };
-  };
-
-  fonts = {
-    # Install an nerd font for the icons.
-    fonts = with pkgs; [
-      (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
-    ];
-  };
-
   virtualisation = {
     # Docker like container engine.
     podman = {
@@ -145,6 +167,4 @@
       enable = true;
     };
   };
-
-  system.stateVersion = "22.11";
 }

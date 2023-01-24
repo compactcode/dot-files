@@ -24,24 +24,10 @@
       };
     };
 
-    loader = {
-      efi = {
-        canTouchEfiVariables = true;
-      };
-
-      systemd-boot = {
-        enable = true;
-        configurationLimit = 5;
-      };
-    };
-
     kernelModules = [
       # Load the GPU early in the book process.
       "amdgpu"
     ];
-
-    # Use the latest kernel.
-    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   fileSystems = {
