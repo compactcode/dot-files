@@ -62,4 +62,9 @@
     # Enable nonfree firmware.
     enableRedistributableFirmware = true;
   };
+
+  networking = {
+    # Set a hostname.
+    hostName = "medusa";
+  };
 }
