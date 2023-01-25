@@ -13,6 +13,12 @@
     stateVersion = "22.11";
   };
 
+  gtk = {
+    enable = true;
+    # Match gtk3 apps to the sytem theme.
+    theme.name = "Adwaita-dark";
+  };
+
   programs = {
     # environment loading.
     direnv = {
