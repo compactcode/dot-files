@@ -10,6 +10,9 @@
       # nvim as the default editor
       VISUAL = "nvim";
     };
+    packages = with pkgs; [
+      sumneko-lua-language-server # lua language server
+    ];
     stateVersion = "22.11";
   };
 

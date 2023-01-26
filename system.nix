@@ -38,7 +38,9 @@
       fd # find replacement
       fzf # fuzzy finder
       git # version control
+      jq # json formatting
       neovim # text editing
+      nixfmt # nix formatting
       pciutils # pci debugging
       podman-compose # docker compose for podman
       ripgrep # grep replacement
