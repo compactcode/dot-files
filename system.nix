@@ -39,6 +39,7 @@
       fzf # fuzzy finder
       git # version control
       jq # json formatting
+      lm_sensors # harware sensors
       neovim # text editing
       nixfmt # nix formatting
       pciutils # pci debugging
