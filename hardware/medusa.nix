@@ -57,4 +57,7 @@
 
   # set a hostname
   networking.hostName = "medusa";
+
+  # the version this machine was created with
+  system.stateVersion = "22.11";
 }

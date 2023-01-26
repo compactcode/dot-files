@@ -115,8 +115,6 @@
     };
   };
 
-  system.stateVersion = "22.11";
-
   # the timezone to Melbourne.
   time.timeZone = "Australia/Melbourne";
 

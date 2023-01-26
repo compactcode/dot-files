@@ -21,7 +21,7 @@
         inherit system pkgs;
 
         modules = [
-          ./hardware/desktop.nix
+          ./hardware/medusa.nix
           ./system.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
