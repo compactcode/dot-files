@@ -29,6 +29,17 @@
       };
     };
 
+    # fuzzy finder.
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+      defaultCommand = "${lib.getBin pkgs.fd}/bin/fd --type f";
+      defaultOptions = [
+        "--reverse"
+          "--height 40%"
+      ];
+    };
+
     # version control.
     git = {
       enable = true;
@@ -49,15 +60,13 @@
       userEmail = "hi@shan.dog";
     };
 
-    # fuzzy finder.
-    fzf = {
+    kitty = {
       enable = true;
-      enableZshIntegration = true;
-      defaultCommand = "${lib.getBin pkgs.fd}/bin/fd --type f";
-      defaultOptions = [
-        "--reverse"
-          "--height 40%"
-      ];
+      settings = {
+        # get title bars to match gnome styling.
+        linux_display_server = "x11";
+      };
+      theme = "Nord";
     };
 
     # gpg based password manager.
