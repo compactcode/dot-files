@@ -50,11 +50,10 @@
     ];
   };
 
+  # install an nerd font for the icons
   fonts = {
-    # install an nerd font for the icons
-    fonts = with pkgs; [
-      (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
-    ];
+    fonts = with pkgs;
+      [ (nerdfonts.override { fonts = [ "SourceCodePro" ]; }) ];
   };
 
   # use english
@@ -68,14 +67,10 @@
 
   networking = {
     # enable firewall
-    firewall = {
-      enable = true;
-    };
+    firewall.enable = true;
 
     # detect and manage network connections
-    networkmanager = {
-      enable = true;
-    };
+    networkmanager.enable = true;
   };
 
   # enable flakes.
@@ -85,15 +80,11 @@
     # password manager, installed here for access to the kernel keyring.
     _1password-gui = {
       enable = true;
-      polkitPolicyOwners = [
-        "shandogs"
-      ];
+      polkitPolicyOwners = [ "shandogs" ];
     };
 
     # web browser, installed here for access to the kernel keyring.
-    firefox = {
-      enable = true;
-    };
+    firefox.enable = true;
 
     # encryption, signing & authentication.
     gnupg = {
@@ -107,14 +98,10 @@
 
   services = {
     # primary source for graphical applications.
-    flatpak = {
-      enable = true;
-    };
+    flatpak.enable = true;
 
     # enable support for yubikey.
-    pcscd = {
-      enable = true;
-    };
+    pcscd.enable = true;
 
     xserver = {
       enable = true;
@@ -128,9 +115,7 @@
         gdm.enable = true;
       };
 
-      desktopManager = {
-        gnome.enable = true;
-      };
+      desktopManager.gnome.enable = true;
 
       # Turn caps lock into another ctrl.
       xkbOptions = "ctrl:nocaps";
@@ -147,31 +132,23 @@
     defaultUserShell = pkgs.zsh;
 
     users = {
-      root = {
-        hashedPassword = "$6$Ol1IgIkZqEqHkDk$X51v4AgMAKXhqpMjfM451dvu71YnMlYdK4lZk/ZFx0m4A/eEPuUfMAYyYwVNjDHMtoNXz6QeoSQg4lHQtHtzX1";
-      };
+      root.hashedPassword =
+        "$6$Ol1IgIkZqEqHkDk$X51v4AgMAKXhqpMjfM451dvu71YnMlYdK4lZk/ZFx0m4A/eEPuUfMAYyYwVNjDHMtoNXz6QeoSQg4lHQtHtzX1";
 
       shandogs = {
         extraGroups = [
           "wheel" # allow sudo.
         ];
         isNormalUser = true;
-        hashedPassword = "$6$Ol1IgIkZqEqHkDk$X51v4AgMAKXhqpMjfM451dvu71YnMlYdK4lZk/ZFx0m4A/eEPuUfMAYyYwVNjDHMtoNXz6QeoSQg4lHQtHtzX1";
+        hashedPassword =
+          "$6$Ol1IgIkZqEqHkDk$X51v4AgMAKXhqpMjfM451dvu71YnMlYdK4lZk/ZFx0m4A/eEPuUfMAYyYwVNjDHMtoNXz6QeoSQg4lHQtHtzX1";
       };
     };
   };
 
-  virtualisation = {
-    # docker replacement.
-    podman = {
-      enable = true;
-    };
-  };
+  # docker replacement.
+  virtualisation.podman.enable = true;
 
   # enable flatpak apps to have system integration (dbus etc).
-  xdg = {
-    portal = {
-      enable = true;
-    };
-  };
+  xdg.portal.enable = true;
 }

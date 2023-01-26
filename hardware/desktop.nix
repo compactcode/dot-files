@@ -7,14 +7,8 @@
 {
   boot = {
     initrd = {
-      availableKernelModules = [
-        "ahci"
-        "nvme"
-        "sd_mod"
-        "usb_storage"
-        "usbhid"
-        "xhci_pci"
-      ];
+      availableKernelModules =
+        [ "ahci" "nvme" "sd_mod" "usb_storage" "usbhid" "xhci_pci" ];
 
       luks.devices = {
         nixos-decrypted = {
@@ -24,10 +18,8 @@
       };
     };
 
-    kernelModules = [
-      # load the GPU early in the book process
-      "amdgpu"
-    ];
+    # load the GPU early in the book process
+    kernelModules = [ "amdgpu" ];
   };
 
   fileSystems = {
@@ -36,19 +28,19 @@
       fsType = "vfat";
     };
 
-    "/" = { 
+    "/" = {
       device = "/dev/disk/by-uuid/96120c03-92c2-4635-b29e-d93e1b79a691";
       fsType = "btrfs";
       options = [ "subvol=root" "compress=zstd" ];
     };
 
-    "/home" = { 
+    "/home" = {
       device = "/dev/disk/by-uuid/96120c03-92c2-4635-b29e-d93e1b79a691";
       fsType = "btrfs";
       options = [ "subvol=home" "compress=zstd" ];
     };
 
-    "/nix" = { 
+    "/nix" = {
       device = "/dev/disk/by-uuid/96120c03-92c2-4635-b29e-d93e1b79a691";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
@@ -63,8 +55,6 @@
     enableRedistributableFirmware = true;
   };
 
-  networking = {
-    # set a hostname
-    hostName = "medusa";
-  };
+  # set a hostname
+  networking.hostName = "medusa";
 }
