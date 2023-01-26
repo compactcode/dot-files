@@ -106,14 +106,7 @@
     xserver = {
       enable = true;
 
-      displayManager = {
-        # auto login since boot requires an encryption password.
-        autoLogin = {
-          enable = true;
-          user = "shandogs";
-        };
-        gdm.enable = true;
-      };
+      displayManager.gdm.enable = true;
 
       desktopManager.gnome.enable = true;
 
