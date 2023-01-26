@@ -118,6 +118,11 @@
       enable = true;
 
       displayManager = {
+        # Auto login since boot requires an encryption password.
+        autoLogin = {
+          enable = true;
+          user = "shandogs";
+        };
         gdm.enable = true;
       };
 
