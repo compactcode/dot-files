@@ -73,52 +73,52 @@
     networkmanager.enable = true;
   };
 
-  # enable flakes.
+  # enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs = {
-    # password manager, installed here for access to the kernel keyring.
+    # password manager, installed here for access to the kernel keyring
     _1password-gui = {
       enable = true;
       polkitPolicyOwners = [ "shandogs" ];
     };
 
-    # web browser, installed here for access to the kernel keyring.
+    # web browser, installed here for access to the kernel keyring
     firefox.enable = true;
 
-    # encryption, signing & authentication.
+    # encryption, signing & authentication
     gnupg = {
       agent = {
         enable = true;
-        # use yubikey for SHH via gpg.
+        # use yubikey for SHH via gpg
         enableSSHSupport = true;
       };
     };
   };
 
   services = {
-    # primary source for graphical applications.
+    # primary source for graphical applications
     flatpak.enable = true;
 
-    # enable support for yubikey.
+    # enable support for yubikey
     pcscd.enable = true;
 
     xserver = {
       enable = true;
 
+      # use the gnome desktop
       displayManager.gdm.enable = true;
-
       desktopManager.gnome.enable = true;
 
-      # Turn caps lock into another ctrl.
+      # turn caps lock into another ctrl.
       xkbOptions = "ctrl:nocaps";
     };
   };
 
-  # the timezone to Melbourne.
+  # the timezone to Melbourne
   time.timeZone = "Australia/Melbourne";
 
-  # setup users.
+  # setup users
   users = {
     defaultUserShell = pkgs.zsh;
 
@@ -128,7 +128,7 @@
 
       shandogs = {
         extraGroups = [
-          "wheel" # allow sudo.
+          "wheel" # allow sudo
         ];
         isNormalUser = true;
         hashedPassword =
@@ -137,9 +137,13 @@
     };
   };
 
-  # docker replacement.
-  virtualisation.podman.enable = true;
+  # docker replacement
+  virtualisation.podman = {
+    enable = true;
+    # enable cross container dns
+    defaultNetwork.dnsname.enable = true;
+  };
 
-  # enable flatpak apps to have system integration (dbus etc).
+  # enable flatpak apps to have system integration (dbus etc)
   xdg.portal.enable = true;
 }
