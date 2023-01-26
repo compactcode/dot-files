@@ -3,23 +3,23 @@
 {
   boot = {
     loader = {
-      # Allow displaying boot options.
+      # allow displaying boot options
       efi.canTouchEfiVariables = true;
 
-      # Use system as the boot manager.
+      # use system as the boot manager
       systemd-boot = {
         enable = true;
         configurationLimit = 5;
       };
     };
 
-    # Use the latest kernel.
+    # use the latest kernel
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
   environment = {
     gnome = {
-      # Gnome packages I don't use.
+      # packages I don't use
       excludePackages = with pkgs; [
         gnome.cheese
         gnome.gnome-maps
@@ -30,57 +30,57 @@
     };
 
     systemPackages = with pkgs; [
-      aws-vault # aws credential handling.
-      bat # cat replacement.
-      dnsutils # dns debugging.
-      du-dust # du replacement.
-      exa # ls replacement.
-      fd # find replacement.
-      fzf # fuzzy finder.
-      git # version control.
-      neovim # text editing.
-      pciutils # pci debugging.
-      podman-compose # docker compose for podman.
-      ripgrep # grep replacement.
-      usbutils # usb debugging.
-      xsv # csv viewer.
-      zig # c replacement.
+      aws-vault # aws credential handling
+      bat # cat replacement
+      dnsutils # dns debugging
+      du-dust # du replacement
+      exa # ls replacement
+      fd # find replacement
+      fzf # fuzzy finder
+      git # version control
+      neovim # text editing
+      pciutils # pci debugging
+      podman-compose # docker compose for podman
+      ripgrep # grep replacement
+      usbutils # usb debugging
+      xsv # csv viewer
+      zig # c replacement
     ];
   };
 
   fonts = {
-    # Install an nerd font for the icons.
+    # install an nerd font for the icons
     fonts = with pkgs; [
       (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
     ];
   };
 
-  # Use English.
+  # use english
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Set location to Melbourne.
+  # melbourne cbd
   location = {
     latitude = -37.814;
     longitude = 144.96332;
   };
 
   networking = {
-    # Enable firewall.
+    # enable firewall
     firewall = {
       enable = true;
     };
 
-    # Detect and manage network connections.
+    # detect and manage network connections
     networkmanager = {
       enable = true;
     };
   };
 
-  # Enable flakes.
+  # enable flakes.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs = {
-    # Password manager, installed here for access to the kernel keyring.
+    # password manager, installed here for access to the kernel keyring.
     _1password-gui = {
       enable = true;
       polkitPolicyOwners = [
@@ -88,28 +88,28 @@
       ];
     };
 
-    # Web browser, installed here for access to the kernel keyring.
+    # web browser, installed here for access to the kernel keyring.
     firefox = {
       enable = true;
     };
 
-    # Encryption, signing & authentication.
+    # encryption, signing & authentication.
     gnupg = {
       agent = {
         enable = true;
-        # Use yubikey for SHH via gpg.
+        # use yubikey for SHH via gpg.
         enableSSHSupport = true;
       };
     };
   };
 
   services = {
-    # Primary source for graphical applications.
+    # primary source for graphical applications.
     flatpak = {
       enable = true;
     };
 
-    # Enable support for yubikey.
+    # enable support for yubikey.
     pcscd = {
       enable = true;
     };
@@ -118,7 +118,7 @@
       enable = true;
 
       displayManager = {
-        # Auto login since boot requires an encryption password.
+        # auto login since boot requires an encryption password.
         autoLogin = {
           enable = true;
           user = "shandogs";
@@ -137,10 +137,10 @@
 
   system.stateVersion = "22.11";
 
-  # The timezone to Melbourne.
+  # the timezone to Melbourne.
   time.timeZone = "Australia/Melbourne";
 
-  # Setup users.
+  # setup users.
   users = {
     defaultUserShell = pkgs.zsh;
 
@@ -151,7 +151,7 @@
 
       shandogs = {
         extraGroups = [
-          "wheel" # Enable sudo.
+          "wheel" # allow sudo.
         ];
         isNormalUser = true;
         hashedPassword = "$6$Ol1IgIkZqEqHkDk$X51v4AgMAKXhqpMjfM451dvu71YnMlYdK4lZk/ZFx0m4A/eEPuUfMAYyYwVNjDHMtoNXz6QeoSQg4lHQtHtzX1";
@@ -160,13 +160,13 @@
   };
 
   virtualisation = {
-    # Docker like container engine.
+    # docker replacement.
     podman = {
       enable = true;
     };
   };
 
-  # Enable flatpak apps to have system integration (dbus etc).
+  # enable flatpak apps to have system integration (dbus etc).
   xdg = {
     portal = {
       enable = true;

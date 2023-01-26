@@ -3,11 +3,11 @@
 {
   home = {
     sessionVariables = {
-      # nvim as the default editor.
+      # nvim as the default editor
       EDITOR = "nvim";
-      # replace ssh with the system gpg agent.
+      # replace ssh with the system gpg agent
       SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)";
-      # nvim as the default editor.
+      # nvim as the default editor
       VISUAL = "nvim";
     };
     stateVersion = "22.11";
@@ -15,12 +15,12 @@
 
   gtk = {
     enable = true;
-    # Match gtk3 apps to the sytem theme.
+    # match gtk3 apps to the sytem theme
     theme.name = "Adwaita-dark";
   };
 
   programs = {
-    # environment loading.
+    # environment loading
     direnv = {
       enable = true;
       enableZshIntegration = true;
@@ -29,7 +29,7 @@
       };
     };
 
-    # fuzzy finder.
+    # fuzzy finder
     fzf = {
       enable = true;
       enableZshIntegration = true;
@@ -40,10 +40,10 @@
       ];
     };
 
-    # version control.
+    # version control
     git = {
       enable = true;
-      # use delta for nice diff output.
+      # use delta for nice diff output
       delta = {
         enable = true;
       };
@@ -63,32 +63,32 @@
     kitty = {
       enable = true;
       settings = {
-        # get title bars to match gnome styling.
+        # get title bars to match gnome styling
         linux_display_server = "x11";
       };
       theme = "Nord";
     };
 
-    # gpg based password manager.
+    # gpg based password manager
     password-store = {
       enable = true;
 
       package = pkgs.pass.withExtensions (exts: [ exts.pass-otp ]);
     };
 
-    # shell prompt.
+    # shell prompt
     starship = {
       enable = true;
       enableZshIntegration = true;
     };
 
-    # smart cd with jumping.
+    # smart cd with jumping
     zoxide = {
       enable = true;
       enableZshIntegration = true;
     };
 
-    # shell.
+    # shell
     zsh = {
       enable = true;
 

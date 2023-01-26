@@ -25,7 +25,7 @@
     };
 
     kernelModules = [
-      # Load the GPU early in the book process.
+      # load the GPU early in the book process
       "amdgpu"
     ];
   };
@@ -56,15 +56,15 @@
   };
 
   hardware = {
-    # Enable amd microcode updates.
+    # enable amd microcode updates
     cpu.amd.updateMicrocode = true;
 
-    # Enable nonfree firmware.
+    # enable nonfree firmware
     enableRedistributableFirmware = true;
   };
 
   networking = {
-    # Set a hostname.
+    # set a hostname
     hostName = "medusa";
   };
 }
