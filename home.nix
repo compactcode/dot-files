@@ -10,10 +10,10 @@
       # nvim as the default editor
       VISUAL = "nvim";
     };
-    packages = with pkgs;
-      [
-        sumneko-lua-language-server # lua language server
-      ];
+    packages = with pkgs; [
+      sumneko-lua-language-server # lua language server
+      asdf-vm # version manager
+    ];
     stateVersion = "22.11";
   };
 
@@ -44,7 +44,7 @@
       enable = true;
       # use delta for nice diff output
       delta.enable = true;
-      ignores = [ ".direnv" ".envrc" "shell.nix" ];
+      ignores = [ ".direnv" ];
       signing = {
         signByDefault = true;
         key = "BF2AD40D0652EF0B";
@@ -85,16 +85,10 @@
     zsh = {
       enable = true;
 
-      prezto = {
-        enable = true;
-
-        pmodules = [
-          "completion" # auto completion
-          "directory" # auto pushd/popd
-          "editor" # emacs key bindings
-          "history" # history setup
-        ];
-      };
+      # load asdf
+      initExtra = ''
+        . ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh 
+      '';
 
       shellAliases = {
         b = "${pkgs.bat}/bin/bat";
@@ -121,6 +115,17 @@
         o = "xdg-open";
         v = "nvim";
         j = "z";
+      };
+
+      prezto = {
+        enable = true;
+
+        pmodules = [
+          "completion" # auto completion
+          "directory" # auto pushd/popd
+          "editor" # emacs key bindings
+          "history" # history setup
+        ];
       };
     };
   };
