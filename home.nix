@@ -11,7 +11,6 @@
       VISUAL = "nvim";
     };
     packages = with pkgs; [
-      sumneko-lua-language-server # lua language server
       asdf-vm # version manager
     ];
     stateVersion = "22.11";
