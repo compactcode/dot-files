@@ -40,6 +40,7 @@
       git # version control
       jq # json formatting
       lm_sensors # harware sensors
+      lnav # log viewing
       neovim # text editing
       nixfmt # nix formatting
       pciutils # pci debugging
