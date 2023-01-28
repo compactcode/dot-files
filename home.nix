@@ -38,6 +38,9 @@
       defaultOptions = [ "--reverse" "--height 40%" ];
     };
 
+    # git ui
+    lazygit.enable = true;
+
     # version control
     git = {
       enable = true;
@@ -115,6 +118,7 @@
         j = "z";
         l = "${pkgs.exa}/bin/exa -la --icons --no-permissions --no-user";
         la = "${pkgs.exa}/bin/exa -la";
+        lg = "${pkgs.lazygit}/bin/lazygit";
         ll = "${pkgs.exa}/bin/exa -la --icons";
         lt = "${pkgs.exa}/bin/exa -l --tree";
         md = "mkdir -p";
