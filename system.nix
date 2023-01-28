@@ -47,6 +47,7 @@
       podman-compose # docker compose for podman
       ripgrep # grep replacement
       usbutils # usb debugging
+      wl-clipboard # clipboard interaction
       xsv # csv viewer
       zig # c replacement
     ];
