@@ -92,6 +92,12 @@
 
       shellAliases = {
         b = "${pkgs.bat}/bin/bat";
+        be = "bundle exec";
+        ber = "bundle exec rspec";
+        berc = "bundle exec rails console";
+        bers = "bundle exec rails server";
+        bi = "bundle install";
+        bu = "bundle update";
         g = "${pkgs.git}/bin/git";
         ga = "${pkgs.git}/bin/git add";
         gars = "${pkgs.git}/bin/git add . && git reset --hard";
@@ -107,6 +113,7 @@
         grh = "${pkgs.git}/bin/git reset HEAD";
         grm = "${pkgs.git}/bin/git rm";
         gs = "${pkgs.git}/bin/git status";
+        j = "z";
         l = "${pkgs.exa}/bin/exa -la --icons --no-permissions --no-user";
         la = "${pkgs.exa}/bin/exa -la";
         ll = "${pkgs.exa}/bin/exa -la --icons";
@@ -114,7 +121,6 @@
         md = "mkdir -p";
         o = "xdg-open";
         v = "nvim";
-        j = "z";
       };
 
       prezto = {
