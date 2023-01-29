@@ -46,7 +46,7 @@
       enable = true;
       # use delta for nice diff output
       delta.enable = true;
-      ignores = [ ".direnv" ];
+      ignores = [ ".direnv" "node_modules" ];
       signing = {
         signByDefault = true;
         key = "BF2AD40D0652EF0B";
