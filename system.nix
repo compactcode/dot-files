@@ -49,7 +49,6 @@
       usbutils # usb debugging
       wl-clipboard # clipboard interaction
       xsv # csv viewer
-      zig # c replacement
     ];
   };
 
