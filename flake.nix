@@ -1,13 +1,17 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
   };
 
-  outputs = { self, nixpkgs, home-manager }:
+  outputs = { self, nixpkgs, home-manager, neovim-nightly-overlay }:
     let
       system = "x86_64-linux";
 
@@ -15,6 +19,10 @@
         inherit system;
 
         config.allowUnfree = true;
+
+        overlays = [
+          neovim-nightly-overlay.overlay
+        ];
       };
     in {
       nixosConfigurations.medusa = nixpkgs.lib.nixosSystem {
