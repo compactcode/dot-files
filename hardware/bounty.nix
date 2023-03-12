@@ -60,7 +60,11 @@
   networking = {
     hostName = "bounty";
     # enable the wireless card
-    wireless.enable = true;
+    wireless = {
+      enable = true;
+      # allow dynamic network selection
+      userControlled.enable = true;
+    };
   };
 
 
