@@ -34,13 +34,13 @@
     };
 
     "/nix" = {
-      device = "/dev/disk/by-uuid/96120c03-92c2-4635-b29e-d93e1b79a691";
+      device = "/dev/disk/by-uuid/b7b61f4f-847d-46d5-9700-08082960b2ef";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
 
     "/swap" = {
-      device = "/dev/disk/by-uuid/96120c03-92c2-4635-b29e-d93e1b79a691";
+      device = "/dev/disk/by-uuid/b7b61f4f-847d-46d5-9700-08082960b2ef";
       fsType = "btrfs";
       options = [ "subvol=swap" "noatime" ];
     };
