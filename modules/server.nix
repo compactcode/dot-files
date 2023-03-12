@@ -29,6 +29,7 @@
       neovim # text editing
       pciutils # pci debugging
       ripgrep # grep replacement
+      tailscale # private vpn
       usbutils # usb debugging
     ];
   };
@@ -44,18 +45,30 @@
 
   networking = {
     # enable firewall
-    firewall.enable = true;
+    firewall = {
+      enable = true;
+      # relax routing restrictions for tailscale
+      checkReversePath = "loose";
+      # allow incoming tailscale traffic
+      trustedInterfaces = [ "tailscale0" ]
+    };
   };
 
   # enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  services.openssh = {
-    enable = true;
-    # public key only
-    passwordAuthentication = false;
-    # public key only
-    kbdInteractiveAuthentication = false;
+  services = {
+    # remote access
+    openssh = {
+      enable = true;
+      # public key only
+      passwordAuthentication = false;
+      # public key only
+      kbdInteractiveAuthentication = false;
+    };
+
+    # private vpn for remote access
+    tailscale.enable = true;
   };
 
   # the timezone to Melbourne

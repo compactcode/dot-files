@@ -46,6 +46,7 @@
       pciutils # pci debugging
       podman-compose # docker compose for podman
       ripgrep # grep replacement
+      tailscale # private vpn
       usbutils # usb debugging
       wl-clipboard # clipboard interaction
       xsv # csv viewer
@@ -74,7 +75,11 @@
     '';
 
     # enable firewall
-    firewall.enable = true;
+    firewall = {
+      enable = true;
+      # relax routing restrictions for tailscale
+      checkReversePath = "loose";
+    };
 
     # detect and manage network connections
     networkmanager.enable = true;
@@ -112,6 +117,9 @@
 
     # enable support for yubikey
     pcscd.enable = true;
+
+    # private vpn
+    tailscale.enable = true;
 
     xserver = {
       enable = true;
