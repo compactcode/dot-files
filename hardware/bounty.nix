@@ -57,7 +57,12 @@
   };
 
   # set a hostname
-  networking.hostName = "bounty";
+  networking = {
+    hostName = "bounty";
+    # enable the wireless card
+    wireless.enable = true;
+  };
+
 
   # the version this machine was created with
   system.stateVersion = "22.11";
