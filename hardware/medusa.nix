@@ -13,7 +13,7 @@
       luks.devices = {
         nixos-decrypted = {
           allowDiscards = true;
-          device = "/dev/disk/by-partlabel/primary";
+          device = "/dev/disk/by-uuid/08942d85-69ce-4f84-a2fd-10dcf05e20c3";
         };
       };
     };
@@ -24,7 +24,7 @@
 
   fileSystems = {
     "/boot" = {
-      device = "/dev/disk/by-label/boot";
+      device = "/dev/disk/by-uuid/E303-A443";
       fsType = "vfat";
     };
 
