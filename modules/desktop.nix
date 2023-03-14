@@ -21,7 +21,13 @@
     gnome = {
       # packages I don't use
       excludePackages = with pkgs; [
+        gnome-console
+        gnome-tour
         gnome.cheese
+        gnome.epiphany
+        gnome.gedit
+        gnome.gnome-clocks
+        gnome.gnome-logs
         gnome.gnome-maps
         gnome.gnome-music
         gnome.gnome-weather
