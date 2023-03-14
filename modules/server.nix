@@ -44,7 +44,6 @@
   };
 
   networking = {
-    # enable firewall
     firewall = {
       enable = true;
       # relax routing for tailscale
@@ -89,6 +88,8 @@
 
       shandogs = {
         extraGroups = [
+          "docker" # allow docker control
+          "services" # allow service editing
           "wheel" # allow sudo
         ];
         isNormalUser = true;
@@ -99,16 +100,20 @@
         ];
       };
 
-      # A dedicated user for services
+      # A dedicated user for running services
       services = {
         isNormalUser = true;
         uid = 1001;
+        extraGroups = [
+          "services"
+        ];
       };
     };
   };
 
-  virtualisation.docker.rootless = {
+  virtualisation.docker = {
     enable = true;
-    setSocketVariable = true;
+    autoPrune.enable = true;
+    storageDriver = "btrfs";
   };
 }
