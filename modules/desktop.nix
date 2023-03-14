@@ -22,6 +22,8 @@
       # packages I don't use
       excludePackages = with pkgs; [
         gnome-console
+        gnome-photos
+        gnome-text-editor
         gnome-tour
         gnome.cheese
         gnome.epiphany
@@ -133,6 +135,11 @@
       # use the gnome desktop
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
+
+      # packages I don't use
+      excludePackages = with pkgs; [ 
+        xterm 
+      ];
 
       # turn caps lock into another ctrl.
       xkbOptions = "ctrl:nocaps";
