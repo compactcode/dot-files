@@ -35,17 +35,10 @@
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users = {
-                services = {
-                  imports = [
-                    ./modules/server-home.nix
-                  ];
-                };
-                shandogs = {
-                  imports = [
-                    ./modules/server-home.nix
-                  ];
-                };
+              home-manager.users.shandogs = {
+                imports = [
+                  ./modules/server-home.nix
+                ];
               };
             }
           ];
