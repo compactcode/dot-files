@@ -39,6 +39,12 @@
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
 
+    "/var/lib/config" = {
+      device = "/dev/disk/by-uuid/54e3470f-292e-e243-88ce-012d4e07b76a";
+      fsType = "btrfs";
+      options = [ "subvol=config" "compress=zstd" ];
+    };
+
     "/swap" = {
       device = "/dev/disk/by-uuid/b7b61f4f-847d-46d5-9700-08082960b2ef";
       fsType = "btrfs";
@@ -66,7 +72,6 @@
       userControlled.enable = true;
     };
   };
-
 
   # the version this machine was created with
   system.stateVersion = "22.11";
