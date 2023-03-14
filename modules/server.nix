@@ -29,7 +29,7 @@
       neovim # text editing
       pciutils # pci debugging
       ripgrep # grep replacement
-      tailscale # private vpn
+      tailscale # remote access
       usbutils # usb debugging
     ];
   };
@@ -47,10 +47,10 @@
     # enable firewall
     firewall = {
       enable = true;
-      # relax routing restrictions for tailscale
+      # relax routing for tailscale
       checkReversePath = "loose";
-      # allow incoming tailscale traffic
-      trustedInterfaces = [ "tailscale0" ]
+      # allow incoming connections from tailscale
+      trustedInterfaces = [ "tailscale0" ];
     };
   };
 
@@ -67,7 +67,7 @@
       kbdInteractiveAuthentication = false;
     };
 
-    # private vpn for remote access
+    # remote access
     tailscale.enable = true;
   };
 
@@ -77,6 +77,11 @@
   # setup users
   users = {
     defaultUserShell = pkgs.zsh;
+
+    # A dedicated group for running services
+    groups.services = {
+      gid = 1001;
+    };
 
     users = {
       root.hashedPassword =
@@ -92,6 +97,12 @@
         openssh.authorizedKeys.keys = [
           "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDP4NxMkmVk7PGDcvi+tJcxRC1UD3T77D2kpdM1S+UmAk/JgjZVHAgiHzdr1wMvOwsfeYoryOZtky68ZOqdAH258n7cCbrfIu9ykdUs2pLia8r59Tl8pmLefhWlGuIXMgWZ+qQI2HJxjqlXq23sZU9UKuifGE4ASD8d/KPFhBPjXCKF7xzjZ0pF+xeo/dFuTuxXpxBaBuNYGGbNjf7EqyfJyiElgQ4S8Q9ZZoI7sPZhmLJgHc2ldjCYWpOqbnvdgA1yO35KbtELiB3VJHmzU/CRY0YrcSr0OmnUUKzVkH10I8mhH4HSo78MpZX/sLHMsnd3DdaNWmO9fjSGFUTvGIlEdIjRev2wKidxvDJ0m5Q/qK79cnwPn03InHX6HuOv1oq/pwNRNPlHdfHrQjUrweMezO/9qV2kCDVWQL92uWavfhhyPmqT6xHAw6kyVvmC5IJVYTnBO+f3HrqhQ6FBZRYls9w60f615DcCic0QuCYttVmfjvnxDZAyP1Y+XJtAdJF+K5dDNox8kzPjLhKnMzx/hvdPewA9zpMXWJW9j5lT5h6anh8/2NjlibzBwR/ClqLeE+3U0lWZx+SOkJvRgmTd4fsrrPByTKiSfHPbx8eUhapKharUz3Zf2c0zCjipmTm6yvgvDeAg491Rc9QsjB45KstYQXYGKq7pjzfHbmo3kQ=="
         ];
+      };
+
+      # A dedicated user for services
+      services = {
+        isNormalUser = true;
+        uid = 1001;
       };
     };
   };
