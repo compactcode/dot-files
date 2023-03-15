@@ -17,6 +17,9 @@
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
+  # remove html documentation
+  documentation.doc.enable = false;
+
   environment = {
     gnome = {
       # packages I don't use
