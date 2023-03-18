@@ -118,9 +118,6 @@
   };
 
   services = {
-    # development environments
-    lorri.enable = true;
-
     # primary source for graphical applications
     flatpak.enable = true;
 
