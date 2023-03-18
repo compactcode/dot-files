@@ -55,6 +55,21 @@
       userEmail = "hi@shan.dog";
     };
 
+    # text editing
+    neovim = {
+      enable = true;
+
+      extraPackages = with pkgs; [
+        nixfmt # formatting
+        nodejs # copilot
+      ];
+
+      # disable language integrations
+      withRuby = false;
+      withNodeJs = false;
+      withPython3 = false;
+    };
+
     kitty = {
       enable = true;
       settings = {
