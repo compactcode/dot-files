@@ -30,6 +30,7 @@
         gnome-tour
         gnome.cheese
         gnome.epiphany
+        gnome.geary # use flatpak instead for sandboxing
         gnome.gedit
         gnome.gnome-clocks
         gnome.gnome-logs
@@ -98,13 +99,13 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs = {
-    # password manager, installed here for access to the kernel keyring
+    # password manager, installed here over flatpak for access to the kernel keyring
     _1password-gui = {
       enable = true;
       polkitPolicyOwners = [ "shandogs" ];
     };
 
-    # web browser, installed here for access to the kernel keyring
+    # web browser, installed here over flatpak for access to the kernel keyring
     firefox.enable = true;
 
     # encryption, signing & authentication
@@ -119,6 +120,14 @@
 
   services = {
     # primary source for graphical applications
+    #
+    # * discord
+    # * geary
+    # * obsidian
+    # * pinta
+    # * signal
+    # * slack
+    # * steam
     flatpak.enable = true;
 
     # enable support for yubikey
