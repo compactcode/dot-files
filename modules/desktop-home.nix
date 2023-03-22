@@ -10,9 +10,6 @@
       # nvim as the default editor
       VISUAL = "nvim";
     };
-    packages = with pkgs; [
-      asdf-vm # version manager
-    ];
     stateVersion = "22.11";
   };
 
@@ -101,11 +98,6 @@
     # shell
     zsh = {
       enable = true;
-
-      # load asdf
-      initExtra = ''
-        . ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh 
-      '';
 
       shellAliases = {
         b = "${pkgs.bat}/bin/bat";
