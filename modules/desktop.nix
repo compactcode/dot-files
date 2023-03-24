@@ -99,7 +99,10 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs = {
-    # password manager, installed here over flatpak for access to the kernel keyring
+    # password manager
+    _1password.enable = true;
+
+    # password manager gui, installed here over flatpak for access to the kernel keyring
     _1password-gui = {
       enable = true;
       polkitPolicyOwners = [ "shandogs" ];
