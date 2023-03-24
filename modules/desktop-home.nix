@@ -59,6 +59,7 @@
       extraPackages = with pkgs; [
         nixfmt # formatting
         nodejs # copilot
+        zig # tree-sitter
       ];
 
       # disable language integrations
