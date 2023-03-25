@@ -139,4 +139,22 @@
       };
     };
   };
+
+  # override the default system entry
+  xdg.desktopEntries.nvim = {
+    categories = [ "Utility" "TextEditor" ];
+    exec = "${lib.getBin pkgs.kitty}/bin/kitty -e nvim"; # launch with kitty
+    genericName = "Text Editor";
+    icon = "nvim";
+    name = "Neovim";
+    terminal = false; # dont launch with default terminal
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/plain" = [ "nvim.desktop" ];
+      "text/markdown" = [ "nvim.desktop" ];
+    };
+  };
 }
