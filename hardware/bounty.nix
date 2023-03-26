@@ -44,9 +44,15 @@
       fsType = "btrfs";
       options = [ "subvol=swap" "noatime" ];
     };
+
+    "/mnt/nas/media" = {
+      device = "192.168.86.100:/volume1/Media";
+      fsType = "nfs";
+      options = [ "x-systemd.automount" "noauto" ];
+    };
   };
 
-  swapDevices = [ { device = "/swap/swapfile"; } ];
+  swapDevices = [{ device = "/swap/swapfile"; }];
 
   hardware = {
     # enable amd microcode updates

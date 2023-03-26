@@ -26,6 +26,7 @@
       fd # find replacement
       fzf # fuzzy finder
       git # version control
+      libnfs # nfs debugging
       neovim # text editing
       pciutils # pci debugging
       ripgrep # grep replacement
