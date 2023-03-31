@@ -20,6 +20,14 @@
   };
 
   programs = {
+    # cat replacement
+    bat = {
+      enable = true;
+      config = {
+        theme = "Nord";
+      };
+    };
+
     # environment loading
     direnv = {
       enable = true;

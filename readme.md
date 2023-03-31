@@ -17,4 +17,5 @@ I use [neovim](https://neovim.io/) with [mutable config](https://github.com/comp
 ## Terminal
 
 * [zsh](https://github.com/sorin-ionescu/prezto)
-* [exa](https://the.exa.website/)
+* [bat](https://the.exa.website/) (cat replacement)
+* [exa](https://the.exa.website/) (ls replacement)
