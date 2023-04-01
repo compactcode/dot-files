@@ -18,6 +18,11 @@ sudo -i parted $INSTALL_DRIVE_NAME -- set 1 boot on
 # Wait for disk labels to be ready.
 sleep 4
 
+# Setup encryption on the primary partition.
+sudo sh -c "echo $INSTALL_DRIVE_PASSWORD | cryptsetup luksFormat /dev/disk/by-partlabel/primary"
+# Mount a decrypted version of the encrypted primary partition.
+sudo sh -c "echo $INSTALL_DRIVE_PASSWORD | cryptsetup luksOpen /dev/disk/by-partlabel/primary nixos-decrypted"
+
 # Format the boot partition.
 sudo -i mkfs.fat -F 32 -n $BOOT_LABEL /dev/disk/by-partlabel/ESP
 # Format the primary partition.

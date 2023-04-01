@@ -61,6 +61,24 @@
             }
           ];
         };
+
+        prophet = nixpkgs.lib.nixosSystem {
+          inherit system pkgs;
+
+          modules = [
+            ./hardware/prophet.nix
+            ./modules/desktop.nix
+            home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.shandogs = {
+                imports = [
+                  ./modules/desktop-home.nix
+                ];
+              };
+            }
+          ];
+        };
       };
     };
 }
