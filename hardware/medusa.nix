@@ -12,7 +12,8 @@
 
       luks.devices = {
         nixos-decrypted = {
-          allowDiscards = true;
+          allowDiscards = true; # improved ssd performance
+          bypassWorkqueues = true; # improved ssd performance
           device = "/dev/disk/by-uuid/08942d85-69ce-4f84-a2fd-10dcf05e20c3";
         };
       };
