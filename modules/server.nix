@@ -57,14 +57,21 @@
   # enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  programs = {
+    # user shell
+    zsh.enable = true;
+  };
+
   services = {
     # remote access
     openssh = {
       enable = true;
-      # public key only
-      passwordAuthentication = false;
-      # public key only
-      kbdInteractiveAuthentication = false;
+      settings = {
+        # public key only
+        PasswordAuthentication = false;
+        # public key only
+        KbdInteractiveAuthentication = false;
+      };
     };
 
     # remote access

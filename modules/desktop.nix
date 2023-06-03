@@ -119,6 +119,9 @@
         enableSSHSupport = true;
       };
     };
+
+    # user shell
+    zsh.enable = true;
   };
 
   services = {
@@ -182,7 +185,7 @@
   virtualisation.podman = {
     enable = true;
     # enable cross container dns
-    defaultNetwork.dnsname.enable = true;
+    defaultNetwork.settings.dns_enabled = true;
   };
 
   # enable flatpak apps to have system integration (dbus etc)
