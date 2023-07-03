@@ -13,7 +13,7 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
 
-        ruby = nixpkgs-ruby.packages.${system}."ruby-3.2.1";
+        ruby = nixpkgs-ruby.packages.${system}."ruby-3.2.2";
       in {
         devShell = with pkgs;
           mkShell {
