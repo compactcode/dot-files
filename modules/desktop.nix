@@ -53,6 +53,7 @@
       jq # json formatting
       lm_sensors # harware sensors
       lnav # log viewing
+      nfs-utils # nfs mounting
       pciutils # pci debugging
       podman-compose # docker compose for podman
       ripgrep # grep replacement
