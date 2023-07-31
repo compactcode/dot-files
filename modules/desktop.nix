@@ -55,7 +55,6 @@
       lnav # log viewing
       nfs-utils # nfs mounting
       pciutils # pci debugging
-      podman-compose # docker compose for podman
       ripgrep # grep replacement
       tailscale # private vpn
       usbutils # usb debugging
@@ -174,6 +173,7 @@
       shandogs = {
         extraGroups = [
           "wheel" # allow sudo
+          "docker" # allow docker control
         ];
         isNormalUser = true;
         hashedPassword =
@@ -183,10 +183,10 @@
   };
 
   # docker replacement
-  virtualisation.podman = {
+  virtualisation.docker = {
     enable = true;
-    # enable cross container dns
-    defaultNetwork.settings.dns_enabled = true;
+    # clean up old images
+    autoPrune.enable = true;
   };
 
   # enable flatpak apps to have system integration (dbus etc)
