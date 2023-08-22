@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     nixpkgs-ruby = {
       url = "github:bobvanderlinden/nixpkgs-ruby";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,7 +13,7 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
 
-        ruby = nixpkgs-ruby.packages.${system}."ruby-3.1.3";
+        ruby = nixpkgs-ruby.packages.${system}."ruby-3.1.4";
       in {
         devShell = with pkgs;
           mkShell {
@@ -33,8 +33,8 @@
               # selenium-webdriver(gem)
               chromium
 
-              nodejs-16_x
-              (yarn.override { nodejs = nodejs-16_x; })
+              nodejs_18
+              (yarn.override { nodejs = nodejs_18; })
             ];
 
             shellHook = ''
