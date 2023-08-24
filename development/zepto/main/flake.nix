@@ -9,13 +9,17 @@
   };
 
   outputs = { self, nixpkgs, nixpkgs-ruby, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
+    flake-utils.lib.eachSystem [ "x86_64-linux" ] (system:
       let
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = import nixpkgs {
+          inherit system;
+
+          config.allowUnfree = true;
+        };
 
         ruby = nixpkgs-ruby.packages.${system}."ruby-3.1.4";
       in {
-        devShell = with pkgs;
+        devShells.default = with pkgs;
           mkShell {
             buildInputs = [
               ruby
@@ -29,9 +33,9 @@
               # nio4r(gem)
               libev
               # selenium-webdriver(gem)
-              chromedriver
+              chromedriver # 115
               # selenium-webdriver(gem)
-              chromium
+              google-chrome-beta # 115
 
               nodejs_18
               (yarn.override { nodejs = nodejs_18; })
