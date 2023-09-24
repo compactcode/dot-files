@@ -62,6 +62,24 @@
           ];
         };
 
+        pudge = nixpkgs.lib.nixosSystem {
+          inherit system pkgs;
+
+          modules = [
+            ./hardware/pudge.nix
+            ./modules/server.nix
+            home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.shandogs = {
+                imports = [
+                  ./modules/server-home.nix
+                ];
+              };
+            }
+          ];
+        };
+
         prophet = nixpkgs.lib.nixosSystem {
           inherit system pkgs;
 
