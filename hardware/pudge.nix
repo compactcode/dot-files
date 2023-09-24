@@ -17,30 +17,30 @@
 
   fileSystems = {
     "/boot" = {
-      device = "/dev/disk/by-uuid/?";
+      device = "/dev/sda1";
       fsType = "vfat";
     };
 
     "/" = {
-      device = "/dev/disk/by-uuid/b7b61f4f-847d-46d5-9700-08082960b2ef";
+      device = "/dev/sda2";
       fsType = "btrfs";
       options = [ "subvol=root" "compress=zstd" ];
     };
 
     "/home" = {
-      device = "/dev/disk/by-uuid/b7b61f4f-847d-46d5-9700-08082960b2ef";
+      device = "/dev/sda2";
       fsType = "btrfs";
       options = [ "subvol=home" "compress=zstd" ];
     };
 
     "/nix" = {
-      device = "/dev/disk/by-uuid/b7b61f4f-847d-46d5-9700-08082960b2ef";
+      device = "/dev/sda2";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
 
     "/swap" = {
-      device = "/dev/disk/by-uuid/b7b61f4f-847d-46d5-9700-08082960b2ef";
+      device = "/dev/sda2";
       fsType = "btrfs";
       options = [ "subvol=swap" "noatime" ];
     };
