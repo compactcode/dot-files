@@ -125,11 +125,11 @@
         grm = "${pkgs.git}/bin/git rm";
         gs = "${pkgs.git}/bin/git status";
         j = "z";
-        l = "${pkgs.exa}/bin/exa -la --icons --no-permissions --no-user";
-        la = "${pkgs.exa}/bin/exa -la";
+        l = "${pkgs.eza}/bin/eza -la --icons --no-permissions --no-user";
+        la = "${pkgs.eza}/bin/eza -la";
         lg = "${pkgs.lazygit}/bin/lazygit";
-        ll = "${pkgs.exa}/bin/exa -la --icons";
-        lt = "${pkgs.exa}/bin/exa -l --tree";
+        ll = "${pkgs.eza}/bin/eza -la --icons";
+        lt = "${pkgs.eza}/bin/eza -l --tree";
         md = "mkdir -p";
         o = "xdg-open";
         v = "nvim";

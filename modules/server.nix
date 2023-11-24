@@ -22,7 +22,7 @@
       bat # cat replacement
       dnsutils # dns debugging
       du-dust # du replacement
-      exa # ls replacement
+      eza # ls replacement
       fd # find replacement
       fzf # fuzzy finder
       git # version control

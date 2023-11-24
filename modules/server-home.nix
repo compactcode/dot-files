@@ -37,10 +37,10 @@
       shellAliases = {
         b = "${pkgs.bat}/bin/bat";
         j = "z";
-        l = "${pkgs.exa}/bin/exa -la --icons --no-permissions --no-user";
-        la = "${pkgs.exa}/bin/exa -la";
-        ll = "${pkgs.exa}/bin/exa -la --icons";
-        lt = "${pkgs.exa}/bin/exa -l --tree";
+        l = "${pkgs.eza}/bin/eza -la --icons --no-permissions --no-user";
+        la = "${pkgs.eza}/bin/eza -la";
+        ll = "${pkgs.eza}/bin/eza -la --icons";
+        lt = "${pkgs.eza}/bin/eza -l --tree";
         md = "mkdir -p";
         v = "nvim";
       };

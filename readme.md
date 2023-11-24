@@ -28,7 +28,7 @@ I use [neovim](https://neovim.io/) with [mutable config](https://github.com/comp
 
 * [bat](https://github.com/sharkdp/bat) (cat replacement)
 * [dust](https://github.com/bootandy/dust) (du replacement)
-* [exa](https://the.exa.website/) (ls replacement)
+* [eza](https://eza.rocks/) (ls replacement)
 * [fd](https://github.com/sharkdp/fd) (find replacement)
 * [ripgrep](https://github.com/BurntSushi/ripgrep) (grep replacement)
 * [xsv](https://github.com/BurntSushi/xsv) (csv toolkit)

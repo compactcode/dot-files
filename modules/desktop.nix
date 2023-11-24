@@ -46,7 +46,7 @@
       bat # cat replacement
       dnsutils # dns debugging
       du-dust # du replacement
-      exa # ls replacement
+      eza # ls replacement
       fd # find replacement
       fzf # fuzzy finder
       git # version control
@@ -65,7 +65,7 @@
 
   # install an nerd font for the icons
   fonts = {
-    fonts = with pkgs;
+    packages = with pkgs;
       [ (nerdfonts.override { fonts = [ "SourceCodePro" ]; }) ];
   };
 
