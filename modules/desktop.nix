@@ -44,6 +44,7 @@
     systemPackages = with pkgs; [
       aws-vault # aws credential handling
       bat # cat replacement
+      devbox # development environments
       dnsutils # dns debugging
       du-dust # du replacement
       eza # ls replacement
