@@ -5,8 +5,6 @@
     sessionVariables = {
       # nvim as the default editor
       EDITOR = "nvim";
-      # replace ssh with the system gpg agent
-      SSH_AUTH_SOCK = "$(gpgconf --list-dirs agent-ssh-socket)";
       # nvim as the default editor
       VISUAL = "nvim";
     };
@@ -147,6 +145,13 @@
       };
     };
   };
+
+  # disable gnome-keyring ssh agent since we use gpg
+  xdg.configFile."autostart/gnome-keyring-ssh.desktop".text = ''
+    [Desktop Entry]
+    Type=Application
+    Hidden=true
+  '';
 
   # override the default system entry
   xdg.desktopEntries.nvim = {
