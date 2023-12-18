@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-ruby = {
       url = "github:bobvanderlinden/nixpkgs-ruby";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -35,7 +35,7 @@
               # selenium-webdriver(gem)
               chromedriver # 115
               # selenium-webdriver(gem)
-              google-chrome-beta # 115
+              chromium
 
               nodejs_18
               (yarn.override { nodejs = nodejs_18; })
