@@ -4,17 +4,20 @@
   virtualisation.oci-containers = {
     backend = "docker";
     containers.homeassistant = {
-      volumes = [
-        "home-assistant:/config"
+      extraOptions = [
+        "--network=host"
       ];
       environment = {
         TZ = "Australia/Melbourne";
         PUID = "1001"; # service user
         GUID = "1001"; # service group
       };
-      image = "lscr.io/linuxserver/home-assistant:2023.12.4"; # Warning: if the tag does not change, the image will not be updated
-      extraOptions = [
-        "--network=host"
+      image = "lscr.io/linuxserver/homeassistant:2023.12.4";
+      ports = [
+        "8123:8123"
+      ];
+      volumes = [
+        "home-assistant:/config"
       ];
     };
   };
