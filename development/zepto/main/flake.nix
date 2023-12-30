@@ -22,6 +22,9 @@
         devShells.default = with pkgs;
           mkShell {
             buildInputs = [
+              # api client
+              bruno
+
               ruby
 
               # debugging
