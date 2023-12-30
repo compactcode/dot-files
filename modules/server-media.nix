@@ -23,7 +23,8 @@
           "8096:8096"
         ];
         volumes = [
-          "emby:/config"
+          "/mnt/nas/config/emby:/config"
+          "/mnt/nas/media:/data"
         ];
       };
 
@@ -38,7 +39,8 @@
           "7878:7878"
         ];
         volumes = [
-          "radarr:/config"
+          "/mnt/nas/config/radarr:/config"
+          "/mnt/nas/media:/data"
         ];
       };
 
@@ -53,7 +55,8 @@
           "8989:8989"
         ];
         volumes = [
-          "sonarr:/config"
+          "/mnt/nas/config/sonarr:/config"
+          "/mnt/nas/media:/data"
         ];
       };
     };

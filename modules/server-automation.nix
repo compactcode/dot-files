@@ -21,7 +21,7 @@
         "8123:8123"
       ];
       volumes = [
-        "home-assistant:/config"
+        "/mnt/nas/config/homeassistant:/config"
       ];
     };
   };

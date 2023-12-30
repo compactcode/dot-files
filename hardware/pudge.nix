@@ -44,6 +44,18 @@
       fsType = "btrfs";
       options = [ "subvol=swap" "noatime" ];
     };
+
+    "/mnt/nas/config" = {
+      device = "192.168.1.200:/mnt/storage/config";
+      fsType = "nfs";
+      options = [ "x-systemd.automount" "noauto" ];
+    };
+
+    "/mnt/nas/media" = {
+      device = "192.168.1.200:/mnt/storage/media";
+      fsType = "nfs";
+      options = [ "x-systemd.automount" "noauto" ];
+    };
   };
 
   swapDevices = [{ device = "/swap/swapfile"; }];
