@@ -63,9 +63,8 @@
       enable = true;
 
       extraPackages = with pkgs; [
-        nixfmt # formatting
-        nodejs # copilot
-        zig # tree-sitter
+        nodejs # runtime (copilot)
+        zig # compiler (tree-sitter)
       ];
 
       # disable language integrations
