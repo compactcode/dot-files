@@ -47,9 +47,19 @@
     # version control
     git = {
       enable = true;
+      extraConfig = {
+        push = {
+          autoSetupRemote = true;
+          default = "simple";
+        };
+      };
       # use delta for nice diff output
       delta.enable = true;
-      ignores = [ ".direnv" "node_modules" ];
+      ignores = [
+        ".devenv"
+        ".direnv"
+        "node_modules"
+      ];
       signing = {
         signByDefault = true;
         key = "BF2AD40D0652EF0B";

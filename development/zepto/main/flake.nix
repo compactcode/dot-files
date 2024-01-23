@@ -35,6 +35,8 @@
 
               # nio4r(gem)
               libev
+              # psych(gem)
+              libyaml
               # selenium-webdriver(gem)
               chromedriver # 115
               # selenium-webdriver(gem)
