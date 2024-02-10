@@ -103,9 +103,6 @@
           "--network=container:gluetun"
         ];
         image = "lscr.io/linuxserver/sonarr:4.0.0.741-ls219";
-        ports = [
-          "8989:8989"
-        ];
         volumes = [
           "/mnt/nas/config/sonarr:/config"
           "/mnt/nas/media:/data"
