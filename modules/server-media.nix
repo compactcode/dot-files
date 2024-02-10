@@ -123,7 +123,7 @@
         extraOptions = [
           "--network=container:gluetun"
         ];
-        image = "lscr.io/transmission/prowlarr:1.11.4.4173-ls45";
+        image = "lscr.io/linuxserver/transmission:4.0.5-r0-ls220";
         volumes = [
           "/mnt/nas/config/transmission:/config"
           "/mnt/nas/media:/data"
