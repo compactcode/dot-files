@@ -6,6 +6,8 @@
       7878
       8096
       8989
+      9091
+      9696
     ];
   };
 
@@ -79,9 +81,6 @@
           "--network=container:gluetun"
         ];
         image = "lscr.io/linuxserver/radarr:5.2.6.8376-ls197";
-        ports = [
-          "7878:7878"
-        ];
         volumes = [
           "/mnt/nas/config/radarr:/config"
           "/mnt/nas/media:/data"
