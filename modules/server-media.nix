@@ -35,6 +35,9 @@
         environment = {
           SERVER_COUNTRIES = "Australia";
         };
+        extraOptions = [
+          "--cap-add=NET_ADMIN"
+        ];
         image = "ghcr.io/qdm12/gluetun:v3.37.0";
         ports = [
           "7878:7878" # radarr
