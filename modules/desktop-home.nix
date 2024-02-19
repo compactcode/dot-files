@@ -128,6 +128,7 @@
         gdc = "${pkgs.git}/bin/git diff --cached";
         glg = "${pkgs.git}/bin/git log --stat";
         glr = "${pkgs.git}/bin/git pull --rebase";
+        gpo = "${pkgs.git}/bin/git push origin \"$(git symbolic-ref --short HEAD)\"";
         grh = "${pkgs.git}/bin/git reset HEAD";
         grm = "${pkgs.git}/bin/git rm";
         gs = "${pkgs.git}/bin/git status";
