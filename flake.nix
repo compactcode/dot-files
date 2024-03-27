@@ -1,5 +1,9 @@
 {
   inputs = {
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -11,7 +15,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
   };
 
-  outputs = { self, nixpkgs, home-manager, neovim-nightly-overlay }:
+  outputs = { self, nixpkgs, disko, home-manager, neovim-nightly-overlay }:
     let
       system = "x86_64-linux";
 
@@ -59,6 +63,17 @@
                 ];
               };
             }
+          ];
+        };
+
+        pheonix = nixpkgs.lib.nixosSystem {
+          inherit system pkgs;
+
+          modules = [
+            disko.nixosModules.disko
+            ./hardware/pheonix.nix
+            ./hardware/disko/pheonix.nix
+            ./modules/desktop-hyprland.nix
           ];
         };
 
