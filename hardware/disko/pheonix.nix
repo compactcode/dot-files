@@ -7,7 +7,7 @@
         type = "gpt";
         partitions = {
           ESP = {
-            size = "512MiB";
+            size = "512M";
             type = "EF00";
             content = {
               type = "filesystem";
@@ -29,6 +29,7 @@
                 extraArgs = [ "-f" ];
                 subvolumes = {
                   "/root" = {
+                    mountOptions = [ "compress=zstd" "noatime" ];
                     mountpoint = "/";
                   };
                   "/nix" = {
@@ -37,7 +38,7 @@
                   };
                   "/persist" = {
                     mountOptions = [ "compress=zstd" "noatime" ];
-                    mountpoint = "/nix";
+                    mountpoint = "/persist";
                   };
                   "/swap" = {
                     mountpoint = "/swap";
