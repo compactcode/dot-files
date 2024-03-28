@@ -31,7 +31,6 @@
         gnome.cheese
         gnome.epiphany
         gnome.geary # use flatpak instead for sandboxing
-        gnome.gedit
         gnome.gnome-clocks
         gnome.gnome-logs
         gnome.gnome-maps
@@ -156,7 +155,7 @@
       ];
 
       # turn caps lock into another ctrl.
-      xkbOptions = "ctrl:nocaps";
+      xkb.options = "ctrl:nocaps";
     };
   };
 
