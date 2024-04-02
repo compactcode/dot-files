@@ -74,6 +74,20 @@
             ./hardware/pheonix.nix
             ./hardware/disko/pheonix.nix
             ./modules/desktop-hyprland.nix
+            home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.shandogs = {
+                imports = [
+                  ./home/cli.nix
+                  ./home/gui.nix
+                ];
+
+                home = {
+                  stateVersion = "23.11";
+                };
+              };
+            }
           ];
         };
 
