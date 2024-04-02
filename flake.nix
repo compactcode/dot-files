@@ -13,9 +13,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, disko, home-manager, neovim-nightly-overlay }:
+  outputs = { self, nixpkgs, disko, home-manager, neovim-nightly-overlay, stylix, ... }:
     let
       system = "x86_64-linux";
 
@@ -79,6 +80,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.shandogs = {
                 imports = [
+                  stylix.homeManagerModules.stylix
                   ./home/cli.nix
                   ./home/gui.nix
                 ];

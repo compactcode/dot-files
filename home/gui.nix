@@ -6,8 +6,11 @@
   };
 
   programs = {
-    kitty = {
+    kitty.enable = true;
+    rofi.enable = true;
+    waybar = {
       enable = true;
+      systemd.enable = true;
     };
   };
 
@@ -16,10 +19,17 @@
     settings = {
       "$mod" = "SUPER";
       bind = [
-        "$mod, n, exec, kitty"
+        "$mod, n, exec, rofi"
+        "$mod, e, exec, kitty"
+        "$mod, i, exec, firefox"
         "$mod, k, exit,"
       ];
     };
+  };
+
+  stylix = {
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
+    image = ./wallpaper/mountain.jpg;
   };
 
   xdg.desktopEntries.nvim = {
