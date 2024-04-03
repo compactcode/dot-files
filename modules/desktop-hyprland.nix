@@ -86,9 +86,19 @@
     zsh.enable = true;
   };
 
+  # enable real-time scheduling for pipewire
+  security.rtkit.enable = true;
+
   services = {
     # primary source for graphical applications
     flatpak.enable = true;
+
+    # enable sound via pipewire
+    pipewire = {
+      enable = true;
+      # pulseaudio compatibility
+      pulse.enable = true;
+    };
   };
 
   # the timezone to Melbourne
