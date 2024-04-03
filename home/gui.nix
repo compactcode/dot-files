@@ -4,6 +4,8 @@
   programs = {
     # terminal
     kitty.enable = true;
+    # notifications
+    mako.enable = true;
     # application launcher
     rofi.enable = true;
     # ssh client
@@ -18,7 +20,10 @@
     # status bar
     waybar = {
       enable = true;
-      systemd.enable = true;
+      systemd = {
+        enable = true;
+        target = "hyprland-session.target";
+      }
     };
   };
 
@@ -40,21 +45,25 @@
         "$mod, k, exit,"
       ];
     };
+    # hyprland-session.target
+    systemd.enable = true;
   };
 
-  xdg.desktopEntries.nvim = {
-    categories = [ "Utility" "TextEditor" ];
-    exec = "${lib.getBin pkgs.kitty}/bin/kitty -e nvim";
-    genericName = "Text Editor";
-    icon = "nvim";
-    name = "Neovim";
-  };
+  xdg = {
+    desktopEntries.nvim = {
+      categories = [ "Utility" "TextEditor" ];
+      exec = "${lib.getBin pkgs.kitty}/bin/kitty -e nvim";
+      genericName = "Text Editor";
+      icon = "nvim";
+      name = "Neovim";
+    };
 
-  xdg.mimeApps = {
-    enable = true;
-    defaultApplications = {
-      "text/plain" = [ "nvim.desktop" ];
-      "text/markdown" = [ "nvim.desktop" ];
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "text/plain" = [ "nvim.desktop" ];
+        "text/markdown" = [ "nvim.desktop" ];
+      };
     };
   };
 }
