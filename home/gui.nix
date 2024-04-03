@@ -7,7 +7,10 @@
     # notifications
     mako.enable = true;
     # application launcher
-    rofi.enable = true;
+    rofi = {
+      enable = true;
+      package = pkgs.rofi-wayland;
+    };
     # ssh client
     ssh = {
       enable = true;
