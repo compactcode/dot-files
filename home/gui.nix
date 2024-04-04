@@ -4,8 +4,6 @@
   programs = {
     # terminal
     kitty.enable = true;
-    # notifications
-    mako.enable = true;
     # application launcher
     rofi = {
       enable = true;
@@ -26,8 +24,13 @@
       systemd = {
         enable = true;
         target = "hyprland-session.target";
-      }
+      };
     };
+  };
+
+  services = {
+    # notifications
+    mako.enable = true;
   };
 
   # automatic theming
