@@ -1,6 +1,8 @@
-{ pkgs, lib, ... }:
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   home = {
     sessionVariables = {
       # nvim as the default editor
@@ -28,7 +30,7 @@
       enable = true;
       enableZshIntegration = true;
       defaultCommand = "${lib.getBin pkgs.fd}/bin/fd --type f";
-      defaultOptions = [ "--reverse" "--height 40%" ];
+      defaultOptions = ["--reverse" "--height 40%"];
     };
 
     # git ui

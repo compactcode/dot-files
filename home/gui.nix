@@ -1,6 +1,8 @@
-{ pkgs, lib, ... }:
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   programs = {
     # terminal
     kitty.enable = true;
@@ -38,7 +40,7 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
     fonts = {
       emoji = {
-        package = (pkgs.nerdfonts.override { fonts = [ "SourceCodePro" ]; });
+        package = pkgs.nerdfonts.override {fonts = ["SourceCodePro"];};
         name = "Source Code Pro";
       };
     };
@@ -63,7 +65,7 @@
 
   xdg = {
     desktopEntries.nvim = {
-      categories = [ "Utility" "TextEditor" ];
+      categories = ["Utility" "TextEditor"];
       exec = "${lib.getBin pkgs.kitty}/bin/kitty -e nvim";
       genericName = "Text Editor";
       icon = "nvim";
@@ -73,8 +75,8 @@
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "text/plain" = [ "nvim.desktop" ];
-        "text/markdown" = [ "nvim.desktop" ];
+        "text/plain" = ["nvim.desktop"];
+        "text/markdown" = ["nvim.desktop"];
       };
     };
   };

@@ -1,18 +1,15 @@
-{ pkgs, ... }:
-
+{pkgs, ...}:
 # CPU: AMD Ryzen 5900X
 # GPU: AMD Radeon 6700XT
 # Motherboard: Gigabyte B550I AORUS PRO AX
-
 {
   boot = {
     initrd = {
-      availableKernelModules =
-        [ "ahci" "nvme" "sd_mod" "usb_storage" "usbhid" "xhci_pci" ];
+      availableKernelModules = ["ahci" "nvme" "sd_mod" "usb_storage" "usbhid" "xhci_pci"];
     };
 
     # load the GPU early in the book process
-    kernelModules = [ "amdgpu" ];
+    kernelModules = ["amdgpu"];
   };
 
   hardware = {

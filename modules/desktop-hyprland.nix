@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   boot = {
     loader = {
       # allow displaying boot options
@@ -64,7 +62,7 @@
   };
 
   # enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   programs = {
     # password manager
@@ -73,7 +71,7 @@
     # password manager gui, installed here over flatpak for access to the kernel keyring
     _1password-gui = {
       enable = true;
-      polkitPolicyOwners = [ "shandogs" ];
+      polkitPolicyOwners = ["shandogs"];
     };
 
     # web browser, installed here over flatpak for access to the kernel keyring
@@ -109,16 +107,14 @@
     defaultUserShell = pkgs.zsh;
 
     users = {
-      root.hashedPassword =
-        "$6$Ol1IgIkZqEqHkDk$X51v4AgMAKXhqpMjfM451dvu71YnMlYdK4lZk/ZFx0m4A/eEPuUfMAYyYwVNjDHMtoNXz6QeoSQg4lHQtHtzX1";
+      root.hashedPassword = "$6$Ol1IgIkZqEqHkDk$X51v4AgMAKXhqpMjfM451dvu71YnMlYdK4lZk/ZFx0m4A/eEPuUfMAYyYwVNjDHMtoNXz6QeoSQg4lHQtHtzX1";
 
       shandogs = {
         extraGroups = [
           "wheel" # allow sudo
         ];
         isNormalUser = true;
-        hashedPassword =
-          "$6$Ol1IgIkZqEqHkDk$X51v4AgMAKXhqpMjfM451dvu71YnMlYdK4lZk/ZFx0m4A/eEPuUfMAYyYwVNjDHMtoNXz6QeoSQg4lHQtHtzX1";
+        hashedPassword = "$6$Ol1IgIkZqEqHkDk$X51v4AgMAKXhqpMjfM451dvu71YnMlYdK4lZk/ZFx0m4A/eEPuUfMAYyYwVNjDHMtoNXz6QeoSQg4lHQtHtzX1";
       };
     };
   };
