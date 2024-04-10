@@ -12,11 +12,15 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, disko, home-manager, neovim-nightly-overlay, stylix, ... }:
+  outputs = { self, nixpkgs, disko, home-manager, neovim-nightly-overlay, nixvim, stylix, ... }:
     let
       system = "x86_64-linux";
 
@@ -81,8 +85,10 @@
               home-manager.users.shandogs = {
                 imports = [
                   stylix.homeManagerModules.stylix
+                  nixvim.homeManagerModules.nixvim
                   ./home/cli.nix
                   ./home/gui.nix
+                  ./home/nixvim.nix
                 ];
 
                 home = {
