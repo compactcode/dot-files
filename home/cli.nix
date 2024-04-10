@@ -58,21 +58,6 @@
       userEmail = "hi@shan.dog";
     };
 
-    # text editing
-    neovim = {
-      enable = true;
-
-      extraPackages = with pkgs; [
-        nodejs # runtime (copilot)
-        zig # compiler (tree-sitter)
-      ];
-
-      # disable language integrations
-      withRuby = false;
-      withNodeJs = false;
-      withPython3 = false;
-    };
-
     # shell prompt
     starship = {
       enable = true;

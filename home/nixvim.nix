@@ -1,5 +1,7 @@
 {pkgs, ...}: {
   programs.nixvim = {
+    enable = true;
+
     colorschemes.nord = {
       enable = true;
       settings = {
@@ -54,7 +56,7 @@
       } # search files
     ];
 
-    options = {
+    opts = {
       expandtab = true; # convert tabs to spaces
       tabstop = 2; # use 2 spaces for tab
       softtabstop = 2; # use 2 spaces for tab
@@ -114,7 +116,9 @@
 
       gitsigns = {
         enable = true;
-        currentLineBlame = true;
+        settings = {
+          current_line_blame = true;
+        };
       };
 
       lsp = {
@@ -187,7 +191,7 @@
             enable = true;
           };
         };
-        extraOptions = {
+        settings = {
           defaults = {
             mappings = {
               i = {
