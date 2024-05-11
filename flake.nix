@@ -100,6 +100,7 @@
                 ./home/cli.nix
                 ./home/gui.nix
                 ./home/nixvim.nix
+                ./home/ssh.nix
               ];
 
               home = {

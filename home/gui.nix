@@ -6,20 +6,13 @@
   programs = {
     # terminal
     kitty.enable = true;
+
     # application launcher
     rofi = {
       enable = true;
       package = pkgs.rofi-wayland;
     };
-    # ssh client
-    ssh = {
-      enable = true;
-      # use 1password as ssh agent
-      extraConfig = ''
-        Host *
-          IdentityAgent ~/.1password/agent.sock
-      '';
-    };
+
     # status bar
     waybar = {
       enable = true;

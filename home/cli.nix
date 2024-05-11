@@ -52,10 +52,6 @@
         ".direnv"
         "node_modules"
       ];
-      signing = {
-        signByDefault = true;
-        key = "BF2AD40D0652EF0B";
-      };
       userName = "Shanon McQuay";
       userEmail = "hi@shan.dog";
     };
