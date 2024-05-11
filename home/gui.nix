@@ -16,6 +16,22 @@
     # status bar
     waybar = {
       enable = true;
+      settings = {
+        mainBar = {
+          layer = "top"; # display on top of other windows
+          modules-left = [
+            "hyprland/workspaces" # active workspaces
+          ];
+          modules-center = [
+            "hyprland/window" # active window
+          ];
+          modules-right = [
+            "temperature"
+            "clock"
+            "tray" # system tray
+          ];
+        };
+      };
       systemd = {
         enable = true;
         target = "hyprland-session.target";
