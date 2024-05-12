@@ -100,17 +100,32 @@
   };
 
   systemd = {
-    user.services.polkit-authentication-agent = {
-      description = "polkit-gnome-authentication-agent-1";
-      wantedBy = ["graphical-session.target"];
-      wants = ["graphical-session.target"];
-      after = ["graphical-session.target"];
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
+    user.services = {
+      # start 1password so applications can make requests
+      _1password = {
+        description = "1password";
+        wantedBy = ["graphical-session.target"];
+        wants = ["graphical-session.target"];
+        after = ["graphical-session.target"];
+        serviceConfig = {
+          Type = "simple";
+          ExecStart = "${pkgs._1password-gui}/bin/1password --silent";
+        };
+      };
+
+      # start authentication agent to applications can make requests
+      polkit-authentication-agent = {
+        description = "polkit-gnome-authentication-agent-1";
+        wantedBy = ["graphical-session.target"];
+        wants = ["graphical-session.target"];
+        after = ["graphical-session.target"];
+        serviceConfig = {
+          Type = "simple";
+          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          Restart = "on-failure";
+          RestartSec = 1;
+          TimeoutStopSec = 10;
+        };
       };
     };
   };
