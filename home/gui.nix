@@ -62,11 +62,11 @@
     settings = {
       "$mod" = "SUPER";
       bind = [
-        "$mod, e, exec, kitty"
+        "$mod, e, exec, ~/.local/share/focusOrStart 2 kitty kitty"
         "$mod, f, fullscreen,"
-        "$mod, i, exec, firefox"
+        "$mod, n, exec, ~/.local/share/focusOrStart 1 firefox firefox"
         "$mod, k, exit,"
-        "$mod, n, exec, rofi -show drun"
+        "$mod, i, exec, rofi -show drun"
 
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
@@ -90,6 +90,26 @@
   };
 
   xdg = {
+    dataFile = {
+      # start or focus an application on a given workspace
+      focusOrStart = {
+        executable = true;
+        text = ''
+          #!/bin/sh
+
+          address=$(hyprctl clients -j | jq -r ".[] | select(.workspace.id == $1) | select(.class == \"$2\") | .address")
+
+          hyprctl dispatch workspace $1
+
+          if [[ $address == "" ]]; then
+            $3
+          else
+            hyprctl dispatch focuswindow address:$address
+          fi
+        '';
+      };
+    };
+
     desktopEntries.nvim = {
       categories = ["Utility" "TextEditor"];
       exec = "${lib.getBin pkgs.kitty}/bin/kitty -e nvim";
