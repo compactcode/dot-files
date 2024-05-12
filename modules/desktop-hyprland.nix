@@ -91,6 +91,9 @@
     # primary source for graphical applications
     flatpak.enable = true;
 
+    # skip login since we just unlocked our encrypted drive
+    getty.autologinUser = "shandogs";
+
     # enable sound via pipewire
     pipewire = {
       enable = true;
