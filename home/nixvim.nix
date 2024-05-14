@@ -2,37 +2,9 @@
   programs.nixvim = {
     enable = true;
 
-    colorschemes.nord = {
-      enable = true;
-      settings = {
-        contrast = true;
-        borders = true;
-      };
-    };
-
     globals.mapleader = " ";
 
     keymaps = [
-      {
-        key = "m";
-        action = "h";
-      } # colemak hjkl
-      {
-        key = "n";
-        action = "j";
-      } # colemak hjkl
-      {
-        key = "e";
-        action = "k";
-      } # colemak hjkl
-      {
-        key = "i";
-        action = "l";
-      } # colemak hjkl
-      {
-        key = "h";
-        action = "n";
-      } # colemak n
       {
         key = "Q";
         action = "<cmd>wa<cr>ZZ";
