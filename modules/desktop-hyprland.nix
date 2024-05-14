@@ -91,8 +91,18 @@
     # primary source for graphical applications
     flatpak.enable = true;
 
-    # skip login since we just unlocked our encrypted drive
-    getty.autologinUser = "shandogs";
+    # login manager
+    greetd = {
+      enable = true;
+      settings = rec {
+        initial_session = {
+          command = "Hyprland";
+          user = "shandogs";
+        };
+        # skip first login since boot requires luks password
+        default_session = initial_session;
+      };
+    };
 
     # enable sound via pipewire
     pipewire = {
