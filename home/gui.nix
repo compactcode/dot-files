@@ -67,6 +67,9 @@
         "$mod, n, exec, ~/.local/share/focusOrStart 1 firefox firefox"
         "$mod, k, exit,"
         "$mod, i, exec, rofi -show drun"
+        "$mod, q, killactive,"
+
+        "$mod, TAB, workspace, previous"
 
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
