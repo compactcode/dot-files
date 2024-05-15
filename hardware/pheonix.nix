@@ -1,9 +1,20 @@
-{pkgs, ...}:
+{...}:
 # CPU: AMD Ryzen 5900X
 # GPU: AMD Radeon 6700XT
 # Motherboard: Gigabyte B550I AORUS PRO AX
 {
   boot = {
+    # disable wifi and bluetooth
+    blacklistedKernelModules = [
+      "bluetooth"
+      "btbcm"
+      "btintel"
+      "btmtk"
+      "btrtl"
+      "btusb"
+      "iwlwifi"
+    ];
+
     initrd = {
       availableKernelModules = ["ahci" "nvme" "sd_mod" "usb_storage" "usbhid" "xhci_pci"];
     };
