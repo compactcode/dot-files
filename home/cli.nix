@@ -18,12 +18,18 @@
       enable = true;
     };
 
+    # top replacement
+    btop.enable = true;
+
     # environment loading
     direnv = {
       enable = true;
       enableZshIntegration = true;
       nix-direnv.enable = true;
     };
+
+    # find replacement
+    fd.enable = true;
 
     # fuzzy finder
     fzf = {
@@ -32,9 +38,6 @@
       defaultCommand = "${lib.getBin pkgs.fd}/bin/fd --type f";
       defaultOptions = ["--reverse" "--height 40%"];
     };
-
-    # git ui
-    lazygit.enable = true;
 
     # version control
     git = {
@@ -55,6 +58,15 @@
       userName = "Shanon McQuay";
       userEmail = "hi@shan.dog";
     };
+
+    # json manipulation
+    jq.enable = true;
+
+    # git ui
+    lazygit.enable = true;
+
+    # grep replacement
+    ripgrep.enable = true;
 
     # shell prompt
     starship = {

@@ -20,25 +20,15 @@
 
   environment = {
     systemPackages = with pkgs; [
-      aws-vault # aws credential handling
-      bat # cat replacement
-      devbox # development environments
       dnsutils # dns debugging
       du-dust # du replacement
-      eza # ls replacement
-      fd # find replacement
-      fzf # fuzzy finder
       git # version control
-      jq # json formatting
       lm_sensors # harware sensors
-      lnav # log viewing
       nfs-utils # nfs mounting
       pciutils # pci debugging
-      ripgrep # grep replacement
-      tailscale # private vpn
+      tailscale # mesh vpn
       usbutils # usb debugging
       wl-clipboard # clipboard interaction
-      xsv # csv viewer
     ];
   };
 
