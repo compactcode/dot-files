@@ -93,6 +93,9 @@
     zsh = {
       enable = true;
 
+      # auto complete ghost text
+      autosuggestion.enable = true;
+
       shellAliases = {
         b = "${pkgs.bat}/bin/bat";
         be = "bundle exec";
