@@ -13,6 +13,12 @@
   };
 
   programs = {
+    # 1password wrapper for cli authentication
+    _1password-shell-plugins = {
+      enable = true;
+      plugins = with pkgs; [gh];
+    };
+
     # cat replacement
     bat = {
       enable = true;
@@ -38,6 +44,9 @@
       defaultCommand = "${lib.getBin pkgs.fd}/bin/fd --type f";
       defaultOptions = ["--reverse" "--height 40%"];
     };
+
+    # github cli
+    gh.enable = true;
 
     # version control
     git = {

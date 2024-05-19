@@ -1,5 +1,9 @@
 {
   inputs = {
+    _1password-shell-plugins = {
+      url = "github:1Password/shell-plugins";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,12 +24,11 @@
     stylix.url = "github:danth/stylix";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
+  outputs = inputs @ {
     disko,
     home-manager,
     neovim-nightly-overlay,
+    nixpkgs,
     nixvim,
     stylix,
     ...
@@ -95,8 +98,9 @@
             home-manager.useUserPackages = true;
             home-manager.users.shandogs = {
               imports = [
-                stylix.homeManagerModules.stylix
                 nixvim.homeManagerModules.nixvim
+                stylix.homeManagerModules.stylix
+                inputs._1password-shell-plugins.hmModules.default
                 ./home/cli.nix
                 ./home/gui.nix
                 ./home/nixvim.nix
