@@ -103,6 +103,9 @@
   };
 
   systemd = {
+    # dont block boot waiting for networking
+    services.NetworkManager-wait-online.enable = false;
+
     user.services = {
       # start 1password so applications can make requests
       _1password = {
