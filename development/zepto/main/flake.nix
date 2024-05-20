@@ -1,57 +1,89 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-ruby = {
-      url = "github:bobvanderlinden/nixpkgs-ruby";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    flake-utils.url = "github:numtide/flake-utils";
+    nixpkgs.url = "github:cachix/devenv-nixpkgs/rolling";
+    systems.url = "github:nix-systems/default";
+    devenv.url = "github:cachix/devenv";
+    devenv.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-ruby, flake-utils }:
-    flake-utils.lib.eachSystem [ "x86_64-linux" ] (system:
-      let
-        pkgs = import nixpkgs {
-          inherit system;
+  nixConfig = {
+    extra-trusted-public-keys = "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=";
+    extra-substituters = "https://devenv.cachix.org";
+  };
 
-          config.allowUnfree = true;
-        };
-
-        ruby = nixpkgs-ruby.packages.${system}."ruby-3.1.4";
-      in {
-        devShells.default = with pkgs;
-          mkShell {
-            buildInputs = [
-              # api client
-              bruno
-
-              ruby
-
-              # debugging
-              awscli2
-
-              # psql, pg(gem)
-              postgresql_12
-
-              # nio4r(gem)
-              libev
-              # psych(gem)
-              libyaml
-              # selenium-webdriver(gem)
-              chromedriver # 115
-              # selenium-webdriver(gem)
-              chromium
-
-              nodejs_18
-              (yarn.override { nodejs = nodejs_18; })
-            ];
-
-            shellHook = ''
-              export GEM_HOME=./tmp/gem/ruby
-              export GEM_PATH=$GEM_HOME
-              export PATH=$GEM_HOME/bin:$PATH
-              export PATH=$PWD/bin:$PATH
-            '';
-          };
+  outputs = { self, nixpkgs, devenv, systems, ... } @ inputs:
+    let
+      forEachSystem = nixpkgs.lib.genAttrs (import systems);
+    in
+    {
+      packages = forEachSystem (system: {
+        devenv-up = self.devShells.${system}.default.config.procfileScript;
       });
+
+      devShells = forEachSystem
+        (system:
+          let
+            pkgs = nixpkgs.legacyPackages.${system};
+          in
+          {
+            default = devenv.lib.mkShell {
+              inherit inputs pkgs;
+
+              modules = [
+                {
+                  # https://devenv.sh/reference/options/
+                  packages = with pkgs; [
+                    # api browser
+                    bruno
+                    slack
+                    # cabybara js driver
+                    chromedriver
+                    chromium
+                    # psych(ruby-lsp)
+                    libyaml
+                  ];
+
+                  languages = {
+                    javascript = {
+                      enable = true;
+                      package = pkgs.nodejs_18;
+                      yarn.enable = true;
+                    };
+
+                    python = {
+                      enable = true;
+                      package = pkgs.python310;
+                      venv.enable = true;
+                    };
+
+                    ruby = {
+                      enable = true;
+                      package = pkgs.ruby;
+                    };
+                  };
+
+                  services = {
+                    redis = {
+                      enable = true;
+                      package = pkgs.redis;
+                    };
+
+                    postgres = {
+                      enable = true;
+                      package = pkgs.postgresql_12;
+                      initialDatabases = [
+                        {name = "split_development";}
+                        {name = "split_test";}
+                      ];
+                      initialScript = ''
+                        CREATE USER postgres SUPERUSER;
+                      '';
+
+                    };
+                  };
+                }
+              ];
+            };
+          });
+    };
 }
