@@ -155,4 +155,22 @@
       };
     };
   };
+
+  xdg = {
+    portal = {
+      enable = true;
+      config = {
+        common = {
+          default = [
+            "hyprland"
+            "gtk" # fallback for things hyprland portal doesn't support
+          ];
+        };
+      };
+
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+      ];
+    };
+  };
 }
