@@ -34,11 +34,11 @@
             "hyprland/workspaces" # active workspaces
           ];
           modules-center = [
-            "hyprland/window" # active window
+            "clock"
           ];
           modules-right = [
             "temperature"
-            "clock"
+            "pulseaudio" # sound
             "tray" # system tray
           ];
         };
