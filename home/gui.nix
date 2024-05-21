@@ -3,6 +3,17 @@
   lib,
   ...
 }: {
+  home = {
+    packages = [
+      pkgs.slack # messenger
+    ];
+
+    sessionVariables = {
+      # default nix electron apps to use wayland
+      NIXOS_OZONE_WL = 1;
+    };
+  };
+
   programs = {
     # terminal
     kitty.enable = true;
