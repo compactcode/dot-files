@@ -93,13 +93,13 @@
           ./hardware/disko/pheonix.nix
           ./modules/desktop-hyprland.nix
           home-manager.nixosModules.home-manager
+          stylix.nixosModules.stylix
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.shandogs = {
               imports = [
                 nixvim.homeManagerModules.nixvim
-                stylix.homeManagerModules.stylix
                 inputs._1password-shell-plugins.hmModules.default
                 ./home/cli.nix
                 ./home/gui.nix

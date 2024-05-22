@@ -53,18 +53,7 @@
   services = {
     # notifications
     mako.enable = true;
-  };
 
-  # automatic theming
-  stylix = {
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
-    fonts = {
-      emoji = {
-        package = pkgs.nerdfonts.override {fonts = ["SourceCodePro"];};
-        name = "Source Code Pro";
-      };
-    };
-    image = ./wallpaper/mountain.jpg;
   };
 
   # window manager
