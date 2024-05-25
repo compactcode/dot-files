@@ -51,6 +51,9 @@
         target = "hyprland-session.target";
       };
     };
+
+    # pdf viewer
+    zathura.enable = true;
   };
 
   services = {
@@ -151,7 +154,7 @@
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "text/plain" = ["nvim.desktop"];
+        "application/pdf" = ["zathura.desktop"];
         "image/gif" = ["imv.desktop"];
         "image/jpeg" = ["imv.desktop"];
         "image/png" = ["imv.desktop"];
@@ -159,6 +162,7 @@
         "image/tiff" = ["imv.desktop"];
         "image/webp" = ["imv.desktop"];
         "text/markdown" = ["nvim.desktop"];
+        "text/plain" = ["nvim.desktop"];
       };
     };
   };
