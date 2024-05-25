@@ -18,6 +18,15 @@
   gtk.enable = true;
 
   programs = {
+    # backup browser for websites that don't work in firefox
+    chromium = {
+      enable = true;
+      extensions = [
+        "aeblfdkhhhdcdjpifhhbdiojplfjncoa" # 1password
+        "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
+      ];
+    };
+
     # image viewer
     imv.enable = true;
 
