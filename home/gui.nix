@@ -15,6 +15,9 @@
   };
 
   programs = {
+    # image viewer
+    imv.enable = true;
+
     # terminal
     kitty.enable = true;
 
@@ -149,6 +152,12 @@
       enable = true;
       defaultApplications = {
         "text/plain" = ["nvim.desktop"];
+        "image/gif" = ["imv.desktop"];
+        "image/jpeg" = ["imv.desktop"];
+        "image/png" = ["imv.desktop"];
+        "image/svg+xml" = ["imv.desktop"];
+        "image/tiff" = ["imv.desktop"];
+        "image/webp" = ["imv.desktop"];
         "text/markdown" = ["nvim.desktop"];
       };
     };
