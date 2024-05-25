@@ -83,6 +83,12 @@
       enableZshIntegration = true;
     };
 
+    # file manager
+    yazi = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
     # smart cd with jumping
     zoxide = {
       enable = true;
