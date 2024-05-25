@@ -14,6 +14,9 @@
     };
   };
 
+  # gtk syles
+  gtk.enable = true;
+
   programs = {
     # image viewer
     imv.enable = true;
