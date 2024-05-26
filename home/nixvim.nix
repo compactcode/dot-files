@@ -11,8 +11,7 @@
       } # save all and exit
       {
         key = "S";
-        action = "function() require(\"flash\").treesitter() end";
-        lua = true;
+        action.__raw = "function() require(\"flash\").treesitter() end";
       } # select using treesitter
       {
         key = "<leader>t";
