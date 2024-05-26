@@ -178,8 +178,11 @@
         "image/svg+xml" = ["imv.desktop"];
         "image/tiff" = ["imv.desktop"];
         "image/webp" = ["imv.desktop"];
+        "text/html" = ["firefox.desktop"];
         "text/markdown" = ["nvim.desktop"];
         "text/plain" = ["nvim.desktop"];
+        "x-scheme-handler/http" = ["firefox.desktop"];
+        "x-scheme-handler/https" = ["firefox.desktop"];
       };
     };
   };
