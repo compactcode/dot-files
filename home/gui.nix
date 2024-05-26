@@ -88,6 +88,7 @@
 
         # applications
         "$mod, i, exec, rofi -show drun"
+        "$mod, b, exec, kitty yazi"
         "$mod, t, exec, kitty"
 
         # focused window actions
