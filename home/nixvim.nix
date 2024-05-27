@@ -16,11 +16,6 @@
         options = {desc = "select using treesitter";};
       }
       {
-        key = "<leader>t";
-        action = "<cmd>Telescope find_files<cr>";
-        options = {desc = "find files";};
-      }
-      {
         key = "<leader>ff";
         action = "<cmd>Telescope frecency<cr>";
         options = {desc = "find commonly edited files";};
@@ -44,6 +39,16 @@
         key = "<leader>fw";
         action = "<cmd>Telescope grep_string<cr>";
         options = {desc = "search project for current word";};
+      }
+      {
+        key = "<leader>o";
+        action = "<cmd>Oil<cr>";
+        options = {desc = "explore files";};
+      }
+      {
+        key = "<leader>t";
+        action = "<cmd>Telescope find_files<cr>";
+        options = {desc = "find files";};
       }
     ];
 
@@ -166,6 +171,9 @@
           pairs = {}; # auto close common pairs
         };
       };
+
+      # file explorer
+      oil.enable = true;
 
       treesitter = {
         enable = true;
