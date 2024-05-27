@@ -167,8 +167,9 @@
       mini = {
         enable = true;
         modules = {
-          comment = {}; # comment toggle
-          pairs = {}; # auto close common pairs
+          comment = {}; # comment lines
+          pairs = {}; # auto pairs
+          surround = {}; # surround actions
         };
       };
 
