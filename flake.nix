@@ -81,7 +81,9 @@
           disko.nixosModules.disko
           ./hardware/pheonix.nix
           ./hardware/disko/pheonix.nix
-          ./modules/desktop-hyprland.nix
+          ./modules/core.nix
+          ./modules/desktop/core.nix
+          ./modules/desktop/hyprland.nix
           ./modules/work/zepto.nix
           home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
