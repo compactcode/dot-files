@@ -5,8 +5,9 @@
 }: {
   home = {
     packages = [
-      pkgs.slack # messenger
+      pkgs.bruno # api explorer
       pkgs.obsidian # document manager
+      pkgs.slack # messenger
       pkgs.vesktop # voice chat (discord)
     ];
 
