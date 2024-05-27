@@ -8,23 +8,43 @@
       {
         key = "Q";
         action = "<cmd>wa<cr>ZZ";
-      } # save all and exit
+        options = {desc = "save all and exit";};
+      }
       {
         key = "S";
         action.__raw = "function() require(\"flash\").treesitter() end";
-      } # select using treesitter
+        options = {desc = "select using treesitter";};
+      }
       {
         key = "<leader>t";
         action = "<cmd>Telescope find_files<cr>";
-      } # open any file
+        options = {desc = "find files";};
+      }
       {
         key = "<leader>ff";
         action = "<cmd>Telescope frecency<cr>";
-      } # open recent file
+        options = {desc = "find commonly edited files";};
+      }
+      {
+        key = "<leader>fg";
+        action = "<cmd>Telescope git_files<cr>";
+        options = {desc = "find files (hidden)";};
+      }
+      {
+        key = "<leader>fo";
+        action = "<cmd>Telescope oldfiles<cr>";
+        options = {desc = "find last edited files";};
+      }
       {
         key = "<leader>fs";
         action = "<cmd>Telescope live_grep<cr>";
-      } # search files
+        options = {desc = "search project";};
+      }
+      {
+        key = "<leader>fw";
+        action = "<cmd>Telescope grep_string<cr>";
+        options = {desc = "search project for current word";};
+      }
     ];
 
     opts = {
@@ -174,6 +194,9 @@
           };
         };
       };
+
+      # key binding menu
+      which-key.enable = true;
     };
   };
 }
