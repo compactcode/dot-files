@@ -16,6 +16,11 @@
         options = {desc = "select using treesitter";};
       }
       {
+        key = "<leader>d";
+        action = "<cmd>Telescope lsp_definitions<cr>";
+        options = {desc = "goto definition";};
+      }
+      {
         key = "<leader>ff";
         action = "<cmd>Telescope frecency<cr>";
         options = {desc = "find commonly edited files";};
@@ -39,6 +44,11 @@
         key = "<leader>fw";
         action = "<cmd>Telescope grep_string<cr>";
         options = {desc = "search project for current word";};
+      }
+      {
+        key = "<leader>la";
+        action = "<cmd>lua vim.lsp.buf.code_action()<cr>";
+        options = {desc = "code actions";};
       }
       {
         key = "<leader>o";
