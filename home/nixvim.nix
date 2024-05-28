@@ -2,6 +2,10 @@
   programs.nixvim = {
     enable = true;
 
+    # disable unused providers
+    withRuby = false;
+    withNodeJs = false;
+
     globals.mapleader = " ";
 
     keymaps = [
