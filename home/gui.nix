@@ -91,8 +91,8 @@
         "$mod, e, exec, ~/.local/share/focusOrStart 3 kitty kitty"
         "$mod, n, exec, ~/.local/share/focusOrStart 1 firefox firefox"
         "$mod, o, exec, ~/.local/share/focusOrStart 4 obsidian obsidian"
+        "$mod, r, exec, ~/.local/share/focusOrStart 5 Slack slack"
         "$mod, s, exec, ~/.local/share/focusOrStart 2 kitty kitty"
-        "$mod, s, exec, ~/.local/share/focusOrStart 5 Slack slack"
 
         # applications
         "$mod, i, exec, rofi -show drun"
