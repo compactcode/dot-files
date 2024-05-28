@@ -67,6 +67,12 @@
       expandtab = true; # convert tabs to spaces
       ignorecase = true; # ignore case by default
       foldenable = false; # disable code folding
+      list = true; # enable listchars
+      listchars = {
+        nbsp = "+"; # display non breaking spaces
+        tab = ">~"; # display tabs
+        trail = "·"; # display any trailing spaces
+      };
       number = true; # show line numbers
       shiftwidth = 2; # use 2 spaces for tab
       smartcase = true; # don't ignore case if a capital is typed
