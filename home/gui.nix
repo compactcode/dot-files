@@ -87,10 +87,11 @@
 
       bind = [
         # applications tied to particular workspaces
-        "$mod, e, exec, ~/.local/share/focusOrStart 2 kitty kitty"
         "$mod, d, exec, ~/.local/share/focusOrStart 5 vesktop vesktop"
+        "$mod, e, exec, ~/.local/share/focusOrStart 3 kitty kitty"
         "$mod, n, exec, ~/.local/share/focusOrStart 1 firefox firefox"
         "$mod, o, exec, ~/.local/share/focusOrStart 4 obsidian obsidian"
+        "$mod, s, exec, ~/.local/share/focusOrStart 2 kitty kitty"
         "$mod, s, exec, ~/.local/share/focusOrStart 5 Slack slack"
 
         # applications
