@@ -16,7 +16,7 @@
       }
       {
         key = "S";
-        action.__raw = "function() require(\"flash\").treesitter() end";
+        action = "<cmd>lua require(\"flash\").treesitter()<cr>";
         options = {desc = "select using treesitter";};
       }
       {
@@ -58,6 +58,11 @@
         key = "<leader>o";
         action = "<cmd>Oil<cr>";
         options = {desc = "explore files";};
+      }
+      {
+        key = "<leader>s";
+        action = "<cmd>lua require(\"spectre\").open()<cr>";
+        options = {desc = "search and replace";};
       }
       {
         key = "<leader>t";
@@ -198,6 +203,9 @@
 
       # file explorer
       oil.enable = true;
+
+      # search and replace
+      spectre.enable = true;
 
       treesitter = {
         enable = true;
