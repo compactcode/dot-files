@@ -66,6 +66,7 @@
       backup = false; # disable file versioning
       expandtab = true; # convert tabs to spaces
       ignorecase = true; # ignore case by default
+      foldenable = false; # disable code folding
       number = true; # show line numbers
       shiftwidth = 2; # use 2 spaces for tab
       smartcase = true; # don't ignore case if a capital is typed
