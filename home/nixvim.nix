@@ -147,6 +147,12 @@
 
       lsp = {
         enable = true;
+        enabledServers = [
+          {
+            name = "ruby_lsp";
+            extraOptions = {};
+          }
+        ];
         servers = {
           nixd = {
             enable = true;
