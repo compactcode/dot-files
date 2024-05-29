@@ -50,23 +50,35 @@
       settings = {
         mainBar = {
           layer = "top"; # display on top of other windows
+
           modules-left = [
             "hyprland/workspaces" # active workspaces
+            "hyprland/submap" # active keybind mode
           ];
           modules-center = [
             "clock"
           ];
           modules-right = [
             "temperature"
+            "network"
             "pulseaudio" # sound
             "tray" # system tray
           ];
+
+          clock = {
+            format = "{:%H.%M}";
+            tooltip = true;
+            tooltip-format = "{:%d.%m.%Y}";
+          };
+
+          network = {
+            interval = 10;
+            format = "{bandwidthUpBytes} {bandwidthDownBytes}";
+          };
         };
       };
-      systemd = {
-        enable = true;
-        target = "hyprland-session.target";
-      };
+
+      systemd.enable = true;
     };
 
     # pdf viewer
