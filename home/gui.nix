@@ -127,6 +127,18 @@
         "$mod+Shift, 9, movetoworkspace, 9"
       ];
 
+      decoration = {
+        rounding = 5;
+      };
+
+      general = {
+        gaps_out = 15;
+      };
+
+      misc = {
+        disable_splash_rendering = true;
+      };
+
       windowrulev2 = [
         "workspace 5, class:^(Slack)$"
         "workspace 9, class:^(steam)$"

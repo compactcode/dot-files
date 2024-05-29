@@ -25,6 +25,14 @@
     };
   };
 
+  # automatic theming
+  stylix = {
+    opacity = {
+      applications = 0.9;
+      terminal = 0.9;
+    };
+  };
+
   systemd = {
     # dont block boot waiting for networking
     services.NetworkManager-wait-online.enable = false;
