@@ -76,7 +76,6 @@
   services = {
     # notifications
     mako.enable = true;
-
   };
 
   # window manager
@@ -103,12 +102,6 @@
         "$mod, f, fullscreen,"
         "$mod, w, togglefloating,"
         "$mod, q, killactive,"
-
-        # focus windows
-        "$mod, left, movefocus, l"
-        "$mod, right, movefocus, r"
-        "$mod, up, movefocus, u"
-        "$mod, down, movefocus, d"
 
         # open workspaces
         "$mod, TAB, workspace, previous"
@@ -139,6 +132,35 @@
         "workspace 9, class:^(steam)$"
       ];
     };
+
+    extraConfig = ''
+      bind = $mod, u, submap, motions
+
+      submap = motions
+
+      # focus windows
+      bind = , left, movefocus, l
+      bind = , right, movefocus, r
+      bind = , up, movefocus, u
+      bind = , down, movefocus, d
+
+      # resize windows
+      binde = CTRL, right, resizeactive, 10 0
+      binde = CTRL, left, resizeactive, -10 0
+      binde = CTRL, up, resizeactive, 0 -10
+      binde = CTRL, down, resizeactive, 0 10
+
+      # move windows
+      bind = SHIFT, left, movewindow, l
+      bind = SHIFT, right, movewindow, r
+      bind = SHIFT, up, movewindow, u
+      bind = SHIFT, down, movewindow, d
+
+      bind = , escape, submap, reset
+
+      submap = reset
+    '';
+
     # hyprland-session.target
     systemd.enable = true;
   };
