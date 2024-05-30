@@ -9,6 +9,7 @@
       pkgs.grimblast # screenshot taker
       pkgs.obsidian # document manager
       pkgs.pinta # image editor
+      pkgs.pavucontrol # sound manager
       pkgs.slack # messenger
       pkgs.vesktop # voice chat (discord)
     ];
