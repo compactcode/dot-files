@@ -6,7 +6,9 @@
   home = {
     packages = [
       pkgs.bruno # api explorer
+      pkgs.grimblast # screenshot taker
       pkgs.obsidian # document manager
+      pkgs.pinta # image editor
       pkgs.slack # messenger
       pkgs.vesktop # voice chat (discord)
     ];
@@ -16,6 +18,8 @@
       NIXOS_OZONE_WL = 1;
       # default obsidian to use wayland
       OBSIDIAN_USE_WAYLAND = 1;
+      # send grimblast screenshots to pinta
+      GRIMBLAST_EDITOR = "pinta";
     };
   };
 
@@ -109,6 +113,7 @@
         "$mod, i, exec, rofi -show drun"
         "$mod, b, exec, kitty yazi"
         "$mod, t, exec, kitty"
+        "$mod, p, exec, grimblast edit area"
 
         # focused window actions
         "$mod, f, fullscreen,"
@@ -234,6 +239,12 @@
         "x-scheme-handler/http" = ["firefox.desktop"];
         "x-scheme-handler/https" = ["firefox.desktop"];
       };
+    };
+
+    # create default desktop directories
+    userDirs = {
+      enable = true;
+      createDirectories = true;
     };
   };
 }
