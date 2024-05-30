@@ -31,12 +31,35 @@
   # automatic theming
   stylix = {
     base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
+
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 24;
+    };
+
     fonts = {
       emoji = {
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Color Emoji";
+      };
+
+      monospace = {
         package = pkgs.nerdfonts.override {fonts = ["SourceCodePro"];};
-        name = "Source Code Pro";
+        name = "Sauce Code Pro Nerd Font";
+      };
+
+      sansSerif = {
+        package = pkgs.rubik;
+        name = "Rubik";
+      };
+
+      serif = {
+        package = pkgs.noto-fonts;
+        name = "Noto Serif";
       };
     };
+
     image = ./wallpaper/mountain.jpg;
   };
 
