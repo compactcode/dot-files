@@ -121,6 +121,7 @@
         bers = "bundle exec rails server";
         bi = "bundle install";
         bu = "bundle update";
+        f = "fzf";
         g = "${pkgs.git}/bin/git";
         ga = "${pkgs.git}/bin/git add";
         gars = "${pkgs.git}/bin/git add . && git reset --hard";
@@ -134,10 +135,10 @@
         glg = "${pkgs.git}/bin/git log --stat";
         glr = "${pkgs.git}/bin/git pull --rebase";
         gpo = "${pkgs.git}/bin/git push origin \"$(git symbolic-ref --short HEAD)\"";
+        gr = "grep";
         grh = "${pkgs.git}/bin/git reset HEAD";
         grm = "${pkgs.git}/bin/git rm";
         gs = "${pkgs.git}/bin/git status";
-        j = "z";
         l = "${pkgs.eza}/bin/eza -la --icons --no-permissions --no-user";
         la = "${pkgs.eza}/bin/eza -la";
         lg = "${pkgs.lazygit}/bin/lazygit";
@@ -145,6 +146,7 @@
         lt = "${pkgs.eza}/bin/eza -l --tree";
         md = "mkdir -p";
         o = "xdg-open";
+        y = "yazi";
         v = "nvim";
       };
 
