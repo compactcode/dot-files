@@ -55,6 +55,7 @@
       settings = {
         mainBar = {
           layer = "top"; # display on top of other windows
+          spacing = 5;
 
           modules-left = [
             "hyprland/workspaces" # active workspaces
@@ -77,8 +78,30 @@
           };
 
           network = {
+            format = "{bandwidthUpBytes} {bandwidthDownBytes} 󰈀";
             interval = 10;
-            format = "{bandwidthUpBytes} {bandwidthDownBytes}";
+          };
+
+          pulseaudio = {
+            format = "{volume}% {icon} {format_source}";
+            format-muted = "󰝟 {format_source}";
+            format-icons = {
+              headphone = "󰋋";
+              muted-icon = "󰝟";
+              default = ["󰕿" "󰖀" "󰕾"];
+            };
+            format-source = "{volume}% 󰍬";
+            format-source-muted = " 󰍭";
+            on-click = "pavucontrol";
+            scroll-step = 5;
+          };
+
+          temperature = {
+            format = "{temperatureC}°C 󰻠";
+          };
+
+          tray = {
+            spacing = 5;
           };
         };
       };
