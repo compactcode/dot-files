@@ -257,6 +257,7 @@
         "image/svg+xml" = ["imv.desktop"];
         "image/tiff" = ["imv.desktop"];
         "image/webp" = ["imv.desktop"];
+        "inode/directory" = ["yazi.desktop"];
         "text/html" = ["firefox.desktop"];
         "text/markdown" = ["nvim.desktop"];
         "text/plain" = ["nvim.desktop"];
