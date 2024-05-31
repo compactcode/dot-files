@@ -1,4 +1,26 @@
 {pkgs, ...}: {
+  environment = {
+    systemPackages = with pkgs; [
+      bruno # api explorer
+      grimblast # screenshot taker
+      obsidian # document manager
+      pavucontrol # sound manager
+      pinta # image editor
+      slack # messenger
+      vesktop # voice chat (discord)
+      wl-clipboard # clipboard interaction
+    ];
+
+    sessionVariables = {
+      # default nix electron apps to use wayland
+      NIXOS_OZONE_WL = 1;
+      # default obsidian to use wayland
+      OBSIDIAN_USE_WAYLAND = 1;
+      # send grimblast screenshots to pinta
+      GRIMBLAST_EDITOR = "pinta";
+    };
+  };
+
   programs = {
     # password manager
     _1password.enable = true;

@@ -1,10 +1,4 @@
 {pkgs, ...}: {
-  environment = {
-    systemPackages = with pkgs; [
-      wl-clipboard # clipboard interaction
-    ];
-  };
-
   programs = {
     # window manager
     hyprland.enable = true;

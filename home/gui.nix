@@ -3,27 +3,6 @@
   lib,
   ...
 }: {
-  home = {
-    packages = [
-      pkgs.bruno # api explorer
-      pkgs.grimblast # screenshot taker
-      pkgs.obsidian # document manager
-      pkgs.pinta # image editor
-      pkgs.pavucontrol # sound manager
-      pkgs.slack # messenger
-      pkgs.vesktop # voice chat (discord)
-    ];
-
-    sessionVariables = {
-      # default nix electron apps to use wayland
-      NIXOS_OZONE_WL = 1;
-      # default obsidian to use wayland
-      OBSIDIAN_USE_WAYLAND = 1;
-      # send grimblast screenshots to pinta
-      GRIMBLAST_EDITOR = "pinta";
-    };
-  };
-
   # gtk syles
   gtk.enable = true;
 
@@ -157,7 +136,7 @@
         "$mod, i, exec, rofi -show drun"
         "$mod, b, exec, kitty yazi"
         "$mod, t, exec, kitty"
-        "$mod, p, exec, grimblast edit area"
+        "$mod, p, exec, grimblast --notify edit area"
 
         # focused window actions
         "$mod, f, fullscreen,"
