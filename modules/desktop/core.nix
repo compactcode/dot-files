@@ -83,6 +83,12 @@
     };
 
     image = ./wallpaper/space.jpg;
+
+    # dark mode
+    polarity = "dark";
+
+    # force gnome styling so that electron apps can detect system theme
+    targets.gnome.enable = true;
   };
 
   systemd = {
