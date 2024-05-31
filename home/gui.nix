@@ -109,6 +109,9 @@
       systemd.enable = true;
     };
 
+    # wallpapers
+    wpaperd.enable = true;
+
     # pdf viewer
     zathura.enable = true;
   };
@@ -116,6 +119,23 @@
   services = {
     # notifications
     mako.enable = true;
+  };
+
+  systemd = {
+    user.services = {
+      # start wallpaper service when a desktop is launched
+      wpaperd = {
+        Unit = {
+          Description = "wallpaper daemon";
+          PartOf = ["graphical-session.target"];
+        };
+        Service = {
+          ExecStart = "${lib.getExe pkgs.wpaperd}";
+          Restart = "on-failure";
+        };
+        Install.WantedBy = ["graphical-session.target"];
+      };
+    };
   };
 
   # window manager
@@ -177,6 +197,7 @@
       };
 
       misc = {
+        disable_hyprland_logo = true;
         disable_splash_rendering = true;
       };
 
