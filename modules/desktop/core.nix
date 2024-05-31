@@ -30,7 +30,7 @@
 
   # automatic theming
   stylix = {
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
     cursor = {
       package = pkgs.bibata-cursors;
@@ -60,7 +60,7 @@
       };
     };
 
-    image = ./wallpaper/mountain.jpg;
+    image = ./wallpaper/space.jpg;
   };
 
   systemd = {
