@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   programs.nixvim = {
     enable = true;
 
@@ -99,7 +103,7 @@
         };
         formatters = {
           alejandra = {
-            command = "${pkgs.alejandra}/bin/alejandra";
+            command = "${lib.getExe pkgs.alejandra}";
           };
         };
         formattersByFt = {

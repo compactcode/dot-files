@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   environment = {
     systemPackages = with pkgs; [
       bruno # api explorer
@@ -101,7 +105,7 @@
         after = ["graphical-session.target"];
         serviceConfig = {
           Type = "simple";
-          ExecStart = "${pkgs._1password-gui}/bin/1password --silent";
+          ExecStart = "${lib.getExe' pkgs._1password-gui "1password"} --silent";
         };
       };
     };

@@ -41,7 +41,7 @@
     fzf = {
       enable = true;
       enableZshIntegration = true;
-      defaultCommand = "${lib.getBin pkgs.fd}/bin/fd --type f";
+      defaultCommand = "${lib.getExe pkgs.fd} --type f";
       defaultOptions = ["--reverse" "--height 40%"];
     };
 
@@ -114,39 +114,38 @@
       autosuggestion.enable = true;
 
       shellAliases = {
-        b = "${pkgs.bat}/bin/bat";
+        b = "${lib.getExe pkgs.bat}";
         be = "bundle exec";
         ber = "bundle exec rspec";
         berc = "bundle exec rails console";
         bers = "bundle exec rails server";
         bi = "bundle install";
         bu = "bundle update";
-        f = "fzf";
-        g = "${pkgs.git}/bin/git";
-        ga = "${pkgs.git}/bin/git add";
-        gars = "${pkgs.git}/bin/git add . && git reset --hard";
-        gc = "${pkgs.git}/bin/git commit";
-        gca = "${pkgs.git}/bin/git commit --amend";
-        gcm = "${pkgs.git}/bin/git commit -m";
-        gco = "${pkgs.git}/bin/git checkout";
-        gcp = "${pkgs.git}/bin/git cherry-pick";
-        gd = "${pkgs.git}/bin/git diff";
-        gdc = "${pkgs.git}/bin/git diff --cached";
-        glg = "${pkgs.git}/bin/git log --stat";
-        glr = "${pkgs.git}/bin/git pull --rebase";
-        gpo = "${pkgs.git}/bin/git push origin \"$(git symbolic-ref --short HEAD)\"";
-        gr = "grep";
-        grh = "${pkgs.git}/bin/git reset HEAD";
-        grm = "${pkgs.git}/bin/git rm";
-        gs = "${pkgs.git}/bin/git status";
-        l = "${pkgs.eza}/bin/eza -la --icons --no-permissions --no-user";
-        la = "${pkgs.eza}/bin/eza -la";
-        lg = "${pkgs.lazygit}/bin/lazygit";
-        ll = "${pkgs.eza}/bin/eza -la --icons";
-        lt = "${pkgs.eza}/bin/eza -l --tree";
-        md = "mkdir -p";
-        o = "xdg-open";
-        y = "yazi";
+        f = "${lib.getExe pkgs.fzf}";
+        g = "${lib.getExe pkgs.git}";
+        ga = "${lib.getExe pkgs.git} add";
+        gars = "${lib.getExe pkgs.git} add . && git reset --hard";
+        gc = "${lib.getExe pkgs.git} commit";
+        gca = "${lib.getExe pkgs.git} commit --amend";
+        gcm = "${lib.getExe pkgs.git} commit -m";
+        gco = "${lib.getExe pkgs.git} checkout";
+        gcp = "${lib.getExe pkgs.git} cherry-pick";
+        gd = "${lib.getExe pkgs.git} diff";
+        gdc = "${lib.getExe pkgs.git} diff --cached";
+        glg = "${lib.getExe pkgs.git} log --stat";
+        glr = "${lib.getExe pkgs.git} pull --rebase";
+        gpo = "${lib.getExe pkgs.git} push origin \"$(git symbolic-ref --short HEAD)\"";
+        grh = "${lib.getExe pkgs.git} reset HEAD";
+        grm = "${lib.getExe pkgs.git} rm";
+        gs = "${lib.getExe pkgs.git} status";
+        l = "${lib.getExe pkgs.eza} -la --icons --no-permissions --no-user";
+        la = "${lib.getExe pkgs.eza} -la";
+        lg = "${lib.getExe pkgs.lazygit}";
+        ll = "${lib.getExe pkgs.eza} -la --icons";
+        lt = "${lib.getExe pkgs.eza} -l --tree";
+        md = "${lib.getExe' pkgs.coreutils "mkdir"} -p";
+        o = "${lib.getExe' pkgs.xdg-utils "xdg-open"}";
+        y = "${lib.getExe pkgs.yazi}";
         v = "nvim";
       };
 

@@ -226,14 +226,14 @@
         text = ''
           #!/bin/sh
 
-          address=$(hyprctl clients -j | jq -r ".[] | select(.workspace.id == $1) | select(.class == \"$2\") | .address")
+          address=$(hyprctl clients -j | ${lib.getExe pkgs.jq} -r ".[] | select(.workspace.id == $1) | select(.class == \"$2\") | .address")
 
-          hyprctl dispatch workspace $1
+          ${lib.getExe' pkgs.hyprland "hyprctl"} dispatch workspace $1
 
           if [[ $address == "" ]]; then
             $3
           else
-            hyprctl dispatch focuswindow address:$address
+            ${lib.getExe' pkgs.hyprland "hyprctl"} dispatch focuswindow address:$address
           fi
         '';
       };
@@ -241,7 +241,7 @@
 
     desktopEntries.nvim = {
       categories = ["Utility" "TextEditor"];
-      exec = "${lib.getBin pkgs.kitty}/bin/kitty -e nvim";
+      exec = "${lib.getExe pkgs.kitty} -e nvim";
       genericName = "Text Editor";
       icon = "nvim";
       name = "Neovim";

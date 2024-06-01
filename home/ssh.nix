@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   sshKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDPCP4SqkSwxkX9dkk36idNz7wCtXfa84hwkkflJVuDF";
 in {
   # allow signing commits with our ssh key
@@ -14,7 +18,7 @@ in {
         gpg = {
           ssh = {
             allowedSignersFile = "~/.ssh/allowed_signers";
-            program = "${pkgs._1password-gui}/bin/op-ssh-sign";
+            program = "${lib.getExe' pkgs._1password-gui "op-ssh-sign"}";
           };
           format = "ssh";
         };
