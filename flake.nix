@@ -133,16 +133,35 @@
         inherit system pkgs;
 
         modules = [
+          disko.nixosModules.disko
           ./hardware/prophet.nix
-          ./modules/desktop.nix
+          ./hardware/disko/prophet.nix
+          ./modules/core.nix
+          ./modules/desktop/core.nix
+          ./modules/desktop/hyprland.nix
+          ./modules/work/zepto.nix
           home-manager.nixosModules.home-manager
+          stylix.nixosModules.stylix
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.shandogs = {
               imports = [
-                ./modules/desktop-home.nix
+                nixvim.homeManagerModules.nixvim
+                inputs._1password-shell-plugins.hmModules.default
+                ./home/cli.nix
+                ./home/gui.nix
+                ./home/nixvim.nix
+                ./home/ssh.nix
               ];
+
+              home = {
+                stateVersion = "24.05";
+              };
+            };
+
+            system = {
+              stateVersion = "24.05";
             };
           }
         ];
