@@ -52,6 +52,15 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   programs = {
+    # nix helper
+    nh = {
+      enable = true;
+      # automatic garbage collection
+      clean.enable = true;
+      # TODO: find a less hacky way to set this
+      flake = "/home/shandogs/Code/personal/dot-files";
+    };
+
     # user shell
     zsh.enable = true;
   };
