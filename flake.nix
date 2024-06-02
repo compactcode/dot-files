@@ -81,10 +81,10 @@
                 ./home/ssh.nix
               ];
 
-              home = {
-                stateVersion = "23.11";
-              };
+              home.stateVersion = "23.11";
             };
+
+            system.stateVersion = "23.11";
           }
         ];
       };
@@ -136,14 +136,10 @@
                 ./home/ssh.nix
               ];
 
-              home = {
-                stateVersion = "24.05";
-              };
+              home.stateVersion = "24.05";
             };
 
-            system = {
-              stateVersion = "24.05";
-            };
+            system.stateVersion = "24.05";
           }
         ];
       };

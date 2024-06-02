@@ -33,7 +33,4 @@
 
   # set a hostname
   networking.hostName = "pheonix";
-
-  # the version this machine was created with
-  system.stateVersion = "23.11";
 }
