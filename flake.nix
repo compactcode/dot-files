@@ -50,7 +50,7 @@
       config.allowUnfree = true;
 
       overlays = [
-        neovim-nightly-overlay.overlay
+        neovim-nightly-overlay.overlays.default
       ];
     };
   in {

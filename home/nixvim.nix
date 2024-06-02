@@ -136,6 +136,8 @@
 
       flash = {
         enable = true;
+        # add jump labels to the default search
+        modes.search.enabled = true;
       };
 
       friendly-snippets = {
