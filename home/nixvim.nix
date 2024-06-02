@@ -153,14 +153,16 @@
         enable = true;
         enabledServers = [
           {
+            # ruby, installed per project
             name = "ruby_lsp";
             extraOptions = {};
           }
         ];
         servers = {
-          nixd = {
-            enable = true;
-          };
+          # bash
+          bashls.enable = true;
+          # nix
+          nixd.enable = true;
         };
       };
 
