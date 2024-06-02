@@ -72,7 +72,15 @@
     jq.enable = true;
 
     # git ui
-    lazygit.enable = true;
+    lazygit = {
+      enable = true;
+      settings = {
+        git = {
+          # annoying as it prompts for authentication
+          autoFetch = false;
+        };
+      };
+    };
 
     # grep replacement
     ripgrep.enable = true;
