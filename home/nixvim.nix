@@ -14,11 +14,6 @@
 
     keymaps = [
       {
-        key = "Q";
-        action = "<cmd>wa<cr>ZZ";
-        options = {desc = "save all and exit";};
-      }
-      {
         key = "S";
         action = "<cmd>lua require(\"flash\").treesitter()<cr>";
         options = {desc = "select using treesitter";};
@@ -72,6 +67,16 @@
         key = "<leader>t";
         action = "<cmd>Telescope find_files<cr>";
         options = {desc = "find files";};
+      }
+      {
+        key = "<leader>w";
+        action = "<cmd>w<cr>";
+        options = {desc = "save file";};
+      }
+      {
+        key = "<leader>q";
+        action = "<cmd>wa<cr>ZZ";
+        options = {desc = "save all and exit";};
       }
     ];
 
