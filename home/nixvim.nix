@@ -34,6 +34,11 @@
         options = {desc = "find last edited files";};
       }
       {
+        key = "<leader>fr";
+        action = "<cmd>Telescope resume<cr>";
+        options = {desc = "resume last search";};
+      }
+      {
         key = "<leader>fs";
         action = "<cmd>Telescope live_grep<cr>";
         options = {desc = "search project";};
