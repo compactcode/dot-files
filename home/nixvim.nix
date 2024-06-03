@@ -243,6 +243,8 @@
         };
         settings = {
           defaults = {
+            # the colors are distracting and not very useful
+            color_devicons = false;
             mappings = {
               i = {
                 "<C-n>" = "move_selection_next";
