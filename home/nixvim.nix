@@ -14,6 +14,30 @@
 
     keymaps = [
       {
+        key = "<c-n>";
+        action = "<Plug>(YankyPreviousEntry)";
+        mode = ["n"];
+        options = {desc = "cycle to previous yanky entry";};
+      }
+      {
+        key = "<c-e>";
+        action = "<Plug>(YankyNextEntry)";
+        mode = ["n"];
+        options = {desc = "cycle to next yanky entry";};
+      }
+      {
+        key = "p";
+        action = "<Plug>(YankyPutAfter)";
+        mode = ["n" "x"];
+        options = {desc = "paste using yanky";};
+      }
+      {
+        key = "P";
+        action = "<Plug>(YankyPutBefore)";
+        mode = ["n" "x"];
+        options = {desc = "paste using yanky";};
+      }
+      {
         key = "S";
         action = "<cmd>lua require(\"flash\").treesitter()<cr>";
         options = {desc = "select using treesitter";};
@@ -59,6 +83,11 @@
         options = {desc = "explore files";};
       }
       {
+        key = "<leader>p";
+        action = "<cmd>Telescope yank_history<cr>";
+        options = {desc = "paste from history";};
+      }
+      {
         key = "<leader>s";
         action = "<cmd>lua require(\"spectre\").open()<cr>";
         options = {desc = "search and replace";};
@@ -72,6 +101,11 @@
         key = "<leader>w";
         action = "<cmd>w<cr>";
         options = {desc = "save file";};
+      }
+      {
+        key = "<leader>y";
+        action = "\"+y";
+        options = {desc = "copy to system clipboard";};
       }
       {
         key = "<leader>q";
@@ -270,6 +304,15 @@
               find_command = ["fd" "--type" "f" "--hidden"];
             };
           };
+        };
+      };
+
+      # clipboard manager
+      yanky = {
+        enable = true;
+        # enable telescope ingegration
+        picker = {
+          telescope.enable = true;
         };
       };
 
