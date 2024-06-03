@@ -8,12 +8,12 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    home-manager = {
-      url = "github:nix-community/home-manager";
+    flakelight = {
+      url = "github:nix-community/flakelight";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
+    home-manager = {
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
@@ -33,116 +33,96 @@
     };
   };
 
-  outputs = inputs @ {
-    disko,
-    home-manager,
-    neovim-nightly-overlay,
-    nixpkgs,
-    nixvim,
-    stylix,
-    ...
-  }: let
-    system = "x86_64-linux";
+  outputs = {flakelight, ...} @ inputs:
+    flakelight.lib.mkFlake ./. {
+      nixpkgs.config = {allowUnfree = true;};
 
-    pkgs = import nixpkgs {
-      inherit system;
+      nixosConfigurations = {
+        pheonix = {
+          system = "x86_64-linux";
+          modules = [
+            inputs.disko.nixosModules.disko
+            ./hardware/pheonix.nix
+            ./hardware/disko/pheonix.nix
+            ./modules/core.nix
+            ./modules/desktop/core.nix
+            ./modules/desktop/hyprland.nix
+            ./modules/work/zepto.nix
+            inputs.home-manager.nixosModules.home-manager
+            inputs.stylix.nixosModules.stylix
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.shandogs = {
+                imports = [
+                  inputs.nixvim.homeManagerModules.nixvim
+                  inputs._1password-shell-plugins.hmModules.default
+                  ./home/cli.nix
+                  ./home/gui.nix
+                  ./home/nixvim.nix
+                  ./home/ssh.nix
+                ];
 
-      config.allowUnfree = true;
+                home.stateVersion = "23.11";
+              };
 
-      overlays = [
-        neovim-nightly-overlay.overlays.default
-      ];
-    };
-  in {
-    nixosConfigurations = {
-      pheonix = nixpkgs.lib.nixosSystem {
-        inherit system pkgs;
+              system.stateVersion = "23.11";
+            }
+          ];
+        };
 
-        modules = [
-          disko.nixosModules.disko
-          ./hardware/pheonix.nix
-          ./hardware/disko/pheonix.nix
-          ./modules/core.nix
-          ./modules/desktop/core.nix
-          ./modules/desktop/hyprland.nix
-          ./modules/work/zepto.nix
-          home-manager.nixosModules.home-manager
-          stylix.nixosModules.stylix
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.shandogs = {
-              imports = [
-                nixvim.homeManagerModules.nixvim
-                inputs._1password-shell-plugins.hmModules.default
-                ./home/cli.nix
-                ./home/gui.nix
-                ./home/nixvim.nix
-                ./home/ssh.nix
-              ];
+        pudge = {
+          system = "x86_64-linux";
+          modules = [
+            ./hardware/pudge.nix
+            ./modules/server.nix
+            ./modules/server-automation.nix
+            ./modules/server-media.nix
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.shandogs = {
+                imports = [
+                  ./modules/server-home.nix
+                ];
+              };
+            }
+          ];
+        };
 
-              home.stateVersion = "23.11";
-            };
+        prophet = {
+          system = "x86_64-linux";
+          modules = [
+            inputs.disko.nixosModules.disko
+            ./hardware/prophet.nix
+            ./hardware/disko/prophet.nix
+            ./modules/core.nix
+            ./modules/desktop/core.nix
+            ./modules/desktop/hyprland.nix
+            ./modules/work/zepto.nix
+            inputs.home-manager.nixosModules.home-manager
+            inputs.stylix.nixosModules.stylix
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.shandogs = {
+                imports = [
+                  inputs.nixvim.homeManagerModules.nixvim
+                  inputs._1password-shell-plugins.hmModules.default
+                  ./home/cli.nix
+                  ./home/gui.nix
+                  ./home/nixvim.nix
+                  ./home/ssh.nix
+                ];
 
-            system.stateVersion = "23.11";
-          }
-        ];
-      };
+                home.stateVersion = "24.05";
+              };
 
-      pudge = nixpkgs.lib.nixosSystem {
-        inherit system pkgs;
-
-        modules = [
-          ./hardware/pudge.nix
-          ./modules/server.nix
-          ./modules/server-automation.nix
-          ./modules/server-media.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.shandogs = {
-              imports = [
-                ./modules/server-home.nix
-              ];
-            };
-          }
-        ];
-      };
-
-      prophet = nixpkgs.lib.nixosSystem {
-        inherit system pkgs;
-
-        modules = [
-          disko.nixosModules.disko
-          ./hardware/prophet.nix
-          ./hardware/disko/prophet.nix
-          ./modules/core.nix
-          ./modules/desktop/core.nix
-          ./modules/desktop/hyprland.nix
-          ./modules/work/zepto.nix
-          home-manager.nixosModules.home-manager
-          stylix.nixosModules.stylix
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.shandogs = {
-              imports = [
-                nixvim.homeManagerModules.nixvim
-                inputs._1password-shell-plugins.hmModules.default
-                ./home/cli.nix
-                ./home/gui.nix
-                ./home/nixvim.nix
-                ./home/ssh.nix
-              ];
-
-              home.stateVersion = "24.05";
-            };
-
-            system.stateVersion = "24.05";
-          }
-        ];
+              system.stateVersion = "24.05";
+            }
+          ];
+        };
       };
     };
-  };
 }
