@@ -29,11 +29,6 @@
         options = {desc = "find commonly edited files";};
       }
       {
-        key = "<leader>fg";
-        action = "<cmd>Telescope git_files<cr>";
-        options = {desc = "find files (hidden)";};
-      }
-      {
         key = "<leader>fo";
         action = "<cmd>Telescope oldfiles<cr>";
         options = {desc = "find last edited files";};
@@ -250,6 +245,23 @@
               };
             };
             sorting_strategy = "ascending";
+            # include hidden files by default
+            vimgrep_arguments = [
+              "rg"
+              "--color=never"
+              "--no-heading"
+              "--with-filename"
+              "--line-number"
+              "--column"
+              "--smart-case"
+              "--hidden"
+            ];
+          };
+          pickers = {
+            find_files = {
+              # include hidden files by default
+              find_command = ["fd" "--type" "f" "--hidden"];
+            };
           };
         };
       };
