@@ -91,7 +91,13 @@
     };
 
     # grep replacement
-    ripgrep.enable = true;
+    ripgrep = {
+      enable = true;
+      # exclude git from hidden files
+      arguments = [
+        "--glob=!.git/*"
+      ];
+    };
 
     # shell prompt
     starship = {
