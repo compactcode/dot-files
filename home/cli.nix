@@ -35,7 +35,15 @@
     };
 
     # find replacement
-    fd.enable = true;
+    fd = {
+      enable = true;
+      # show hidden files by default
+      hidden = true;
+      # exclude git from hidden files
+      ignores = [
+        ".git/"
+      ];
+    };
 
     # fuzzy finder
     fzf = {
