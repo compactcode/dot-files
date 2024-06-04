@@ -97,7 +97,13 @@
 
   services = {
     # notifications
-    mako.enable = true;
+    mako = {
+      enable = true;
+      # auto hide after 10 seconds
+      defaultTimeout = 10 * 1000;
+      # many application icons are ugly & unhelpful
+      icons = false;
+    };
   };
 
   systemd = {
