@@ -175,6 +175,13 @@
         "$mod+Shift, 9, movetoworkspace, 9"
       ];
 
+      bindm = [
+        # move windows with left mouse
+        "$mod, mouse:272, movewindow"
+        # resize windows with right mouse
+        "$mod, mouse:273, resizewindow"
+      ];
+
       decoration = {
         # TODO: extract an option
         rounding = 5;
