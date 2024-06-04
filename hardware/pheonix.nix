@@ -31,6 +31,11 @@
     enableRedistributableFirmware = true;
   };
 
+  # prevent pci devices (nvme) waking the system out of sleep
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="pci", DRIVER=="pcieport", ATTR{power/wakeup}="disabled"
+  '';
+
   # set a hostname
   networking.hostName = "pheonix";
 }

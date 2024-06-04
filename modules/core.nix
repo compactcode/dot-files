@@ -65,6 +65,13 @@
     zsh.enable = true;
   };
 
+  # disable hibernation
+  systemd.sleep.extraConfig = ''
+    AllowHibernation=no
+    AllowHybridSleep=no
+    AllowSuspendThenHibernate=no
+  '';
+
   # the timezone to Melbourne
   time.timeZone = "Australia/Melbourne";
 
