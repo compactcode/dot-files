@@ -73,6 +73,30 @@
         options = {desc = "search project for current word";};
       }
       {
+        key = "<leader>go";
+        action = "<cmd>lua require(\"gitlinker\").get_buf_range_url(\"n\", {action_callback = require(\"gitlinker.actions\").open_in_browser})<cr>";
+        mode = ["n"];
+        options = {desc = "open permalink url to current line";};
+      }
+      {
+        key = "<leader>go";
+        action = "<cmd>lua require(\"gitlinker\").get_buf_range_url(\"v\", {action_callback = require(\"gitlinker.actions\").open_in_browser})<cr>";
+        mode = ["v"];
+        options = {desc = "open permalink url to current lines";};
+      }
+      {
+        key = "<leader>gy";
+        action = "<cmd>lua require(\"gitlinker\").get_buf_range_url(\"n\")<cr>";
+        mode = ["n"];
+        options = {desc = "copy permalink url to current line";};
+      }
+      {
+        key = "<leader>gy";
+        action = "<cmd>lua require(\"gitlinker\").get_buf_range_url(\"v\")<cr>";
+        mode = ["v"];
+        options = {desc = "copy permalink url to current lines";};
+      }
+      {
         key = "<leader>la";
         action = "<cmd>lua vim.lsp.buf.code_action()<cr>";
         options = {desc = "code actions";};
@@ -173,16 +197,20 @@
         };
       };
 
+      # enhanced versions of builtin motions
       flash = {
         enable = true;
         # add jump labels to the default search
         modes.search.enabled = true;
       };
 
-      friendly-snippets = {
-        enable = true;
-      };
+      # default library of snippets
+      friendly-snippets.enable = true;
 
+      # git permalinks
+      gitlinker.enable = true;
+
+      # git decorations
       gitsigns = {
         enable = true;
         settings = {
