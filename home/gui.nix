@@ -96,6 +96,9 @@
   };
 
   services = {
+    # clipboard manager
+    cliphist.enable = true;
+
     # notifications
     mako = {
       enable = true;
@@ -145,6 +148,7 @@
         "$mod, b, exec, kitty yazi"
         "$mod, t, exec, kitty"
         "$mod, p, exec, grimblast --notify edit area"
+        "$mod, v, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
         # focused window actions
         "$mod, f, fullscreen,"
