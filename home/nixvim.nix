@@ -102,6 +102,11 @@
         options = {desc = "code actions";};
       }
       {
+        key = "<leader>lf";
+        action = "<cmd>lua vim.lsp.buf.format()<cr>";
+        options = {desc = "code actions";};
+      }
+      {
         key = "<leader>o";
         action = "<cmd>Oil<cr>";
         options = {desc = "explore files";};
@@ -159,18 +164,13 @@
     };
 
     plugins = {
-      conform-nvim = {
+      efmls-configs = {
         enable = true;
-        formatOnSave = {
-          lspFallback = true;
-        };
-        formatters = {
-          alejandra = {
-            command = "${lib.getExe pkgs.alejandra}";
+        setup = {
+          json = {
+            formatter = "jq";
+            linter = "jq";
           };
-        };
-        formattersByFt = {
-          nix = ["alejandra"];
         };
       };
 
@@ -228,17 +228,37 @@
           }
         ];
         servers = {
+          # general purpose (linting/formatting efc)
+          efm = {
+            enable = true;
+            extraOptions = {
+              init_options = {
+                documentFormatting = true;
+              };
+            };
+          };
           # bash
           bashls.enable = true;
           # nix
-          nixd.enable = true;
+          nixd = {
+            enable = true;
+            settings = {
+              formatting.command = [(lib.getExe pkgs.alejandra)];
+            };
+          };
         };
       };
 
+      # autocomplete source icons
       lspkind = {
         enable = true;
         cmp.enable = true;
         mode = "symbol";
+      };
+
+      # auto formatting on save using lsp formatters
+      lsp-format = {
+        enable = true;
       };
 
       lualine = {
