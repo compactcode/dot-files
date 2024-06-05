@@ -4,6 +4,9 @@
     hyprland.enable = true;
   };
 
+  # allow swaylock to perform authentication
+  security.pam.services.swaylock = {};
+
   services = {
     # login manager
     greetd = {
