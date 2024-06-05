@@ -116,6 +116,9 @@
       icons = false;
     };
 
+    # network manager
+    network-manager-applet.enable = true;
+
     # idle detection
     swayidle = {
       enable = true;
