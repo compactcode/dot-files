@@ -133,20 +133,15 @@
       ];
       timeouts = [
         {
-          # power off screen after 5 minutes
-          timeout = 60 * 5;
-          command = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch dpms off";
-          resumeCommand = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch dpms on";
-        }
-        {
           # lock screen after 10 minutes
           timeout = 60 * 10;
           command = "${lib.getExe pkgs.swaylock} -f";
         }
         {
-          # suspend after 15 minutes
+          # power off screen after 15 minutes
           timeout = 60 * 15;
-          command = "${lib.getExe' pkgs.systemd "systemctl"} suspend";
+          command = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch dpms off";
+          resumeCommand = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch dpms on";
         }
       ];
     };
