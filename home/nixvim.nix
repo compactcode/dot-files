@@ -326,12 +326,6 @@
       # lsp symbol window
       navbuddy = {
         enable = true;
-        extraOptions = {
-          source_buffer = {
-            # dont highlight the source buffer
-            highlight = false;
-          };
-        };
         # allow connecting to lsps
         lsp.autoAttach = true;
         # custom key mappings
