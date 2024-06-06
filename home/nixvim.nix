@@ -53,6 +53,11 @@
         options = {desc = "find commonly edited files";};
       }
       {
+        key = "<leader>fm";
+        action = "<cmd>Telescope marks<cr>";
+        options = {desc = "find marks";};
+      }
+      {
         key = "<leader>fo";
         action = "<cmd>Telescope oldfiles<cr>";
         options = {desc = "find last edited files";};
@@ -105,6 +110,11 @@
         key = "<leader>lf";
         action = "<cmd>Format<cr>";
         options = {desc = "format code";};
+      }
+      {
+        key = "<leader>ls";
+        action = "<cmd>Navbuddy<cr>";
+        options = {desc = "code symbols";};
       }
       {
         key = "<leader>o";
@@ -295,6 +305,9 @@
           lualine_y = ["progress"];
           lualine_z = ["location"];
         };
+        winbar = {
+          lualine_c = ["navic"];
+        };
       };
 
       luasnip = {
@@ -308,6 +321,47 @@
           pairs = {}; # auto pairs
           surround = {}; # surround actions
         };
+      };
+
+      # lsp symbol window
+      navbuddy = {
+        enable = true;
+        extraOptions = {
+          source_buffer = {
+            # dont highlight the source buffer
+            highlight = false;
+          };
+        };
+        # allow connecting to lsps
+        lsp.autoAttach = true;
+        # custom key mappings
+        mappings = {
+          "<esc>" = "close";
+          "<enter>" = "select";
+
+          # navigation (colemak)
+          "m" = "parent";
+          "n" = "next_sibling";
+          "e" = "previous_sibling";
+          "i" = "children";
+
+          # interaction
+          "v" = "visual_scope";
+          "y" = "yank_scope";
+          "d" = "delete";
+
+          # reordering
+          "N" = "move_down";
+          "E" = "move_up";
+        };
+        # disable default key mappings
+        useDefaultMapping = false;
+      };
+
+      # lsp current context
+      navic = {
+        enable = true;
+        lsp.autoAttach = true;
       };
 
       # file explorer
