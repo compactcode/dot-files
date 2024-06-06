@@ -103,8 +103,8 @@
       }
       {
         key = "<leader>lf";
-        action = "<cmd>lua vim.lsp.buf.format()<cr>";
-        options = {desc = "code actions";};
+        action = "<cmd>Format<cr>";
+        options = {desc = "format code";};
       }
       {
         key = "<leader>o";
