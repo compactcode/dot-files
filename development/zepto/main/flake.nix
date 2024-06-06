@@ -27,7 +27,7 @@
     devShells =
       forEachSystem
       (system: let
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = import nixpkgs {config.allowUnfree = true;};
       in {
         default = devenv.lib.mkShell {
           inherit inputs pkgs;
@@ -35,13 +35,6 @@
           modules = [
             {
               # https://devenv.sh/reference/options/
-              packages = with pkgs; [
-                # cabybara js driver
-                chromedriver
-                chromium
-                # psych(ruby-lsp)
-                libyaml
-              ];
 
               languages = {
                 javascript = {
@@ -54,7 +47,21 @@
                   enable = true;
                   package = pkgs.ruby;
                 };
+
+                # needed for node gyp
+                python = {
+                  enable = true;
+                  package = pkgs.python310;
+                };
               };
+
+              packages = with pkgs; [
+                # cabybara js driver
+                chromedriver
+                chromium
+                # psych(ruby-lsp)
+                libyaml
+              ];
 
               services = {
                 redis = {
@@ -75,10 +82,38 @@
                 };
               };
 
-              scripts.load-secrets.exec = ''
-                export BUNDLE_RUBYGEMS__PKG__GITHUB__COM=$(op read op://personal/gh-packages-prophet/token)
-                export BUNDLE_ENTERPRISE__CONTRIBSYS__COM=$(op read op://personal/sidekiq-ent/token)
-              '';
+              processes = {
+                web = {
+                  exec = "bundle exec rails server";
+                  process-compose = {
+                    availability = {
+                      restart = "on_failure";
+                    };
+                    depends_on = {
+                      postgres = {
+                        condition = "process_healthy";
+                      };
+                    };
+                  };
+                };
+
+                worker = {
+                  exec = "bundle exec sidekiq";
+                  process-compose = {
+                    availability = {
+                      restart = "on_failure";
+                    };
+                    depends_on = {
+                      redis = {
+                        condition = "process_healthy";
+                      };
+                      postgres = {
+                        condition = "process_healthy";
+                      };
+                    };
+                  };
+                };
+              };
             }
           ];
         };
