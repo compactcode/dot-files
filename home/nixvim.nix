@@ -171,6 +171,12 @@
             formatter = "jq";
             linter = "jq";
           };
+          yaml = {
+            formatter = "prettier";
+            linter = [
+              "yamllint"
+            ];
+          };
         };
       };
 
@@ -243,7 +249,9 @@
           nixd = {
             enable = true;
             settings = {
-              formatting.command = [(lib.getExe pkgs.alejandra)];
+              formatting.command = [
+                (lib.getExe pkgs.alejandra)
+              ];
             };
           };
         };
