@@ -54,7 +54,7 @@
       }
       {
         key = "<leader>af";
-        action = "<cmd>Format<cr>";
+        action = "<cmd>lua require(\"conform\").format()<cr>";
         options = {desc = "format code";};
       }
       {
@@ -174,19 +174,26 @@
     };
 
     plugins = {
-      efmls-configs = {
+      conform-nvim = {
         enable = true;
-        setup = {
-          json = {
-            formatter = "jq";
-            linter = "jq";
+        formatOnSave = {
+          lspFallback = true;
+        };
+        formatters = {
+          alejandra = {
+            command = "${lib.getExe pkgs.alejandra}";
           };
-          yaml = {
-            formatter = "prettier";
-            linter = [
-              "yamllint"
-            ];
+          jq = {
+            command = "${lib.getExe pkgs.jq}";
           };
+          prettierd = {
+            command = "${lib.getExe pkgs.prettierd}";
+          };
+        };
+        formattersByFt = {
+          json = ["jq"];
+          nix = ["alejandra"];
+          yaml = ["prettierd"];
         };
       };
 
@@ -210,6 +217,18 @@
             {name = "path";}
             {name = "buffer";}
           ];
+        };
+      };
+
+      efmls-configs = {
+        enable = true;
+        setup = {
+          json = {
+            linter = "jq";
+          };
+          yaml = {
+            linter = "yamllint";
+          };
         };
       };
 
@@ -249,21 +268,15 @@
             enable = true;
             extraOptions = {
               init_options = {
-                documentFormatting = true;
+                documentFormatting = false;
+                documentRangeFormatting = false;
               };
             };
           };
           # bash
           bashls.enable = true;
           # nix
-          nixd = {
-            enable = true;
-            settings = {
-              formatting.command = [
-                (lib.getExe pkgs.alejandra)
-              ];
-            };
-          };
+          nixd.enable = true;
         };
       };
 
@@ -272,11 +285,6 @@
         enable = true;
         cmp.enable = true;
         mode = "symbol";
-      };
-
-      # auto formatting on save using lsp formatters
-      lsp-format = {
-        enable = true;
       };
 
       lualine = {
