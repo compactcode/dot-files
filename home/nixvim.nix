@@ -48,6 +48,16 @@
         options = {desc = "goto definition";};
       }
       {
+        key = "<leader>as";
+        action = "<cmd>lua require(\"spectre\").open()<cr>";
+        options = {desc = "search and replace";};
+      }
+      {
+        key = "<leader>af";
+        action = "<cmd>Format<cr>";
+        options = {desc = "format code";};
+      }
+      {
         key = "<leader>ff";
         action = "<cmd>Telescope frecency<cr>";
         options = {desc = "find commonly edited files";};
@@ -107,16 +117,6 @@
         options = {desc = "code actions";};
       }
       {
-        key = "<leader>lf";
-        action = "<cmd>Format<cr>";
-        options = {desc = "format code";};
-      }
-      {
-        key = "<leader>ls";
-        action = "<cmd>Navbuddy<cr>";
-        options = {desc = "code symbols";};
-      }
-      {
         key = "<leader>o";
         action = "<cmd>Oil<cr>";
         options = {desc = "explore files";};
@@ -128,8 +128,8 @@
       }
       {
         key = "<leader>s";
-        action = "<cmd>lua require(\"spectre\").open()<cr>";
-        options = {desc = "search and replace";};
+        action = "<cmd>Navbuddy<cr>";
+        options = {desc = "code symbols";};
       }
       {
         key = "<leader>t";
