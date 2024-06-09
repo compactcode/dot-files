@@ -3,6 +3,18 @@
   lib,
   ...
 }: {
+  # code formatter preferences
+  editorconfig = {
+    enable = true;
+    settings = {
+      "*" = {
+        trim_trailing_whitespace = true;
+        indent_style = "space";
+        indent_size = 2;
+      };
+    };
+  };
+
   home = {
     sessionVariables = {
       # nvim as the default editor
