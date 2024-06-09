@@ -142,14 +142,19 @@
         options = {desc = "save file";};
       }
       {
+        key = "<leader>W";
+        action = "<cmd>wa<cr>";
+        options = {desc = "save all files";};
+      }
+      {
         key = "<leader>y";
         action = "\"+y";
         options = {desc = "copy to system clipboard";};
       }
       {
         key = "<leader>q";
-        action = "<cmd>wa<cr>ZZ";
-        options = {desc = "save all and exit";};
+        action = "<cmd>qa!<cr>";
+        options = {desc = "exit immediately";};
       }
     ];
 
