@@ -189,10 +189,14 @@
           prettierd = {
             command = "${lib.getExe pkgs.prettierd}";
           };
+          shfmt = {
+            command = "${lib.getExe pkgs.shfmt}";
+          };
         };
         formattersByFt = {
           json = ["jq"];
           nix = ["alejandra"];
+          sh = ["shfmt"];
           yaml = ["prettierd"];
         };
       };
