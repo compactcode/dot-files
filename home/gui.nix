@@ -182,13 +182,13 @@
 
         # applications
         "$mod, i, exec, rofi -show drun"
-        "$mod, b, exec, kitty yazi"
+        "$mod, b, exec, ~/.local/share/openBookmark"
         "$mod, t, exec, kitty"
+        "$mod, f, exec, kitty yazi"
         "$mod, p, exec, grimblast --notify edit area"
         "$mod, v, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
         # focused window actions
-        "$mod, f, fullscreen,"
         "$mod, w, togglefloating,"
         "$mod, q, killactive,"
 
@@ -245,9 +245,11 @@
     };
 
     extraConfig = ''
-      bind = $mod, u, submap, motions
+      bind = $mod, u, submap, focused
 
-      submap = motions
+      submap = focused
+
+      bind = , f, fullscreen,
 
       # focus windows
       bind = , left, movefocus, l
