@@ -10,36 +10,17 @@ _rofi () {
 display_type=3
 max_str_width=80
 
-# keybindings
-switch_view="Alt+Tab"
-
 main () {
-    if [[ $mode == "bookmarks" ]]; then
-        content=$(parseBuku)
-        menu=$(echo "${content}" | _rofi -p '> ' -filter "${filter}" -kb-custom-2 "${switch_view}")
-    elif [[ $mode == "tags" ]]; then
-      menu=$(buku --nostdin --np --st | grep -v -e '^waiting for input$' -e '^$' | awk '{$NF=""; print $0}' | cut -d ' ' -f2  | _rofi -p '> ' -kb-custom-2 "${switch_view}")
-    fi
+    content=$(parseBuku)
+    menu=$(echo "${content}" | _rofi -p '> ' -filter "${filter}")
     val=$?
     if [[ $val -eq 1 ]]; then
         exit
-    elif [[ $val -eq 11 ]]; then
-        if [[ $mode == "bookmarks" ]]; then
-            export mode="tags"
-            mode=tags main
-        elif [[ $mode == "tags" ]]; then
-            export mode="bookmarks"
-            mode=bookmarks main
-        fi
     elif [[ $val -eq 0 ]]; then
-        if [[ $mode == "bookmarks" ]]; then
-            id=$(getId "$content" "$menu")
-            for bm in ${id}; do
-                buku --nostdin -o "${bm}"
-            done
-        elif [[ $mode == "tags" ]]; then
-            filter="${menu}" mode="bookmarks" main
-        fi
+        id=$(getId "$content" "$menu")
+        for bm in ${id}; do
+            buku --nostdin -o "${bm}"
+        done
     fi
 }
 
@@ -94,4 +75,4 @@ getId () {
   echo $id
 }
 
-mode=bookmarks main
+main
