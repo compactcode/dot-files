@@ -7,7 +7,7 @@ _rofi () {
 }
 
 # display settings
-display_type=1
+display_type=3
 max_str_width=80
 
 # keybindings
@@ -19,31 +19,6 @@ delete="Alt+d"
 
 # colors
 help_color="#334433"
-
-# source global config
-if [[ -f /etc/rofi-buku.config ]]
-then
-  source /etc/rofi-buku.config
-fi
-
-# source local config:
-if [[ -z $XDG_CONFIG_DIR ]]
-then
-  if [[ -f $HOME/.config/rofi-buku/config ]]
-  then
-    source $HOME/.config/rofi-buku/config
-  else
-    echo "User config file '~/.config/rofi-buku/config' not found. using global config"
-  fi
-else
-  if [[ -f "${XDG_CONFIG_DIR}/rofi-buku/config" ]]
-  then
-    source "${XDG_CONFIG_DIR}/rofi-buku/config"
-  else
-    echo "User config file '~/.config/rofi-buku/config' not found. using global config"
-  fi
-fi
-
 
 main () {
     HELP="Welcome to Buku. Use <span color='${help_color}'>${new_bookmark}</span> to add a new Bookmark
