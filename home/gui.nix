@@ -3,6 +3,10 @@
   lib,
   ...
 }: {
+  imports = [
+    ./gui/wayland/rofi
+  ];
+
   # gtk syles
   gtk.enable = true;
 
@@ -24,12 +28,6 @@
 
     # video player
     mpv.enable = true;
-
-    # application launcher
-    rofi = {
-      enable = true;
-      package = pkgs.rofi-wayland;
-    };
 
     # screen locker
     swaylock.enable = true;
@@ -235,6 +233,7 @@
       };
 
       misc = {
+        # disable built in logo
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
       };
