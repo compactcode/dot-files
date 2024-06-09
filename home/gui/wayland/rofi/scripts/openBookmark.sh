@@ -17,17 +17,12 @@ actions="Alt+a"
 edit="Alt+e"
 delete="Alt+d"
 
-# colors
-help_color="#334433"
-
 main () {
-    HELP="Welcome to Buku. Use <span color='${help_color}'>${new_bookmark}</span> to add a new Bookmark
-Use <span color='${help_color}'>${switch_view}</span> to switch View. <span color='${help_color}'>${actions}</span> for actions"
     if [[ $mode == "bookmarks" ]]; then
         content=$(parseBuku)
-        menu=$(echo "${content}" | _rofi -p '> ' -filter "${filter}" -mesg "${HELP}" -kb-custom-1 "${new_bookmark}" -kb-custom-2 "${switch_view}" -kb-custom-3 "${actions}" -kb-custom-4 "${edit}" -kb-custom-5 "${delete}")
+        menu=$(echo "${content}" | _rofi -p '> ' -filter "${filter}" -kb-custom-1 "${new_bookmark}" -kb-custom-2 "${switch_view}" -kb-custom-3 "${actions}" -kb-custom-4 "${edit}" -kb-custom-5 "${delete}")
     elif [[ $mode == "tags" ]]; then
-        menu=$(buku --nostdin --np --st | grep -v -e '^waiting for input$' -e '^$' | awk '{$NF=""; print $0}' | cut -d ' ' -f2  | _rofi -p '> ' -mesg "${HELP}" -kb-custom-1 "${new_bookmark}" -kb-custom-2 "${switch_view}" -kb-custom-3 "${actions}" -kb-custom-4 "${edit}" -kb-custom-5 "${delete}")
+        menu=$(buku --nostdin --np --st | grep -v -e '^waiting for input$' -e '^$' | awk '{$NF=""; print $0}' | cut -d ' ' -f2  | _rofi -p '> ' -kb-custom-1 "${new_bookmark}" -kb-custom-2 "${switch_view}" -kb-custom-3 "${actions}" -kb-custom-4 "${edit}" -kb-custom-5 "${delete}")
     fi
     val=$?
     if [[ $val -eq 1 ]]; then
