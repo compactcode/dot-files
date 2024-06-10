@@ -18,8 +18,9 @@ main() {
     exit
   elif [[ $val -eq 0 ]]; then
     id=$(getId "$content" "$menu")
+    hyprctl dispatch focuswindow class:firefox
     for bm in ${id}; do
-      buku --nostdin -o "${bm}"
+      hyprctl dispatch exec firefox "$(buku -p "$bm" -f 1 | awk '{print $2}')"
     done
   fi
 }
