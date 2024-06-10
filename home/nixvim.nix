@@ -334,7 +334,6 @@
       mini = {
         enable = true;
         modules = {
-          comment = {}; # comment lines
           pairs = {}; # auto pairs
           surround = {}; # surround actions
         };
