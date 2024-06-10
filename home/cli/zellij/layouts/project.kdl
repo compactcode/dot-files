@@ -1,0 +1,24 @@
+layout {
+    default_tab_template {
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+    }
+    tab name="editor" focus=true {
+        pane command="nvim" args="." close_on_exit=false
+    }
+    tab name="shell" close_on_exit=false
+    tab name="git" {
+      pane command="lazygit" close_on_exit=false
+    }
+}
+
+keybinds {
+  unbind "Ctrl h"
+  normal {
+    bind "Alt e" { GoToTab 1; }
+    bind "Alt s" { GoToTab 2; }
+    bind "Alt g" { GoToTab 3; }
+  }
+}

@@ -3,6 +3,10 @@
   lib,
   ...
 }: {
+  imports = [
+    ./cli/zellij
+  ];
+
   # code formatter preferences
   editorconfig = {
     enable = true;
@@ -121,17 +125,6 @@
     yazi = {
       enable = true;
       enableZshIntegration = true;
-    };
-
-    # workspace manager
-    zellij = {
-      enable = true;
-      settings = {
-        # simple ui
-        default_layout = "compact";
-        # remove internal borders
-        pane_frames = false;
-      };
     };
 
     # smart cd with jumping
