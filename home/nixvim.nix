@@ -195,6 +195,7 @@
     };
 
     plugins = {
+      # formatting
       conform-nvim = {
         enable = true;
         formatOnSave = {
@@ -222,6 +223,7 @@
         };
       };
 
+      # auto complete
       cmp = {
         enable = true;
         settings = {
@@ -245,6 +247,7 @@
         };
       };
 
+      # linting
       efmls-configs = {
         enable = true;
         setup = {
@@ -287,12 +290,15 @@
             extraOptions = {};
           }
         ];
+        # enable inlay hints if supported
+        inlayHints = true;
         servers = {
           # general purpose (linting/formatting efc)
           efm = {
             enable = true;
             extraOptions = {
               init_options = {
+                # conform handles formatting
                 documentFormatting = false;
                 documentRangeFormatting = false;
               };
