@@ -14,6 +14,22 @@
 
     keymaps = [
       {
+        key = "<c-left>";
+        action = "<C-w>h";
+      }
+      {
+        key = "<c-down>";
+        action = "<C-w>j";
+      }
+      {
+        key = "<c-up>";
+        action = "<C-w>k";
+      }
+      {
+        key = "<c-right>";
+        action = "<C-w>l";
+      }
+      {
         key = "<c-n>";
         action = "<Plug>(YankyPreviousEntry)";
         mode = ["n"];
