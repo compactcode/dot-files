@@ -56,7 +56,10 @@
     nh = {
       enable = true;
       # automatic garbage collection
-      clean.enable = true;
+      clean = {
+        enable = true;
+        extraArgs = "--keep 5 --keep-since 30d";
+      };
       # TODO: find a less hacky way to set this
       flake = "/home/shandogs/Code/personal/dot-files";
     };
