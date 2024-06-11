@@ -11,13 +11,14 @@ display_type=3
 max_str_width=80
 
 main() {
-  content=$(parseBuku)
-  menu=$(echo "${content}" | _rofi -p '> ' -filter "${filter}")
-  val=$?
-  if [[ $val -eq 1 ]]; then
+  bookmarks=$(parseBuku)
+
+  selected=$(echo "${bookmarks}" | _rofi -p '> ' -filter "${filter}")
+
+  if [[ $? -eq 1 ]]; then
     exit
-  elif [[ $val -eq 0 ]]; then
-    id=$(getId "$content" "$menu")
+  else
+    id=$(getId "$bookmarks" "$selected")
     hyprctl dispatch focuswindow class:firefox
     for bm in ${id}; do
       hyprctl dispatch exec firefox "$(buku -p "$bm" -f 1 | awk '{print $2}')"

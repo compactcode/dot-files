@@ -174,6 +174,7 @@
 
       bind = [
         # applications tied to particular workspaces
+        "$mod, a, exec, ~/.local/share/openProject"
         "$mod, d, exec, ~/.local/share/focusOrStart 5 vesktop vesktop"
         "$mod, e, exec, ~/.local/share/focusOrStart 3 kitty kitty"
         "$mod, n, exec, ~/.local/share/focusOrStart 1 firefox firefox"

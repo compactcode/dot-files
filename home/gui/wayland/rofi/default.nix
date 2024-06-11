@@ -14,10 +14,16 @@
 
   xdg = {
     dataFile = {
-      # open bookmark browser
+      # open bookmark
       openBookmark = {
         executable = true;
         source = ./scripts/openBookmark.sh;
+      };
+
+      # open project
+      openProject = {
+        executable = true;
+        source = ./scripts/openProject.sh;
       };
     };
   };
