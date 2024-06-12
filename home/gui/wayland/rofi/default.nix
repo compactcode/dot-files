@@ -15,15 +15,15 @@
   xdg = {
     dataFile = {
       # open bookmark
-      openBookmark = {
+      "rofi/bookmark.sh" = {
         executable = true;
-        source = ./scripts/openBookmark.sh;
+        source = ./scripts/bookmark.sh;
       };
 
       # open project
-      openProject = {
+      "rofi/project.sh" = {
         executable = true;
-        source = ./scripts/openProject.sh;
+        source = ./scripts/project.sh;
       };
     };
   };
