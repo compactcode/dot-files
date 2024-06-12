@@ -294,8 +294,6 @@
             extraOptions = {};
           }
         ];
-        # enable inlay hints if supported
-        inlayHints = true;
         servers = {
           # general purpose (linting/formatting efc)
           efm = {
