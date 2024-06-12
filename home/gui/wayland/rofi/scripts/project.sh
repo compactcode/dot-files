@@ -12,7 +12,11 @@ main() {
   if [[ $? -eq 1 ]]; then
     exit
   elif [[ -n $selected ]]; then
-    hyprctl dispatch exec -- kitty -d "$selected" zellij -l project
+    if rg -q cachix/devenv "$selected/flake.nix"; then
+      hyprctl dispatch exec -- kitty -d "$selected" zellij -l devenv
+    else
+      hyprctl dispatch exec -- kitty -d "$selected" zellij -l basic
+    fi
   fi
 }
 

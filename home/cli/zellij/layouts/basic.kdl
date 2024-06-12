@@ -10,7 +10,9 @@ layout {
       args "+Telescope find_files"
     }
   }
-  tab name="shell" close_on_exit=false
+  tab name="shell" {
+    pane command="zsh" close_on_exit=false
+  }
   tab name="git" {
     pane command="lazygit" close_on_exit=false
   }
@@ -19,8 +21,6 @@ layout {
 keybinds {
   // disable session mode
   unbind "Ctrl o"
-  // disable move mode
-  unbind "Ctrl n"
   normal {
     bind "Alt e" { GoToTab 1; }
     bind "Alt s" { GoToTab 2; }

@@ -1,9 +1,13 @@
 {
   xdg = {
     configFile = {
-      # basic project template
-      "zellij/layouts/project.kdl" = {
-        source = ./layouts/project.kdl;
+      # generic project
+      "zellij/layouts/basic.kdl" = {
+        source = ./layouts/basic.kdl;
+      };
+      # devenv project
+      "zellij/layouts/devenv.kdl" = {
+        source = ./layouts/devenv.kdl;
       };
     };
   };
