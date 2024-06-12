@@ -17,7 +17,10 @@ layout {
 }
 
 keybinds {
-  unbind "Ctrl h"
+  // disable session mode
+  unbind "Ctrl o"
+  // disable move mode
+  unbind "Ctrl n"
   normal {
     bind "Alt e" { GoToTab 1; }
     bind "Alt s" { GoToTab 2; }
