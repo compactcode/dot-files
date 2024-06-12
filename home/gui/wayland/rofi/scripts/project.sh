@@ -12,7 +12,7 @@ main() {
   if [[ $? -eq 1 ]]; then
     exit
   elif [[ -n $selected ]]; then
-    hyprctl dispatch exec kitty -d "$selected" zellij -l project
+    hyprctl dispatch exec -- kitty -d "$selected" zellij -l project
   fi
 }
 
