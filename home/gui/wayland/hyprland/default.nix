@@ -10,11 +10,11 @@
         # applications tied to particular workspaces
         "$mod, a, exec, ~/.local/share/rofi/project.sh"
         "$mod, d, exec, ~/.local/share/hyprland/focus.sh 5 vesktop vesktop"
-        "$mod, e, exec, ~/.local/share/hyprland/focus.sh 3 kitty kitty"
+        "$mod, e, exec, ~/.local/share/hyprland/project.sh 3"
         "$mod, n, exec, ~/.local/share/hyprland/focus.sh 1 firefox firefox"
         "$mod, o, exec, ~/.local/share/hyprland/focus.sh 4 obsidian obsidian"
         "$mod, r, exec, ~/.local/share/hyprland/focus.sh 5 Slack slack"
-        "$mod, s, exec, ~/.local/share/hyprland/focus.sh 2 kitty kitty"
+        "$mod, e, exec, ~/.local/share/hyprland/project.sh 2"
 
         # applications
         "$mod, i, exec, rofi -show drun"
@@ -121,10 +121,16 @@
 
   xdg = {
     dataFile = {
-      # start or focus an application on a given workspace
+      # focus application on a given workspace
       "hyprland/focus.sh" = {
         executable = true;
         source = ./scripts/focus.sh;
+      };
+
+      # focus project on a given workspace
+      "hyprland/project.sh" = {
+        executable = true;
+        source = ./scripts/project.sh;
       };
     };
   };
