@@ -14,7 +14,7 @@
         "$mod, n, exec, ~/.local/share/hyprland/focus.sh 1 firefox firefox"
         "$mod, o, exec, ~/.local/share/hyprland/focus.sh 4 obsidian obsidian"
         "$mod, r, exec, ~/.local/share/hyprland/focus.sh 5 Slack slack"
-        "$mod, e, exec, ~/.local/share/hyprland/project.sh 2"
+        "$mod, s, exec, ~/.local/share/hyprland/project.sh 2"
 
         # applications
         "$mod, i, exec, rofi -show drun"
