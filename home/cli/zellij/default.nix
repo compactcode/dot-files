@@ -21,6 +21,16 @@
         default_layout = "compact";
         # remove internal borders
         pane_frames = false;
+        keybinds = {
+          unbind = [
+            # disable session mode (conflicts with neovim)
+            "Ctrl o"
+          ];
+          normal = {
+            # disable resize mode (conflicts with neovim)
+            unbind = ["Ctrl n"];
+          };
+        };
       };
     };
   };

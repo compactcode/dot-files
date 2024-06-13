@@ -19,8 +19,6 @@ layout {
 }
 
 keybinds {
-  // disable session mode
-  unbind "Ctrl o"
   normal {
     bind "Alt e" { GoToTab 1; }
     bind "Alt s" { GoToTab 2; }
