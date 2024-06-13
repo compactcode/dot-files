@@ -20,7 +20,9 @@ layout {
   }
   tab name="processes" {
     pane command="zsh" close_on_exit=false {
-      args "-c" "devenv up"
+      // make direnv environment available
+      // https://github.com/direnv/direnv/issues/262
+      args "-c" "eval $(direnv export bash) && devenv up"
     }
   }
   tab name="logs" {
