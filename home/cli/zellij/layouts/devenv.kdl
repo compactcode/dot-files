@@ -17,8 +17,8 @@ layout {
     pane command="lazygit" close_on_exit=false
   }
   tab name="processes" {
-    pane command="devenv" close_on_exit=false {
-      args "up"
+    pane command="zsh" close_on_exit=false {
+      args "-c" "devenv up"
     }
   }
   tab name="logs" {
