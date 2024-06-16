@@ -6,6 +6,7 @@
   environment = {
     systemPackages = with pkgs; [
       bruno # api explorer
+      dust # du replacement
       grimblast # screenshot taker
       obsidian # document manager
       pavucontrol # sound manager
