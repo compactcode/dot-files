@@ -13,6 +13,7 @@
       pinta # image editor
       slack # messenger
       vesktop # voice chat (discord)
+      xsv # csv explorer
       wl-clipboard # clipboard interaction
     ];
 
