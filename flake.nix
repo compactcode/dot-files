@@ -1,76 +1,85 @@
 {
   inputs = {
+    _1password-shell-plugins = {
+      url = "github:1Password/shell-plugins";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    flakelight = {
+      url = "github:nix-community/flakelight";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs = {
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+      };
     };
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    stylix = {
+      url = "github:danth/stylix";
+      inputs = {
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, neovim-nightly-overlay }:
-    let
-      system = "x86_64-linux";
+  outputs = {flakelight, ...} @ inputs:
+    flakelight.lib.mkFlake ./. {
+      nixpkgs.config = {allowUnfree = true;};
 
-      pkgs = import nixpkgs {
-        inherit system;
-
-        config.allowUnfree = true;
-
-        overlays = [
-          neovim-nightly-overlay.overlay
-        ];
-      };
-    in {
       nixosConfigurations = {
-        bounty = nixpkgs.lib.nixosSystem {
-          inherit system pkgs;
-
+        pheonix = {
+          system = "x86_64-linux";
           modules = [
-            ./hardware/bounty.nix
-            ./modules/server.nix
-            home-manager.nixosModules.home-manager {
+            inputs.disko.nixosModules.disko
+            ./hardware/pheonix.nix
+            ./hardware/disko/pheonix.nix
+            ./modules/core.nix
+            ./modules/desktop/core.nix
+            ./modules/desktop/hyprland.nix
+            ./modules/work/zepto.nix
+            inputs.home-manager.nixosModules.home-manager
+            inputs.stylix.nixosModules.stylix
+            {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.shandogs = {
                 imports = [
-                  ./modules/server-home.nix
+                  inputs.nixvim.homeManagerModules.nixvim
+                  inputs._1password-shell-plugins.hmModules.default
+                  ./home/cli.nix
+                  ./home/gui.nix
+                  ./home/nixvim.nix
+                  ./home/ssh.nix
                 ];
+
+                home.stateVersion = "23.11";
               };
+
+              system.stateVersion = "23.11";
             }
           ];
         };
 
-        medusa = nixpkgs.lib.nixosSystem {
-          inherit system pkgs;
-
-          modules = [
-            ./hardware/medusa.nix
-            ./modules/desktop.nix
-            home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.shandogs = {
-                imports = [
-                  ./modules/desktop-home.nix
-                ];
-              };
-            }
-          ];
-        };
-
-        pudge = nixpkgs.lib.nixosSystem {
-          inherit system pkgs;
-
+        pudge = {
+          system = "x86_64-linux";
           modules = [
             ./hardware/pudge.nix
             ./modules/server.nix
             ./modules/server-automation.nix
             ./modules/server-media.nix
-            home-manager.nixosModules.home-manager {
+            inputs.home-manager.nixosModules.home-manager
+            {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.shandogs = {
@@ -82,20 +91,35 @@
           ];
         };
 
-        prophet = nixpkgs.lib.nixosSystem {
-          inherit system pkgs;
-
+        prophet = {
+          system = "x86_64-linux";
           modules = [
+            inputs.disko.nixosModules.disko
             ./hardware/prophet.nix
-            ./modules/desktop.nix
-            home-manager.nixosModules.home-manager {
+            ./hardware/disko/prophet.nix
+            ./modules/core.nix
+            ./modules/desktop/core.nix
+            ./modules/desktop/hyprland.nix
+            ./modules/work/zepto.nix
+            inputs.home-manager.nixosModules.home-manager
+            inputs.stylix.nixosModules.stylix
+            {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.shandogs = {
                 imports = [
-                  ./modules/desktop-home.nix
+                  inputs.nixvim.homeManagerModules.nixvim
+                  inputs._1password-shell-plugins.hmModules.default
+                  ./home/cli.nix
+                  ./home/gui.nix
+                  ./home/nixvim.nix
+                  ./home/ssh.nix
                 ];
+
+                home.stateVersion = "24.05";
               };
+
+              system.stateVersion = "24.05";
             }
           ];
         };

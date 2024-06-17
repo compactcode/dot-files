@@ -1,57 +1,122 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-ruby = {
-      url = "github:bobvanderlinden/nixpkgs-ruby";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    flake-utils.url = "github:numtide/flake-utils";
+    nixpkgs.url = "github:cachix/devenv-nixpkgs/rolling";
+    systems.url = "github:nix-systems/default";
+    devenv.url = "github:cachix/devenv";
+    devenv.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-ruby, flake-utils }:
-    flake-utils.lib.eachSystem [ "x86_64-linux" ] (system:
-      let
-        pkgs = import nixpkgs {
-          inherit system;
+  nixConfig = {
+    extra-trusted-public-keys = "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=";
+    extra-substituters = "https://devenv.cachix.org";
+  };
 
-          config.allowUnfree = true;
-        };
+  outputs = {
+    self,
+    nixpkgs,
+    devenv,
+    systems,
+    ...
+  } @ inputs: let
+    forEachSystem = nixpkgs.lib.genAttrs (import systems);
+  in {
+    packages = forEachSystem (system: {
+      devenv-up = self.devShells.${system}.default.config.procfileScript;
+    });
 
-        ruby = nixpkgs-ruby.packages.${system}."ruby-3.1.4";
+    devShells =
+      forEachSystem
+      (system: let
+        pkgs = import nixpkgs {config.allowUnfree = true;};
       in {
-        devShells.default = with pkgs;
-          mkShell {
-            buildInputs = [
-              # api client
-              bruno
+        default = devenv.lib.mkShell {
+          inherit inputs pkgs;
 
-              ruby
+          modules = [
+            {
+              # https://devenv.sh/reference/options/
 
-              # debugging
-              awscli2
+              languages = {
+                javascript = {
+                  enable = true;
+                  package = pkgs.nodejs_18;
+                  yarn.enable = true;
+                };
 
-              # psql, pg(gem)
-              postgresql_12
+                ruby = {
+                  enable = true;
+                  package = pkgs.ruby;
+                };
 
-              # nio4r(gem)
-              libev
-              # psych(gem)
-              libyaml
-              # selenium-webdriver(gem)
-              chromedriver # 115
-              # selenium-webdriver(gem)
-              chromium
+                # needed for node gyp
+                python = {
+                  enable = true;
+                  package = pkgs.python310;
+                };
+              };
 
-              nodejs_18
-              (yarn.override { nodejs = nodejs_18; })
-            ];
+              packages = with pkgs; [
+                # cabybara js driver
+                chromedriver
+                chromium
+                # psych(ruby-lsp)
+                libyaml
+              ];
 
-            shellHook = ''
-              export GEM_HOME=./tmp/gem/ruby
-              export GEM_PATH=$GEM_HOME
-              export PATH=$GEM_HOME/bin:$PATH
-              export PATH=$PWD/bin:$PATH
-            '';
-          };
+              services = {
+                redis = {
+                  enable = true;
+                  package = pkgs.redis;
+                };
+
+                postgres = {
+                  enable = true;
+                  package = pkgs.postgresql_12;
+                  initialDatabases = [
+                    {name = "split_development";}
+                    {name = "split_test";}
+                  ];
+                  initialScript = ''
+                    CREATE USER postgres SUPERUSER;
+                  '';
+                };
+              };
+
+              processes = {
+                web = {
+                  exec = "bundle exec rails server";
+                  process-compose = {
+                    availability = {
+                      restart = "on_failure";
+                    };
+                    depends_on = {
+                      postgres = {
+                        condition = "process_healthy";
+                      };
+                    };
+                  };
+                };
+
+                worker = {
+                  exec = "bundle exec sidekiq";
+                  process-compose = {
+                    availability = {
+                      restart = "on_failure";
+                    };
+                    depends_on = {
+                      redis = {
+                        condition = "process_healthy";
+                      };
+                      postgres = {
+                        condition = "process_healthy";
+                      };
+                    };
+                  };
+                };
+              };
+            }
+          ];
+        };
       });
+  };
 }

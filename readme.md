@@ -4,25 +4,14 @@ System and user configuration for [NixOS](https://nixos.org/).
 
 ## Desktop
 
-* [gnome](https://www.gnome.org/)
+* [1password](https://1password.com/) (secret manager)
+  * [git signing](https://developer.1password.com/docs/ssh/git-commit-signing/)
+  * [ssh](https://developer.1password.com/docs/ssh/)
+* [hyprland](https://hyprland.org/) (window manager)
+* [kitty](https://sw.kovidgoyal.net/kitty/) (terminal multiplexer)
+* [obsidian](https://obsidian.md/) (knowledge management)
 
-## Graphical Applications
-
-I use [flathub](https://flathub.org/home) for most graphical applications.
-
-Flatpaks get updated faster, provide sandboxing and work on all Linux distributions.
-
-* [Beekeeper](https://flathub.org/apps/details/io.beekeeperstudio.Studio) (sql toolkit)
-* [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal) (permission manager)
-* [Geary](https://flathub.org/apps/details/org.gnome.Geary) (email)
-* [Obsidian](https://flathub.org/apps/details/md.obsidian.Obsidian) (document manager)
-* [Pinta](https://flathub.org/apps/details/com.github.PintaProject.Pinta) (image editor)
-* [Signal](https://flathub.org/apps/details/org.signal.Signal) (messenger)
-* [Steam](https://flathub.org/apps/details/com.valvesoftware.Steam) (gaming)
-
-## Editor
-
-I use [neovim](https://neovim.io/) with [mutable config](https://github.com/compactcode/neovim) managed by git.
+Applications are themed using [stylix](https://github.com/danth/stylix)
 
 ## Terminal
 
@@ -32,4 +21,26 @@ I use [neovim](https://neovim.io/) with [mutable config](https://github.com/comp
 * [fd](https://github.com/sharkdp/fd) (find replacement)
 * [ripgrep](https://github.com/BurntSushi/ripgrep) (grep replacement)
 * [xsv](https://github.com/BurntSushi/xsv) (csv toolkit)
+* [zoxide](https://github.com/ajeetdsouza/zoxide) (cd replacement)
 * [zsh](https://github.com/sorin-ionescu/prezto) (shell)
+
+## Editor
+
+* [neovim](https://neovim.io/)
+* [nixvim](https://github.com/nix-community/nixvim)
+
+## Installation
+
+* boot the [nixos installer](https://nixos.org/download/).
+
+```
+git clone https://github.com/compactcode/dot-files.git
+
+cd dot-files
+
+export NIX_CONFIG="experimental-features = nix-command flakes"
+
+sudo nix run 'github:nix-community/disko#disko-install' -- --write-efi-boot-entries --flake '.#prophet' --disk main /dev/disk/by-uuid/faf3866c-2bdb-4b87-a9d0-96bb2271f294
+
+sudo nixos-install --flake ".#prophet"
+```

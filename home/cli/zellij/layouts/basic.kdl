@@ -1,0 +1,29 @@
+layout {
+  default_tab_template {
+    children
+    pane size=1 borderless=true {
+      plugin location="zellij:compact-bar"
+    }
+  }
+  tab name="editor" focus=true {
+    pane command="zsh" close_on_exit=false {
+      // make direnv environment available
+      // https://github.com/direnv/direnv/issues/262
+      args "-c" "eval $(direnv export bash) && nvim"
+    }
+  }
+  tab name="shell" {
+    pane command="zsh" close_on_exit=false
+  }
+  tab name="git" {
+    pane command="lazygit" close_on_exit=false
+  }
+}
+
+keybinds {
+  normal {
+    bind "Alt e" { GoToTab 1; }
+    bind "Alt s" { GoToTab 2; }
+    bind "Alt g" { GoToTab 3; }
+  }
+}
