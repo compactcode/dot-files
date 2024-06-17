@@ -38,9 +38,7 @@ git clone https://github.com/compactcode/dot-files.git
 
 cd dot-files
 
-export NIX_CONFIG="experimental-features = nix-command flakes"
-
-sudo nix run 'github:nix-community/disko#disko-install' -- --write-efi-boot-entries --flake '.#prophet' --disk main /dev/disk/by-uuid/faf3866c-2bdb-4b87-a9d0-96bb2271f294
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko ./hardware/disko/prophet.nix
 
 sudo nixos-install --flake ".#prophet"
 ```
