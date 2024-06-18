@@ -5,6 +5,7 @@
   ...
 }: {
   imports = [
+    ./gui/email
     ./gui/wayland/rofi
     ./gui/wayland/hyprland
   ];
