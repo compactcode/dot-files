@@ -81,6 +81,11 @@
         kb_options = "ctrl:nocaps";
       };
 
+      monitor = [
+        # use default monitor resolutions
+        ",preferred,auto,1"
+      ];
+
       misc = {
         # disable built in logo
         disable_hyprland_logo = true;
