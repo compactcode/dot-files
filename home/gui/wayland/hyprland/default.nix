@@ -76,6 +76,11 @@
         gaps_out = 15;
       };
 
+      input = {
+        # remap capslock to control
+        kb_options = "ctrl:nocaps";
+      };
+
       misc = {
         # disable built in logo
         disable_hyprland_logo = true;
