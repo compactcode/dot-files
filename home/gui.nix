@@ -95,9 +95,6 @@
       systemd.enable = true;
     };
 
-    # wallpapers
-    wpaperd.enable = true;
-
     # pdf viewer
     zathura.enable = true;
   };
@@ -148,23 +145,6 @@
           resumeCommand = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch dpms on";
         }
       ];
-    };
-  };
-
-  systemd = {
-    user.services = {
-      # start wallpaper service when a desktop is launched
-      wpaperd = {
-        Unit = {
-          Description = "wallpaper daemon";
-          PartOf = ["graphical-session.target"];
-        };
-        Service = {
-          ExecStart = "${lib.getExe pkgs.wpaperd}";
-          Restart = "on-failure";
-        };
-        Install.WantedBy = ["graphical-session.target"];
-      };
     };
   };
 

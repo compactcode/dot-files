@@ -1,4 +1,7 @@
 {config, ...}: {
+  # wallpaper
+  services.hyprpaper.enable = true;
+
   # window manager
   wayland.windowManager.hyprland = {
     enable = true;
