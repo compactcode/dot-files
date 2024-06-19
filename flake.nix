@@ -59,7 +59,7 @@
                   inputs._1password-shell-plugins.hmModules.default
                   ./home/cli.nix
                   ./home/gui.nix
-                  ./home/nixvim.nix
+                  ./home/nixvim
                   ./home/ssh.nix
                 ];
 
@@ -112,7 +112,7 @@
                   inputs._1password-shell-plugins.hmModules.default
                   ./home/cli.nix
                   ./home/gui.nix
-                  ./home/nixvim.nix
+                  ./home/nixvim
                   ./home/ssh.nix
                 ];
 

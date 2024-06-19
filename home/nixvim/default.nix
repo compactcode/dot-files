@@ -1,8 +1,8 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{...}: {
+  imports = [
+    ./plugins/conform.nix
+  ];
+
   programs.nixvim = {
     enable = true;
 
@@ -67,11 +67,6 @@
         key = "<leader>as";
         action = "<cmd>lua require(\"spectre\").open()<cr>";
         options = {desc = "search and replace";};
-      }
-      {
-        key = "<leader>af";
-        action = "<cmd>lua require(\"conform\").format()<cr>";
-        options = {desc = "format code";};
       }
       {
         key = "<leader>ff";
@@ -195,34 +190,6 @@
     };
 
     plugins = {
-      # formatting
-      conform-nvim = {
-        enable = true;
-        formatOnSave = {
-          lspFallback = true;
-        };
-        formatters = {
-          alejandra = {
-            command = "${lib.getExe pkgs.alejandra}";
-          };
-          jq = {
-            command = "${lib.getExe pkgs.jq}";
-          };
-          prettierd = {
-            command = "${lib.getExe pkgs.prettierd}";
-          };
-          shfmt = {
-            command = "${lib.getExe pkgs.shfmt}";
-          };
-        };
-        formattersByFt = {
-          json = ["jq"];
-          nix = ["alejandra"];
-          sh = ["shfmt"];
-          yaml = ["prettierd"];
-        };
-      };
-
       # auto complete
       cmp = {
         enable = true;
@@ -358,6 +325,7 @@
       mini = {
         enable = true;
         modules = {
+          indentscope = {}; # indent decorations
           pairs = {}; # auto pairs
           surround = {}; # surround actions
         };
