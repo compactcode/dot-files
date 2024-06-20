@@ -1,6 +1,6 @@
 {
-  pkgs,
   lib,
+  pkgs,
   ...
 }: {
   programs.nixvim = {
@@ -15,6 +15,17 @@
     # formatting
     plugins.conform-nvim = {
       enable = true;
+
+      # custom function allowing auto formatting to be disabled
+      formatOnSave = ''
+        function(bufnr)
+          if vim.g.disable_autoformat then
+            return
+          end
+          return { lsp_format = "fallback" }
+        end
+      '';
+
       # globally installed formatters
       formatters = {
         alejandra = {
@@ -38,6 +49,19 @@
         sh = ["shfmt"];
         yaml = ["prettierd"];
       };
+    };
+
+    # custom command to disable auto formatting
+    userCommands = {
+      "ConformToggle".command.__raw = ''
+        function()
+          if vim.g.disable_autoformat then
+            vim.g.disable_autoformat = false
+          else
+            vim.g.disable_autoformat = true
+          end
+        end
+      '';
     };
   };
 }
