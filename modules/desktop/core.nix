@@ -1,8 +1,13 @@
 {
+  inputs,
   pkgs,
   lib,
   ...
 }: {
+  imports = [
+    inputs.stylix.nixosModules.stylix
+  ];
+
   environment = {
     systemPackages = with pkgs; [
       bruno # api explorer
@@ -91,6 +96,11 @@
     };
 
     image = ./wallpaper/space.jpg;
+
+    opacity = {
+      # give terminals a transparent background
+      terminal = 0.9;
+    };
 
     # dark mode
     polarity = "dark";
