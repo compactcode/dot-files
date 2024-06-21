@@ -63,6 +63,17 @@
             "tray" # system tray
           ];
 
+          battery = {
+            interval = 60;
+            states = {
+              warning = 30;
+              critical = 1;
+            };
+            "format" = "{capacity}% {icon}";
+            "format-icons" = ["" "" "" "" ""];
+            "max-length" = 2;
+          };
+
           clock = {
             format = "{:%H.%M}";
             tooltip = true;
