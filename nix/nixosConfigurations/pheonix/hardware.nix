@@ -1,4 +1,3 @@
-{...}:
 # CPU: AMD Ryzen 5900X
 # GPU: AMD Radeon 6700XT
 # Motherboard: Gigabyte B550I AORUS PRO AX

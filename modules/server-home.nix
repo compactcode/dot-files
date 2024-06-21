@@ -1,12 +1,13 @@
-{ pkgs, lib, ... }:
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   home = {
     sessionVariables = {
       # nvim as the default editor
       EDITOR = "nvim";
     };
-    stateVersion = "22.11";
   };
 
   programs = {
@@ -15,7 +16,7 @@
       enable = true;
       enableZshIntegration = true;
       defaultCommand = "${lib.getBin pkgs.fd}/bin/fd --type f";
-      defaultOptions = [ "--reverse" "--height 40%" ];
+      defaultOptions = ["--reverse" "--height 40%"];
     };
 
     # shell prompt

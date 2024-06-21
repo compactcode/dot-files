@@ -1,4 +1,3 @@
-{pkgs, ...}:
 # CPU: Intel N100
 # GPU: Intel UHD Graphics
 # Motherboard: LarkBox X 2023
@@ -12,36 +11,8 @@
     kernelModules = ["kvm-intel"];
   };
 
+  # TODO: Move this somewhere else.
   fileSystems = {
-    "/boot" = {
-      device = "/dev/sda1";
-      fsType = "vfat";
-    };
-
-    "/" = {
-      device = "/dev/sda2";
-      fsType = "btrfs";
-      options = ["subvol=root" "compress=zstd"];
-    };
-
-    "/home" = {
-      device = "/dev/sda2";
-      fsType = "btrfs";
-      options = ["subvol=home" "compress=zstd"];
-    };
-
-    "/nix" = {
-      device = "/dev/sda2";
-      fsType = "btrfs";
-      options = ["subvol=nix" "compress=zstd" "noatime"];
-    };
-
-    "/swap" = {
-      device = "/dev/sda2";
-      fsType = "btrfs";
-      options = ["subvol=swap" "noatime"];
-    };
-
     "/mnt/nas/config" = {
       device = "192.168.1.200:/mnt/storage/config";
       fsType = "nfs";
@@ -55,8 +26,6 @@
     };
   };
 
-  swapDevices = [{device = "/swap/swapfile";}];
-
   hardware = {
     # enable amd microcode updates
     cpu.intel.updateMicrocode = true;
@@ -65,9 +34,7 @@
     enableRedistributableFirmware = true;
   };
 
-  # set a hostname
   networking = {
-    hostName = "pudge";
     # enable the wireless card
     wireless = {
       enable = true;
@@ -75,7 +42,4 @@
       userControlled.enable = true;
     };
   };
-
-  # the version this machine was created with
-  system.stateVersion = "23.05";
 }
