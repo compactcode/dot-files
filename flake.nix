@@ -38,39 +38,6 @@
       nixpkgs.config = {allowUnfree = true;};
 
       nixosConfigurations = {
-        pheonix = {
-          system = "x86_64-linux";
-          modules = [
-            inputs.disko.nixosModules.disko
-            ./hardware/pheonix.nix
-            ./hardware/disko/pheonix.nix
-            ./modules/core.nix
-            ./modules/desktop/core.nix
-            ./modules/desktop/hyprland.nix
-            ./modules/work/zepto.nix
-            inputs.home-manager.nixosModules.home-manager
-            inputs.stylix.nixosModules.stylix
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.shandogs = {
-                imports = [
-                  inputs.nixvim.homeManagerModules.nixvim
-                  inputs._1password-shell-plugins.hmModules.default
-                  ./home/cli.nix
-                  ./home/gui.nix
-                  ./home/nixvim
-                  ./home/ssh.nix
-                ];
-
-                home.stateVersion = "23.11";
-              };
-
-              system.stateVersion = "23.11";
-            }
-          ];
-        };
-
         pudge = {
           system = "x86_64-linux";
           modules = [

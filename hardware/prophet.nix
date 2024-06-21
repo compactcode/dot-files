@@ -1,14 +1,10 @@
-{ pkgs, ... }:
-
 # CPU: Intel Core i7-8565U
 # GPU: Nvidia Quadro P520
 # Motherboard: ThinkPad P43s
-
 {
   boot = {
     # Disable Nvidia GPU
-    blacklistedKernelModules =
-      [ "nouveau" "nvidia" "nvidia_drm" "nvidia_modeset" ];
+    blacklistedKernelModules = ["nouveau" "nvidia" "nvidia_drm" "nvidia_modeset"];
 
     # Disable Nvidia GPU
     extraModprobeConfig = ''
@@ -17,8 +13,7 @@
     '';
 
     initrd = {
-      availableKernelModules =
-        [ "ahci" "nvme" "sd_mod" "usb_storage" "usbhid" "xhci_pci" ];
+      availableKernelModules = ["ahci" "nvme" "sd_mod" "usb_storage" "usbhid" "xhci_pci"];
     };
   };
 
