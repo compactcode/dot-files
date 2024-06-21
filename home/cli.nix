@@ -29,12 +29,6 @@
   };
 
   programs = {
-    # 1password wrapper for cli authentication
-    _1password-shell-plugins = {
-      enable = true;
-      plugins = with pkgs; [gh];
-    };
-
     # cat replacement
     bat = {
       enable = true;
