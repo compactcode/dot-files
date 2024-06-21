@@ -2,8 +2,8 @@
   system = "x86_64-linux";
   modules = [
     inputs.disko.nixosModules.disko
-    ../../../hardware/pheonix.nix
-    ../../../hardware/disko/pheonix.nix
+    ./hardware.nix
+    ./filesytem.nix
     ../../../modules/core.nix
     ../../../modules/desktop/core.nix
     ../../../modules/desktop/hyprland.nix
@@ -25,6 +25,8 @@
 
         home.stateVersion = "23.11";
       };
+
+      networking.hostName = "pheonix";
 
       system.stateVersion = "23.11";
     }

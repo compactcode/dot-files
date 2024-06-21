@@ -35,7 +35,4 @@
   services.udev.extraRules = ''
     ACTION=="add", SUBSYSTEM=="pci", DRIVER=="pcieport", ATTR{power/wakeup}="disabled"
   '';
-
-  # set a hostname
-  networking.hostName = "pheonix";
 }
