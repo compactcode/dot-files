@@ -2,8 +2,8 @@
   system = "x86_64-linux";
   modules = [
     inputs.disko.nixosModules.disko
-    ../../../hardware/prophet.nix
-    ../../../hardware/disko/prophet.nix
+    ./hardware.nix
+    ./filesystem.nix
     ../../../modules/core.nix
     ../../../modules/desktop/core.nix
     ../../../modules/desktop/hyprland.nix
@@ -25,6 +25,8 @@
 
         home.stateVersion = "24.05";
       };
+
+      networking.hostName = "prophet";
 
       system.stateVersion = "24.05";
     }
