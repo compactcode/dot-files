@@ -17,8 +17,8 @@
             inputs._1password-shell-plugins.hmModules.default
             ./home/cli.nix
             ./home/gui.nix
+            ./home/gui/1password.nix
             ./home/nixvim
-            ./home/ssh.nix
           ];
         };
       };
