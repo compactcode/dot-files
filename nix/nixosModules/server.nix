@@ -13,7 +13,7 @@
         useUserPackages = true;
         users.shandogs = {
           imports = [
-            ./home/server.nix
+            ./home/cli/core.nix
           ];
         };
       };
