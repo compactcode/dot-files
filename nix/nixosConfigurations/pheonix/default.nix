@@ -1,27 +1,12 @@
 {inputs, ...}: {
   system = "x86_64-linux";
   modules = [
-    inputs.disko.nixosModules.disko
     ./hardware.nix
-    ./filesytem.nix
-    ../../../modules/core.nix
-    ../../../modules/desktop/core.nix
-    ../../../modules/desktop/hyprland.nix
-    ../../../modules/work/zepto.nix
-    inputs.home-manager.nixosModules.home-manager
+    inputs.self.nixosModules.desktop
     {
-      home-manager.useGlobalPkgs = true;
-      home-manager.useUserPackages = true;
-      home-manager.users.shandogs = {
-        imports = [
-          inputs.nixvim.homeManagerModules.nixvim
-          inputs._1password-shell-plugins.hmModules.default
-          ../../../home/cli.nix
-          ../../../home/gui.nix
-          ../../../home/nixvim
-          ../../../home/ssh.nix
-        ];
+      disko.devices.disk.main.device = "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_2TB_S4J4NF0NA04068A";
 
+      home-manager.users.shandogs = {
         home.stateVersion = "23.11";
       };
 

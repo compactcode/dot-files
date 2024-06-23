@@ -35,6 +35,7 @@
 
   outputs = {flakelight, ...} @ inputs:
     flakelight.lib.mkFlake ./. {
+      inherit inputs;
       nixpkgs.config = {allowUnfree = true;};
     };
 }
