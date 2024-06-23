@@ -1,11 +1,11 @@
 {inputs, ...}: {
   imports =[
     inputs.disko.nixosModules.disko
-    ../../modules/disko/desktop.nix
-    ../../modules/core.nix
-    ../../modules/desktop/core.nix
-    ../../modules/desktop/hyprland.nix
-    ../../modules/work/zepto.nix
+    ./nixos/disko/desktop.nix
+    ./nixos/core.nix
+    ./nixos/desktop/core.nix
+    ./nixos/desktop/hyprland.nix
+    ./nixos/work/zepto.nix
     inputs.home-manager.nixosModules.home-manager
     {
       home-manager = {
@@ -15,10 +15,10 @@
           imports = [
             inputs.nixvim.homeManagerModules.nixvim
             inputs._1password-shell-plugins.hmModules.default
-            ../../home/cli.nix
-            ../../home/gui.nix
-            ../../home/nixvim
-            ../../home/ssh.nix
+            ./home/cli.nix
+            ./home/gui.nix
+            ./home/nixvim
+            ./home/ssh.nix
           ];
         };
       };

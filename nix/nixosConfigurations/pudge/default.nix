@@ -1,21 +1,12 @@
 {inputs, ...}: {
   system = "x86_64-linux";
   modules = [
-    inputs.disko.nixosModules.disko
     ./hardware.nix
-    ./filesystem.nix
-    ../../../modules/server.nix
-    ../../../modules/server-automation.nix
-    ../../../modules/server-media.nix
-    inputs.home-manager.nixosModules.home-manager
+    inputs.self.nixosModules.server
     {
-      home-manager.useGlobalPkgs = true;
-      home-manager.useUserPackages = true;
-      home-manager.users.shandogs = {
-        imports = [
-          ../../../modules/server-home.nix
-        ];
+      disko.devices.disk.main.device = "/dev/disk/by-id/ata-AirDisk_512GB_SSD_NFG246R002163S30WX";
 
+      home-manager.users.shandogs = {
         home.stateVersion = "22.11";
       };
 

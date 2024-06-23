@@ -3,7 +3,6 @@
     disk = {
       vdb = {
         type = "disk";
-        device = "/dev/disk/by-id/ata-AirDisk_512GB_SSD_NFG246R002163S30WX";
         content = {
           type = "gpt";
           partitions = {
