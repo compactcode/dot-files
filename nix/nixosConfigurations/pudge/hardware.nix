@@ -28,13 +28,4 @@
 
   # enable microcode updates
   hardware.cpu.intel.updateMicrocode = true;
-
-  networking = {
-    # enable the wireless card
-    wireless = {
-      enable = true;
-      # allow dynamic network selection
-      userControlled.enable = true;
-    };
-  };
 }
