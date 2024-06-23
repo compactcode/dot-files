@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  imports =[
+  imports = [
     inputs.disko.nixosModules.disko
     ./nixos/disko/desktop.nix
     ./nixos/core.nix

@@ -1,8 +1,6 @@
-{ pkgs, ... }:
-
-{
+{...}: {
   networking.firewall = {
-    allowedTCPPorts = [ 8123 ];
+    allowedTCPPorts = [8123];
   };
 
   virtualisation.oci-containers = {

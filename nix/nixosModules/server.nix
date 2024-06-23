@@ -2,9 +2,10 @@
   imports = [
     inputs.disko.nixosModules.disko
     ./nixos/disko/server.nix
-    ./nixos/server.nix
-    ./nixos/server-automation.nix
-    ./nixos/server-media.nix
+    ./nixos/core.nix
+    ./nixos/server/core.nix
+    ./nixos/server/automation.nix
+    ./nixos/server/media.nix
     inputs.home-manager.nixosModules.home-manager
     {
       home-manager = {
@@ -12,7 +13,7 @@
         useUserPackages = true;
         users.shandogs = {
           imports = [
-            ./home/server-home.nix
+            ./home/server.nix
           ];
         };
       };
