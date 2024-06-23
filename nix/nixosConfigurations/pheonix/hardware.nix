@@ -22,13 +22,8 @@
     kernelModules = ["amdgpu"];
   };
 
-  hardware = {
-    # enable amd microcode updates
-    cpu.amd.updateMicrocode = true;
-
-    # enable nonfree firmware
-    enableRedistributableFirmware = true;
-  };
+  # enable microcode updates
+  hardware.cpu.amd.updateMicrocode = true;
 
   # prevent pci devices (nvme) waking the system out of sleep
   services.udev.extraRules = ''

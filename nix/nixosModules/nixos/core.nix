@@ -32,6 +32,9 @@
   # use english
   i18n.defaultLocale = "en_US.UTF-8";
 
+  # enable nonfree firmware
+  hardware.enableRedistributableFirmware = true;
+
   # melbourne cbd
   location = {
     latitude = -37.814;

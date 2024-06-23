@@ -26,13 +26,8 @@
     };
   };
 
-  hardware = {
-    # enable amd microcode updates
-    cpu.intel.updateMicrocode = true;
-
-    # enable nonfree firmware
-    enableRedistributableFirmware = true;
-  };
+  # enable microcode updates
+  hardware.cpu.intel.updateMicrocode = true;
 
   networking = {
     # enable the wireless card

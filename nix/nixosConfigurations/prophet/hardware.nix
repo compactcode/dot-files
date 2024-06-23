@@ -17,13 +17,8 @@
     };
   };
 
-  hardware = {
-    # enable amd microcode updates
-    cpu.intel.updateMicrocode = true;
-
-    # enable nonfree firmware
-    enableRedistributableFirmware = true;
-  };
+  # enable microcode updates
+  hardware.cpu.intel.updateMicrocode = true;
 
   services.udev.extraRules = ''
     # Remove NVIDIA USB xHCI Host Controller devices, if present
