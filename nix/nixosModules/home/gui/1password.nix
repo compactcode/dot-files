@@ -1,6 +1,6 @@
 {
-  pkgs,
   lib,
+  pkgs,
   ...
 }: let
   sshKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDPCP4SqkSwxkX9dkk36idNz7wCtXfa84hwkkflJVuDF";
@@ -9,6 +9,12 @@ in {
   home.file.".ssh/allowed_signers".text = "* ${sshKey}";
 
   programs = {
+    # 1password wrapper for cli authentication
+    _1password-shell-plugins = {
+      enable = true;
+      plugins = with pkgs; [gh];
+    };
+
     # version control
     git = {
       extraConfig = {

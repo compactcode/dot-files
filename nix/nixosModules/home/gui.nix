@@ -14,12 +14,6 @@
   gtk.enable = true;
 
   programs = {
-    # 1password wrapper for cli authentication
-    _1password-shell-plugins = {
-      enable = true;
-      plugins = with pkgs; [gh];
-    };
-
     # backup browser for websites that don't work in firefox
     chromium = {
       enable = true;
