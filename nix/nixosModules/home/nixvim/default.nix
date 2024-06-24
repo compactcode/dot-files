@@ -1,6 +1,8 @@
 {...}: {
   imports = [
+    ./plugins/aerial.nix
     ./plugins/conform.nix
+    ./plugins/lualine.nix
     ./plugins/neotest.nix
   ];
 
@@ -137,11 +139,6 @@
         key = "<leader>p";
         action = "<cmd>Telescope yank_history<cr>";
         options = {desc = "paste from history";};
-      }
-      {
-        key = "<leader>s";
-        action = "<cmd>Navbuddy<cr>";
-        options = {desc = "code symbols";};
       }
       {
         key = "<leader>t";
@@ -288,37 +285,6 @@
         mode = "symbol";
       };
 
-      lualine = {
-        enable = true;
-        componentSeparators = {
-          left = "";
-          right = "";
-        };
-        sections = {
-          lualine_a = ["mode"];
-          lualine_b = ["branch"];
-          lualine_c = [
-            {
-              name = "filename";
-              extraConfig.path = 1;
-            }
-          ];
-          lualine_x = [
-            "encoding"
-            "fileformat"
-            {
-              name = "filetype";
-              extraConfig.colored = false;
-            }
-          ];
-          lualine_y = ["progress"];
-          lualine_z = ["location"];
-        };
-        winbar = {
-          lualine_c = ["navic"];
-        };
-      };
-
       luasnip = {
         enable = true;
       };
@@ -330,41 +296,6 @@
           pairs = {}; # auto pairs
           surround = {}; # surround actions
         };
-      };
-
-      # lsp symbol window
-      navbuddy = {
-        enable = true;
-        # allow connecting to lsps
-        lsp.autoAttach = true;
-        # custom key mappings
-        mappings = {
-          "<esc>" = "close";
-          "<enter>" = "select";
-
-          # navigation (colemak)
-          "m" = "parent";
-          "n" = "next_sibling";
-          "e" = "previous_sibling";
-          "i" = "children";
-
-          # interaction
-          "v" = "visual_scope";
-          "y" = "yank_scope";
-          "d" = "delete";
-
-          # reordering
-          "N" = "move_down";
-          "E" = "move_up";
-        };
-        # disable default key mappings
-        useDefaultMapping = false;
-      };
-
-      # lsp current context
-      navic = {
-        enable = true;
-        lsp.autoAttach = true;
       };
 
       # file explorer
