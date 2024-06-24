@@ -1,6 +1,7 @@
 {...}: {
   imports = [
     ./plugins/conform.nix
+    ./plugins/neotest.nix
   ];
 
   programs.nixvim = {
