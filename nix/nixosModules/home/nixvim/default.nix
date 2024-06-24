@@ -4,6 +4,7 @@
     ./plugins/conform.nix
     ./plugins/lualine.nix
     ./plugins/neotest.nix
+    ./plugins/oil.nix
   ];
 
   programs.nixvim = {
@@ -129,11 +130,6 @@
         key = "<leader>la";
         action = "<cmd>lua vim.lsp.buf.code_action()<cr>";
         options = {desc = "code actions";};
-      }
-      {
-        key = "<leader>o";
-        action = "<cmd>Oil<cr>";
-        options = {desc = "explore files";};
       }
       {
         key = "<leader>p";
@@ -297,9 +293,6 @@
           surround = {}; # surround actions
         };
       };
-
-      # file explorer
-      oil.enable = true;
 
       # search and replace
       spectre.enable = true;
