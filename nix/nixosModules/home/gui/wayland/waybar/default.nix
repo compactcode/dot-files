@@ -19,6 +19,7 @@
             "temperature"
             "network"
             "pulseaudio" # sound
+            "battery"
             "tray" # system tray
           ];
 
@@ -30,7 +31,6 @@
             };
             "format" = "{capacity}% {icon}";
             "format-icons" = ["" "" "" "" ""];
-            "max-length" = 2;
           };
 
           clock = {
