@@ -22,6 +22,9 @@
         };
       };
 
+      # lsp status notifications
+      fidget.enable = true;
+
       # lsp servers
       lsp = {
         enable = true;
