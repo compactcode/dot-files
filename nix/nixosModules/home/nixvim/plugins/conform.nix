@@ -46,6 +46,7 @@
       formattersByFt = {
         json = ["jq"];
         nix = ["alejandra"];
+        ruby = ["rubocop"];
         sh = ["shfmt"];
         yaml = ["prettierd"];
       };
