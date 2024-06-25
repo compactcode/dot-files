@@ -2,6 +2,7 @@
   imports = [
     ./plugins/aerial.nix
     ./plugins/conform.nix
+    ./plugins/lsp.nix
     ./plugins/lualine.nix
     ./plugins/neotest.nix
     ./plugins/oil.nix
@@ -93,11 +94,6 @@
         options = {desc = "copy permalink url to current lines";};
       }
       {
-        key = "<leader>la";
-        action = "<cmd>lua vim.lsp.buf.code_action()<cr>";
-        options = {desc = "code actions";};
-      }
-      {
         key = "<leader>w";
         action = "<cmd>w<cr>";
         options = {desc = "save file";};
@@ -168,19 +164,6 @@
         };
       };
 
-      # linting
-      efmls-configs = {
-        enable = true;
-        setup = {
-          json = {
-            linter = "jq";
-          };
-          yaml = {
-            linter = "yamllint";
-          };
-        };
-      };
-
       # enhanced versions of builtin motions
       flash = {
         enable = true;
@@ -200,41 +183,6 @@
         settings = {
           current_line_blame = true;
         };
-      };
-
-      lsp = {
-        enable = true;
-        enabledServers = [
-          {
-            # ruby, installed per project
-            name = "ruby_lsp";
-            extraOptions = {};
-          }
-        ];
-        servers = {
-          # general purpose (linting/formatting efc)
-          efm = {
-            enable = true;
-            extraOptions = {
-              init_options = {
-                # conform handles formatting
-                documentFormatting = false;
-                documentRangeFormatting = false;
-              };
-            };
-          };
-          # bash
-          bashls.enable = true;
-          # nix
-          nixd.enable = true;
-        };
-      };
-
-      # autocomplete source icons
-      lspkind = {
-        enable = true;
-        cmp.enable = true;
-        mode = "symbol";
       };
 
       luasnip = {
