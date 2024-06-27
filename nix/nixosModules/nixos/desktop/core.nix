@@ -10,6 +10,7 @@
 
   environment = {
     systemPackages = with pkgs; [
+      armcord # voice chat (discord)
       bruno # api explorer
       dust # du replacement
       grimblast # screenshot taker
@@ -17,7 +18,6 @@
       pavucontrol # sound manager
       pinta # image editor
       slack # messenger
-      vesktop # voice chat (discord)
       xsv # csv explorer
       wl-clipboard # clipboard interaction
     ];

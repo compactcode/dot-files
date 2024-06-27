@@ -12,7 +12,7 @@
       bind = [
         # applications tied to particular workspaces
         "$mod, a, exec, ~/.local/share/rofi/project.sh"
-        "$mod, d, exec, ~/.local/share/hyprland/focus.sh 5 vesktop vesktop"
+        "$mod, d, exec, ~/.local/share/hyprland/focus.sh 5 armcord armcord"
         "$mod, e, exec, ~/.local/share/hyprland/project.sh 3"
         "$mod, n, exec, ~/.local/share/hyprland/focus.sh 1 firefox firefox"
         "$mod, o, exec, ~/.local/share/hyprland/focus.sh 4 obsidian obsidian"
