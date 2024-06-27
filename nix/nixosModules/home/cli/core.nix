@@ -19,7 +19,15 @@
     };
 
     # top replacement
-    btop.enable = true;
+    btop = {
+      enable = true;
+      settings = {
+        # show cpu usage on the core rather than total
+        proc_per_core = true;
+        # show processes in a tree
+        proc_tree = true;
+      };
+    };
 
     # environment loading
     direnv = {
