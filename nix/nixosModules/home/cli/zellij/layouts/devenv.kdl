@@ -16,7 +16,11 @@ layout {
     pane command="zsh" close_on_exit=false
   }
   tab name="git" {
-    pane command="lazygit" close_on_exit=false
+    pane command="zsh" close_on_exit=false {
+      // make direnv environment available
+      // https://github.com/direnv/direnv/issues/262
+      args "-c" "eval $(direnv export bash) && lazygit"
+    }
   }
   tab name="processes" {
     pane command="zsh" close_on_exit=false {
