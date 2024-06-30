@@ -70,6 +70,11 @@
         options = {desc = "search and replace";};
       }
       {
+        key = "<leader>c";
+        action = "<cmd>nohlsearch<cr>";
+        options = {desc = "clear search highlight";};
+      }
+      {
         key = "<leader>go";
         action = "<cmd>lua require(\"gitlinker\").get_buf_range_url(\"n\", {action_callback = require(\"gitlinker.actions\").open_in_browser})<cr>";
         mode = ["n"];
