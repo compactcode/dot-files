@@ -94,6 +94,7 @@
 
       shellAliases = {
         b = "${lib.getExe pkgs.bat}";
+        c = "clear";
         f = "${lib.getExe pkgs.fzf}";
         g = "${lib.getExe pkgs.git}";
         l = "${lib.getExe pkgs.eza} -la --icons --no-permissions --no-user";
