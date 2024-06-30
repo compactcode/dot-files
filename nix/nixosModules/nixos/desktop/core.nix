@@ -17,9 +17,10 @@
       obsidian # document manager
       pavucontrol # sound manager
       pinta # image editor
+      signal-desktop # secure messenger
       slack # messenger
-      xsv # csv explorer
       wl-clipboard # clipboard interaction
+      xsv # csv explorer
     ];
 
     sessionVariables = {
