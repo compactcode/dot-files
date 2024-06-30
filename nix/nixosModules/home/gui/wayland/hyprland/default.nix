@@ -9,6 +9,11 @@
     settings = {
       "$mod" = "SUPER";
 
+      animation = [
+        # slide scratchpads in vertically
+        "specialWorkspace, 1, 10, default, slidevert"
+      ];
+
       bind = [
         # applications tied to particular workspaces
         "$mod, a, exec, ~/.local/share/rofi/project.sh"
@@ -30,6 +35,9 @@
         # focused window actions
         "$mod, w, togglefloating,"
         "$mod, q, killactive,"
+
+        # open scratchpad
+        "$mod, c, togglespecialworkspace, scratchpad"
 
         # open workspaces
         "$mod, TAB, workspace, previous"
@@ -95,6 +103,11 @@
       windowrulev2 = [
         "workspace 5, class:^(Slack)$"
         "workspace 9, class:^(steam)$"
+      ];
+
+      workspace = [
+        # auto create floating terminal on scratchpad
+        "special:scratchpad, on-created-empty:[float; size 1200 600]kitty"
       ];
     };
 
