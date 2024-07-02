@@ -173,7 +173,7 @@
       flash = {
         enable = true;
         # add jump labels to the default search
-        modes.search.enabled = true;
+        settings.modes.search.enabled = true;
       };
 
       # default library of snippets
