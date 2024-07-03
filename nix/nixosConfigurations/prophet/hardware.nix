@@ -17,8 +17,15 @@
     };
   };
 
-  # enable microcode updates
-  hardware.cpu.intel.updateMicrocode = true;
+  hardware = {
+    # enable bluetooth
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+    # enable microcode updates
+    cpu.intel.updateMicrocode = true;
+  };
 
   services.udev.extraRules = ''
     # Remove NVIDIA USB xHCI Host Controller devices, if present
