@@ -125,4 +125,13 @@
       };
     };
   };
+
+  virtualisation = {
+    # container manager
+    docker = {
+      enable = true;
+      # start on demand
+      enableOnBoot = false;
+    };
+  };
 }

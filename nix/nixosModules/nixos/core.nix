@@ -91,6 +91,7 @@
       shandogs = {
         extraGroups = [
           "wheel" # allow sudo
+          "docker" # allow docker control
         ];
         isNormalUser = true;
         hashedPassword = "$6$Ol1IgIkZqEqHkDk$X51v4AgMAKXhqpMjfM451dvu71YnMlYdK4lZk/ZFx0m4A/eEPuUfMAYyYwVNjDHMtoNXz6QeoSQg4lHQtHtzX1";
