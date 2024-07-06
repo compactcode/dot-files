@@ -1,6 +1,7 @@
 {...}: {
   imports = [
     ./plugins/aerial.nix
+    ./plugins/cmp.nix
     ./plugins/conform.nix
     ./plugins/lsp.nix
     ./plugins/lualine.nix
@@ -141,34 +142,6 @@
     };
 
     plugins = {
-      # auto complete
-      cmp = {
-        enable = true;
-        settings = {
-          # show current completion inline
-          experimental = {
-            ghost_text = true;
-          };
-          snippet = {
-            expand = "luasnip";
-          };
-          mapping.__raw = ''
-            cmp.mapping.preset.insert({
-              ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-              ["<C-e>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-              ["<C-Space>"] = cmp.mapping.complete(),
-              ["<CR>"] = cmp.mapping.confirm({ select = true }),
-            })
-          '';
-          sources = [
-            {name = "luasnip";}
-            {name = "nvim_lsp";}
-            {name = "path";}
-            {name = "buffer";}
-          ];
-        };
-      };
-
       # enhanced versions of builtin motions
       flash = {
         enable = true;
