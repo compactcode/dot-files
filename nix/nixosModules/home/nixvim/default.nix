@@ -5,6 +5,7 @@
     ./plugins/conform.nix
     ./plugins/lsp.nix
     ./plugins/lualine.nix
+    ./plugins/luasnip.nix
     ./plugins/neotest.nix
     ./plugins/oil.nix
     ./plugins/telescope.nix
@@ -161,10 +162,6 @@
         settings = {
           current_line_blame = true;
         };
-      };
-
-      luasnip = {
-        enable = true;
       };
 
       mini = {
