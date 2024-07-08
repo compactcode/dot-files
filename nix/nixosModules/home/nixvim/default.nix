@@ -14,6 +14,12 @@
   programs.nixvim = {
     enable = true;
 
+    # color scheme used by stylix
+    colorschemes.base16.settings = {
+      # draw borders around telescope sections
+      telescope_borders = true;
+    };
+
     # disable unused providers
     withRuby = false;
     withNodeJs = false;
