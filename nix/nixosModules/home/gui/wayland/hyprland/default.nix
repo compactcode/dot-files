@@ -98,6 +98,9 @@
         # disable built in logo
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
+        # workaround for on-created-empty not gaining focus
+        # see https://github.com/hyprwm/Hyprland/issues/6237
+        initial_workspace_tracking = 0;
       };
 
       windowrulev2 = [
@@ -107,7 +110,7 @@
 
       workspace = [
         # auto create floating terminal on scratchpad
-        "special:scratchpad, on-created-empty:[float; size 1200 600]kitty"
+        "special:scratchpad, on-created-empty:kitty"
       ];
     };
 
