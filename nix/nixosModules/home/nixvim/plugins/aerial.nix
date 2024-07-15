@@ -2,11 +2,6 @@
   programs.nixvim = {
     keymaps = [
       {
-        key = "gn";
-        action = "<cmd>AerialNext<cr>";
-        options = {desc = "jump to next symbol";};
-      }
-      {
         key = "<leader>ss";
         action = "<cmd>Telescope aerial<cr>";
         options = {desc = "code symbol search";};
