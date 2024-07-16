@@ -30,7 +30,7 @@
 
       gluetun = {
         environmentFiles = [
-          "/run/secret/gluetun.env" # not managed by nix
+          "/mnt/nas/config/gluetun/secret.env" # not managed by nix
         ];
         environment = {
           SERVER_COUNTRIES = "Australia";
