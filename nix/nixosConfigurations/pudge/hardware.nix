@@ -3,6 +3,17 @@
 # Motherboard: LarkBox X 2023
 {
   boot = {
+    # disable wifi and bluetooth
+    blacklistedKernelModules = [
+      "bluetooth"
+      "btbcm"
+      "btintel"
+      "btmtk"
+      "btrtl"
+      "btusb"
+      "iwlwifi"
+    ];
+
     initrd = {
       availableKernelModules = ["ahci" "sd_mod" "uas" "usb_storage" "usbhid" "xhci_pci"];
     };
