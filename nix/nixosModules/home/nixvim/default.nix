@@ -6,6 +6,7 @@
     ./plugins/lsp.nix
     ./plugins/lualine.nix
     ./plugins/luasnip.nix
+    ./plugins/mini.nix
     ./plugins/neotest.nix
     ./plugins/oil.nix
     ./plugins/telescope.nix
@@ -167,15 +168,6 @@
         enable = true;
         settings = {
           current_line_blame = true;
-        };
-      };
-
-      mini = {
-        enable = true;
-        modules = {
-          indentscope = {}; # indent decorations
-          pairs = {}; # auto pairs
-          surround = {}; # surround actions
         };
       };
 
