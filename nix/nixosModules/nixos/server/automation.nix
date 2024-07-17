@@ -14,7 +14,7 @@
       extraOptions = [
         "--network=host"
       ];
-      image = "lscr.io/linuxserver/homeassistant:2023.12.4";
+      image = "lscr.io/linuxserver/homeassistant:2024.7.2";
       ports = [
         "8123:8123"
       ];
