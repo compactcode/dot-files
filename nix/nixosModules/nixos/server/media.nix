@@ -58,7 +58,7 @@
         extraOptions = [
           "--network=container:gluetun"
         ];
-        image = "lscr.io/linuxserver/prowlarr:1.11.4.4173-ls45";
+        image = "lscr.io/linuxserver/prowlarr:1.20.1.4603-ls78";
         volumes = [
           "/mnt/nas/config/prowlarr:/config"
         ];
