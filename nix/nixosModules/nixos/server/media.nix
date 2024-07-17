@@ -18,7 +18,7 @@
           PUID = "1001"; # service user
           PGID = "1001"; # service group
         };
-        image = "lscr.io/linuxserver/emby:4.7.14.0-ls180";
+        image = "lscr.io/linuxserver/emby:4.8.8.0-ls210";
         ports = [
           "8096:8096"
         ];
