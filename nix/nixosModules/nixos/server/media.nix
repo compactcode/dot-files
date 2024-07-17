@@ -78,7 +78,7 @@
         extraOptions = [
           "--network=container:gluetun"
         ];
-        image = "lscr.io/linuxserver/radarr:5.2.6.8376-ls197";
+        image = "lscr.io/linuxserver/radarr:5.7.0.8882-ls229";
         volumes = [
           "/mnt/nas/config/radarr:/config"
           "/mnt/nas/media:/data"
