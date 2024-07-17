@@ -99,7 +99,7 @@
         extraOptions = [
           "--network=container:gluetun"
         ];
-        image = "lscr.io/linuxserver/sonarr:4.0.0.741-ls219";
+        image = "lscr.io/linuxserver/sonarr:4.0.8.1874-ls248";
         volumes = [
           "/mnt/nas/config/sonarr:/config"
           "/mnt/nas/media:/data"
