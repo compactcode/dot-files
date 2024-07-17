@@ -25,6 +25,8 @@
           unbind = [
             # disable session mode (conflicts with neovim)
             "Ctrl o"
+            # disable tmux mode (conflicts with neovim)
+            "Ctrl b"
           ];
           normal = {
             # disable resize mode (conflicts with neovim)
