@@ -36,6 +36,12 @@
             {
               # https://devenv.sh/reference/options/
 
+              dotenv = {
+                enable = true;
+                # enable sandbox mode
+                filename = [".env.sandbox_local"];
+              };
+
               languages = {
                 javascript = {
                   enable = true;
