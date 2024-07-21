@@ -176,16 +176,16 @@
 
       treesitter = {
         enable = true;
-        indent = true;
+        settings = {
+          indent.enable = true;
+        };
       };
 
       # clipboard manager
       yanky = {
         enable = true;
         # enable telescope ingegration
-        picker = {
-          telescope.enable = true;
-        };
+        enableTelescope = true;
       };
 
       # key binding menu
