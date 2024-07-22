@@ -10,6 +10,10 @@
         home.stateVersion = "24.05";
       };
 
+      # enables laptop specific features:
+      # - battery management
+      laptop.enable = true;
+
       networking.hostName = "prophet";
 
       system.stateVersion = "24.05";
