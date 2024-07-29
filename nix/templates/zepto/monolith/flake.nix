@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:cachix/devenv-nixpkgs/rolling";
+    nixpkgs-legacy.url = "github:nixos/nixpkgs/nixos-23.05";
     systems.url = "github:nix-systems/default";
     devenv.url = "github:cachix/devenv";
     devenv.inputs.nixpkgs.follows = "nixpkgs";
@@ -28,6 +29,11 @@
       forEachSystem
       (system: let
         pkgs = import nixpkgs {config.allowUnfree = true;};
+        pkgs-legacy = import inputs.nixpkgs-legacy {
+          config.permittedInsecurePackages = [
+            "nodejs-16.20.2"
+          ];
+        };
       in {
         default = devenv.lib.mkShell {
           inherit inputs pkgs;
@@ -45,8 +51,11 @@
               languages = {
                 javascript = {
                   enable = true;
-                  package = pkgs.nodejs_18;
-                  yarn.enable = true;
+                  package = pkgs-legacy.nodejs_16;
+                  yarn = {
+                    enable = true;
+                    package = pkgs-legacy.yarn;
+                  };
                 };
 
                 ruby = {
