@@ -42,9 +42,9 @@
             {
               # https://devenv.sh/reference/options/
 
+              # enable sandbox mode
               dotenv = {
-                enable = true;
-                # enable sandbox mode
+                enable = false;
                 filename = [".env.sandbox_local"];
               };
 
