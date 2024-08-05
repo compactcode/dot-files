@@ -42,6 +42,9 @@
             {
               # https://devenv.sh/reference/options/
 
+              # allow old insecure ssl config
+              env.NODE_OPTIONS = "--openssl-legacy-provider";
+
               # enable sandbox mode
               dotenv = {
                 enable = false;
