@@ -4,10 +4,6 @@
     plugins.cmp = {
       enable = true;
       settings = {
-        # show current completion inline
-        experimental = {
-          ghost_text = true;
-        };
         snippet = {
           expand = "luasnip";
         };
