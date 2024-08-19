@@ -10,11 +10,48 @@
         realName = "Shanon McQuay";
         passwordCommand = "op read op://personal/fastmail/token";
 
-        himalaya.enable = true;
-        mbsync.enable = true;
+        astroid = {
+          enable = true;
+        };
+
+        # fetching
+        mbsync = {
+          enable = true;
+          create = "maildir";
+        };
+
+        # sending
+        msmtp.enable = true;
+
+        # indexing
+        notmuch.enable = true;
       };
     };
   };
 
-  programs.himalaya.enable = true;
+  programs = {
+    astroid = {
+      enable = true;
+    };
+
+    msmtp = {
+      enable = true;
+    };
+
+    mbsync = {
+      enable = true;
+    };
+
+    notmuch = {
+      enable = true;
+      # add staging tag https://notmuchmail.org/initial_tagging/
+      new.tags = ["new"];
+      hooks = {
+        # process new staging tags
+        postNew = ''
+          notmuch tag +inbox +unread -new -- tag:new
+        '';
+      };
+    };
+  };
 }
