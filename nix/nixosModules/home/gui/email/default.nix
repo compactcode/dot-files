@@ -10,10 +10,6 @@
         realName = "Shanon McQuay";
         passwordCommand = "op read op://personal/fastmail/token";
 
-        astroid = {
-          enable = true;
-        };
-
         # fetching
         mbsync = {
           enable = true;
@@ -30,7 +26,7 @@
   };
 
   programs = {
-    astroid = {
+    alot = {
       enable = true;
     };
 
