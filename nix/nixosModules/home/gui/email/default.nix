@@ -1,6 +1,6 @@
 {config, ...}: {
   accounts.email = {
-    maildirBasePath = "${config.xdg.dataHome}/.mail";
+    maildirBasePath = "${config.xdg.dataHome}/mail";
 
     accounts = {
       primary = {
