@@ -52,13 +52,18 @@
           notmuch tag +newsletter -- tag:new from:rw@peterc.org
           notmuch tag +newsletter -- tag:new from:tldrnewsletter.com
 
-          notmuch tag +shares -- tag:new from:linkmarketservices.com.au
-          notmuch tag +shares -- tag:new from:openmarkets.com.au
+          notmuch tag +shares -unread -- tag:new from:linkmarketservices.com.au
+          notmuch tag +shares -unread -- tag:new from:openmarkets.com.au
+          notmuch tag +shares -unread -- tag:new from:mailservice.computershare.com.au
 
-          notmuch tag +bills -- tag:new from:amaysim.com.au
-          notmuch tag +bills -- tag:new from:team.aussiebroadband.com.au
+          notmuch tag +bills -unread -- tag:new from:amaysim.com.au
+          notmuch tag +bills -unread -- tag:new from:team.aussiebroadband.com.au
+          notmuch tag +bills -unread -- tag:new from:do-not-reply@powershop.com.au
+          notmuch tag +bills -unread -- tag:new from:admin.edithvalefcc@kingston.vic.gov.au
 
           notmuch tag +childcare -- tag:new from:educa.com.au
+          notmuch tag +childcare -- tag:new from:geteduca.com.au
+          notmuch tag +childcare -- tag:new from:admin.edithvalefcc@kingston.vic.gov.au
 
           notmuch tag +inbox -new -- tag:new
         '';
