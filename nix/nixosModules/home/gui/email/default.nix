@@ -22,6 +22,30 @@
         # indexing
         notmuch.enable = true;
       };
+
+      legacy = {
+        address = "shanonmcquay@gmail.com";
+        flavor = "gmail.com";
+        realName = "Shanon McQuay";
+        passwordCommand = "op read op://personal/google/token";
+
+        # fetching
+        mbsync = {
+          enable = true;
+          create = "maildir";
+          patterns = [
+            "INBOX"
+            "[Gmail]/Sent Mail"
+            "[Gmail]/Drafts"
+          ];
+        };
+
+        # sending
+        msmtp.enable = true;
+
+        # indexing
+        notmuch.enable = true;
+      };
     };
   };
 
@@ -48,6 +72,7 @@
           notmuch tag +sent -unread -new -- tag:new from:hi@shan.dog
 
           notmuch tag +newsletter -- tag:new from:campaign.realestate.com.au
+          notmuch tag +newsletter -- tag:new from:foundmyfitness.com
           notmuch tag +newsletter -- tag:new from:rainbowplantlife.com
           notmuch tag +newsletter -- tag:new from:rw@peterc.org
           notmuch tag +newsletter -- tag:new from:tldrnewsletter.com
