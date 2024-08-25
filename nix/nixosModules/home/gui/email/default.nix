@@ -1,4 +1,9 @@
-{config, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   accounts.email = {
     maildirBasePath = "${config.xdg.dataHome}/mail";
 
@@ -46,11 +51,31 @@
   };
 
   programs = {
-    alot = {
+    # notmuch tagging
+    afew = {
       enable = true;
+      extraConfig = ''
+        [SpamFilter]
+
+        [SentMailsFilter]
+        sent_tag = sent
+        [ArchiveSentMailsFilter]
+
+        [KillThreadsFilter]
+
+        [Filter.0]
+        query = 'from:linkmarketservices.com.au OR from:openmarkets.com.au OR from:mailservice.computershare.com.au'
+        tags = +shares; -unread
+
+        [Filter.1]
+        query = 'from:amaysim.com.au OR from:team.aussiebroadband.com.au'
+        tags = +bills; -unread
+
+        [InboxFilter]
+      '';
     };
 
-    # terminal client
+    # notmuch client
     alot = {
       enable = true;
     };
@@ -66,31 +91,8 @@
       # add staging tag https://notmuchmail.org/initial_tagging/
       new.tags = ["new"];
       hooks = {
-        # process new staging tags
-        postNew = ''
-          notmuch tag +sent -unread -new -- tag:new from:hi@shan.dog
-
-          notmuch tag +newsletter -- tag:new from:campaign.realestate.com.au
-          notmuch tag +newsletter -- tag:new from:foundmyfitness.com
-          notmuch tag +newsletter -- tag:new from:rainbowplantlife.com
-          notmuch tag +newsletter -- tag:new from:rw@peterc.org
-          notmuch tag +newsletter -- tag:new from:tldrnewsletter.com
-
-          notmuch tag +shares -unread -- tag:new from:linkmarketservices.com.au
-          notmuch tag +shares -unread -- tag:new from:openmarkets.com.au
-          notmuch tag +shares -unread -- tag:new from:mailservice.computershare.com.au
-
-          notmuch tag +bills -unread -- tag:new from:amaysim.com.au
-          notmuch tag +bills -unread -- tag:new from:team.aussiebroadband.com.au
-          notmuch tag +bills -unread -- tag:new from:do-not-reply@powershop.com.au
-          notmuch tag +bills -unread -- tag:new from:admin.edithvalefcc@kingston.vic.gov.au
-
-          notmuch tag +childcare -- tag:new from:educa.com.au
-          notmuch tag +childcare -- tag:new from:geteduca.com.au
-          notmuch tag +childcare -- tag:new from:admin.edithvalefcc@kingston.vic.gov.au
-
-          notmuch tag +inbox -new -- tag:new
-        '';
+        # use afew to process staging tags
+        postNew = "${lib.getExe pkgs.afew} --tag --new";
       };
     };
   };
