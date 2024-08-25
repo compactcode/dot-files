@@ -14,6 +14,7 @@
         mbsync = {
           enable = true;
           create = "maildir";
+          expunge = "both";
         };
 
         # sending
@@ -33,6 +34,7 @@
         mbsync = {
           enable = true;
           create = "maildir";
+          expunge = "both";
           patterns = [
             "INBOX"
             "[Gmail]/Sent Mail"
