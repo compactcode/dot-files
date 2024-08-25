@@ -17,9 +17,6 @@
           expunge = "both";
         };
 
-        # sending
-        msmtp.enable = true;
-
         # indexing
         notmuch.enable = true;
       };
@@ -42,9 +39,6 @@
           ];
         };
 
-        # sending
-        msmtp.enable = true;
-
         # indexing
         notmuch.enable = true;
       };
@@ -56,14 +50,17 @@
       enable = true;
     };
 
-    msmtp = {
+    # terminal client
+    alot = {
       enable = true;
     };
 
+    # fetching
     mbsync = {
       enable = true;
     };
 
+    # indexing
     notmuch = {
       enable = true;
       # add staging tag https://notmuchmail.org/initial_tagging/

@@ -44,6 +44,7 @@
 
               # allow old insecure ssl config
               env.NODE_OPTIONS = "--openssl-legacy-provider";
+              env.DISABLE_COVERAGE = 1;
 
               # enable sandbox mode
               dotenv = {
@@ -74,6 +75,8 @@
               };
 
               packages = with pkgs; [
+                # aws cli
+                awscli2
                 # cabybara js driver
                 chromedriver
                 chromium
