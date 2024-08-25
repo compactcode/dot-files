@@ -3,6 +3,10 @@
     path = ./python;
     description = "basic python project";
   };
+  ruby = {
+    path = ./ruby;
+    description = "basic ruby project";
+  };
   zepto-documentation = {
     path = ./zepto/documentation;
     description = "zepto documentation";
