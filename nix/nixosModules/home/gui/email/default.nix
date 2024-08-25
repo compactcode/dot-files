@@ -47,6 +47,28 @@
         # indexing
         notmuch.enable = true;
       };
+
+      zepto = {
+        address = "shanon@zepto.com.au";
+        flavor = "gmail.com";
+        realName = "Shanon McQuay";
+        passwordCommand = "op read op://personal/google/token_zepto";
+
+        # fetching
+        mbsync = {
+          enable = true;
+          create = "maildir";
+          expunge = "both";
+          patterns = [
+            "INBOX"
+            "[Gmail]/Sent Mail"
+            "[Gmail]/Drafts"
+          ];
+        };
+
+        # indexing
+        notmuch.enable = true;
+      };
     };
   };
 
