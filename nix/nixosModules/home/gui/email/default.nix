@@ -101,6 +101,8 @@
     alot = {
       enable = true;
       settings = {
+        # default search on open
+        initial_command = "search tag:inbox";
         # default to viewing html part
         prefer_plaintext = false;
       };
@@ -120,6 +122,11 @@
         # use afew to process staging tags
         postNew = "${lib.getExe pkgs.afew} --tag --new";
       };
+      # always ignore these tags
+      search.excludeTags = [
+        "killed"
+        "spam"
+      ];
     };
   };
 
