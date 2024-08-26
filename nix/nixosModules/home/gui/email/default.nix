@@ -100,6 +100,10 @@
     # notmuch client
     alot = {
       enable = true;
+      settings = {
+        # default to viewing html part
+        prefer_plaintext = false;
+      };
     };
 
     # fetching
@@ -118,4 +122,8 @@
       };
     };
   };
+
+  home.file.".mailcap".text = ''
+    text/html; ${pkgs.w3m}/bin/w3m -dump %s; nametemplate=%s.html; copiousoutput
+  '';
 }
