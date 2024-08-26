@@ -77,26 +77,36 @@
     afew = {
       enable = true;
       extraConfig = ''
+        # ignore spam
         [SpamFilter]
 
+        # ignore sent
         [SentMailsFilter]
         sent_tag = sent
         [ArchiveSentMailsFilter]
 
+        # delete new messages on deleted threads
         [KillThreadsFilter]
 
+        # tag threads
+        [ListMailsFilter]
+
+        # tag and archive share trades
         [Filter.0]
         query = 'from:linkmarketservices.com.au OR from:openmarkets.com.au OR from:mailservice.computershare.com.au'
-        tags = +shares; -unread
+        tags = +shares; -unread; -new
 
+        # tag and archive bills
         [Filter.1]
         query = 'from:amaysim.com.au OR from:team.aussiebroadband.com.au'
-        tags = +bills; -unread
+        tags = +bills; -unread; -new
 
+        # tag work
         [Filter.2]
         query = 'to:zepto.com.au OR to:zeptopayments.com OR to:splitpayments.com.au'
         tags = +zepto; -new
 
+        # tag everything new tag inbox
         [InboxFilter]
       '';
     };
