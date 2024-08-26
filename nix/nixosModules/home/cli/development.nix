@@ -76,6 +76,7 @@
         gars = "${lib.getExe pkgs.git} add . && git reset --hard";
         gc = "${lib.getExe pkgs.git} commit";
         gca = "${lib.getExe pkgs.git} commit --amend";
+        gcl = "${lib.getExe pkgs.git} clone";
         gcm = "${lib.getExe pkgs.git} commit -m";
         gco = "${lib.getExe pkgs.git} checkout";
         gcp = "${lib.getExe pkgs.git} cherry-pick";
