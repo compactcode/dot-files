@@ -93,6 +93,10 @@
         query = 'from:amaysim.com.au OR from:team.aussiebroadband.com.au'
         tags = +bills; -unread
 
+        [Filter.2]
+        query = 'to:zepto.com.au OR to:zeptopayments.com OR to:splitpayments.com.au'
+        tags = +zepto; -new
+
         [InboxFilter]
       '';
     };
