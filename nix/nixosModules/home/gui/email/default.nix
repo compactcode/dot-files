@@ -114,6 +114,12 @@
     # notmuch client
     alot = {
       enable = true;
+      bindings = {
+        thread = {
+          b = "call hooks.open_in_browser(ui)";
+        };
+      };
+      hooks = builtins.readFile ./alot/hooks.py;
       settings = {
         # default search on open
         initial_command = "search tag:inbox";
