@@ -1,3 +1,5 @@
+# Adapted from https://github.com/pazz/alot/wiki/Contrib-Hooks#open-html-emails-in-external-browser
+
 import alot
 import tempfile
 import webbrowser
