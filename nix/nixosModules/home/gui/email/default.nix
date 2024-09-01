@@ -154,4 +154,14 @@
     text/html; ${pkgs.w3m}/bin/w3m -dump %s; nametemplate=%s.html; copiousoutput
     application/pdf; zathura '%s';
   '';
+
+  xdg = {
+    dataFile = {
+      # sync email
+      "email/sync.sh" = {
+        executable = true;
+        source = ./scripts/sync.sh;
+      };
+    };
+  };
 }
