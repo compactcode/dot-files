@@ -40,6 +40,9 @@
 
         # configured and installed
         servers = {
+          # bash
+          bashls.enable = true;
+          # general purpose
           efm = {
             enable = true;
             extraOptions = {
@@ -50,8 +53,8 @@
               };
             };
           };
-          # bash
-          bashls.enable = true;
+          # html
+          emmet-ls.enable = true;
           # nix
           nixd.enable = true;
         };
