@@ -3,8 +3,14 @@
     nixpkgs.url = "github:cachix/devenv-nixpkgs/rolling";
     nixpkgs-legacy.url = "github:nixos/nixpkgs/nixos-23.05";
     systems.url = "github:nix-systems/default";
-    devenv.url = "github:cachix/devenv";
-    devenv.inputs.nixpkgs.follows = "nixpkgs";
+    devenv = {
+      url = "github:cachix/devenv";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixpkgs-ruby = {
+      url = "github:bobvanderlinden/nixpkgs-ruby";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -64,7 +70,7 @@
 
                 ruby = {
                   enable = true;
-                  package = pkgs.ruby;
+                  versionFile = ./.ruby-version;
                 };
 
                 # needed for node gyp
