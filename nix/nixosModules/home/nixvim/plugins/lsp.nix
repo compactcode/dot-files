@@ -57,6 +57,8 @@
           emmet-ls.enable = true;
           # nix
           nixd.enable = true;
+          # html
+          tailwindcss.enable = true;
         };
       };
 
