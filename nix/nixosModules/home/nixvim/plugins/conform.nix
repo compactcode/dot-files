@@ -47,6 +47,8 @@
         formatters_by_ft = {
           json = ["jq"];
           nix = ["alejandra"];
+          eruby = ["htmlbeautifier"];
+          html = ["prettierd"];
           ruby = ["rubocop"];
           sh = ["shfmt"];
           yaml = ["prettierd"];
