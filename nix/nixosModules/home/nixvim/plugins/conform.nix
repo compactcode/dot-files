@@ -16,39 +16,41 @@
     plugins.conform-nvim = {
       enable = true;
 
-      # custom function allowing auto formatting to be disabled
-      formatOnSave = ''
-        function(bufnr)
-          if vim.g.disable_autoformat then
-            return
+      settings = {
+        # custom function allowing auto formatting to be disabled
+        format_on_save = ''
+          function(bufnr)
+            if vim.g.disable_autoformat then
+              return
+            end
+            return { lsp_format = "fallback" }
           end
-          return { lsp_format = "fallback" }
-        end
-      '';
+        '';
 
-      # globally installed formatters
-      formatters = {
-        alejandra = {
-          command = "${lib.getExe pkgs.alejandra}";
+        # globally installed formatters
+        formatters = {
+          alejandra = {
+            command = "${lib.getExe pkgs.alejandra}";
+          };
+          jq = {
+            command = "${lib.getExe pkgs.jq}";
+          };
+          prettierd = {
+            command = "${lib.getExe pkgs.prettierd}";
+          };
+          shfmt = {
+            command = "${lib.getExe pkgs.shfmt}";
+          };
         };
-        jq = {
-          command = "${lib.getExe pkgs.jq}";
-        };
-        prettierd = {
-          command = "${lib.getExe pkgs.prettierd}";
-        };
-        shfmt = {
-          command = "${lib.getExe pkgs.shfmt}";
-        };
-      };
 
-      # enabled formatters
-      formattersByFt = {
-        json = ["jq"];
-        nix = ["alejandra"];
-        ruby = ["rubocop"];
-        sh = ["shfmt"];
-        yaml = ["prettierd"];
+        # enabled formatters
+        formatters_by_ft = {
+          json = ["jq"];
+          nix = ["alejandra"];
+          ruby = ["rubocop"];
+          sh = ["shfmt"];
+          yaml = ["prettierd"];
+        };
       };
     };
 
