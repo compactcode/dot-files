@@ -6,6 +6,11 @@
         action = "<cmd>lua vim.lsp.buf.code_action()<cr>";
         options = {desc = "code actions";};
       }
+      {
+        key = "<leader>lh";
+        action = "<cmd>lua vim.lsp.buf.hover()<cr>";
+        options = {desc = "show info about symbol";};
+      }
     ];
 
     plugins = {
