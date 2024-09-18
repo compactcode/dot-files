@@ -4,6 +4,11 @@
   ...
 }: {
   home = {
+    packages = [
+      # zip/archive handling
+      pkgs.ouch
+    ];
+
     sessionVariables = {
       # nvim as the default editor
       EDITOR = "nvim";
