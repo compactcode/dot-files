@@ -16,10 +16,8 @@
       # language query extensions (used by mini.ai)
       treesitter-textobjects = {
         enable = true;
-        settings = {
-          # use mini.ai instead
-          select.enable = false;
-        };
+        # use mini.ai instead
+        select.enable = false;
       };
     };
   };
