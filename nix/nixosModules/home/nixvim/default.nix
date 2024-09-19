@@ -182,6 +182,9 @@
       treesitter = {
         enable = true;
         settings = {
+          # replace default highlighting
+          highlight.enable = true;
+          # replace default indenting
           indent.enable = true;
         };
       };
