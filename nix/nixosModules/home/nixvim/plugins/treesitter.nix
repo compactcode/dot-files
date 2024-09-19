@@ -18,6 +18,13 @@
         enable = true;
         # use mini.ai instead
         select.enable = false;
+        move = {
+          enable = true;
+          gotoNextStart = {
+            "]f" = "@function.outer";
+            "]c" = "@class.outer";
+          };
+        };
       };
     };
   };
