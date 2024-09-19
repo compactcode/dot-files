@@ -1,5 +1,16 @@
 {...}: {
   programs.nixvim = {
+    # find calls to external classes
+    extraFiles."after/queries/ruby/textobjects.scm".text = ''
+      ; extends
+      (call
+        receiver: [
+           (constant) @external_call
+           (scope_resolution) @external_call
+         ]
+      )
+    '';
+
     # language parsing
     plugins = {
       treesitter = {
@@ -20,6 +31,9 @@
         select.enable = false;
         move = {
           enable = true;
+          gotoNextEnd = {
+            "]e" = "@external_call";
+          };
           gotoNextStart = {
             "]f" = "@function.outer";
             "]c" = "@class.outer";
