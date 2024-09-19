@@ -38,10 +38,10 @@
       };
 
       settings = {
-        # disable quickfix integration
-        quickfix.enable = true;
         # disable scanning for test files
-        discovery.enable = true;
+        discovery.enable = false;
+        # disable quickfix integration
+        quickfix.enable = false;
       };
     };
   };
