@@ -10,6 +10,7 @@
     ./plugins/neotest.nix
     ./plugins/oil.nix
     ./plugins/telescope.nix
+    ./plugins/treesitter.nix
   ];
 
   programs.nixvim = {
@@ -178,16 +179,6 @@
 
       # search and replace
       spectre.enable = true;
-
-      treesitter = {
-        enable = true;
-        settings = {
-          # replace default highlighting
-          highlight.enable = true;
-          # replace default indenting
-          indent.enable = true;
-        };
-      };
 
       # clipboard manager
       yanky = {
