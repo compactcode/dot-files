@@ -79,12 +79,13 @@
           timeout = 60 * 10;
           command = "${lib.getExe pkgs.swaylock} -f";
         }
-        {
-          # power off screen after 15 minutes
-          timeout = 60 * 15;
-          command = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch dpms off";
-          resumeCommand = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch dpms on";
-        }
+        # TODO: Causes issues with swaylock and screen sharing.
+        # {
+        #   # power off screen after 15 minutes
+        #   timeout = 60 * 15;
+        #   command = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch dpms off";
+        #   resumeCommand = "${lib.getExe' pkgs.hyprland "hyprctl"} dispatch dpms on";
+        # }
       ];
     };
   };
