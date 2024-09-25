@@ -27,8 +27,7 @@
       # language query extensions (used by mini.ai)
       treesitter-textobjects = {
         enable = true;
-        # use mini.ai instead
-        select.enable = false;
+        # jump to nodes
         move = {
           enable = true;
           gotoNextEnd = {
@@ -37,6 +36,16 @@
           gotoNextStart = {
             "]f" = "@function.outer";
             "]c" = "@class.outer";
+          };
+        };
+        # use mini.ai instead
+        select.enable = false;
+        # move nodes
+        swap = {
+          enable = true;
+          swapNext = {
+            "<leader>aea" = "@parameter.inner";
+            "<leader>aef" = "@function.outer";
           };
         };
       };
