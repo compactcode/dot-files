@@ -13,6 +13,7 @@
     ./plugins/other.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
+    ./plugins/which-key.nix
   ];
 
   programs.nixvim = {
@@ -188,9 +189,6 @@
         # enable telescope ingegration
         enableTelescope = true;
       };
-
-      # key binding menu
-      which-key.enable = true;
     };
   };
 }
