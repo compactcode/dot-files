@@ -2,7 +2,7 @@
   programs.nixvim = {
     keymaps = [
       {
-        key = "<leader>o";
+        key = "<leader>e";
         action = "<cmd>Oil<cr>";
         options = {desc = "explore files";};
       }

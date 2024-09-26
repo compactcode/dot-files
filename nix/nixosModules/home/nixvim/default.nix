@@ -10,6 +10,7 @@
     ./plugins/mini.nix
     ./plugins/neotest.nix
     ./plugins/oil.nix
+    ./plugins/other.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
   ];
