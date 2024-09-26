@@ -127,6 +127,7 @@
                 worker = {
                   exec = "bundle exec sidekiq";
                   process-compose = {
+                    disabled = true;
                     availability = {
                       restart = "on_failure";
                     };
