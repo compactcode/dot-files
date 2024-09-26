@@ -116,11 +116,15 @@
       enable = true;
       bindings = {
         thread = {
+          # open email in system browser
           b = "call hooks.open_in_browser(ui)";
         };
       };
+      # custom hooks for
       hooks = builtins.readFile ./alot/hooks.py;
       settings = {
+        # enable hooks
+        hooksfile = "${config.xdg.configHome}/alot/hooks.py";
         # default search on open
         initial_command = "search tag:inbox";
         # default to viewing html part
