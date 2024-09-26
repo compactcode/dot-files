@@ -3,6 +3,7 @@
     ./plugins/aerial.nix
     ./plugins/cmp.nix
     ./plugins/conform.nix
+    ./plugins/dressing.nix
     ./plugins/lsp.nix
     ./plugins/lualine.nix
     ./plugins/luasnip.nix

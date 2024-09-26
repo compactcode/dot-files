@@ -24,6 +24,14 @@
           indent.enable = true;
         };
       };
+      treesitter-refactor = {
+        enable = true;
+        # rename local variable
+        smartRename = {
+          enable = true;
+          keymaps.smartRename = "<leader>ar";
+        };
+      };
       # language query extensions (used by mini.ai)
       treesitter-textobjects = {
         enable = true;
