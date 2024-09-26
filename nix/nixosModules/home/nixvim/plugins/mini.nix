@@ -3,6 +3,7 @@
     # collection of plugins
     plugins.mini = {
       enable = true;
+      mockDevIcons = true;
       modules = {
         # text objects
         ai = {
@@ -26,6 +27,7 @@
           };
         };
         align = {}; # text alignment
+        icons = {}; # icon provider
         indentscope = {}; # indent decorations
         pairs = {}; # auto pairs
         surround = {}; # surround actions

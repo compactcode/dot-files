@@ -66,13 +66,6 @@
           tailwindcss.enable = true;
         };
       };
-
-      # autocomplete source icons
-      lspkind = {
-        enable = true;
-        cmp.enable = true;
-        mode = "symbol";
-      };
     };
   };
 }

@@ -4,9 +4,16 @@
     plugins.cmp = {
       enable = true;
       settings = {
-        snippet = {
-          expand = "luasnip";
-        };
+        formatting.format.__raw = ''
+          function(entry, vim_item)
+            -- replace kind with mini lsp icon
+            local icon, _ = require("mini.icons").get("lsp", vim_item.kind)
+            if icon ~= nil then
+              vim_item.kind = icon
+            end
+            return vim_item
+          end
+        '';
         mapping.__raw = ''
           cmp.mapping.preset.insert({
             ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -15,6 +22,9 @@
             ["<CR>"] = cmp.mapping.confirm({ select = true }),
           })
         '';
+        snippet = {
+          expand = "luasnip";
+        };
         sources = [
           # snippets
           {name = "luasnip";}
