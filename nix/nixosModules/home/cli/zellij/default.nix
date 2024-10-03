@@ -36,4 +36,11 @@
       };
     };
   };
+
+  # automatic styling
+  stylix = {
+    targets = {
+      zellij.enable = true;
+    };
+  };
 }

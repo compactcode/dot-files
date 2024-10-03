@@ -67,6 +67,8 @@
   stylix = {
     enable = true;
 
+    autoEnable = false;
+
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
     cursor = {
@@ -107,8 +109,13 @@
     # dark mode
     polarity = "dark";
 
-    # force gnome styling so that electron apps can detect system theme
-    targets.gnome.enable = true;
+    # automatic styling
+    targets = {
+      # boot console
+      console.enable = true;
+      # cant be done in home manager
+      chromium.enable = true;
+    };
   };
 
   systemd = {

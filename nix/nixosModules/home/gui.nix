@@ -40,6 +40,18 @@
     zathura.enable = true;
   };
 
+  stylix = {
+    targets = {
+      gnome.enable = true; # ensure electron apps to detect system theme
+      gtk.enable = true;
+      kde.enable = true;
+      kitty.enable = true;
+      mako.enable = true;
+      swaylock.enable = true;
+      zathura.enable = true;
+    };
+  };
+
   services = {
     # clipboard manager
     cliphist.enable = true;

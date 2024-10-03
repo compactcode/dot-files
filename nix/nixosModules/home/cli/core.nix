@@ -123,4 +123,13 @@
       };
     };
   };
+
+  # automatic styling
+  stylix = {
+    targets = {
+      bat.enable = true;
+      btop.enable = true;
+      yazi.enable = true;
+    };
+  };
 }

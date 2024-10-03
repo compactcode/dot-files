@@ -93,4 +93,11 @@
       };
     };
   };
+
+  # automatic styling
+  stylix = {
+    targets = {
+      lazygit.enable = true;
+    };
+  };
 }

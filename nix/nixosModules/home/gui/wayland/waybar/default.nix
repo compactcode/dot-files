@@ -71,4 +71,11 @@
       systemd.enable = true;
     };
   };
+
+  # automatic styling
+  stylix = {
+    targets = {
+      waybar.enable = true;
+    };
+  };
 }

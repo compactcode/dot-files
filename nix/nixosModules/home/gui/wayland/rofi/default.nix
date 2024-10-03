@@ -12,6 +12,13 @@
     };
   };
 
+  # automatic styling
+  stylix = {
+    targets = {
+      rofi.enable = true;
+    };
+  };
+
   xdg = {
     dataFile = {
       # open bookmark

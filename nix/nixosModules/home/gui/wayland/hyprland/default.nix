@@ -2,6 +2,14 @@
   # wallpaper
   services.hyprpaper.enable = true;
 
+  # automatic styling
+  stylix = {
+    targets = {
+      hyprland.enable = true;
+      hyprpaper.enable = true;
+    };
+  };
+
   # window manager
   wayland.windowManager.hyprland = {
     enable = true;

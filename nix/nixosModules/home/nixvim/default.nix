@@ -191,4 +191,11 @@
       };
     };
   };
+
+  # automatic styling
+  stylix = {
+    targets = {
+      nixvim.enable = true;
+    };
+  };
 }
