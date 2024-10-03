@@ -1,5 +1,14 @@
 {...}: {
   programs.nixvim = {
+    # enable colorscheme
+    colorschemes.catppuccin = {
+      settings = {
+        integrations = {
+          which_key = true;
+        };
+      };
+    };
+
     # key bind hints
     plugins.which-key = {
       enable = true;

@@ -19,10 +19,11 @@
   programs.nixvim = {
     enable = true;
 
-    # color scheme used by stylix
-    colorschemes.base16.settings = {
-      # draw borders around telescope sections
-      telescope_borders = true;
+    colorschemes.catppuccin = {
+      enable = true;
+      settings = {
+        flavour = "mocha";
+      };
     };
 
     # disable unused providers
@@ -189,13 +190,6 @@
         # enable telescope ingegration
         enableTelescope = true;
       };
-    };
-  };
-
-  # automatic styling
-  stylix = {
-    targets = {
-      nixvim.enable = true;
     };
   };
 }

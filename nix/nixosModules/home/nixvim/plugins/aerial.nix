@@ -1,5 +1,14 @@
 {pkgs, ...}: {
   programs.nixvim = {
+    # enable colorscheme
+    colorschemes.catppuccin = {
+      settings = {
+        integrations = {
+          aerial = true;
+        };
+      };
+    };
+
     keymaps = [
       {
         key = "<leader>ss";

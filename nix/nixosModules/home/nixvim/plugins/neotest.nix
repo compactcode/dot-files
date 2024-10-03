@@ -1,5 +1,14 @@
 {...}: {
   programs.nixvim = {
+    # enable colorscheme
+    colorschemes.catppuccin = {
+      settings = {
+        integrations = {
+          neotest = true;
+        };
+      };
+    };
+
     keymaps = [
       {
         key = "gt";
