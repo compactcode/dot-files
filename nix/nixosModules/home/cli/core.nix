@@ -129,6 +129,7 @@
     targets = {
       bat.enable = true;
       btop.enable = true;
+      fzf.enable = true;
       yazi.enable = true;
     };
   };
