@@ -4,6 +4,7 @@
     ./plugins/cmp.nix
     ./plugins/conform.nix
     ./plugins/dressing.nix
+    ./plugins/gitsigns.nix
     ./plugins/lsp.nix
     ./plugins/lualine.nix
     ./plugins/luasnip.nix
@@ -173,14 +174,6 @@
 
       # git permalinks
       gitlinker.enable = true;
-
-      # git decorations
-      gitsigns = {
-        enable = true;
-        settings = {
-          current_line_blame = true;
-        };
-      };
 
       # search and replace
       spectre.enable = true;
