@@ -1,5 +1,14 @@
 {...}: {
   programs.nixvim = {
+    # enable colorscheme
+    colorschemes.catppuccin = {
+      settings = {
+        integrations = {
+          fidget = true;
+        };
+      };
+    };
+
     keymaps = [
       {
         key = "<leader>la";
@@ -28,7 +37,11 @@
       };
 
       # lsp status notifications
-      fidget.enable = true;
+      fidget = {
+        enable = true;
+        # background opacity
+        notification.window.winblend = 0;
+      };
 
       # lsp servers
       lsp = {
