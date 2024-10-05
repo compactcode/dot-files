@@ -22,8 +22,13 @@
     kernelModules = ["amdgpu"];
   };
 
-  # enable microcode updates
-  hardware.cpu.amd.updateMicrocode = true;
+  hardware = {
+    # enable microcode updates
+    cpu.amd.updateMicrocode = true;
+  };
+
+  # enable gpu support for applications like btop
+  nixpkgs.config.rocmSupport = true;
 
   # prevent pci devices (nvme) waking the system out of sleep
   services.udev.extraRules = ''
