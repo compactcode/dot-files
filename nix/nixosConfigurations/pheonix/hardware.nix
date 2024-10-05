@@ -35,8 +35,12 @@
   # enable gpu support for applications like btop
   nixpkgs.config.rocmSupport = true;
 
-  # prevent pci devices (nvme) waking the system out of sleep
-  services.udev.extraRules = ''
-    ACTION=="add", SUBSYSTEM=="pci", DRIVER=="pcieport", ATTR{power/wakeup}="disabled"
-  '';
+  services = {
+    # periodic ssd maintenance
+    fstrim.enable = true;
+    # prevent pci devices (nvme) waking the system out of sleep
+    udev.extraRules = ''
+      ACTION=="add", SUBSYSTEM=="pci", DRIVER=="pcieport", ATTR{power/wakeup}="disabled"
+    '';
+  };
 }
