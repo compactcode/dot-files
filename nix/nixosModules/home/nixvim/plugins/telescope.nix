@@ -37,6 +37,16 @@
         options = {desc = "search project for current word";};
       }
       {
+        key = "<leader>ld";
+        action = "<cmd>Telescope lsp_definitions<cr>";
+        options = {desc = "goto definition";};
+      }
+      {
+        key = "<leader>lu";
+        action = "<cmd>Telescope lsp_references<cr>";
+        options = {desc = "show lsp referenecs";};
+      }
+      {
         key = "<leader>p";
         action = "<cmd>Telescope yank_history<cr>";
         options = {desc = "paste from history";};
@@ -45,6 +55,11 @@
         key = "<leader>t";
         action = "<cmd>Telescope find_files<cr>";
         options = {desc = "find files";};
+      }
+      {
+        key = "<leader>u";
+        action = "<cmd>Telescope lsp_references<cr>";
+        options = {desc = "show lsp referenecs";};
       }
     ];
 
