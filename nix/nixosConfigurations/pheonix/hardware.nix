@@ -25,6 +25,11 @@
   hardware = {
     # enable microcode updates
     cpu.amd.updateMicrocode = true;
+    # enable gpu acceleration
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
   };
 
   # enable gpu support for applications like btop
