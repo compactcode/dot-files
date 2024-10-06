@@ -23,6 +23,8 @@
   };
 
   hardware = {
+    # enable gpu asap to improve boot resolution
+    amdgpu.initrd.enable = true;
     # enable microcode updates
     cpu.amd.updateMicrocode = true;
     # enable gpu acceleration
