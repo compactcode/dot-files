@@ -18,6 +18,20 @@
   };
 
   programs = {
+    # shell history database
+    atuin = {
+      enable = true;
+      enableZshIntegration = true;
+      settings = {
+        # search bar at the top
+        invert = true;
+        # display results inline instead of fullscreen.
+        inline_height = 25;
+        # simplify the ui
+        style = "compact";
+      };
+    };
+
     # cat replacement
     bat = {
       enable = true;
@@ -56,8 +70,14 @@
     fzf = {
       enable = true;
       enableZshIntegration = true;
+      # use fd for listing files
       defaultCommand = "${lib.getExe pkgs.fd} --type f";
-      defaultOptions = ["--reverse" "--height 40%"];
+      defaultOptions = [
+        # search bar at the top
+        "--reverse"
+        # display results inline instead of fullscreen
+        "--height 40%"
+      ];
     };
 
     # json manipulation
