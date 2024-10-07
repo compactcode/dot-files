@@ -86,6 +86,7 @@
       # load user session variables
       env = [
         "XDG_PROJECTS_DIR, ${config.home.sessionVariables.XDG_PROJECTS_DIR}"
+        "EDITOR, ${config.home.sessionVariables.EDITOR}"
       ];
 
       general = {
