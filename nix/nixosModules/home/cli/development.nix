@@ -19,15 +19,6 @@
     };
   };
 
-  home = {
-    sessionVariables = {
-      # nvim as the default editor
-      EDITOR = "nvim";
-      # nvim as the default editor
-      VISUAL = "nvim";
-    };
-  };
-
   programs = {
     # github cli
     gh.enable = true;
