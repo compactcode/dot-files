@@ -72,7 +72,7 @@
             };
           };
           # html
-          emmet-ls.enable = true;
+          emmet_ls.enable = true;
           # nix
           nixd.enable = true;
           # html
