@@ -4,6 +4,7 @@
   ...
 }: {
   imports = [
+    ./gh
     ./zellij
   ];
 
@@ -20,9 +21,6 @@
   };
 
   programs = {
-    # github cli
-    gh.enable = true;
-
     # version control
     git = {
       enable = true;
