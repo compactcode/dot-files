@@ -12,7 +12,7 @@
     ./plugins/neotest.nix
     ./plugins/oil.nix
     ./plugins/other.nix
-    # ./plugins/render-markdown.nix
+    ./plugins/render-markdown.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
     ./plugins/which-key.nix
