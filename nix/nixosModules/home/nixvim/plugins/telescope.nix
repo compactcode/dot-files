@@ -85,6 +85,10 @@
               "<C-e>" = "move_selection_previous";
             };
           };
+          preview = {
+            # disable preview for large files
+            filesize_limit = 0.2;
+          };
           sorting_strategy = "ascending";
           # include hidden files by default
           vimgrep_arguments = [
