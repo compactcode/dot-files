@@ -11,10 +11,10 @@
   environment = {
     systemPackages = with pkgs; [
       adwaita-icon-theme # gnome icons
-      armcord # voice chat (discord)
       bruno # api explorer
       dust # du replacement
       grimblast # screenshot taker
+      legcord # voice chat (discord)
       obsidian # document manager
       pavucontrol # sound manager
       pinta # image editor
