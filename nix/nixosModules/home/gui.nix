@@ -103,6 +103,10 @@
   };
 
   xdg = {
+    # set base directories (config, state etc)
+    enable = true;
+
+    # add launcher for neovim
     desktopEntries.nvim = {
       categories = ["Utility" "TextEditor"];
       exec = "${lib.getExe pkgs.kitty} -e nvim";
@@ -111,6 +115,7 @@
       name = "Neovim";
     };
 
+    # set preferred applications
     mimeApps = {
       enable = true;
       defaultApplications = {
