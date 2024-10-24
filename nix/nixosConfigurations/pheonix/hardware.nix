@@ -27,6 +27,8 @@
     amdgpu.initrd.enable = true;
     # enable microcode updates
     cpu.amd.updateMicrocode = true;
+    # enable firmware flashing
+    keyboard.zsa.enable = true;
     # enable gpu acceleration
     graphics = {
       enable = true;
