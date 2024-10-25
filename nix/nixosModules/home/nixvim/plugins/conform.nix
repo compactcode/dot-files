@@ -23,7 +23,7 @@
             if vim.g.disable_autoformat then
               return
             end
-            return { lsp_format = "fallback" }
+            return { timeout_ms = 1500, lsp_format = "fallback" }
           end
         '';
 
