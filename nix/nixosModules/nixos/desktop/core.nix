@@ -101,11 +101,6 @@
 
     image = ./wallpaper/space.jpg;
 
-    opacity = {
-      # give terminals a transparent background
-      terminal = 0.9;
-    };
-
     # dark mode
     polarity = "dark";
 
