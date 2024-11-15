@@ -24,6 +24,7 @@
       };
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     stylix = {
       url = "github:danth/stylix";
       inputs = {
@@ -37,5 +38,9 @@
     flakelight.lib.mkFlake ./. {
       inherit inputs;
       nixpkgs.config = {allowUnfree = true;};
+      withOverlays = [
+        # TODO: workaround for https://github.com/pazz/alot/issues/1632
+        (final: prev: {alot = inputs.nixpkgs-stable.legacyPackages.${prev.system}.alot;})
+      ];
     };
 }
