@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ./yazi
+    ./cli/yazi
   ];
 
   home = {

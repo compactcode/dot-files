@@ -15,11 +15,11 @@
           imports = [
             inputs.nixvim.homeManagerModules.nixvim
             inputs._1password-shell-plugins.hmModules.default
-            ./home/cli/core.nix
-            ./home/cli/development.nix
-            ./home/gui.nix
-            ./home/gui/1password.nix
-            ./home/nixvim
+            inputs.self.homeModules.cli-core
+            inputs.self.homeModules.cli-development
+            inputs.self.homeModules.nixvim
+            inputs.self.homeModules.gui
+            inputs.self.homeModules.gui-1password
           ];
         };
       };

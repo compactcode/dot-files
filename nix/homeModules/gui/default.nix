@@ -5,10 +5,10 @@
   ...
 }: {
   imports = [
-    ./gui/email
-    ./gui/wayland/hyprland
-    ./gui/wayland/rofi
-    ./gui/wayland/waybar
+    ./email
+    ./wayland/hyprland
+    ./wayland/rofi
+    ./wayland/waybar
   ];
 
   # gtk syles

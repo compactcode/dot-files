@@ -4,8 +4,8 @@
   ...
 }: {
   imports = [
-    ./gh
-    ./zellij
+    ./cli/gh
+    ./cli/zellij
   ];
 
   # code formatter preferences
