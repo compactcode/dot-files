@@ -4,7 +4,7 @@
     inputs.self.homeModules.cli-core
     {
       home = {
-        homeDirectory = "/home/shanon";
+        homeDirectory = "/Users/shanon";
         stateVersion = "24.05";
         username = "shanon";
       };
