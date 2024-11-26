@@ -2,6 +2,7 @@
   modules = [
     inputs.stylix.homeManagerModules.stylix
     inputs.self.homeModules.cli-core
+    inputs.self.homeModules.cli-development
     {
       home = {
         homeDirectory = "/Users/shanon";
