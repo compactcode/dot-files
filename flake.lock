@@ -256,6 +256,27 @@
         "type": "github"
       }
     },
+    "flakelight-darwin": {
+      "inputs": {
+        "flakelight": [
+          "flakelight"
+        ],
+        "nix-darwin": "nix-darwin"
+      },
+      "locked": {
+        "lastModified": 1725969919,
+        "narHash": "sha256-2vit931wouI3W87ZjJe2WLRHRvOjwJpgOpSsvNJk03Y=",
+        "owner": "cmacrae",
+        "repo": "flakelight-darwin",
+        "rev": "3e211e1cf6e4b08e1669dd96db911809c027f273",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cmacrae",
+        "repo": "flakelight-darwin",
+        "type": "github"
+      }
+    },
     "fromYaml": {
       "flake": false,
       "locked": {
@@ -392,6 +413,28 @@
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
+          "flakelight-darwin",
+          "flakelight",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1725628909,
+        "narHash": "sha256-xI0OSqPHcs/c/utJsU0Zvcp1VhejMI9mgwr68uHHlPs=",
+        "owner": "LnL7",
+        "repo": "nix-darwin",
+        "rev": "76559183801030451e200c90a1627c1d82bb4910",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LnL7",
+        "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
+    "nix-darwin_2": {
+      "inputs": {
+        "nixpkgs": [
           "nixvim",
           "nixpkgs"
         ]
@@ -451,7 +494,7 @@
         "home-manager": [
           "home-manager"
         ],
-        "nix-darwin": "nix-darwin",
+        "nix-darwin": "nix-darwin_2",
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -500,6 +543,7 @@
         "_1password-shell-plugins": "_1password-shell-plugins",
         "disko": "disko",
         "flakelight": "flakelight",
+        "flakelight-darwin": "flakelight-darwin",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",

@@ -12,6 +12,10 @@
       url = "github:nix-community/flakelight";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flakelight-darwin = {
+      url = "github:cmacrae/flakelight-darwin";
+      inputs.flakelight.follows = "flakelight";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,6 +42,7 @@
     flakelight.lib.mkFlake ./. {
       inherit inputs;
       nixpkgs.config = {allowUnfree = true;};
+      imports = [inputs.flakelight-darwin.flakelightModules.default];
       withOverlays = [
         # TODO: workaround for https://github.com/pazz/alot/issues/1632
         (final: prev: {alot = inputs.nixpkgs-stable.legacyPackages.${prev.system}.alot;})
