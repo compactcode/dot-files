@@ -13,6 +13,7 @@
         useUserPackages = true;
         users.shandogs = {
           imports = [
+            inputs.stylix.homeManagerModules.stylix
             inputs.self.homeModules.cli-core
           ];
         };
