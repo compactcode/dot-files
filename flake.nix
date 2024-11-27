@@ -14,10 +14,17 @@
     };
     flakelight-darwin = {
       url = "github:cmacrae/flakelight-darwin";
-      inputs.flakelight.follows = "flakelight";
+      inputs = {
+        flakelight.follows = "flakelight";
+        nix-darwin.follows = "nix-darwin";
+      };
     };
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {

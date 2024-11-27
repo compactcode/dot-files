@@ -261,7 +261,9 @@
         "flakelight": [
           "flakelight"
         ],
-        "nix-darwin": "nix-darwin"
+        "nix-darwin": [
+          "nix-darwin"
+        ]
       },
       "locked": {
         "lastModified": 1725969919,
@@ -413,17 +415,15 @@
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
-          "flakelight-darwin",
-          "flakelight",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1725628909,
-        "narHash": "sha256-xI0OSqPHcs/c/utJsU0Zvcp1VhejMI9mgwr68uHHlPs=",
+        "lastModified": 1732603785,
+        "narHash": "sha256-AEjWTJwOmSnVYsSJCojKgoguGfFfwel6z/6ud6UFMU8=",
         "owner": "LnL7",
         "repo": "nix-darwin",
-        "rev": "76559183801030451e200c90a1627c1d82bb4910",
+        "rev": "6ab87b7c84d4ee873e937108c4ff80c015a40c7a",
         "type": "github"
       },
       "original": {
@@ -545,6 +545,7 @@
         "flakelight": "flakelight",
         "flakelight-darwin": "flakelight-darwin",
         "home-manager": "home-manager",
+        "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixvim": "nixvim",
