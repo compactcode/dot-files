@@ -1,8 +1,10 @@
 {inputs, ...}: {
   modules = [
+    inputs.nixvim.homeManagerModules.nixvim
     inputs.stylix.homeManagerModules.stylix
     inputs.self.homeModules.cli-core
     inputs.self.homeModules.cli-development
+    inputs.self.homeModules.nixvim
     {
       home = {
         homeDirectory = "/Users/shanon";
