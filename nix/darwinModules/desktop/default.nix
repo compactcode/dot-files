@@ -31,6 +31,9 @@
         home = "/Users/shanon";
       };
 
+      # remap capslock to control
+      system.keyboard.remapCapsLockToControl = true;
+
       # enable touch id for sudo
       security.pam.enableSudoTouchIdAuth = true;
 
