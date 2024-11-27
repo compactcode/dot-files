@@ -31,9 +31,6 @@
         home = "/Users/shanon";
       };
 
-      # ?
-      services.nix-daemon.enable = true;
-
       # enable touch id for sudo
       security.pam.enableSudoTouchIdAuth = true;
 
