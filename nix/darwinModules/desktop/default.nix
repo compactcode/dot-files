@@ -21,6 +21,8 @@
           home = {
             stateVersion = "24.05";
           };
+          programs.kitty.enable = true;
+          stylix.targets.kitty.enable = true;
         };
       };
     }
