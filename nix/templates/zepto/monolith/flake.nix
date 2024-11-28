@@ -98,7 +98,7 @@
 
                 postgres = {
                   enable = true;
-                  package = pkgs.postgresql_12;
+                  package = pkgs.postgresql_16;
                   initialDatabases = [
                     {name = "split_development";}
                     {name = "split_test";}
