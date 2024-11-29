@@ -21,14 +21,12 @@
             inputs.self.homeModules.nixvim
           ];
           home = {
+            packages = with pkgs; [
+              slack # messenger
+            ];
             stateVersion = "24.05";
           };
-          packages = with pkgs; [
-            slack
-          ];
           programs = {
-            # web browser
-            firefox.enable = true;
             # terminal
             kitty.enable = true;
           };
