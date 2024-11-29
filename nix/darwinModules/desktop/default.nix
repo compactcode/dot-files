@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     inputs.stylix.darwinModules.stylix
     inputs.home-manager.darwinModules.home-manager
@@ -19,7 +23,16 @@
           home = {
             stateVersion = "24.05";
           };
-          programs.kitty.enable = true;
+          packages = with pkgs; [
+            slack
+          ];
+          programs = {
+            # web browser
+            firefox.enable = true;
+            # terminal
+            kitty.enable = true;
+          };
+          stylix.targets.firefox.enable = true;
           stylix.targets.kitty.enable = true;
         };
       };
