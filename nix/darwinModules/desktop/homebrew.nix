@@ -6,9 +6,8 @@
       cleanup = "zap";
     };
     casks = [
-      "firefox"
       "1password"
-      "kitty"
+      "raycast"
     ];
   };
 }
