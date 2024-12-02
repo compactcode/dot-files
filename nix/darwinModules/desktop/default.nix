@@ -23,6 +23,7 @@
           ];
           home = {
             packages = with pkgs; [
+              obsidian # document manager
               slack # messenger
             ];
             stateVersion = "24.05";
