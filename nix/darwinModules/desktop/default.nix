@@ -23,6 +23,7 @@
           ];
           home = {
             packages = with pkgs; [
+              discord # voice/video chat
               obsidian # document manager
               slack # messenger
             ];
