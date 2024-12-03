@@ -30,9 +30,14 @@
           };
           programs = {
             # terminal
-            kitty.enable = true;
+            kitty = {
+              enable = true;
+              settings = {
+                # allow using the alt key
+                macos_option_as_alt = "both";
+              };
+            };
           };
-          stylix.targets.firefox.enable = true;
           stylix.targets.kitty.enable = true;
         };
       };
