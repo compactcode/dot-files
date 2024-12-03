@@ -36,11 +36,26 @@
     polarity = "dark";
   };
 
-  system.keyboard = {
-    # allow remap
-    enableKeyMapping = true;
-    # remap capslock to control
-    remapCapsLockToControl = true;
+  system = {
+    defaults = {
+      dock = {
+        # only show on hover
+        autohide = true;
+        # only pin these apps
+        persistent-apps = [
+          "/Applications/Google Chrome.app"
+          "/System/Applications/Mail.app"
+          "${pkgs.kitty}/Applications/Kitty.app"
+          "${pkgs.slack}/Applications/Slack.app"
+        ];
+      };
+    };
+    keyboard = {
+      # allow remap
+      enableKeyMapping = true;
+      # remap capslock to control
+      remapCapsLockToControl = true;
+    };
   };
 
   # enable touch id for sudo
