@@ -6,7 +6,11 @@
       cleanup = "zap";
     };
     casks = [
+      # password manager
       "1password"
+      # keyboard manager
+      "keyboard-maestro"
+      # launcher
       "raycast"
     ];
   };
