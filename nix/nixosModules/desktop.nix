@@ -5,7 +5,6 @@
     ./nixos/core.nix
     ./nixos/desktop/core.nix
     ./nixos/desktop/hyprland.nix
-    ./nixos/work/zepto.nix
     inputs.home-manager.nixosModules.home-manager
     {
       home-manager = {

@@ -47,28 +47,6 @@
         # indexing
         notmuch.enable = true;
       };
-
-      zepto = {
-        address = "shanon@zepto.com.au";
-        flavor = "gmail.com";
-        realName = "Shanon McQuay";
-        passwordCommand = "op read op://personal/google/token_zepto";
-
-        # fetching
-        mbsync = {
-          enable = true;
-          create = "maildir";
-          expunge = "both";
-          patterns = [
-            "INBOX"
-            "[Gmail]/Sent Mail"
-            "[Gmail]/Drafts"
-          ];
-        };
-
-        # indexing
-        notmuch.enable = true;
-      };
     };
   };
 
@@ -100,11 +78,6 @@
         [Filter.1]
         query = 'from:amaysim.com.au OR from:team.aussiebroadband.com.au'
         tags = +bills; -unread; -new
-
-        # tag work
-        [Filter.2]
-        query = 'to:zepto.com.au OR to:zeptopayments.com OR to:splitpayments.com.au'
-        tags = +zepto; -new
 
         # tag everything new tag inbox
         [InboxFilter]
