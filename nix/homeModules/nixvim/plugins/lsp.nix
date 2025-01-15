@@ -40,7 +40,9 @@
       fidget = {
         enable = true;
         # background opacity
-        notification.window.winblend = 0;
+        settings = {
+          notification.window.winblend = 0;
+        };
       };
 
       # lsp servers
