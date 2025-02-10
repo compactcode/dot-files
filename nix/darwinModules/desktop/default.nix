@@ -24,6 +24,7 @@
           ];
           home = {
             packages = with pkgs; [
+              bruno # api explorer
               discord # voice/video chat
               obsidian # document manager
               slack # messenger
