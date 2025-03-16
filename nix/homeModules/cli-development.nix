@@ -8,6 +8,13 @@
     ./cli/zellij
   ];
 
+  home = {
+    packages = [
+      # ai assistant
+      pkgs.aider-chat
+    ];
+  };
+
   # code formatter preferences
   editorconfig = {
     enable = true;
