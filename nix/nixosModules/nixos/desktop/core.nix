@@ -21,7 +21,7 @@
       signal-desktop # secure messenger
       slack # messenger
       wl-clipboard # clipboard interaction
-      xsv # csv explorer
+      xan # csv explorer
     ];
 
     sessionVariables = {
