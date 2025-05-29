@@ -1,14 +1,13 @@
 {...}: {
   imports = [
     ./plugins/aerial.nix
-    # ./plugins/blink.nix
-    ./plugins/cmp.nix
+    ./plugins/blink.nix
+    # ./plugins/cmp.nix
     ./plugins/conform.nix
     ./plugins/dressing.nix
     ./plugins/gitsigns.nix
     ./plugins/lsp.nix
     ./plugins/lualine.nix
-    ./plugins/luasnip.nix
     ./plugins/mini.nix
     ./plugins/neotest.nix
     ./plugins/oil.nix
@@ -182,5 +181,11 @@
         enableTelescope = true;
       };
     };
+  };
+
+  # Add custom snippets
+  xdg.configFile."nvim/snippets/" = {
+    source = ./snippets;
+    recursive = true;
   };
 }

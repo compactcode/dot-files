@@ -25,7 +25,8 @@
             };
           };
         };
-        snippets.preset = "luasnip";
+        # use neovim default snippets
+        snippets.preset = "default";
       };
     };
   };
