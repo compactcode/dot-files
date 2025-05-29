@@ -41,7 +41,7 @@
       delta.enable = true;
       ignores = [
         ".aider*"
-        ".direnv"
+        ".devenv"
         ".direnv"
         "node_modules"
       ];
