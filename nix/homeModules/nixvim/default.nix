@@ -1,6 +1,7 @@
 {...}: {
   imports = [
     ./plugins/aerial.nix
+    # ./plugins/blink.nix
     ./plugins/cmp.nix
     ./plugins/conform.nix
     ./plugins/dressing.nix
