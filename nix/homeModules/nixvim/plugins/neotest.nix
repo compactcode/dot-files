@@ -25,6 +25,7 @@
         quickfix.enable = false;
       };
 
+      # delay loading until requested
       lazyLoad.settings = {
         cmd = "Neotest";
         keys = [

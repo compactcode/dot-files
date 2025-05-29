@@ -4,14 +4,6 @@
   ...
 }: {
   programs.nixvim = {
-    keymaps = [
-      {
-        key = "<leader>af";
-        action = "<cmd>lua require(\"conform\").format()<cr>";
-        options = {desc = "format code";};
-      }
-    ];
-
     # formatting
     plugins.conform-nvim = {
       enable = true;
@@ -45,14 +37,27 @@
 
         # enabled formatters
         formatters_by_ft = {
-          json = ["jq"];
-          nix = ["alejandra"];
           eruby = ["htmlbeautifier"];
           html = ["prettierd"];
+          json = ["jq"];
+          nix = ["alejandra"];
           ruby = ["rubocop"];
           sh = ["shfmt"];
           yaml = ["prettierd"];
         };
+      };
+
+      # delay loading until requested or editing
+      lazyLoad.settings = {
+        cmd = "ConformInfo";
+        event = "InsertEnter";
+        keys = [
+          {
+            __unkeyed-1 = "<leader>af";
+            __unkeyed-2 = "<cmd>lua require(\"conform\").format()<cr>";
+            desc = "format code";
+          }
+        ];
       };
     };
 
