@@ -141,9 +141,6 @@
         settings.modes.search.enabled = true;
       };
 
-      # default library of snippets
-      friendly-snippets.enable = true;
-
       # lazy loading
       lz-n.enable = true;
 
@@ -154,11 +151,5 @@
         enableTelescope = true;
       };
     };
-  };
-
-  # Add custom snippets
-  xdg.configFile."nvim/snippets/" = {
-    source = ./snippets;
-    recursive = true;
   };
 }
