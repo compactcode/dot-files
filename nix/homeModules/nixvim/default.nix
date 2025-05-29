@@ -13,6 +13,7 @@
     ./plugins/oil.nix
     ./plugins/other.nix
     ./plugins/render-markdown.nix
+    ./plugins/spectre.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
     ./plugins/which-key.nix
@@ -79,11 +80,6 @@
         key = "S";
         action = "<cmd>lua require(\"flash\").treesitter()<cr>";
         options = {desc = "select using treesitter";};
-      }
-      {
-        key = "<leader>as";
-        action = "<cmd>lua require(\"spectre\").open()<cr>";
-        options = {desc = "search and replace";};
       }
       {
         key = "<leader>c";
@@ -175,8 +171,8 @@
       # git permalinks
       gitlinker.enable = true;
 
-      # search and replace
-      spectre.enable = true;
+      # lazy loading
+      lz-n.enable = true;
 
       # clipboard manager
       yanky = {
