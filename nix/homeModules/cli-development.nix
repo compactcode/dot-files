@@ -40,7 +40,8 @@
       # use delta for nice diff output
       delta.enable = true;
       ignores = [
-        ".devenv"
+        ".aider*"
+        ".direnv"
         ".direnv"
         "node_modules"
       ];
