@@ -28,6 +28,7 @@
               discord # voice/video chat
               obsidian # document manager
               slack # messenger
+              vscode # code editor
             ];
             stateVersion = "24.05";
           };
