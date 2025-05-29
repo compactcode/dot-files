@@ -50,6 +50,9 @@
         name = "shanon";
         home = "/Users/shanon";
       };
+
+      # temporary nix-darwin option
+      system.primaryUser = "shanon";
     }
   ];
 }

@@ -36,6 +36,9 @@
     polarity = "dark";
   };
 
+  # enable touch id for sudo
+  security.pam.services.sudo_local.touchIdAuth = true;
+
   system = {
     defaults = {
       dock = {
@@ -57,7 +60,4 @@
       remapCapsLockToControl = true;
     };
   };
-
-  # enable touch id for sudo
-  security.pam.services.sudo_local.touchIdAuth = true;
 }
