@@ -9,34 +9,6 @@
       };
     };
 
-    keymaps = [
-      {
-        key = "gt";
-        action = "<cmd>lua require('neotest').jump.next({ status = 'failed' })<cr>";
-        options = {desc = "jump to next failed test";};
-      }
-      {
-        key = "<leader>ra";
-        action = "<cmd>lua require('neotest').run.run(vim.fn.expand(\"%\"))<cr>";
-        options = {desc = "run file";};
-      }
-      {
-        key = "<leader>rn";
-        action = "<cmd>lua require('neotest').run.run()<cr>";
-        options = {desc = "run nearest";};
-      }
-      {
-        key = "<leader>ro";
-        action = "<cmd>lua require('neotest').output.open()<cr>";
-        options = {desc = "test output";};
-      }
-      {
-        key = "<leader>rr";
-        action = "<cmd>lua require('neotest').run.run_last()<cr>";
-        options = {desc = "run last test";};
-      }
-    ];
-
     # test runner
     plugins.neotest = {
       enable = true;
@@ -51,6 +23,37 @@
         discovery.enable = false;
         # disable quickfix integration
         quickfix.enable = false;
+      };
+
+      lazyLoad.settings = {
+        cmd = "Neotest";
+        keys = [
+          {
+            __unkeyed-1 = "gt";
+            __unkeyed-2 = "<cmd>lua require('neotest').jump.next({ status = 'failed' })<cr>";
+            desc = "jump to next failed test";
+          }
+          {
+            __unkeyed-1 = "<leader>ra";
+            __unkeyed-2 = "<cmd>lua require('neotest').run.run(vim.fn.expand(\"%\"))<cr>";
+            desc = "run file";
+          }
+          {
+            __unkeyed-1 = "<leader>rn";
+            __unkeyed-2 = "<cmd>lua require('neotest').run.run()<cr>";
+            desc = "run nearest";
+          }
+          {
+            __unkeyed-1 = "<leader>ro";
+            __unkeyed-2 = "<cmd>lua require('neotest').output.open()<cr>";
+            desc = "test output";
+          }
+          {
+            __unkeyed-1 = "<leader>rr";
+            __unkeyed-2 = "<cmd>lua require('neotest').run.run_last()<cr>";
+            desc = "run last test";
+          }
+        ];
       };
     };
   };
