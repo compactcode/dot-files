@@ -4,8 +4,9 @@
     ./plugins/blink.nix
     ./plugins/conform.nix
     ./plugins/dressing.nix
-    ./plugins/gitsigns.nix
+    ./plugins/flash.nix
     ./plugins/gitlinker.nix
+    ./plugins/gitsigns.nix
     ./plugins/lsp.nix
     ./plugins/lualine.nix
     ./plugins/mini.nix
@@ -134,13 +135,6 @@
     };
 
     plugins = {
-      # enhanced versions of builtin motions
-      flash = {
-        enable = true;
-        # add jump labels to the default search
-        settings.modes.search.enabled = true;
-      };
-
       # lazy loading
       lz-n.enable = true;
 
