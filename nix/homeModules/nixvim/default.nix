@@ -23,16 +23,22 @@
   programs.nixvim = {
     enable = true;
 
+    # recognise slim-rails files
+    # https://github.com/slim-template/slim-rails/blob/a6ae6b27d625b3703d9447cb5737b7007ce7874e/lib/slim-rails/register_engine.rb#L34
+    autoCmd = [
+      {
+        event = ["BufReadPost" "BufNewFile"];
+        pattern = "*.slim";
+        command = "set filetype=slim";
+      }
+    ];
+
     colorschemes.catppuccin = {
       enable = true;
       settings = {
         flavour = "mocha";
       };
     };
-
-    # disable unused providers
-    withRuby = false;
-    withNodeJs = false;
 
     globals.mapleader = " ";
 
@@ -145,5 +151,9 @@
         enableTelescope = true;
       };
     };
+
+    # disable unused providers
+    withRuby = false;
+    withNodeJs = false;
   };
 }
