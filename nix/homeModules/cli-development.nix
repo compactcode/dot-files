@@ -4,16 +4,10 @@
   ...
 }: {
   imports = [
+    ./cli/aider
     ./cli/gh
     ./cli/zellij
   ];
-
-  home = {
-    packages = [
-      # ai assistant
-      pkgs.aider-chat
-    ];
-  };
 
   # code formatter preferences
   editorconfig = {
