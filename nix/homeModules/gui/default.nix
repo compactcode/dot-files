@@ -59,12 +59,14 @@
     # notifications
     mako = {
       enable = true;
-      # TODO: extract an option
-      borderRadius = 5;
-      # auto hide after 10 seconds
-      defaultTimeout = 10 * 1000;
-      # many application icons are ugly & unhelpful
-      icons = false;
+      settings = {
+        # TODO: extract an option
+        borderRadius = 5;
+        # auto hide after 10 seconds
+        defaultTimeout = 10 * 1000;
+        # many application icons are ugly & unhelpful
+        icons = false;
+      };
     };
 
     # network manager
