@@ -6,10 +6,9 @@
       cleanup = "zap";
     };
     casks = [
-      # password manager
-      "1password"
-      # launcher
-      "raycast"
+      "1password" # password manager
+      "raycast" # launcher
+      "rubymine" # code editor
     ];
   };
 }
