@@ -30,7 +30,7 @@
     };
 
     # required but not used
-    image = ./wallpaper/space.jpg;
+    image = ../../assets/wallpaper/space.jpg;
 
     # dark mode
     polarity = "dark";
