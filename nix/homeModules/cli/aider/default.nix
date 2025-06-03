@@ -1,20 +1,24 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   home = {
-    file.".aider.conf.yml".text = ''
-      # output style (catppuccin mocha)
-      user-input-color: "#a6e3a1" # green
-      tool-output-color: "#cdd6f4" # text
-      tool-error-color: "#f38ba8" # red
-      tool-warning-color: "#f9e2af" # yellow
-      assistant-output-color: "#89b4fa" # blue
-      completion-menu-color: "#cdd6f4" # text
-      completion-menu-bg-color: "#1e1e2e" # base
-      completion-menu-current-color: "#1e1e2e" # base (bg)
-      completion-menu-current-bg-color: "#89b4fa" # blue
+    file.".aider.conf.yml".source = (pkgs.formats.yaml {}).generate "aider-config" {
+      # output style
+      user-input-color = "#${config.lib.stylix.colors.base0B}";
+      tool-output-color = "#${config.lib.stylix.colors.base05}";
+      tool-error-color = "#${config.lib.stylix.colors.base08}";
+      tool-warning-color = "#${config.lib.stylix.colors.base0A}";
+      assistant-output-color = "#${config.lib.stylix.colors.base0D}";
+      completion-menu-color = "#${config.lib.stylix.colors.base05}";
+      completion-menu-bg-color = "#${config.lib.stylix.colors.base00}";
+      completion-menu-current-color = "#${config.lib.stylix.colors.base00}";
+      completion-menu-current-bg-color = "#${config.lib.stylix.colors.base0D}";
 
-      # markdown
-      code-theme: github-dark
-    '';
+      # markdown style
+      code-theme = "github-dark";
+    };
 
     packages = [
       # ai assistant
