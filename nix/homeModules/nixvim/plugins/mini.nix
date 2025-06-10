@@ -3,7 +3,9 @@
     # collection of plugins
     plugins.mini = {
       enable = true;
+
       mockDevIcons = true;
+
       modules = {
         # text objects
         ai = {
@@ -31,6 +33,11 @@
         indentscope = {}; # indent decorations
         pairs = {}; # auto pairs
         surround = {}; # surround actions
+      };
+
+      # delay loading until the ui is loaded
+      lazyLoad.settings = {
+        event = "DeferredUIEnter";
       };
     };
   };
