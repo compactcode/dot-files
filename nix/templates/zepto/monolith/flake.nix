@@ -83,9 +83,6 @@
               packages = with pkgs; [
                 # aws cli
                 awscli2
-                # cabybara js driver
-                chromedriver
-                chromium
                 # psych(ruby-lsp)
                 libyaml
               ];
