@@ -53,10 +53,10 @@
               env.DISABLE_COVERAGE = 1;
 
               # enable sandbox mode
-              dotenv = {
-                enable = false;
-                filename = [".env.sandbox_local"];
-              };
+              # dotenv = {
+              #   enable = false;
+              #   filename = [".env.sandbox_local"];
+              # };
 
               languages = {
                 javascript = {
