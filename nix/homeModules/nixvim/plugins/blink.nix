@@ -29,6 +29,12 @@
           # use neovim built in snippet functionality
           snippets.preset = "default";
         };
+
+        # delay loading until inserting text
+        lazyLoad.settings = {
+          # https://github.com/nix-community/nixvim/issues/3001
+          # event = ["InsertEnter" "CmdlineEnter"];
+        };
       };
 
       # default snippets
