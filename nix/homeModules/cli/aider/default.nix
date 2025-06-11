@@ -4,7 +4,7 @@
   ...
 }: {
   home = {
-    file.".aider.conf.yml".source = (pkgs.formats.yaml {}).generate "aider-config" {
+    file.".aider.conf.yml".source = (pkgs.formats.yaml {}).generate "aider.conf.yml" {
       # output style
       user-input-color = "#${config.lib.stylix.colors.base0B}";
       tool-output-color = "#${config.lib.stylix.colors.base05}";
