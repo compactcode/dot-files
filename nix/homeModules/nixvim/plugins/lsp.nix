@@ -39,9 +39,15 @@
       # lsp status notifications
       fidget = {
         enable = true;
+
         # background opacity
         settings = {
           notification.window.winblend = 0;
+        };
+
+        # delay loading until an lsp is attached
+        lazyLoad.settings = {
+          event = ["LspAttach"];
         };
       };
 
@@ -79,6 +85,11 @@
           nixd.enable = true;
           # html
           tailwindcss.enable = true;
+        };
+
+        # delay loading until a file is opened
+        lazyLoad.settings = {
+          event = ["BufReadPre" "BufNewFile"];
         };
       };
     };
