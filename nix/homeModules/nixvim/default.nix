@@ -153,7 +153,8 @@
     };
 
     # disable unused providers
-    withRuby = false;
     withNodeJs = false;
+    withPerl = false;
+    withRuby = false;
   };
 }
