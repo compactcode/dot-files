@@ -4,6 +4,11 @@
     plugins = {
       blink-cmp = {
         enable = true;
+
+        # https://github.com/nix-community/nixvim/issues/3001
+        # Not needed on latest versions of neovim.
+        setupLspCapabilities = false;
+
         settings = {
           completion = {
             menu = {
@@ -32,8 +37,7 @@
 
         # delay loading until inserting text
         lazyLoad.settings = {
-          # https://github.com/nix-community/nixvim/issues/3001
-          # event = ["InsertEnter" "CmdlineEnter"];
+          event = ["InsertEnter" "CmdlineEnter"];
         };
       };
 
