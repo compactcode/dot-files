@@ -27,6 +27,7 @@
               bruno # api explorer
               discord # voice/video chat
               obsidian # document manager
+              podman # container manager
               slack # messenger
               vscode # code editor
             ];
