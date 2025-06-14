@@ -114,6 +114,11 @@
           };
         };
       };
+
+      # delay loading until requested
+      lazyLoad.settings = {
+        cmd = "Telescope";
+      };
     };
   };
 }
