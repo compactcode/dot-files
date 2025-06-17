@@ -7,6 +7,7 @@
     ./plugins/flash.nix
     ./plugins/gitlinker.nix
     ./plugins/gitsigns.nix
+    ./plugins/grug-far.nix
     ./plugins/lsp.nix
     ./plugins/lualine.nix
     ./plugins/mini.nix
@@ -14,7 +15,7 @@
     ./plugins/oil.nix
     ./plugins/other.nix
     ./plugins/render-markdown.nix
-    ./plugins/spectre.nix
+    # ./plugins/spectre.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
     ./plugins/which-key.nix
@@ -40,7 +41,10 @@
       };
     };
 
-    globals.mapleader = " ";
+    globals = {
+      mapleader = " ";
+      maplocalleader = "\\";
+    };
 
     keymaps = [
       {
