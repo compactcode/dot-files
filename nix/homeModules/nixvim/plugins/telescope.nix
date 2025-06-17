@@ -116,9 +116,10 @@
       };
 
       # delay loading until requested
-      lazyLoad.settings = {
-        cmd = "Telescope";
-      };
+      # TODO: this was causing settings to not be applied
+      # lazyLoad.settings = {
+      #   cmd = "Telescope";
+      # };
     };
   };
 }
