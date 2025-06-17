@@ -5,7 +5,7 @@
     ./plugins/conform.nix
     ./plugins/snacks.nix
     ./plugins/flash.nix
-    ./plugins/gitlinker.nix
+    # ./plugins/gitlinker.nix
     ./plugins/gitsigns.nix
     ./plugins/grug-far.nix
     ./plugins/lsp.nix
