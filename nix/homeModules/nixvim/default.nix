@@ -3,7 +3,7 @@
     ./plugins/aerial.nix
     ./plugins/blink.nix
     ./plugins/conform.nix
-    ./plugins/dressing.nix
+    ./plugins/snacks.nix
     ./plugins/flash.nix
     ./plugins/gitlinker.nix
     ./plugins/gitsigns.nix
