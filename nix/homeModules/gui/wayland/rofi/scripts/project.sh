@@ -13,9 +13,9 @@ main() {
     exit
   elif [[ -n $selected ]]; then
     if rg -q cachix/devenv "$selected/flake.nix"; then
-      hyprctl dispatch exec -- kitty -d "$selected" zellij -l devenv
+      hyprctl dispatch exec -- kitty -d "$selected" --session session-devenv.conf
     else
-      hyprctl dispatch exec -- kitty -d "$selected" zellij -l basic
+      hyprctl dispatch exec -- kitty -d "$selected" --session session-basic.conf
     fi
   fi
 }

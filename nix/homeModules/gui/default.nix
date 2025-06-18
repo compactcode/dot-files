@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./email
+    ./kitty
     ./wayland/hyprland
     ./wayland/rofi
     ./wayland/waybar
@@ -27,9 +28,6 @@
     # image viewer
     imv.enable = true;
 
-    # terminal
-    kitty.enable = true;
-
     # video player
     mpv.enable = true;
 
@@ -45,7 +43,6 @@
       gnome.enable = true; # ensure electron apps to detect system theme
       gtk.enable = true;
       kde.enable = true;
-      kitty.enable = true;
       mako.enable = true;
       swaylock.enable = true;
       zathura.enable = true;
