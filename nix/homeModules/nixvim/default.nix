@@ -1,9 +1,10 @@
 {...}: {
   imports = [
+    # ./plugins/spectre.nix
     ./plugins/aerial.nix
+    ./plugins/ai/avante.nix
     ./plugins/blink.nix
     ./plugins/conform.nix
-    ./plugins/snacks.nix
     ./plugins/flash.nix
     ./plugins/gitlinker.nix
     ./plugins/gitsigns.nix
@@ -15,7 +16,7 @@
     ./plugins/oil.nix
     ./plugins/other.nix
     ./plugins/render-markdown.nix
-    # ./plugins/spectre.nix
+    ./plugins/snacks.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
     ./plugins/which-key.nix
