@@ -6,6 +6,7 @@
   imports = [
     ./cli/aider
     ./cli/gh
+    ./cli/nixvim
     ./cli/zellij
   ];
 

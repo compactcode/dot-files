@@ -18,7 +18,6 @@
             inputs._1password-shell-plugins.hmModules.default
             inputs.self.homeModules.cli-core
             inputs.self.homeModules.cli-development
-            inputs.self.homeModules.nixvim
             inputs.self.homeModules.gui-1password
             ./aerospace
           ];
