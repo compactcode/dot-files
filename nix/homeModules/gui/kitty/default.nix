@@ -7,6 +7,8 @@
       settings = {
         # allow controlling kitty from scripts
         allow_remote_control = "yes";
+        # allow using the alt key
+        macos_option_as_alt = "both";
       };
 
       keybindings = {

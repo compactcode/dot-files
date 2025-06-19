@@ -6,7 +6,6 @@
 }: {
   imports = [
     ./email
-    ./kitty
     ./wayland/hyprland
     ./wayland/rofi
     ./wayland/waybar

@@ -18,7 +18,7 @@
             inputs._1password-shell-plugins.hmModules.default
             inputs.self.homeModules.cli-core
             inputs.self.homeModules.cli-development
-            inputs.self.homeModules.gui-1password
+            inputs.self.homeModules.gui-core
             ./aerospace
           ];
           home = {
@@ -32,17 +32,6 @@
             ];
             stateVersion = "24.05";
           };
-          programs = {
-            # terminal
-            kitty = {
-              enable = true;
-              settings = {
-                # allow using the alt key
-                macos_option_as_alt = "both";
-              };
-            };
-          };
-          stylix.targets.kitty.enable = true;
         };
       };
 
