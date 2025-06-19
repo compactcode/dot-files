@@ -33,6 +33,8 @@
   };
 
   services = {
+    # fingerprint scanner
+    fprintd.enable = true;
     # periodic ssd maintenance
     fstrim.enable = true;
     # disable nvidia gpu
