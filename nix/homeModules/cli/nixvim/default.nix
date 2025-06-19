@@ -3,6 +3,7 @@
     # ./plugins/spectre.nix
     ./plugins/aerial.nix
     ./plugins/ai/avante.nix
+    ./plugins/ai/codecompanion.nix
     ./plugins/blink.nix
     ./plugins/conform.nix
     ./plugins/flash.nix
