@@ -17,7 +17,7 @@
             inputs.self.homeModules.cli-core
             inputs.self.homeModules.cli-development
             inputs.self.homeModules.gui-core
-            inputs.self.homeModules.gui
+            inputs.self.homeModules.gui-wayland
           ];
         };
       };
