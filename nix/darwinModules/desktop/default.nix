@@ -6,6 +6,7 @@
   imports = [
     inputs.stylix.darwinModules.stylix
     inputs.home-manager.darwinModules.home-manager
+    ./aerospace
     ./core.nix
     ./homebrew.nix
     {
@@ -19,7 +20,6 @@
             inputs.self.homeModules.cli-core
             inputs.self.homeModules.cli-development
             inputs.self.homeModules.gui-core
-            ./aerospace
           ];
           home = {
             packages = with pkgs; [
