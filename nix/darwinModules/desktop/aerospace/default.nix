@@ -22,6 +22,10 @@
         alt-shift-ctrl-cmd-3 = "workspace 3";
         alt-shift-ctrl-cmd-4 = "workspace 4";
         alt-shift-ctrl-cmd-5 = "workspace 5";
+        alt-shift-ctrl-cmd-6 = "workspace 6";
+        alt-shift-ctrl-cmd-7 = "workspace 7";
+        alt-shift-ctrl-cmd-8 = "workspace 8";
+        alt-shift-ctrl-cmd-9 = "workspace 9";
 
         alt-shift-ctrl-cmd-s = "exec-and-forget open -a ${pkgs.slack}/Applications/Slack.app";
         alt-shift-ctrl-cmd-t = "exec-and-forget open -a ${pkgs.kitty}/Applications/Kitty.app";
@@ -36,6 +40,10 @@
         alt-shift-ctrl-3 = "move-node-to-workspace 3";
         alt-shift-ctrl-4 = "move-node-to-workspace 4";
         alt-shift-ctrl-5 = "move-node-to-workspace 5";
+        alt-shift-ctrl-6 = "move-node-to-workspace 6";
+        alt-shift-ctrl-7 = "move-node-to-workspace 7";
+        alt-shift-ctrl-8 = "move-node-to-workspace 8";
+        alt-shift-ctrl-9 = "move-node-to-workspace 9";
 
         alt-shift-ctrl-a = "layout accordion horizontal vertical";
         alt-shift-ctrl-t = "layout tiles horizontal vertical";
