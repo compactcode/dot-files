@@ -1,5 +1,13 @@
 {...}: {
   programs.nixvim = {
+    keymaps = [
+      {
+        key = "S";
+        action = "<cmd>lua require(\"flash\").treesitter()<cr>";
+        options = {desc = "select using treesitter";};
+      }
+    ];
+
     # enhanced versions of builtin motions
     plugins.flash = {
       enable = true;

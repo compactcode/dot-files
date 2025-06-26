@@ -90,11 +90,6 @@
         options = {desc = "paste using yanky";};
       }
       {
-        key = "S";
-        action = "<cmd>lua require(\"flash\").treesitter()<cr>";
-        options = {desc = "select using treesitter";};
-      }
-      {
         key = "<leader>c";
         action = "<cmd>nohlsearch<cr>";
         options = {desc = "clear search highlight";};
