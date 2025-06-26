@@ -52,7 +52,7 @@
         options = {desc = "paste from history";};
       }
       {
-        key = "<leader>t";
+        key = "<leader><space>";
         action = "<cmd>Telescope find_files<cr>";
         options = {desc = "find files";};
       }

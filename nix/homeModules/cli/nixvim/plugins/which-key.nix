@@ -20,7 +20,7 @@
           }
           {
             __unkeyed-1 = "<leader>f";
-            group = "files";
+            group = "find";
           }
           {
             __unkeyed-1 = "<leader>g";
@@ -36,7 +36,11 @@
           }
           {
             __unkeyed-1 = "<leader>s";
-            group = "search";
+            group = "symbols";
+          }
+          {
+            __unkeyed-1 = "<leader>t";
+            group = "terminal";
           }
         ];
       };
