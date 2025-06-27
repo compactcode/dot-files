@@ -20,6 +20,9 @@
 
         settings = {
           completion = {
+            # always show documentation preview, useful for snippets
+            documentation.auto_show = true;
+
             menu = {
               draw = {
                 components = {
@@ -40,6 +43,10 @@
               };
             };
           };
+
+          # always autocomplete in command mode
+          cmdline.completion.menu.auto_show = true;
+
           # use neovim built in snippet functionality
           snippets.preset = "default";
         };
