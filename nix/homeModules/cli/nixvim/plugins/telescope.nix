@@ -2,11 +2,6 @@
   programs.nixvim = {
     keymaps = [
       {
-        key = "<leader>d";
-        action = "<cmd>Telescope lsp_definitions<cr>";
-        options = {desc = "goto definition";};
-      }
-      {
         key = "<leader>ff";
         action = "<cmd>Telescope frecency workspace=CWD<cr>";
         options = {desc = "find commonly edited files";};
@@ -37,12 +32,12 @@
         options = {desc = "search project for current word";};
       }
       {
-        key = "<leader>ld";
+        key = "<leader>cd";
         action = "<cmd>Telescope lsp_definitions<cr>";
         options = {desc = "goto definition";};
       }
       {
-        key = "<leader>lu";
+        key = "<leader>cu";
         action = "<cmd>Telescope lsp_references<cr>";
         options = {desc = "show lsp referenecs";};
       }
@@ -55,11 +50,6 @@
         key = "<leader><space>";
         action = "<cmd>Telescope find_files<cr>";
         options = {desc = "find files";};
-      }
-      {
-        key = "<leader>u";
-        action = "<cmd>Telescope lsp_references<cr>";
-        options = {desc = "show lsp referenecs";};
       }
     ];
 

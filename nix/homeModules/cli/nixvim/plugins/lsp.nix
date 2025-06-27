@@ -11,12 +11,12 @@
 
     keymaps = [
       {
-        key = "<leader>la";
+        key = "<leader>ca";
         action = "<cmd>lua vim.lsp.buf.code_action()<cr>";
         options = {desc = "code actions";};
       }
       {
-        key = "<leader>lh";
+        key = "<leader>ch";
         action = "<cmd>lua vim.lsp.buf.hover()<cr>";
         options = {desc = "show info about symbol";};
       }

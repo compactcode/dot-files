@@ -29,7 +29,7 @@
         # rename local variable
         smartRename = {
           enable = true;
-          keymaps.smartRename = "<leader>ar";
+          keymaps.smartRename = "<leader>cr";
         };
       };
       # language query extensions (used by mini.ai)
@@ -52,8 +52,8 @@
         swap = {
           enable = true;
           swapNext = {
-            "<leader>aea" = "@parameter.inner";
-            "<leader>aef" = "@function.outer";
+            "<leader>cea" = "@parameter.inner";
+            "<leader>cef" = "@function.outer";
           };
         };
       };

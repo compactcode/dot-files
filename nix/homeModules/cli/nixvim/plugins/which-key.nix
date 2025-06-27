@@ -16,7 +16,11 @@
         spec = [
           {
             __unkeyed-1 = "<leader>a";
-            group = "actions";
+            group = "ai";
+          }
+          {
+            __unkeyed-1 = "<leader>c";
+            group = "code";
           }
           {
             __unkeyed-1 = "<leader>f";
@@ -39,8 +43,8 @@
             group = "symbols";
           }
           {
-            __unkeyed-1 = "<leader>t";
-            group = "terminal";
+            __unkeyed-1 = "<leader>u";
+            group = "ui";
           }
         ];
       };

@@ -2,7 +2,7 @@
   programs.nixvim = {
     keymaps = [
       {
-        key = "<leader>tt";
+        key = "<leader>t";
         action = "<cmd>lua Snacks.terminal.toggle()<cr>";
         mode = ["n"];
         options = {desc = "open terminal";};

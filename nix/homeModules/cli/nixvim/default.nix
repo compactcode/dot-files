@@ -90,7 +90,7 @@
         options = {desc = "paste using yanky";};
       }
       {
-        key = "<leader>c";
+        key = "<leader>uc";
         action = "<cmd>nohlsearch<cr>";
         options = {desc = "clear search highlight";};
       }

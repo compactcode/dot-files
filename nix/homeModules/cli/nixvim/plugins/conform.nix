@@ -53,7 +53,7 @@
         event = "InsertEnter";
         keys = [
           {
-            __unkeyed-1 = "<leader>af";
+            __unkeyed-1 = "<leader>cf";
             __unkeyed-2 = "<cmd>lua require(\"conform\").format()<cr>";
             desc = "format code";
           }
