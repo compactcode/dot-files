@@ -68,18 +68,16 @@
       TAB_TITLE=$1
       shift
 
-      # Note: this requires jq to be installed
-      # Check if a tab with the given title already exists
+      # check if a tab with the given title already exists
       if kitty @ ls | jq -e --arg title "$TAB_TITLE" '.[] | .tabs[] | select(.title == $title)' > /dev/null; then
-        # If it exists, focus it
         kitty @ focus-tab --match "title:$TAB_TITLE"
       else
-        # If it doesn't exist, create it and run the command
         if [ $# -gt 0 ]; then
-          kitty @ launch --type=tab --tab-title "$TAB_TITLE" "$@"
+          # create tab with given command
+          kitty @ launch --type=tab --tab-title "$TAB_TITLE" --cwd=current "$@"
         else
-          # if no command is given, kitty will launch the default shell
-          kitty @ launch --type=tab --tab-title "$TAB_TITLE"
+          # create defaut tab
+          kitty @ launch --type=tab --tab-title "$TAB_TITLE" --cwd=current
         fi
       fi
     '';
