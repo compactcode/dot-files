@@ -1,4 +1,4 @@
-{...}: {
+{config, ...}: {
   programs = {
     # terminal
     kitty = {
@@ -18,6 +18,12 @@
         "alt+p" = "launch --type=overlay kitty @ focus-tab --match title:^processes$";
         "alt+s" = "launch --type=overlay kitty @ focus-tab --match title:^shell$";
       };
+    };
+  };
+
+  home = {
+    shellAliases = {
+      ko = "${config.xdg.configFile."kitty/scripts/focus-or-open.sh".source}";
     };
   };
 
