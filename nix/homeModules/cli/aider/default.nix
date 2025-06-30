@@ -18,6 +18,9 @@
 
       # markdown style
       code-theme = "github-dark";
+
+      # disable automatic commit generation
+      auto-commits = false;
     };
 
     packages = [
