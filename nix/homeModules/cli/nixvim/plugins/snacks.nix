@@ -1,12 +1,12 @@
 {...}: {
   programs.nixvim = {
     keymaps = [
-      {
-        key = "<leader>t";
-        action = "<cmd>lua Snacks.terminal.toggle()<cr>";
-        mode = ["n"];
-        options = {desc = "open terminal";};
-      }
+      # {
+      #   key = "<leader>t";
+      #   action = "<cmd>lua Snacks.terminal.toggle()<cr>";
+      #   mode = ["n"];
+      #   options = {desc = "open terminal";};
+      # }
       {
         key = "<C-/>";
         action = "<cmd>close<cr>";

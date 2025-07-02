@@ -47,6 +47,11 @@
         options = {desc = "paste from history";};
       }
       {
+        key = "<leader>t";
+        action = "<cmd>Telescope find_files<cr>";
+        options = {desc = "paste from history";};
+      }
+      {
         key = "<leader><space>";
         action = "<cmd>Telescope find_files<cr>";
         options = {desc = "find files";};
