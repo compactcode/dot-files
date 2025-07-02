@@ -44,8 +44,12 @@
             };
           };
 
-          # always autocomplete in command mode
-          cmdline.completion.menu.auto_show = true;
+          # enable when typing commands
+          cmdline.completion.menu.auto_show.__raw = ''
+            function(ctx)
+              return vim.fn.getcmdtype() == ':'
+            end
+          '';
 
           # use neovim built in snippet functionality
           snippets.preset = "default";
