@@ -1,4 +1,4 @@
-{...}: {
+{config, ...}: {
   programs.nixvim = {
     # enable colorscheme
     colorschemes.catppuccin = {
@@ -53,6 +53,20 @@
 
           # use neovim built in snippet functionality
           snippets.preset = "default";
+
+          sources = {
+            default = [
+              "lsp"
+              "path"
+              "snippets"
+              "buffer"
+            ];
+
+            providers = {
+              # keep the buffer source enabled when an lsp is attached
+              lsp.fallbacks = config.lib.nixvim.utils.emptyTable;
+            };
+          };
         };
 
         # delay loading until inserting text
