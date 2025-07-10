@@ -121,7 +121,6 @@
         ll = "${lib.getExe pkgs.eza} -la --icons";
         lt = "${lib.getExe pkgs.eza} -l --tree";
         md = "${lib.getExe' pkgs.coreutils "mkdir"} -p";
-        y = "${lib.getExe pkgs.yazi}";
         v = "nvim";
       };
 

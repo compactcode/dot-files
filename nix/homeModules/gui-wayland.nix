@@ -41,6 +41,7 @@
   home = {
     shellAliases = {
       o = "${lib.getExe' pkgs.xdg-utils "xdg-open"}";
+      y = "${lib.getExe pkgs.yazi}";
     };
   };
 
