@@ -7,7 +7,7 @@
     ./cli/aider
     ./cli/gh
     ./cli/nixvim
-    ./cli/zellij
+    # ./cli/zellij
   ];
 
   # code formatter preferences
