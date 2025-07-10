@@ -1,7 +1,16 @@
-{pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   programs = {
     # window manager
-    hyprland.enable = true;
+    hyprland = {
+      enable = true;
+      # use systemd
+      withUWSM = true;
+    };
   };
 
   # allow swaylock to perform authentication
@@ -13,7 +22,7 @@
       enable = true;
       settings = rec {
         initial_session = {
-          command = "Hyprland";
+          command = "${lib.getExe config.programs.uwsm.package} start hyprland-uwsm.desktop";
           user = "shandogs";
         };
         # skip first login since boot requires luks password

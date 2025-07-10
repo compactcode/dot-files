@@ -152,9 +152,6 @@
 
       submap = reset
     '';
-
-    # hyprland-session.target
-    systemd.enable = true;
   };
 
   xdg = {
