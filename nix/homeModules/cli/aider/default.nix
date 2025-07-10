@@ -25,7 +25,7 @@
 
     packages = [
       # ai assistant
-      pkgs.aider-chat
+      pkgs.aider-chat-with-playwright
     ];
   };
 }
