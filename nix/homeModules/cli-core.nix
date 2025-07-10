@@ -3,10 +3,6 @@
   lib,
   ...
 }: {
-  imports = [
-    ./cli/yazi
-  ];
-
   home = {
     packages = [
       # zip/archive handling

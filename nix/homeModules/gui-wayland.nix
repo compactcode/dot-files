@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./gui/email
+    ./gui/yazi
     ./gui/wayland/hyprland
     ./gui/wayland/rofi
     ./gui/wayland/waybar
