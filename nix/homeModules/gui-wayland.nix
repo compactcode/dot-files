@@ -37,6 +37,12 @@
     zathura.enable = true;
   };
 
+  home = {
+    shellAliases = {
+      o = "${lib.getExe' pkgs.xdg-utils "xdg-open"}";
+    };
+  };
+
   stylix = {
     targets = {
       gnome.enable = true; # ensure electron apps to detect system theme

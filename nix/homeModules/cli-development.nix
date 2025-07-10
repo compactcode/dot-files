@@ -81,7 +81,6 @@
         grm = "${lib.getExe pkgs.git} rm";
         gs = "${lib.getExe pkgs.git} status";
         lg = "${lib.getExe pkgs.lazygit}";
-        o = "${lib.getExe' pkgs.xdg-utils "xdg-open"}";
       };
     };
   };
