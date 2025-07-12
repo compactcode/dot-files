@@ -129,12 +129,12 @@
     };
   };
 
-  virtualisation = {
-    # container manager
-    docker = {
-      enable = true;
-      # start on demand
-      enableOnBoot = false;
-    };
+  # container manager
+  virtualisation.podman = {
+    enable = true;
+    # replace the docker socket
+    dockerSocket.enable = true;
+    # replace the docker command
+    dockerCompat = true;
   };
 }
