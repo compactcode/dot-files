@@ -17,5 +17,26 @@
       "};"
     ],
     "description": "new attrset with enable set to true"
+  },
+  "delibm": {
+    "prefix": "delibm",
+    "body": [
+      "{",
+      "  delib,",
+      "  pkg,",
+      "  ...",
+      "}:",
+      "delib.module {",
+      "  # description here",
+      "  name = \"programs.name\";",
+      "",
+      "  options = delib.singleEnableOption true;",
+      "",
+      "  home.ifEnabled = {",
+      "    home.packages = [pkgs.bruno];",
+      "  };",
+      "}"
+    ],
+    "description": "new denix module"
   }
 }
