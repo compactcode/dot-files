@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    ./gui/email
+    # ./gui/email
     ./gui/yazi
     ./gui/wayland/hyprland
     ./gui/wayland/rofi
