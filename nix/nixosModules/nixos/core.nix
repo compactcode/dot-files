@@ -64,22 +64,8 @@
     # enable flakes
     nix.settings.experimental-features = ["nix-command" "flakes"];
 
-    programs = {
-      # nix helper
-      nh = {
-        enable = true;
-        # automatic garbage collection
-        clean = {
-          enable = true;
-          extraArgs = "--keep 5 --keep-since 30d";
-        };
-        # TODO: find a less hacky way to set this
-        flake = "/home/shandogs/Projects/personal/dot-files";
-      };
-
-      # user shell
-      zsh.enable = true;
-    };
+    # user shell
+    programs.zsh.enable = true;
 
     # battery management
     services.tlp.enable = config.laptop.enable;

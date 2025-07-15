@@ -3,6 +3,10 @@
   lib,
   ...
 }: {
+  imports = [
+    ./cli/nh
+  ];
+
   home = {
     packages = [
       # zip/archive handling
