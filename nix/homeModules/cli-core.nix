@@ -147,6 +147,7 @@
       bat.enable = true;
       btop.enable = true;
       fzf.enable = true;
+      starship.enable = true;
     };
   };
 }
