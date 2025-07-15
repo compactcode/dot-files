@@ -24,7 +24,6 @@
           home = {
             packages = with pkgs; [
               bruno # api explorer
-              nh # nix cli helper
               podman # container manager
               slack # messenger
             ];
