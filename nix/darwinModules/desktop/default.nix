@@ -25,7 +25,6 @@
             packages = with pkgs; [
               bruno # api explorer
               nh # nix cli helper
-              obsidian # document manager
               podman # container manager
               slack # messenger
             ];
