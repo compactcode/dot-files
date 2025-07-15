@@ -14,7 +14,6 @@
       bruno # api explorer
       dust # du replacement
       grimblast # screenshot taker
-      legcord # voice chat (discord)
       obsidian # document manager
       pavucontrol # sound manager
       pinta # image editor
