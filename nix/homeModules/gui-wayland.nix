@@ -51,6 +51,7 @@
       gtk.enable = true;
       kde.enable = true;
       mako.enable = true;
+      mpv.enable = true;
       swaylock.enable = true;
       zathura.enable = true;
     };
