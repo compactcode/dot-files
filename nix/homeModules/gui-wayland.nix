@@ -73,6 +73,9 @@
       };
     };
 
+    # authentication agent
+    polkit-gnome.enable = true;
+
     # network manager
     network-manager-applet.enable = true;
 

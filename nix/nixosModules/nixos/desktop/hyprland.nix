@@ -34,23 +34,6 @@
   systemd = {
     # dont block boot waiting for networking
     services.NetworkManager-wait-online.enable = false;
-
-    user.services = {
-      # start authentication agent to applications can make requests
-      polkit-authentication-agent = {
-        description = "polkit-gnome-authentication-agent-1";
-        wantedBy = ["graphical-session.target"];
-        wants = ["graphical-session.target"];
-        after = ["graphical-session.target"];
-        serviceConfig = {
-          Type = "simple";
-          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-          Restart = "on-failure";
-          RestartSec = 1;
-          TimeoutStopSec = 10;
-        };
-      };
-    };
   };
 
   xdg = {
